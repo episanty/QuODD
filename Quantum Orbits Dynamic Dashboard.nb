@@ -28010,6 +28010,8 @@ PrintingOptions->{"PaperOrientation"->"Landscape",
 "PrintingMargins"->0},
 PrivateNotebookOptions->{"FileOutlineCache"->False},
 ShowSelection->True,
+TrackCellChangeTimes->False,
 FrontEndVersion->"10.1 for Linux x86 (64-bit) (March 23, 2015)",
 StyleDefinitions->"Default.nb"
 ]
+
