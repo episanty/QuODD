@@ -26,20 +26,20 @@ EvaluationElements->"InitializationCell"
 ];
 
 
-stdpars={0.05,0.057,1.07};
+(*stdpars={0.05,0.057,1.07};*)
 
 
-ts[pp_,\[Kappa]_,\[Omega]_,F_,po_,py_]:=1/\[Omega] ArcSin[\[Omega]/F pp+I \[Omega]/F Sqrt[\[Kappa]^2+po^2+py^2]]
+(*ts[pp_,\[Kappa]_,\[Omega]_,F_,po_,py_]:=1/\[Omega]ArcSin[\[Omega]/Fpp+\[ImaginaryI] \[Omega]/FSqrt[\[Kappa]^2+po^2+py^2]]*)
 
 
-t0[pp_,\[Kappa]_,\[Omega]_,F_,po_,py_]:=Re[ts[pp,\[Kappa],\[Omega],F,po,py]]
-\[Tau][pp_,\[Kappa]_,\[Omega]_,F_,po_,py_]:=Im[ts[pp,\[Kappa],\[Omega],F,po,py]]
+(*t0[pp_,\[Kappa]_,\[Omega]_,F_,po_,py_]:=Re[ts[pp,\[Kappa],\[Omega],F,po,py]]
+\[Tau][pp_,\[Kappa]_,\[Omega]_,F_,po_,py_]:=Im[ts[pp,\[Kappa],\[Omega],F,po,py]]*)
 
 
 (*FullSimplify[Re[
 \[ImaginaryI] Integrate[\[Kappa]^2/2+1/2(po^2+py^2)+1/2(pp-F/\[Omega]Sin[\[Omega] t])^2,{t,0,1/\[Omega]ArcSin[\[Omega]/F(pp+\[ImaginaryI] Sqrt[\[Kappa]^2+po^2+py^2])]}]/.{Sin[2u_]\[Rule]2Sin[u]Cos[u]}
 ]]*)
-exponent[{po_,py_,pp_},{F_,\[Omega]_},\[Kappa]_]:=-(1/8) Im[1/\[Omega]^3 (2 F \[Omega] (-4 pp+3 pp Sqrt[1+((-I pp+Sqrt[po^2+py^2+\[Kappa]^2])^2 \[Omega]^2)/F^2]-I Sqrt[po^2+py^2+\[Kappa]^2] Sqrt[1+((-I pp+Sqrt[po^2+py^2+\[Kappa]^2])^2 \[Omega]^2)/F^2])+2 (F^2+2 (po^2+pp^2+py^2+\[Kappa]^2) \[Omega]^2) ArcSin[((pp+I Sqrt[po^2+py^2+\[Kappa]^2]) \[Omega])/F])]
+(*exponent[{po_,py_,pp_},{F_,\[Omega]_},\[Kappa]_]:=-(1/8) Im[1/\[Omega]^3(2 F \[Omega] (-4 pp+3 pp Sqrt[1+((-\[ImaginaryI] pp+Sqrt[po^2+py^2+\[Kappa]^2])^2 \[Omega]^2)/F^2]-\[ImaginaryI] Sqrt[po^2+py^2+\[Kappa]^2] Sqrt[1+((-\[ImaginaryI] pp+Sqrt[po^2+py^2+\[Kappa]^2])^2 \[Omega]^2)/F^2])+2 (F^2+2 (po^2+pp^2+py^2+\[Kappa]^2) \[Omega]^2) ArcSin[((pp+\[ImaginaryI] Sqrt[po^2+py^2+\[Kappa]^2]) \[Omega])/F])]*)
 
 
 Options[timeContours]={ImageSize->{360,360}};
@@ -89,19 +89,19 @@ ParametricPlot[
 ]
 ,Graphics[{PointSize[Large],Purple,Tooltip[Point[{Re[#],Im[#]}&@Evaluate["ts"/.rules]],"\!\(\*SubscriptBox[\(t\), \(s\)]\)"]}]
 ,Graphics[{PointSize[Large],Gray,Tooltip[Point[{Re[#],Im[#]}&@Evaluate["t\[Kappa]"/.rules]],"\!\(\*SubscriptBox[\(t\), \(\[Kappa]\)]\)"]}]
-,Graphics[{PointSize[Large],Green,Tooltip[Point[{Re\[InvisibleApplication]t[s],Im\[InvisibleApplication]t[s]}/.s->0],"Contour start"]}]
-,Graphics[{PointSize[Large],Red,Tooltip[Point[{Re\[InvisibleApplication]t[s],Im\[InvisibleApplication]t[s]}/.s->1],"Contour end"]}]
+,Graphics[{PointSize[Large],Green,Tooltip[Point[{Re[t[0]],Im[t[0]]}(*/.s\[Rule]0*)],"Contour start"]}]
+,Graphics[{PointSize[Large],Red,Tooltip[Point[{Re[t[1]],Im[t[1]]}(*/.s\[Rule]1*)],"Contour end"]}]
 ,Graphics[{PointSize[Large],Blue,Tooltip[Point[{0,0}],"Time origin"]}]
-,Graphics[{PointSize[Large],Black,Tooltip[Point[{Re\[InvisibleApplication]t[sman],Im\[InvisibleApplication]t[sman]}],"t(s)"]}]
+,Graphics[{PointSize[Large],Black,Tooltip[Point[{Re[t[sman]],Im[t[sman]]}],"t(s)"]}]
 }]
 
 
 Options[trajectoryPlotter]={"PlotRange"->All};
-trajectoryPlotter[function_,label_,sman_,OptionsPattern[]]:=
+trajectoryPlotter[trajectoryFunction_,label_,sman_,OptionsPattern[]]:=
 Show[#,PlotRange->OptionValue["PlotRange"],PlotRangePadding->0.05Max[(#[[2]]-#[[1]]&)/@(PlotRange/. AbsoluteOptions[#,PlotRange])]]&@(*For better padding, as per mm.se:42495.*)
 Show[
 ParametricPlot[
-{Re[function[s]],Im[function[s]]},{s,0,1}
+{Re[trajectoryFunction[s]],Im[trajectoryFunction[s]]},{s,0,1}
 ,AspectRatio->Automatic
 ,PlotRange->Full
 ,Frame->True
@@ -116,10 +116,10 @@ Red,Thick,Tooltip[Line[{{-1000,0},{0,0}}],DisplayForm[Row[{"Branch cut\n",Supers
 ]
 ,ImageSize->{360,360}
 ]
-,Graphics[{PointSize[Large],Green,Tooltip[Point[{Re[function[0]],Im[function[0]]}],"Contour start"]}]
-,Graphics[{PointSize[Large],Red,Tooltip[Point[{Re[function[1]],Im[function[1]]}],"Contour end"]}]
+,Graphics[{PointSize[Large],Green,Tooltip[Point[{Re[trajectoryFunction[0]],Im[trajectoryFunction[0]]}],"Contour start"]}]
+,Graphics[{PointSize[Large],Red,Tooltip[Point[{Re[trajectoryFunction[1]],Im[trajectoryFunction[1]]}],"Contour end"]}]
 ,Graphics[{PointSize[Large],Blue,Tooltip[Point[{0,0}],"Origin"]}]
-,Graphics[{PointSize[Large],Black,Tooltip[Point[{Re[function[sman]],Im[function[sman]]}],label]}]
+,Graphics[{PointSize[Large],Black,Tooltip[Point[{Re[trajectoryFunction[sman]],Im[trajectoryFunction[sman]]}],label]}]
 ]
 
 
@@ -147,7 +147,7 @@ colourScale[{pomax_,ppmax_},{F_,\[Omega]_},\[Kappa]_]:=colourScale[{pomax,0,ppma
 y,
 {x,0,0.075},{y,0,1}
 ,AspectRatio->Automatic
-,Contours->10^Range[Floor[Log[10,E^(2exponent[{pomax,0,ppmax},{F,\[Omega]},\[Kappa]])/E^(2exponent[{0,0,0},{F,\[Omega]},\[Kappa]])]],-0,0.1]
+,Contours->10^Range[Floor[Log[10,E^(2volkovExponent[{pomax,0,ppmax},{F,\[Omega],\[Kappa]}])/E^(2volkovExponent[{0,0,0},{F,\[Omega],\[Kappa]}])]],-0,0.1]
 ,PlotRangePadding->None
 ,FrameTicks->{{None,{10^Range[-1,0,0.1],ToString[#,TraditionalForm]&/@Evaluate[10^ToString/@Range[-1,0,0.1]/.{
 \!\(\*SuperscriptBox[\(10\), \("\<0.\>"\)]\)->1}]}\[Transpose]},{None,None}}
@@ -245,11 +245,11 @@ colourScale[{pomax,ppmax},{F,\[Omega]},\[Kappa]]
 
 
 ClearAll[ionizationProbabilityPlot]
-ionizationProbabilityPlot[{F_,\[Omega]_,\[Kappa]_},cleanPlot_:True]:=ionizationProbabilityPlot[{F,\[Omega],\[Kappa]},a]=Module[
+ionizationProbabilityPlot[{F_,\[Omega]_,\[Kappa]_}]:=ionizationProbabilityPlot[{F,\[Omega],\[Kappa]},a]=Module[
 {ppmax=1.5,pomax=1},
 Show[
-If[TrueQ[cleanPlot],cleanContourPlot,#&][ContourPlot[
-E^(2exponent[{ppo,0,ppp},{F,\[Omega]},\[Kappa]])/E^(2exponent[{0,0,0},{F,\[Omega]},\[Kappa]])
+cleanContourPlot[ContourPlot[
+E^(2volkovExponent[{ppo,0,ppp},{F,\[Omega],\[Kappa]}])/E^(2volkovExponent[{0,0,0},{F,\[Omega],\[Kappa]}])
 ,{ppo,0,pomax},{ppp,0,ppmax}
 ,PlotRange->Full
 ,Contours->10^Range[-2,0,0.1]
@@ -261,7 +261,7 @@ E^(2exponent[{ppo,0,ppp},{F,\[Omega]},\[Kappa]])/E^(2exponent[{0,0,0},{F,\[Omega
 ,ImageSize->{{360},{340}}
 ]],
 ContourPlot[
-E^(2exponent[{ppo,0,ppp},{F,\[Omega]},\[Kappa]])/E^(2exponent[{0,0,0},{F,\[Omega]},\[Kappa]])
+E^(2volkovExponent[{ppo,0,ppp},{F,\[Omega],\[Kappa]}])/E^(2volkovExponent[{0,0,0},{F,\[Omega],\[Kappa]}])
 ,{ppo,0,pomax},{ppp,0,ppmax}
 ,PlotRange->Full
 ,Contours->10^Range[-2,0,0.1]
@@ -270,10 +270,10 @@ E^(2exponent[{ppo,0,ppp},{F,\[Omega]},\[Kappa]])/E^(2exponent[{0,0,0},{F,\[Omega
 ,PlotPoints->20
 ],
 (ContourPlot[
-E^(2exponent[{ppo,0,ppp},{F,\[Omega]},\[Kappa]])/E^(2exponent[{0,0,0},{F,\[Omega]},\[Kappa]])
+E^(2volkovExponent[{ppo,0,ppp},{F,\[Omega],\[Kappa]}])/E^(2volkovExponent[{0,0,0},{F,\[Omega],\[Kappa]}])
 ,{ppo,0,pomax},{ppp,0,ppmax}
 ,PlotRange->Full
-,Contours->10^Range[Floor[Log[10,E^(2exponent[{pomax,0,ppmax},{F,\[Omega]},\[Kappa]])/E^(2exponent[{0,0,0},{F,\[Omega]},\[Kappa]])]],-0,1]
+,Contours->10^Range[Floor[Log[10,E^(2volkovExponent[{pomax,0,ppmax},{F,\[Omega],\[Kappa]}])/E^(2volkovExponent[{0,0,0},{F,\[Omega],\[Kappa]}])]],-0,1]
 ,ContourShading->None
 ,ContourStyle->{Black}
 ,PlotPoints->20
@@ -303,7 +303,7 @@ momentumPlaneControls[{po_,py_,pp_},{F_,\[Omega]_,\[Kappa]_}]:=Grid[{
 "Probability = "<>(If[#<=10^-2,
 ToString[ScientificForm[#,2],TraditionalForm],
 ToString[NumberForm[#,2]]
-]&[E^(2exponent[{po,py,pp},{F,\[Omega]},\[Kappa]])/E^(2exponent[{0,0,0},{F,\[Omega]},\[Kappa]])])
+]&[E^(2volkovExponent[{po,py,pp},{F,\[Omega],\[Kappa]}])/E^(2volkovExponent[{0,0,0},{F,\[Omega],\[Kappa]}])])
 ]]},
 {
 LocatorPane[
@@ -354,7 +354,7 @@ dashboardPlotter[{F_,\[Omega]_},\[Kappa]_,initialpath_: {"t\[Kappa]","t0","T"},{
 ,updateDefinitions, timecontours,timepath
 },
 updateDefinitions[]:=(
-baretss=ts[pp,\[Kappa],\[Omega],F,po,py];
+baretss=(*ts[pp,\[Kappa],\[Omega],F,po,py]*)ts[{po,py,pp},{F,\[Omega],\[Kappa]}];
 tss=baretss+\[CapitalDelta]tss;
 rules={"t\[Kappa]"->tss-I/\[Kappa]^2,"ts"->tss,"t0"->Re[tss],"\[Tau]"->Im[tss],"T"-> 2\[Pi]/\[Omega]};
 path=Evaluate[barepath/.rules]+\[CapitalDelta]path;
