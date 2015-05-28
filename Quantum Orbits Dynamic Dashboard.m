@@ -247,7 +247,6 @@ dashboardPlotter[{F_,\[Omega]_},\[Kappa]_,initialpath_: {"t\[Kappa]","t0","T"},{
 ,r2range={{All,All},{All,All}},r2FullRange=All,r2plot
 ,tRangeSymbolic={{All,All},{All,All}},tRangeNumeric
 ,updateDefinitions
-,scale=1
 },
 updateDefinitions[]:=(
 baretss=ts[{po,py,pp},{F,\[Omega],\[Kappa]}];
@@ -258,7 +257,7 @@ If[#[[1,1]]===All,"t0"-10,#[[1,1]]],If[#[[1,2]]===All,Re[Last[path]]+10,#[[1,2]]
 },{
 If[#[[2,1]]===All,-10,#[[2,1]]],If[#[[2,2]]===All,Max[Im[tss]+10,15],#[[2,2]]]
 }}&[tRangeSymbolic])/.rules);
-tCAset=If[TrueQ[showtCAs],(tCA/.allQuantumClosestApproachTimes[{po,0,pp},{F,\[Omega],\[Kappa]},{xinit,0,zinit},"Range"->Complex@@@Transpose[tRangeNumeric]]),{}];
+tCAset=If[TrueQ[showtCAs],Print["calculating tCAs"];(tCA/.allQuantumClosestApproachTimes[{po,0,pp},{F,\[Omega],\[Kappa]},{xinit,0,zinit},"Range"->Complex@@@Transpose[tRangeNumeric]]),{}];
 path=Evaluate[barepath/.rules]+\[CapitalDelta]path;
 t=Interpolation[Evaluate[{Range[0,1,1/(Length[path]-1)],path}\[Transpose]],InterpolationOrder->1];
 trajectory:=Function[t,complexTrajectory[t,{po,py,pp}, {F,\[Omega],\[Kappa]},rInit->{xinit,0,zinit},forcets->tss]];
@@ -303,7 +302,6 @@ timePathPlotter[rules,t,sMan]
 ]
 ]
 ]
-,InputField[Dynamic[scale]]
 ,(*Time plane range controls*)
 rangeReset[tRangeSymbolic,{"Re(t)","Im(t)"}]
 },Center]
