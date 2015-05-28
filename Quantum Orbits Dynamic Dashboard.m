@@ -21,7 +21,7 @@
 
 Needs["EPToolbox`"]
 NotebookEvaluate[
-"/home/episanty/Work/CQD/Project/Scratch/functions 28.05 functions file v1.0.5.nb",
+"/home/episanty/Work/CQD/Project/Scratch/functions 28.05 functions file v1.0.6.nb",
 EvaluationElements->"InitializationCell"
 ];
 
@@ -350,38 +350,48 @@ dashboardPlotter[{F_,\[Omega]_},\[Kappa]_,initialpath_: {"t\[Kappa]","t0","T"},{
 ,tss,baretss,\[CapitalDelta]tss=0
 ,xinit=0,zinit=0,rInitRange=0.15
 ,r2range={{All,All},{All,All}},r2FullRange=All,r2plot
-,trange={{All,All},{All,All}}
-,updateDefinitions, timecontours,timepath
+,tRangeSymbolic={{All,All},{All,All}},tRangeNumeric
+,updateDefinitions(*, timecontours,timepath*)
 },
+
+(*ret,
+Evaluate[If[#===All,"t0"-10/.rules,#]&[range\[LeftDoubleBracket]1,1\[RightDoubleBracket]]],
+Evaluate[If[#===All,Re[Last[path]]+10/.rules,#]&[range\[LeftDoubleBracket]1,2\[RightDoubleBracket]]]
+},{imt,
+Evaluate[If[#===All,-10,#]&[range\[LeftDoubleBracket]2,1\[RightDoubleBracket]]],
+Evaluate[If[#===All,Max[Im[tss]+10,15],#]&[range\[LeftDoubleBracket]2,2\[RightDoubleBracket]]]
+}*)
 updateDefinitions[]:=(
-baretss=(*ts[pp,\[Kappa],\[Omega],F,po,py]*)ts[{po,py,pp},{F,\[Omega],\[Kappa]}];
+baretss=ts[{po,py,pp},{F,\[Omega],\[Kappa]}];
 tss=baretss+\[CapitalDelta]tss;
 rules={"t\[Kappa]"->tss-I/\[Kappa]^2,"ts"->tss,"t0"->Re[tss],"\[Tau]"->Im[tss],"T"-> 2\[Pi]/\[Omega]};
+tRangeNumeric=(({
+{
+If[#[[1,1]]===All,"t0"-10,#[[1,1]]],
+If[#[[1,2]]===All,Re[Last[path]]+10,#[[1,2]]]
+},{
+If[#[[2,1]]===All,-10,#[[2,1]]],
+If[#[[2,2]]===All,Max[Im[tss]+10,15],#[[2,2]]]
+}}&[tRangeSymbolic])/.rules);
 path=Evaluate[barepath/.rules]+\[CapitalDelta]path;
 t=Interpolation[Evaluate[{Range[0,1,1/(Length[path]-1)],path}\[Transpose]],InterpolationOrder->1];
-trajectory:=Function[t,complexTrajectory[t,{po,py,pp}, {F,\[Omega],\[Kappa]},rInit->{xinit,0,zinit}]];
+trajectory:=Function[t,complexTrajectory[t,{po,py,pp}, {F,\[Omega],\[Kappa]},rInit->{xinit,0,zinit},forcets->tss]];
 );
 Dynamic[updateDefinitions[];""]
 
 Framed[Grid[
-{
-{(*Top row: controllers.*)
+{{(*Top row: controllers.*)
 contourProgressController[sMan],
 tsController[\[CapitalDelta]tss,baretss,tss,{F,\[Omega],\[Kappa]}],
 rInitController[xinit,zinit,rInitRange]
-}
-,
-{(*Middle row*)
+},{(*Middle row*)
 Dynamic[trajectoryPlotter[trajectory[t[#]][[1]]&,"\!\(\*SubscriptBox[\(x\), \(cl\)]\)(t)",sMan,"PlotRange"->All]],
 Dynamic[trajectoryPlotter[trajectory[t[#]][[3]]&,"\!\(\*SubscriptBox[\(z\), \(cl\)]\)(t)",sMan,"PlotRange"->All]],
 Dynamic[timeIntegrandPlotter[Total[trajectory[t[#]]^2]&,t,ImageSize->{720,360}]]
-}
-,
-{(*Bottom row*)
+},{(*Bottom row*)
 (*Momentum plane / ionization probability*)
 momentumPlaneControls[{po,py,pp},{F,\[Omega],\[Kappa]}]
-,
-(*r^2 plane - trajectory*)
+,(*r^2 plane - trajectory*)
 Column[{
 Dynamic[
 trajectoryPlotter[Total[trajectory[t[#]]^2]&,"\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t\!\(\*SuperscriptBox[\()\), \(2\)]\)",sMan,"PlotRange"->r2range]
@@ -389,8 +399,7 @@ trajectoryPlotter[Total[trajectory[t[#]]^2]&,"\!\(\*SubscriptBox[\(r\), \(cl\)]\
 ,(*r^2 plane range controls*)
 rangeReset[r2range,{"Re(\!\(\*SuperscriptBox[\(r\), \(2\)]\))","Im(\!\(\*SuperscriptBox[\(r\), \(2\)]\))"}]
 },Center]
-,
-(*time plane - path chooser.*)
+,(*time plane - path chooser.*)
 Column[{
 LocatorPane[
 Dynamic[
@@ -399,16 +408,16 @@ Function[points,(\[CapitalDelta]path=(Complex@@@points[[1;;-2]])-Evaluate[barepa
 ],
 Dynamic[
 Show[
-timeContours[Total[trajectory[#]^2]&,rules,tss,path,trange,ImageSize->{720,360}],
+timeContours[Total[trajectory[#]^2]&,rules,tss,path,tRangeNumeric,ImageSize->{720,360}],
 timePathPlotter[rules,t,sMan]
 ]
 ]
-],
-(*Time plane range controls*)
-rangeReset[trange,{"Re(t)","Im(t)"}]
+]
+,Dynamic[trajectory]
+,(*Time plane range controls*)
+rangeReset[tRangeSymbolic,{"Re(t)","Im(t)"}]
 },Center]
-}
-}
+}}
 ]]
 ,SaveDefinitions->True]
 
