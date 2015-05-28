@@ -26,33 +26,12 @@ EvaluationElements->"InitializationCell"
 ];
 
 
-(*stdpars={0.05,0.057,1.07};*)
-
-
-(*ts[pp_,\[Kappa]_,\[Omega]_,F_,po_,py_]:=1/\[Omega]ArcSin[\[Omega]/Fpp+\[ImaginaryI] \[Omega]/FSqrt[\[Kappa]^2+po^2+py^2]]*)
-
-
-(*t0[pp_,\[Kappa]_,\[Omega]_,F_,po_,py_]:=Re[ts[pp,\[Kappa],\[Omega],F,po,py]]
-\[Tau][pp_,\[Kappa]_,\[Omega]_,F_,po_,py_]:=Im[ts[pp,\[Kappa],\[Omega],F,po,py]]*)
-
-
-(*FullSimplify[Re[
-\[ImaginaryI] Integrate[\[Kappa]^2/2+1/2(po^2+py^2)+1/2(pp-F/\[Omega]Sin[\[Omega] t])^2,{t,0,1/\[Omega]ArcSin[\[Omega]/F(pp+\[ImaginaryI] Sqrt[\[Kappa]^2+po^2+py^2])]}]/.{Sin[2u_]\[Rule]2Sin[u]Cos[u]}
-]]*)
-(*exponent[{po_,py_,pp_},{F_,\[Omega]_},\[Kappa]_]:=-(1/8) Im[1/\[Omega]^3(2 F \[Omega] (-4 pp+3 pp Sqrt[1+((-\[ImaginaryI] pp+Sqrt[po^2+py^2+\[Kappa]^2])^2 \[Omega]^2)/F^2]-\[ImaginaryI] Sqrt[po^2+py^2+\[Kappa]^2] Sqrt[1+((-\[ImaginaryI] pp+Sqrt[po^2+py^2+\[Kappa]^2])^2 \[Omega]^2)/F^2])+2 (F^2+2 (po^2+pp^2+py^2+\[Kappa]^2) \[Omega]^2) ArcSin[((pp+\[ImaginaryI] Sqrt[po^2+py^2+\[Kappa]^2]) \[Omega])/F])]*)
-
-
 Options[timeContours]={ImageSize->{360,360}};
 timeContours[r2function_,rules_,tss_,path_,tRangeNumeric_,OptionsPattern[]]:=Show[{
 RegionPlot[
 Tooltip[Re[r2function[ret+I imt]]<0,DisplayForm[Row[{"Re(",Superscript["\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)","2"],")<0"}]]]
-,{ret,tRangeNumeric[[1,1]],tRangeNumeric[[1,2]]
-(*Evaluate[If[#===All,"t0"-10/.rules,#]&[range\[LeftDoubleBracket]1,1\[RightDoubleBracket]]],
-Evaluate[If[#===All,Re[Last[path]]+10/.rules,#]&[range\[LeftDoubleBracket]1,2\[RightDoubleBracket]]]*)
-},{imt,tRangeNumeric[[2,1]],tRangeNumeric[[2,2]]
-(*Evaluate[If[#===All,-10,#]&[range\[LeftDoubleBracket]2,1\[RightDoubleBracket]]],
-Evaluate[If[#===All,Max[Im[tss]+10,15],#]&[range\[LeftDoubleBracket]2,2\[RightDoubleBracket]]]*)
-},AspectRatio->Automatic,AxesOrigin->{0,0},PlotRangePadding->0
+,{ret,tRangeNumeric[[1,1]],tRangeNumeric[[1,2]]},{imt,tRangeNumeric[[2,1]],tRangeNumeric[[2,2]]}
+,AspectRatio->Automatic,AxesOrigin->{0,0},PlotRangePadding->0
 ,FrameLabel->{"Re(t)","Im(t)"}
 ,PlotLabel->"time contour"
 ,PlotStyle->GrayLevel[0.8]
@@ -61,13 +40,8 @@ Evaluate[If[#===All,Max[Im[tss]+10,15],#]&[range\[LeftDoubleBracket]2,2\[RightDo
 Sequence@@Table[
 ContourPlot[
 Im[r2function[ret+I imt]]==0
-,{ret,tRangeNumeric[[1,1]],tRangeNumeric[[1,2]]
-(*Evaluate[If[#===All,"t0"-10/.rules,#]&[range\[LeftDoubleBracket]1,1\[RightDoubleBracket]]],
-Evaluate[If[#===All,Re[Last[path]]+10/.rules,#]&[range\[LeftDoubleBracket]1,2\[RightDoubleBracket]]]*)
-},{imt,tRangeNumeric[[2,1]],tRangeNumeric[[2,2]]
-(*Evaluate[If[#===All,-10,#]&[range\[LeftDoubleBracket]2,1\[RightDoubleBracket]]],
-Evaluate[If[#===All,Max[Im[tss]+10,15],#]&[range\[LeftDoubleBracket]2,2\[RightDoubleBracket]]]*)
-},AspectRatio->Automatic,AxesOrigin->{0,0},PlotRangePadding->0
+,{ret,tRangeNumeric[[1,1]],tRangeNumeric[[1,2]]},{imt,tRangeNumeric[[2,1]],tRangeNumeric[[2,2]]}
+,AspectRatio->Automatic,AxesOrigin->{0,0},PlotRangePadding->0
 ,ContourStyle->{Thick,selector/.{Less->Red,Greater->RGBColor[0,0.6,0]}}
 ,ContourLabels->{None,Tooltip[Null,
 selector/.{Less->DisplayForm[Row[{"Branch cut.\nIm(",Superscript["\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)","2"],")=0,\nRe(",Superscript["\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)","2"],")<0"}]],Greater->DisplayForm[Row[{"Im(",Superscript["\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)","2"],")=0,\nRe(",Superscript["\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)","2"],")>0"}]]}
@@ -142,9 +116,6 @@ Tooltip[{s,Abs[-(rer2function[s])^(-1/2)D[t[ss],ss]/.{ss->s}]},"Abs"]
 ]
 
 
-ionizationProbabilityColorFunction=(Blend[{RGBColor[0.4,0,0],Red,Orange,Yellow},#]&);
-
-
 colourScale[{pomax_,ppmax_},{F_,\[Omega]_},\[Kappa]_]:=colourScale[{pomax,0,ppmax},{F,\[Omega]},\[Kappa]]=ContourPlot[
 y,
 {x,0,0.075},{y,0,1}
@@ -160,90 +131,6 @@ y,
 
 
 colourScale[{1,1.5},{0.05,0.055},1.007]
-
-
-(*ionizationProbabilityColours[{F_,\[Omega]_},\[Kappa]_]:=ionizationProbabilityColours[{F,\[Omega]},\[Kappa]]=Module[{ppmax=1.5,pomax=1,},
-Rasterize[
-(*Coloured regions are rasterized, and the contour lines, with their tooltips, are overlaid after that, as per mm.se/q/43152.*)
-ContourPlot[
-\[ExponentialE]^(2exponent[{ppo,0,ppp},{F,\[Omega]},\[Kappa]])/\[ExponentialE]^(2exponent[{0,0,0},{F,\[Omega]},\[Kappa]])
-,{ppo,0,pomax},{ppp,0,ppmax}
-,PlotRange\[Rule]Full
-,AspectRatio\[Rule]Automatic
-,PlotRangePadding\[Rule]None
-,Contours\[Rule]10^Range[Floor[Log[10,\[ExponentialE]^(2exponent[{pomax,0,ppmax},{F,\[Omega]},\[Kappa]])/\[ExponentialE]^(2exponent[{0,0,0},{F,\[Omega]},\[Kappa]])]],-0,0.1]
-,ContourStyle\[Rule]None
-,ColorFunction\[Rule]colorfunction
-,ImageSize\[Rule]{{360},{340}}
-,FrameLabel\[Rule]{Text["|Subscript[p, \[Perpendicular]]|"],Text["Subscript[p, \[DoubleVerticalBar]]"]}
-]
-]
-]*)
-
-
-(*ionizationProbabilityContours[{F_,\[Omega]_},\[Kappa]_]:=ionizationProbabilityContours[{F,\[Omega]},\[Kappa]]=Module[{ppmax=1.5,pomax=1,
-colorfunction=(Blend[{RGBColor[0.4,0,0],Red,Orange,Yellow},#]&)},
-Show[
-ContourPlot[
-\[ExponentialE]^(2exponent[{ppo,0,ppp},{F,\[Omega]},\[Kappa]])/\[ExponentialE]^(2exponent[{0,0,0},{F,\[Omega]},\[Kappa]])
-,{ppo,0,pomax},{ppp,0,ppmax}
-,PlotRange\[Rule]Full
-,Contours\[Rule]10^Range[Floor[Log[10,\[ExponentialE]^(2exponent[{pomax,0,ppmax},{F,\[Omega]},\[Kappa]])/\[ExponentialE]^(2exponent[{0,0,0},{F,\[Omega]},\[Kappa]])]],-0,1]
-,ContourShading\[Rule]None
-,ContourStyle\[Rule]{Black}
-,PlotPoints\[Rule]20
-,AspectRatio\[Rule]Automatic
-,PlotRangePadding\[Rule]None
-,ImageSize\[Rule]{{360},{340}}
-,FrameLabel\[Rule]{Style[Text["|Subscript[p, \[Perpendicular]]|"],Opacity[0]],Style[Text["|Subscript[p, \[DoubleVerticalBar]]|"],Opacity[0]]}
-,Frame\[Rule]True
-,FrameStyle\[Rule]Directive[Opacity[0]]
-,FrameTicksStyle\[Rule]Directive[Opacity[0]]
-],
-ContourPlot[
-\[ExponentialE]^(2exponent[{ppo,0,ppp},{F,\[Omega]},\[Kappa]])/\[ExponentialE]^(2exponent[{0,0,0},{F,\[Omega]},\[Kappa]])
-,{ppo,0,pomax},{ppp,0,ppmax}
-,PlotRange\[Rule]Full
-,Contours\[Rule]10^Range[-2,0,0.1]
-,ContourShading\[Rule]None
-,ContourStyle\[Rule]{Thin}
-,PlotPoints\[Rule]20
-]
-]
-]*)
-
-
-(*Row[{
-Overlay[{
-ionizationProbabilityColours[{0.05,0.055},1.007],
-LocatorPane[
-{0.2,.2},
-ionizationProbabilityContours[{0.05,0.055},1.007]
-,BaselinePosition\[Rule]Center
-]
-},All,2,Alignment\[Rule]Center],
-colourScale[{1,0,1.5},{0.05,0.055},1.007]
-}];*)
-
-
-(*ionizationProbability[{po_,py_,pp_},{F_,\[Omega]_},\[Kappa]_,{pomax_,ppmax_}]:=Grid[{
-{Text[
-"Probability = "<>(If[#\[LessEqual]10^-2,
-ToString[ScientificForm[#,2],TraditionalForm],
-ToString[NumberForm[#,2]]
-]&[\[ExponentialE]^(2exponent[{po,py,pp},{F,\[Omega]},\[Kappa]])/\[ExponentialE]^(2exponent[{0,0,0},{F,\[Omega]},\[Kappa]])])
-]},
-{
-Overlay[{
-ionizationProbabilityColours[{F,\[Omega]},\[Kappa]],
-Show[
-ionizationProbabilityContours[{F,\[Omega]},\[Kappa]],
-Graphics[{PointSize[Large],RGBColor[0,0.7,0],    Point[{po,Abs@pp}]}]
-]
-},All,2,Alignment\[Rule]Center],
-colourScale[{pomax,ppmax},{F,\[Omega]},\[Kappa]]
-}
-}]*)
 
 
 ClearAll[ionizationProbabilityPlot]
@@ -345,7 +232,6 @@ Manipulator[Dynamic[Abs[zinit],(zinit=If[zinit!=0,Sign[zinit]#,#])&],{0,rInitRan
 
 dashboardPlotter[{F_,\[Omega]_},\[Kappa]_,initialpath_: {"t\[Kappa]","t0","T"},{poinit_:0.15,ppinit_:0.15}]:=DynamicModule[
 {po=poinit,pp=ppinit,py=0,sMan=0.1,t,rules
-(*,r2,poTrajectory,pyTrajectory,ppTrajectory,re2Trajecotry*)
 ,trajectory
 ,expr,labels
 ,path,barepath=initialpath,\[CapitalDelta]path=Table[0,{Length[initialpath]}]
@@ -354,18 +240,16 @@ dashboardPlotter[{F_,\[Omega]_},\[Kappa]_,initialpath_: {"t\[Kappa]","t0","T"},{
 ,xinit=0,zinit=0,rInitRange=0.15
 ,r2range={{All,All},{All,All}},r2FullRange=All,r2plot
 ,tRangeSymbolic={{All,All},{All,All}},tRangeNumeric
-,updateDefinitions(*, timecontours,timepath*)
+,updateDefinitions
 },
 updateDefinitions[]:=(
 baretss=ts[{po,py,pp},{F,\[Omega],\[Kappa]}];
 tss=baretss+\[CapitalDelta]tss;
 rules:={"t\[Kappa]"->tss-I/\[Kappa]^2,"ts"->tss,"t0"->Re[tss],"\[Tau]"->Im[tss],"T"-> 2\[Pi]/\[Omega],"tCAset"->tCAset};
 tRangeNumeric=(({{
-If[#[[1,1]]===All,"t0"-10,#[[1,1]]],
-If[#[[1,2]]===All,Re[Last[path]]+10,#[[1,2]]]
+If[#[[1,1]]===All,"t0"-10,#[[1,1]]],If[#[[1,2]]===All,Re[Last[path]]+10,#[[1,2]]]
 },{
-If[#[[2,1]]===All,-10,#[[2,1]]],
-If[#[[2,2]]===All,Max[Im[tss]+10,15],#[[2,2]]]
+If[#[[2,1]]===All,-10,#[[2,1]]],If[#[[2,2]]===All,Max[Im[tss]+10,15],#[[2,2]]]
 }}&[tRangeSymbolic])/.rules);
 tCAset=If[TrueQ[showtCAs],(tCA/.allQuantumClosestApproachTimes[{po,0,pp},{F,\[Omega],\[Kappa]},{xinit,0,zinit},"Range"->Complex@@@Transpose[tRangeNumeric]]),{}];
 path=Evaluate[barepath/.rules]+\[CapitalDelta]path;
@@ -398,8 +282,12 @@ rangeReset[r2range,{"Re(\!\(\*SuperscriptBox[\(r\), \(2\)]\))","Im(\!\(\*Supersc
 Column[{
 LocatorPane[
 Dynamic[
-{Re[path],Im[path]}\[Transpose]~Join~{{Re[tss],Im[tss]}},
-Function[points,(\[CapitalDelta]path=(Complex@@@points[[1;;-2]])-Evaluate[barepath/.rules]);(\[CapitalDelta]tss=Complex@@points[[-1]]-baretss);updateDefinitions[],HoldRest]
+Join[(*{Re[path],Im[path]}\[Transpose]*){Re[#],Im[#]}&/@path,{{Re[tss],Im[tss]}}],
+Function[points,
+(\[CapitalDelta]path=(Complex@@@Most[points])-Evaluate[barepath/.rules]);
+(\[CapitalDelta]tss=Complex@@Last[points]-baretss);
+updateDefinitions[]
+,HoldRest]
 ],
 Dynamic[
 Show[

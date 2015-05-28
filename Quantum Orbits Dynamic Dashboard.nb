@@ -715,212 +715,6 @@ Cell[BoxData[{
 file v1.0.6.nb\>\"", ",", "\[IndentingNewLine]", 
     RowBox[{"EvaluationElements", "\[Rule]", "\"\<InitializationCell\>\""}]}],
     "\[IndentingNewLine]", "]"}], ";"}]}], "Input",
- InitializationCell->True],
-
-Cell[BoxData[
- RowBox[{"(*", 
-  RowBox[{
-   RowBox[{"stdpars", "=", 
-    RowBox[{"{", 
-     RowBox[{"0.05", ",", "0.057", ",", "1.07"}], "}"}]}], ";"}], 
-  "*)"}]], "Input",
- InitializationCell->True]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[TextData[Cell[BoxData[
- FormBox[
-  RowBox[{
-   SubscriptBox["t", "s"], " ", "and", " ", "Volkov", " ", "exponent"}], 
-  TraditionalForm]]]], "Subsubsection"],
-
-Cell[BoxData[
- RowBox[{"(*", 
-  RowBox[{
-   RowBox[{"ts", "[", 
-    RowBox[{
-    "pp_", ",", "\[Kappa]_", ",", "\[Omega]_", ",", "F_", ",", "po_", ",", 
-     "py_"}], "]"}], ":=", 
-   RowBox[{
-    FractionBox["1", "\[Omega]"], 
-    RowBox[{"ArcSin", "[", 
-     RowBox[{
-      RowBox[{
-       FractionBox["\[Omega]", "F"], "pp"}], "+", 
-      RowBox[{"\[ImaginaryI]", " ", 
-       FractionBox["\[Omega]", "F"], 
-       SqrtBox[
-        RowBox[{
-         SuperscriptBox["\[Kappa]", "2"], "+", 
-         SuperscriptBox["po", "2"], "+", 
-         SuperscriptBox["py", "2"]}]]}]}], "]"}]}]}], "*)"}]], "Input",
- InitializationCell->True],
-
-Cell[BoxData[
- RowBox[{"(*", 
-  RowBox[{
-   RowBox[{"t0", "[", 
-    RowBox[{
-    "pp_", ",", "\[Kappa]_", ",", "\[Omega]_", ",", "F_", ",", "po_", ",", 
-     "py_"}], "]"}], ":=", 
-   RowBox[{
-    RowBox[{
-     RowBox[{"Re", "[", 
-      RowBox[{"ts", "[", 
-       RowBox[{
-       "pp", ",", "\[Kappa]", ",", "\[Omega]", ",", "F", ",", "po", ",", 
-        "py"}], "]"}], "]"}], "\n", 
-     RowBox[{"\[Tau]", "[", 
-      RowBox[{
-      "pp_", ",", "\[Kappa]_", ",", "\[Omega]_", ",", "F_", ",", "po_", ",", 
-       "py_"}], "]"}]}], ":=", 
-    RowBox[{"Im", "[", 
-     RowBox[{"ts", "[", 
-      RowBox[{
-      "pp", ",", "\[Kappa]", ",", "\[Omega]", ",", "F", ",", "po", ",", 
-       "py"}], "]"}], "]"}]}]}], "*)"}]], "Input",
- CellGroupingRules->{GroupTogetherGrouping, 10000.},
- InitializationCell->True],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"(*", 
-   RowBox[{"FullSimplify", "[", 
-    RowBox[{"Re", "[", "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{"\[ImaginaryI]", " ", 
-       RowBox[{"Integrate", "[", 
-        RowBox[{
-         RowBox[{
-          FractionBox[
-           SuperscriptBox["\[Kappa]", "2"], "2"], "+", 
-          RowBox[{
-           FractionBox["1", "2"], 
-           RowBox[{"(", 
-            RowBox[{
-             SuperscriptBox["po", "2"], "+", 
-             SuperscriptBox["py", "2"]}], ")"}]}], "+", 
-          RowBox[{
-           FractionBox["1", "2"], 
-           SuperscriptBox[
-            RowBox[{"(", 
-             RowBox[{"pp", "-", 
-              RowBox[{
-               FractionBox["F", "\[Omega]"], 
-               RowBox[{"Sin", "[", 
-                RowBox[{"\[Omega]", " ", "t"}], "]"}]}]}], ")"}], "2"]}]}], 
-         ",", 
-         RowBox[{"{", 
-          RowBox[{"t", ",", "0", ",", 
-           RowBox[{
-            FractionBox["1", "\[Omega]"], 
-            RowBox[{"ArcSin", "[", 
-             RowBox[{
-              FractionBox["\[Omega]", "F"], 
-              RowBox[{"(", 
-               RowBox[{"pp", "+", 
-                RowBox[{"\[ImaginaryI]", " ", 
-                 SqrtBox[
-                  RowBox[{
-                   SuperscriptBox["\[Kappa]", "2"], "+", 
-                   SuperscriptBox["po", "2"], "+", 
-                   SuperscriptBox["py", "2"]}]]}]}], ")"}]}], "]"}]}]}], 
-          "}"}]}], "]"}]}], "/.", 
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"Sin", "[", 
-         RowBox[{"2", "u_"}], "]"}], "\[Rule]", 
-        RowBox[{"2", 
-         RowBox[{"Sin", "[", "u", "]"}], 
-         RowBox[{"Cos", "[", "u", "]"}]}]}], "}"}]}], "\[IndentingNewLine]", 
-     "]"}], "]"}], "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"(*", 
-   RowBox[{
-    RowBox[{"exponent", "[", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{"po_", ",", "py_", ",", "pp_"}], "}"}], ",", 
-      RowBox[{"{", 
-       RowBox[{"F_", ",", "\[Omega]_"}], "}"}], ",", "\[Kappa]_"}], "]"}], ":=", 
-    RowBox[{
-     RowBox[{"-", 
-      FractionBox["1", "8"]}], " ", 
-     RowBox[{"Im", "[", 
-      RowBox[{
-       FractionBox["1", 
-        SuperscriptBox["\[Omega]", "3"]], 
-       RowBox[{"(", 
-        RowBox[{
-         RowBox[{"2", " ", "F", " ", "\[Omega]", " ", 
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{
-             RowBox[{"-", "4"}], " ", "pp"}], "+", 
-            RowBox[{"3", " ", "pp", " ", 
-             SqrtBox[
-              RowBox[{"1", "+", 
-               FractionBox[
-                RowBox[{
-                 SuperscriptBox[
-                  RowBox[{"(", 
-                   RowBox[{
-                    RowBox[{
-                    RowBox[{"-", "\[ImaginaryI]"}], " ", "pp"}], "+", 
-                    SqrtBox[
-                    RowBox[{
-                    SuperscriptBox["po", "2"], "+", 
-                    SuperscriptBox["py", "2"], "+", 
-                    SuperscriptBox["\[Kappa]", "2"]}]]}], ")"}], "2"], " ", 
-                 SuperscriptBox["\[Omega]", "2"]}], 
-                SuperscriptBox["F", "2"]]}]]}], "-", 
-            RowBox[{"\[ImaginaryI]", " ", 
-             SqrtBox[
-              RowBox[{
-               SuperscriptBox["po", "2"], "+", 
-               SuperscriptBox["py", "2"], "+", 
-               SuperscriptBox["\[Kappa]", "2"]}]], " ", 
-             SqrtBox[
-              RowBox[{"1", "+", 
-               FractionBox[
-                RowBox[{
-                 SuperscriptBox[
-                  RowBox[{"(", 
-                   RowBox[{
-                    RowBox[{
-                    RowBox[{"-", "\[ImaginaryI]"}], " ", "pp"}], "+", 
-                    SqrtBox[
-                    RowBox[{
-                    SuperscriptBox["po", "2"], "+", 
-                    SuperscriptBox["py", "2"], "+", 
-                    SuperscriptBox["\[Kappa]", "2"]}]]}], ")"}], "2"], " ", 
-                 SuperscriptBox["\[Omega]", "2"]}], 
-                SuperscriptBox["F", "2"]]}]]}]}], ")"}]}], "+", 
-         RowBox[{"2", " ", 
-          RowBox[{"(", 
-           RowBox[{
-            SuperscriptBox["F", "2"], "+", 
-            RowBox[{"2", " ", 
-             RowBox[{"(", 
-              RowBox[{
-               SuperscriptBox["po", "2"], "+", 
-               SuperscriptBox["pp", "2"], "+", 
-               SuperscriptBox["py", "2"], "+", 
-               SuperscriptBox["\[Kappa]", "2"]}], ")"}], " ", 
-             SuperscriptBox["\[Omega]", "2"]}]}], ")"}], " ", 
-          RowBox[{"ArcSin", "[", 
-           FractionBox[
-            RowBox[{
-             RowBox[{"(", 
-              RowBox[{"pp", "+", 
-               RowBox[{"\[ImaginaryI]", " ", 
-                SqrtBox[
-                 RowBox[{
-                  SuperscriptBox["po", "2"], "+", 
-                  SuperscriptBox["py", "2"], "+", 
-                  SuperscriptBox["\[Kappa]", "2"]}]]}]}], ")"}], " ", 
-             "\[Omega]"}], "F"], "]"}]}]}], ")"}]}], "]"}]}]}], 
-   "*)"}]}]], "Input",
  InitializationCell->True]
 }, Open  ]],
 
@@ -974,69 +768,14 @@ Cell[BoxData[{
          RowBox[{"tRangeNumeric", "\[LeftDoubleBracket]", 
           RowBox[{"1", ",", "1"}], "\[RightDoubleBracket]"}], ",", 
          RowBox[{"tRangeNumeric", "\[LeftDoubleBracket]", 
-          RowBox[{"1", ",", "2"}], "\[RightDoubleBracket]"}]}], 
-        "\[IndentingNewLine]", 
-        RowBox[{"(*", 
-         RowBox[{
-          RowBox[{"Evaluate", "[", 
-           RowBox[{
-            RowBox[{
-             RowBox[{"If", "[", 
-              RowBox[{
-               RowBox[{"#", "===", "All"}], ",", 
-               RowBox[{
-                RowBox[{"\"\<t0\>\"", "-", "10"}], "/.", "rules"}], ",", 
-               "#"}], "]"}], "&"}], "[", 
-            RowBox[{"range", "\[LeftDoubleBracket]", 
-             RowBox[{"1", ",", "1"}], "\[RightDoubleBracket]"}], "]"}], "]"}],
-           ",", "\[IndentingNewLine]", 
-          RowBox[{"Evaluate", "[", 
-           RowBox[{
-            RowBox[{
-             RowBox[{"If", "[", 
-              RowBox[{
-               RowBox[{"#", "===", "All"}], ",", 
-               RowBox[{
-                RowBox[{
-                 RowBox[{"Re", "[", 
-                  RowBox[{"Last", "[", "path", "]"}], "]"}], "+", "10"}], "/.",
-                 "rules"}], ",", "#"}], "]"}], "&"}], "[", 
-            RowBox[{"range", "\[LeftDoubleBracket]", 
-             RowBox[{"1", ",", "2"}], "\[RightDoubleBracket]"}], "]"}], 
-           "]"}]}], "*)"}], "\[IndentingNewLine]", "}"}], ",", 
+          RowBox[{"1", ",", "2"}], "\[RightDoubleBracket]"}]}], "}"}], ",", 
        RowBox[{"{", 
         RowBox[{"imt", ",", 
          RowBox[{"tRangeNumeric", "\[LeftDoubleBracket]", 
           RowBox[{"2", ",", "1"}], "\[RightDoubleBracket]"}], ",", 
          RowBox[{"tRangeNumeric", "\[LeftDoubleBracket]", 
-          RowBox[{"2", ",", "2"}], "\[RightDoubleBracket]"}]}], 
-        "\[IndentingNewLine]", 
-        RowBox[{"(*", 
-         RowBox[{
-          RowBox[{"Evaluate", "[", 
-           RowBox[{
-            RowBox[{
-             RowBox[{"If", "[", 
-              RowBox[{
-               RowBox[{"#", "===", "All"}], ",", 
-               RowBox[{"-", "10"}], ",", "#"}], "]"}], "&"}], "[", 
-            RowBox[{"range", "\[LeftDoubleBracket]", 
-             RowBox[{"2", ",", "1"}], "\[RightDoubleBracket]"}], "]"}], "]"}],
-           ",", "\[IndentingNewLine]", 
-          RowBox[{"Evaluate", "[", 
-           RowBox[{
-            RowBox[{
-             RowBox[{"If", "[", 
-              RowBox[{
-               RowBox[{"#", "===", "All"}], ",", 
-               RowBox[{"Max", "[", 
-                RowBox[{
-                 RowBox[{
-                  RowBox[{"Im", "[", "tss", "]"}], "+", "10"}], ",", "15"}], 
-                "]"}], ",", "#"}], "]"}], "&"}], "[", 
-            RowBox[{"range", "\[LeftDoubleBracket]", 
-             RowBox[{"2", ",", "2"}], "\[RightDoubleBracket]"}], "]"}], 
-           "]"}]}], "*)"}], "\[IndentingNewLine]", "}"}], ",", 
+          RowBox[{"2", ",", "2"}], "\[RightDoubleBracket]"}]}], "}"}], 
+       "\[IndentingNewLine]", ",", 
        RowBox[{"AspectRatio", "\[Rule]", "Automatic"}], ",", 
        RowBox[{"AxesOrigin", "\[Rule]", 
         RowBox[{"{", 
@@ -1071,69 +810,14 @@ Cell[BoxData[{
             RowBox[{"tRangeNumeric", "\[LeftDoubleBracket]", 
              RowBox[{"1", ",", "1"}], "\[RightDoubleBracket]"}], ",", 
             RowBox[{"tRangeNumeric", "\[LeftDoubleBracket]", 
-             RowBox[{"1", ",", "2"}], "\[RightDoubleBracket]"}]}], 
-           "\[IndentingNewLine]", 
-           RowBox[{"(*", 
-            RowBox[{
-             RowBox[{"Evaluate", "[", 
-              RowBox[{
-               RowBox[{
-                RowBox[{"If", "[", 
-                 RowBox[{
-                  RowBox[{"#", "===", "All"}], ",", 
-                  RowBox[{
-                   RowBox[{"\"\<t0\>\"", "-", "10"}], "/.", "rules"}], ",", 
-                  "#"}], "]"}], "&"}], "[", 
-               RowBox[{"range", "\[LeftDoubleBracket]", 
-                RowBox[{"1", ",", "1"}], "\[RightDoubleBracket]"}], "]"}], 
-              "]"}], ",", "\[IndentingNewLine]", 
-             RowBox[{"Evaluate", "[", 
-              RowBox[{
-               RowBox[{
-                RowBox[{"If", "[", 
-                 RowBox[{
-                  RowBox[{"#", "===", "All"}], ",", 
-                  RowBox[{
-                   RowBox[{
-                    RowBox[{"Re", "[", 
-                    RowBox[{"Last", "[", "path", "]"}], "]"}], "+", "10"}], "/.",
-                    "rules"}], ",", "#"}], "]"}], "&"}], "[", 
-               RowBox[{"range", "\[LeftDoubleBracket]", 
-                RowBox[{"1", ",", "2"}], "\[RightDoubleBracket]"}], "]"}], 
-              "]"}]}], "*)"}], "\[IndentingNewLine]", "}"}], ",", 
+             RowBox[{"1", ",", "2"}], "\[RightDoubleBracket]"}]}], "}"}], ",", 
           RowBox[{"{", 
            RowBox[{"imt", ",", 
             RowBox[{"tRangeNumeric", "\[LeftDoubleBracket]", 
              RowBox[{"2", ",", "1"}], "\[RightDoubleBracket]"}], ",", 
             RowBox[{"tRangeNumeric", "\[LeftDoubleBracket]", 
-             RowBox[{"2", ",", "2"}], "\[RightDoubleBracket]"}]}], 
-           "\[IndentingNewLine]", 
-           RowBox[{"(*", 
-            RowBox[{
-             RowBox[{"Evaluate", "[", 
-              RowBox[{
-               RowBox[{
-                RowBox[{"If", "[", 
-                 RowBox[{
-                  RowBox[{"#", "===", "All"}], ",", 
-                  RowBox[{"-", "10"}], ",", "#"}], "]"}], "&"}], "[", 
-               RowBox[{"range", "\[LeftDoubleBracket]", 
-                RowBox[{"2", ",", "1"}], "\[RightDoubleBracket]"}], "]"}], 
-              "]"}], ",", "\[IndentingNewLine]", 
-             RowBox[{"Evaluate", "[", 
-              RowBox[{
-               RowBox[{
-                RowBox[{"If", "[", 
-                 RowBox[{
-                  RowBox[{"#", "===", "All"}], ",", 
-                  RowBox[{"Max", "[", 
-                   RowBox[{
-                    RowBox[{
-                    RowBox[{"Im", "[", "tss", "]"}], "+", "10"}], ",", "15"}],
-                    "]"}], ",", "#"}], "]"}], "&"}], "[", 
-               RowBox[{"range", "\[LeftDoubleBracket]", 
-                RowBox[{"2", ",", "2"}], "\[RightDoubleBracket]"}], "]"}], 
-              "]"}]}], "*)"}], "\[IndentingNewLine]", "}"}], ",", 
+             RowBox[{"2", ",", "2"}], "\[RightDoubleBracket]"}]}], "}"}], 
+          "\[IndentingNewLine]", ",", 
           RowBox[{"AspectRatio", "\[Rule]", "Automatic"}], ",", 
           RowBox[{"AxesOrigin", "\[Rule]", 
            RowBox[{"{", 
@@ -1559,7 +1243,7 @@ Cell[BoxData[{
              "}"}], "]"}], ",", "label"}], "]"}]}], "}"}], "]"}]}], 
      "\[IndentingNewLine]", "}"}], "]"}]}]}]}], "Input",
  InitializationCell->True]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -1674,7 +1358,7 @@ SqrtBox[\(\*SubscriptBox[\(r\), \(cl\)] \*SuperscriptBox[\((t)\), \
    "\[IndentingNewLine]", "]"}]}]}], "Input",
  CellGroupingRules->{GroupTogetherGrouping, 10000.},
  InitializationCell->True]
-}, Open  ]]
+}, Closed]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1683,7 +1367,7 @@ Cell["Ionization probability", "Subsection"],
 
 Cell[CellGroupData[{
 
-Cell["colourScale and colorfunction", "Subsubsection"],
+Cell["ionizationProbabilityColorFunction", "Subsubsection"],
 
 Cell[BoxData[
  RowBox[{
@@ -1697,8 +1381,12 @@ Cell[BoxData[
          RowBox[{"RGBColor", "[", 
           RowBox[{"0.4", ",", "0", ",", "0"}], "]"}], ",", "Red", ",", 
          "Orange", ",", "Yellow"}], "}"}], ",", "#"}], "]"}], "&"}], ")"}]}], 
-  ";"}]], "Input",
- InitializationCell->True],
+  ";"}]], "Input"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["colourScale and colorfunction", "Subsubsection"],
 
 Cell[BoxData[
  RowBox[{
@@ -12003,469 +11691,101 @@ G91Nk33SnmhuCF7Ww9Ft/516Jgixd+AfGqRYwg==
   PlotRange->{{0, 0.075}, {0, 1}},
   PlotRangeClipping->True,
   PlotRangePadding->{{None, None}, {None, None}},
-  Ticks->{Automatic, Automatic}]], "Output"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["ionizationProbabilityColours", "Subsubsection"],
-
-Cell[BoxData[
- RowBox[{"(*", 
-  RowBox[{
-   RowBox[{"ionizationProbabilityColours", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{"F_", ",", "\[Omega]_"}], "}"}], ",", "\[Kappa]_"}], "]"}], ":=", 
-   RowBox[{
-    RowBox[{"ionizationProbabilityColours", "[", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{"F", ",", "\[Omega]"}], "}"}], ",", "\[Kappa]"}], "]"}], "=", 
-    RowBox[{"Module", "[", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"ppmax", "=", "1.5"}], ",", 
-        RowBox[{"pomax", "=", "1"}], ","}], "}"}], ",", "\[IndentingNewLine]", 
-      RowBox[{"Rasterize", "[", "\[IndentingNewLine]", 
-       RowBox[{"(*", 
-        RowBox[{
-         RowBox[{"Coloured", " ", "regions", " ", "are", " ", "rasterized"}], 
-         ",", " ", 
-         RowBox[{"and", " ", "the", " ", "contour", " ", "lines"}], ",", " ", 
-         
-         RowBox[{"with", " ", "their", " ", "tooltips"}], ",", " ", 
-         RowBox[{"are", " ", "overlaid", " ", "after", " ", "that"}], ",", 
-         " ", 
-         RowBox[{"as", " ", "per", " ", 
-          RowBox[{
-           RowBox[{
-            RowBox[{"mm", ".", "se"}], "/", "q"}], "/", "43152."}]}]}], 
-        "*)"}], "\[IndentingNewLine]", 
-       RowBox[{"ContourPlot", "[", "\[IndentingNewLine]", 
-        RowBox[{
-         RowBox[{
-          SuperscriptBox["\[ExponentialE]", 
-           RowBox[{"2", 
-            RowBox[{"exponent", "[", 
-             RowBox[{
-              RowBox[{"{", 
-               RowBox[{"ppo", ",", "0", ",", "ppp"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"F", ",", "\[Omega]"}], "}"}], ",", "\[Kappa]"}], 
-             "]"}]}]], "/", 
-          SuperscriptBox["\[ExponentialE]", 
-           RowBox[{"2", 
-            RowBox[{"exponent", "[", 
-             RowBox[{
-              RowBox[{"{", 
-               RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"F", ",", "\[Omega]"}], "}"}], ",", "\[Kappa]"}], 
-             "]"}]}]]}], "\[IndentingNewLine]", ",", 
-         RowBox[{"{", 
-          RowBox[{"ppo", ",", "0", ",", "pomax"}], "}"}], ",", 
-         RowBox[{"{", 
-          RowBox[{"ppp", ",", "0", ",", "ppmax"}], "}"}], 
-         "\[IndentingNewLine]", ",", 
-         RowBox[{"PlotRange", "\[Rule]", "Full"}], "\[IndentingNewLine]", ",", 
-         RowBox[{"AspectRatio", "\[Rule]", "Automatic"}], 
-         "\[IndentingNewLine]", ",", 
-         RowBox[{"PlotRangePadding", "\[Rule]", "None"}], 
-         "\[IndentingNewLine]", ",", 
-         RowBox[{"Contours", "\[Rule]", 
-          SuperscriptBox["10", 
-           RowBox[{"Range", "[", 
-            RowBox[{
-             RowBox[{"Floor", "[", 
-              RowBox[{"Log", "[", 
-               RowBox[{"10", ",", 
-                RowBox[{
-                 SuperscriptBox["\[ExponentialE]", 
-                  RowBox[{"2", 
-                   RowBox[{"exponent", "[", 
-                    RowBox[{
-                    RowBox[{"{", 
-                    RowBox[{"pomax", ",", "0", ",", "ppmax"}], "}"}], ",", 
-                    RowBox[{"{", 
-                    RowBox[{"F", ",", "\[Omega]"}], "}"}], ",", "\[Kappa]"}], 
-                    "]"}]}]], "/", 
-                 SuperscriptBox["\[ExponentialE]", 
-                  RowBox[{"2", 
-                   RowBox[{"exponent", "[", 
-                    RowBox[{
-                    RowBox[{"{", 
-                    RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
-                    RowBox[{"{", 
-                    RowBox[{"F", ",", "\[Omega]"}], "}"}], ",", "\[Kappa]"}], 
-                    "]"}]}]]}]}], "]"}], "]"}], ",", 
-             RowBox[{"-", "0"}], ",", "0.1"}], "]"}]]}], 
-         "\[IndentingNewLine]", ",", 
-         RowBox[{"ContourStyle", "\[Rule]", "None"}], "\[IndentingNewLine]", 
-         ",", 
-         RowBox[{"ColorFunction", "\[Rule]", "colorfunction"}], 
-         "\[IndentingNewLine]", ",", 
-         RowBox[{"ImageSize", "\[Rule]", 
-          RowBox[{"{", 
-           RowBox[{
-            RowBox[{"{", "360", "}"}], ",", 
-            RowBox[{"{", "340", "}"}]}], "}"}]}], "\[IndentingNewLine]", ",", 
-         
-         RowBox[{"FrameLabel", "\[Rule]", 
-          RowBox[{"{", 
-           RowBox[{
-            RowBox[{
-            "Text", "[", 
-             "\"\<|\!\(\*SubscriptBox[\(p\), \(\[Perpendicular]\)]\)|\>\"", 
-             "]"}], ",", 
-            RowBox[{
-            "Text", "[", 
-             "\"\<\!\(\*SubscriptBox[\(p\), \(\[DoubleVerticalBar]\)]\)\>\"", 
-             "]"}]}], "}"}]}]}], "\[IndentingNewLine]", "]"}], 
-       "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]}]}], 
-  "*)"}]], "Input",
- CellGroupingRules->{GroupTogetherGrouping, 10000.},
- InitializationCell->True]
+  Ticks->{
+   Automatic, 
+    Automatic}]], "Output",ImageCache->GraphicsData["CompressedBitmap", "\<\
+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\
+\>"]]
 }, Closed]],
 
 Cell[CellGroupData[{
 
-Cell["ionizationProbabilityContours", "Subsubsection"],
-
-Cell[BoxData[
- RowBox[{"(*", 
-  RowBox[{
-   RowBox[{"ionizationProbabilityContours", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{"F_", ",", "\[Omega]_"}], "}"}], ",", "\[Kappa]_"}], "]"}], ":=", 
-   RowBox[{
-    RowBox[{"ionizationProbabilityContours", "[", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{"F", ",", "\[Omega]"}], "}"}], ",", "\[Kappa]"}], "]"}], "=", 
-    RowBox[{"Module", "[", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"ppmax", "=", "1.5"}], ",", 
-        RowBox[{"pomax", "=", "1"}], ",", "\[IndentingNewLine]", 
-        RowBox[{"colorfunction", "=", 
-         RowBox[{"(", 
-          RowBox[{
-           RowBox[{"Blend", "[", 
-            RowBox[{
-             RowBox[{"{", 
-              RowBox[{
-               RowBox[{"RGBColor", "[", 
-                RowBox[{"0.4", ",", "0", ",", "0"}], "]"}], ",", "Red", ",", 
-               "Orange", ",", "Yellow"}], "}"}], ",", "#"}], "]"}], "&"}], 
-          ")"}]}]}], "}"}], ",", "\[IndentingNewLine]", 
-      RowBox[{"Show", "[", "\[IndentingNewLine]", 
-       RowBox[{
-        RowBox[{"ContourPlot", "[", "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{
-           SuperscriptBox["\[ExponentialE]", 
-            RowBox[{"2", 
-             RowBox[{"exponent", "[", 
-              RowBox[{
-               RowBox[{"{", 
-                RowBox[{"ppo", ",", "0", ",", "ppp"}], "}"}], ",", 
-               RowBox[{"{", 
-                RowBox[{"F", ",", "\[Omega]"}], "}"}], ",", "\[Kappa]"}], 
-              "]"}]}]], "/", 
-           SuperscriptBox["\[ExponentialE]", 
-            RowBox[{"2", 
-             RowBox[{"exponent", "[", 
-              RowBox[{
-               RowBox[{"{", 
-                RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
-               RowBox[{"{", 
-                RowBox[{"F", ",", "\[Omega]"}], "}"}], ",", "\[Kappa]"}], 
-              "]"}]}]]}], "\[IndentingNewLine]", ",", 
-          RowBox[{"{", 
-           RowBox[{"ppo", ",", "0", ",", "pomax"}], "}"}], ",", 
-          RowBox[{"{", 
-           RowBox[{"ppp", ",", "0", ",", "ppmax"}], "}"}], 
-          "\[IndentingNewLine]", ",", 
-          RowBox[{"PlotRange", "\[Rule]", "Full"}], "\[IndentingNewLine]", 
-          ",", 
-          RowBox[{"Contours", "\[Rule]", 
-           SuperscriptBox["10", 
-            RowBox[{"Range", "[", 
-             RowBox[{
-              RowBox[{"Floor", "[", 
-               RowBox[{"Log", "[", 
-                RowBox[{"10", ",", 
-                 RowBox[{
-                  SuperscriptBox["\[ExponentialE]", 
-                   RowBox[{"2", 
-                    RowBox[{"exponent", "[", 
-                    RowBox[{
-                    RowBox[{"{", 
-                    RowBox[{"pomax", ",", "0", ",", "ppmax"}], "}"}], ",", 
-                    RowBox[{"{", 
-                    RowBox[{"F", ",", "\[Omega]"}], "}"}], ",", "\[Kappa]"}], 
-                    "]"}]}]], "/", 
-                  SuperscriptBox["\[ExponentialE]", 
-                   RowBox[{"2", 
-                    RowBox[{"exponent", "[", 
-                    RowBox[{
-                    RowBox[{"{", 
-                    RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
-                    RowBox[{"{", 
-                    RowBox[{"F", ",", "\[Omega]"}], "}"}], ",", "\[Kappa]"}], 
-                    "]"}]}]]}]}], "]"}], "]"}], ",", 
-              RowBox[{"-", "0"}], ",", "1"}], "]"}]]}], "\[IndentingNewLine]",
-           ",", 
-          RowBox[{"ContourShading", "\[Rule]", "None"}], 
-          "\[IndentingNewLine]", ",", 
-          RowBox[{"ContourStyle", "\[Rule]", 
-           RowBox[{"{", "Black", "}"}]}], "\[IndentingNewLine]", ",", 
-          RowBox[{"PlotPoints", "\[Rule]", "20"}], "\[IndentingNewLine]", ",", 
-          RowBox[{"AspectRatio", "\[Rule]", "Automatic"}], 
-          "\[IndentingNewLine]", ",", 
-          RowBox[{"PlotRangePadding", "\[Rule]", "None"}], 
-          "\[IndentingNewLine]", ",", 
-          RowBox[{"ImageSize", "\[Rule]", 
-           RowBox[{"{", 
-            RowBox[{
-             RowBox[{"{", "360", "}"}], ",", 
-             RowBox[{"{", "340", "}"}]}], "}"}]}], "\[IndentingNewLine]", ",", 
-          RowBox[{"FrameLabel", "\[Rule]", 
-           RowBox[{"{", 
-            RowBox[{
-             RowBox[{"Style", "[", 
-              RowBox[{
-               RowBox[{
-               "Text", "[", 
-                "\"\<|\!\(\*SubscriptBox[\(p\), \(\[Perpendicular]\)]\)|\>\"",
-                 "]"}], ",", 
-               RowBox[{"Opacity", "[", "0", "]"}]}], "]"}], ",", 
-             RowBox[{"Style", "[", 
-              RowBox[{
-               RowBox[{
-               "Text", "[", 
-                "\"\<|\!\(\*SubscriptBox[\(p\), \
-\(\[DoubleVerticalBar]\)]\)|\>\"", "]"}], ",", 
-               RowBox[{"Opacity", "[", "0", "]"}]}], "]"}]}], "}"}]}], 
-          "\[IndentingNewLine]", ",", 
-          RowBox[{"Frame", "\[Rule]", "True"}], "\[IndentingNewLine]", ",", 
-          RowBox[{"FrameStyle", "\[Rule]", 
-           RowBox[{"Directive", "[", 
-            RowBox[{"Opacity", "[", "0", "]"}], "]"}]}], 
-          "\[IndentingNewLine]", ",", 
-          RowBox[{"FrameTicksStyle", "\[Rule]", 
-           RowBox[{"Directive", "[", 
-            RowBox[{"Opacity", "[", "0", "]"}], "]"}]}]}], 
-         "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", 
-        RowBox[{"ContourPlot", "[", "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{
-           SuperscriptBox["\[ExponentialE]", 
-            RowBox[{"2", 
-             RowBox[{"exponent", "[", 
-              RowBox[{
-               RowBox[{"{", 
-                RowBox[{"ppo", ",", "0", ",", "ppp"}], "}"}], ",", 
-               RowBox[{"{", 
-                RowBox[{"F", ",", "\[Omega]"}], "}"}], ",", "\[Kappa]"}], 
-              "]"}]}]], "/", 
-           SuperscriptBox["\[ExponentialE]", 
-            RowBox[{"2", 
-             RowBox[{"exponent", "[", 
-              RowBox[{
-               RowBox[{"{", 
-                RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
-               RowBox[{"{", 
-                RowBox[{"F", ",", "\[Omega]"}], "}"}], ",", "\[Kappa]"}], 
-              "]"}]}]]}], "\[IndentingNewLine]", ",", 
-          RowBox[{"{", 
-           RowBox[{"ppo", ",", "0", ",", "pomax"}], "}"}], ",", 
-          RowBox[{"{", 
-           RowBox[{"ppp", ",", "0", ",", "ppmax"}], "}"}], 
-          "\[IndentingNewLine]", ",", 
-          RowBox[{"PlotRange", "\[Rule]", "Full"}], "\[IndentingNewLine]", 
-          ",", 
-          RowBox[{"Contours", "\[Rule]", 
-           SuperscriptBox["10", 
-            RowBox[{"Range", "[", 
-             RowBox[{
-              RowBox[{"-", "2"}], ",", "0", ",", "0.1"}], "]"}]]}], 
-          "\[IndentingNewLine]", ",", 
-          RowBox[{"ContourShading", "\[Rule]", "None"}], 
-          "\[IndentingNewLine]", ",", 
-          RowBox[{"ContourStyle", "\[Rule]", 
-           RowBox[{"{", "Thin", "}"}]}], "\[IndentingNewLine]", ",", 
-          RowBox[{"PlotPoints", "\[Rule]", "20"}]}], "\[IndentingNewLine]", 
-         "]"}]}], "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
-     "]"}]}]}], "*)"}]], "Input",
- CellGroupingRules->{GroupTogetherGrouping, 10000.},
- InitializationCell->True]
-}, Closed]],
-
-Cell[CellGroupData[{
-
-Cell["initialization of both", "Subsubsection"],
-
-Cell[BoxData[
- RowBox[{"(*", 
-  RowBox[{
-   RowBox[{"Row", "[", 
-    RowBox[{"{", "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{"Overlay", "[", 
-       RowBox[{
-        RowBox[{"{", "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"ionizationProbabilityColours", "[", 
-           RowBox[{
-            RowBox[{"{", 
-             RowBox[{"0.05", ",", "0.055"}], "}"}], ",", "1.007"}], "]"}], 
-          ",", "\[IndentingNewLine]", 
-          RowBox[{"LocatorPane", "[", "\[IndentingNewLine]", 
-           RowBox[{
-            RowBox[{"{", 
-             RowBox[{"0.2", ",", ".2"}], "}"}], ",", "\[IndentingNewLine]", 
-            RowBox[{"ionizationProbabilityContours", "[", 
-             RowBox[{
-              RowBox[{"{", 
-               RowBox[{"0.05", ",", "0.055"}], "}"}], ",", "1.007"}], "]"}], 
-            "\[IndentingNewLine]", ",", 
-            RowBox[{"BaselinePosition", "\[Rule]", "Center"}]}], 
-           "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "}"}], ",", 
-        "All", ",", "2", ",", 
-        RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}], ",", 
-      "\[IndentingNewLine]", 
-      RowBox[{"colourScale", "[", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"1", ",", "0", ",", "1.5"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"0.05", ",", "0.055"}], "}"}], ",", "1.007"}], "]"}]}], 
-     "\[IndentingNewLine]", "}"}], "]"}], ";"}], "*)"}]], "Input",
- CellGroupingRules->{GroupTogetherGrouping, 10000.},
- InitializationCell->True]
-}, Closed]],
-
-Cell[CellGroupData[{
-
-Cell["ionizationProbability", "Subsubsection"],
-
-Cell[BoxData[
- RowBox[{"(*", 
-  RowBox[{
-   RowBox[{"ionizationProbability", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{"po_", ",", "py_", ",", "pp_"}], "}"}], ",", 
-     RowBox[{"{", 
-      RowBox[{"F_", ",", "\[Omega]_"}], "}"}], ",", "\[Kappa]_", ",", 
-     RowBox[{"{", 
-      RowBox[{"pomax_", ",", "ppmax_"}], "}"}]}], "]"}], ":=", 
-   RowBox[{"Grid", "[", 
-    RowBox[{"{", "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{"Text", "[", "\[IndentingNewLine]", 
-        RowBox[{"\"\<Probability = \>\"", "<>", 
-         RowBox[{"(", 
-          RowBox[{
-           RowBox[{
-            RowBox[{"If", "[", 
-             RowBox[{
-              RowBox[{"#", "\[LessEqual]", 
-               SuperscriptBox["10", 
-                RowBox[{"-", "2"}]]}], ",", "\[IndentingNewLine]", 
-              RowBox[{"ToString", "[", 
-               RowBox[{
-                RowBox[{"ScientificForm", "[", 
-                 RowBox[{"#", ",", "2"}], "]"}], ",", "TraditionalForm"}], 
-               "]"}], ",", "\[IndentingNewLine]", 
-              RowBox[{"ToString", "[", 
-               RowBox[{"NumberForm", "[", 
-                RowBox[{"#", ",", "2"}], "]"}], "]"}]}], 
-             "\[IndentingNewLine]", "]"}], "&"}], "[", 
-           RowBox[{
-            SuperscriptBox["\[ExponentialE]", 
-             RowBox[{"2", 
-              RowBox[{"exponent", "[", 
-               RowBox[{
-                RowBox[{"{", 
-                 RowBox[{"po", ",", "py", ",", "pp"}], "}"}], ",", 
-                RowBox[{"{", 
-                 RowBox[{"F", ",", "\[Omega]"}], "}"}], ",", "\[Kappa]"}], 
-               "]"}]}]], "/", 
-            SuperscriptBox["\[ExponentialE]", 
-             RowBox[{"2", 
-              RowBox[{"exponent", "[", 
-               RowBox[{
-                RowBox[{"{", 
-                 RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
-                RowBox[{"{", 
-                 RowBox[{"F", ",", "\[Omega]"}], "}"}], ",", "\[Kappa]"}], 
-               "]"}]}]]}], "]"}], ")"}]}], "\[IndentingNewLine]", "]"}], 
-       "}"}], ",", "\[IndentingNewLine]", 
-      RowBox[{"{", "\[IndentingNewLine]", 
-       RowBox[{
-        RowBox[{"Overlay", "[", 
-         RowBox[{
-          RowBox[{"{", "\[IndentingNewLine]", 
-           RowBox[{
-            RowBox[{"ionizationProbabilityColours", "[", 
-             RowBox[{
-              RowBox[{"{", 
-               RowBox[{"F", ",", "\[Omega]"}], "}"}], ",", "\[Kappa]"}], 
-             "]"}], ",", "\[IndentingNewLine]", 
-            RowBox[{"Show", "[", "\[IndentingNewLine]", 
-             RowBox[{
-              RowBox[{"ionizationProbabilityContours", "[", 
-               RowBox[{
-                RowBox[{"{", 
-                 RowBox[{"F", ",", "\[Omega]"}], "}"}], ",", "\[Kappa]"}], 
-               "]"}], ",", "\[IndentingNewLine]", 
-              RowBox[{"Graphics", "[", 
-               RowBox[{"{", 
-                RowBox[{
-                 RowBox[{"PointSize", "[", "Large", "]"}], ",", 
-                 RowBox[{"RGBColor", "[", 
-                  RowBox[{"0", ",", "0.7", ",", "0"}], "]"}], ",", "    ", 
-                 RowBox[{"Point", "[", 
-                  RowBox[{"{", 
-                   RowBox[{"po", ",", 
-                    RowBox[{"Abs", "@", "pp"}]}], "}"}], "]"}]}], "}"}], 
-               "]"}]}], "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]",
-            "}"}], ",", "All", ",", "2", ",", 
-          RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}], ",", 
-        "\[IndentingNewLine]", 
-        RowBox[{"colourScale", "[", 
-         RowBox[{
-          RowBox[{"{", 
-           RowBox[{"pomax", ",", "ppmax"}], "}"}], ",", 
-          RowBox[{"{", 
-           RowBox[{"F", ",", "\[Omega]"}], "}"}], ",", "\[Kappa]"}], "]"}]}], 
-       "\[IndentingNewLine]", "}"}]}], "\[IndentingNewLine]", "}"}], "]"}]}], 
-  "*)"}]], "Input",
- InitializationCell->True],
-
-Cell[BoxData[
- RowBox[{"(*", 
-  RowBox[{"ionizationProbability", "[", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{"0.1", ",", "0", ",", "0.1"}], "}"}], ",", 
-    RowBox[{"{", 
-     RowBox[{"0.05", ",", "0.055"}], "}"}], ",", "1.007", ",", 
-    RowBox[{"{", 
-     RowBox[{"1", ",", "1.5"}], "}"}]}], "]"}], "*)"}]], "Input",
- CellGroupingRules->{GroupTogetherGrouping, 10000.}]
-}, Closed]],
-
-Cell[CellGroupData[{
-
-Cell["New - ionizationProbabilityPlot", "Subsubsection"],
+Cell["ionizationProbabilityPlot", "Subsubsection"],
 
 Cell[CellGroupData[{
 
@@ -16132,7 +15452,7 @@ puW/XPTGpjcecOmfL/mUfEj+BwYGLzw=
   Ticks->{Automatic, Automatic}]], "Output"]
 }, Open  ]]
 }, Closed]]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -16605,245 +15925,6 @@ Cell[CellGroupData[{
 
 Cell["dashboardPlotter", "Subsection"],
 
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"?", "forcets"}]], "Input"],
-
-Cell[BoxData[
- StyleBox["\<\"forcets is an option for complexTrajectory and \
-classicalTrajectory which specifies a start time \!\(\*SubscriptBox[\(t\), \
-\(s\)]\) to use for the trajectory, or uses the Automatic one.\"\>", 
-  "MSG"]], "Print", "PrintUsage",
- CellTags->"Info3641836943-5484926"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"??", "allQuantumClosestApproachTimes"}]], "Input"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- StyleBox["\<\"allQuantumClosestApproachTimes[{px, py, pz}, {F, \[Omega], \
-\[Kappa]}, {xinit, yinit, zinit}] returns the quantum tCAs as a list of \
-complex values. It accepts as options an explicit \\\"ts\\\" and a \
-\\\"Range\\\", set to {-2\[ImaginaryI]\[Tau], T+2\[ImaginaryI]\[Tau]} by \
-default, as well as all the options of EPToolbox`FindComplexRoots.\"\>", 
-  "MSG"]], "Print", "PrintUsage",
- CellTags->"Info3641837674-5484926"],
-
-Cell[BoxData[
- InterpretationBox[GridBox[{
-    {GridBox[{
-       {
-        RowBox[{
-         RowBox[{"allQuantumClosestApproachTimes", "[", 
-          RowBox[{
-           RowBox[{"{", 
-            RowBox[{"po_", ",", "py_", ",", "pp_"}], "}"}], ",", 
-           RowBox[{"{", 
-            RowBox[{"F_", ",", "\[Omega]_", ",", "\[Kappa]_"}], "}"}], ",", 
-           RowBox[{"{", 
-            RowBox[{"xinit_", ",", "yinit_", ",", "zinit_"}], "}"}], ",", 
-           RowBox[{"options", ":", 
-            RowBox[{"OptionsPattern", "[", "]"}]}]}], "]"}], ":=", 
-         RowBox[{"Module", "[", 
-          RowBox[{
-           RowBox[{"{", 
-            RowBox[{"tss", ",", "range", ",", "rules"}], "}"}], ",", 
-           RowBox[{
-            RowBox[{"tss", "=", 
-             RowBox[{"If", "[", 
-              RowBox[{
-               RowBox[{
-                RowBox[{"OptionValue", "[", "\<\"rules\"\>", "]"}], "===", 
-                "Automatic"}], ",", 
-               RowBox[{"ts", "[", 
-                RowBox[{
-                "pp", ",", "\[Kappa]", ",", "\[Omega]", ",", "F", ",", "po", 
-                 ",", "py"}], "]"}], ",", 
-               RowBox[{"\<\"ts\"\>", "/.", "\[VeryThinSpace]", 
-                RowBox[{"OptionValue", "[", "\<\"rules\"\>", "]"}]}]}], 
-              "]"}]}], ";", 
-            RowBox[{"rules", "=", 
-             RowBox[{"If", "[", 
-              RowBox[{
-               RowBox[{
-                RowBox[{"OptionValue", "[", "\<\"rules\"\>", "]"}], "===", 
-                "Automatic"}], ",", 
-               RowBox[{"{", 
-                RowBox[{
-                 RowBox[{"\<\"t\[Kappa]\"\>", "\[Rule]", 
-                  RowBox[{"tss", "-", 
-                   FractionBox["\[ImaginaryI]", 
-                    SuperscriptBox["\[Kappa]", "2"]]}]}], ",", 
-                 RowBox[{"\<\"ts\"\>", "\[Rule]", "tss"}], ",", 
-                 RowBox[{"\<\"t0\"\>", "\[Rule]", 
-                  RowBox[{"Re", "[", "tss", "]"}]}], ",", 
-                 RowBox[{"\<\"\[Tau]\"\>", "\[Rule]", 
-                  RowBox[{"Im", "[", "tss", "]"}]}], ",", 
-                 RowBox[{"\<\"T\"\>", "\[Rule]", 
-                  FractionBox[
-                   RowBox[{"2", " ", "\[Pi]"}], "\[Omega]"]}]}], "}"}], ",", 
-               RowBox[{"OptionValue", "[", "rules", "]"}]}], "]"}]}], ";", 
-            RowBox[{"range", "=", 
-             RowBox[{"Which", "[", 
-              RowBox[{
-               RowBox[{"MatchQ", "[", 
-                RowBox[{
-                 RowBox[{
-                  RowBox[{"OptionValue", "[", "\<\"Range\"\>", "]"}], "/.", 
-                  "\[VeryThinSpace]", "rules"}], ",", 
-                 RowBox[{
-                  RowBox[{"{", 
-                   RowBox[{
-                    RowBox[{"a_", "?", "NumericQ"}], ",", 
-                    RowBox[{"b_", "?", "NumericQ"}]}], "}"}], "/;", 
-                  RowBox[{
-                   RowBox[{"Im", "[", 
-                    RowBox[{"b", "-", "a"}], "]"}], "\[LessEqual]", "0"}]}]}],
-                 "]"}], ",", 
-               RowBox[{
-                RowBox[{"(", 
-                 RowBox[{
-                  RowBox[{"OptionValue", "[", "Range", "]"}], "/.", 
-                  "\[VeryThinSpace]", "rules"}], ")"}], "+", 
-                RowBox[{"{", 
-                 RowBox[{
-                  RowBox[{
-                   RowBox[{"-", "2"}], " ", "\[ImaginaryI]", " ", 
-                   RowBox[{"Im", "[", "tss", "]"}]}], ",", 
-                  RowBox[{"2", " ", "\[ImaginaryI]", " ", 
-                   RowBox[{"Im", "[", "tss", "]"}]}]}], "}"}]}], ",", 
-               RowBox[{"MatchQ", "[", 
-                RowBox[{
-                 RowBox[{
-                  RowBox[{"OptionValue", "[", "\<\"Range\"\>", "]"}], "/.", 
-                  "\[VeryThinSpace]", "rules"}], ",", 
-                 RowBox[{"{", 
-                  RowBox[{
-                   RowBox[{"_", "?", "NumericQ"}], ",", 
-                   RowBox[{"_", "?", "NumericQ"}]}], "}"}]}], "]"}], ",", 
-               RowBox[{
-                RowBox[{"OptionValue", "[", "Range", "]"}], "/.", 
-                "\[VeryThinSpace]", "rules"}], ",", "True", ",", 
-               RowBox[{"{", 
-                RowBox[{
-                 RowBox[{
-                  RowBox[{"-", "2"}], " ", "\[ImaginaryI]", " ", 
-                  RowBox[{"Im", "[", "tss", "]"}]}], ",", 
-                 RowBox[{
-                  FractionBox[
-                   RowBox[{"2", " ", "\[Pi]"}], "\[Omega]"], "+", 
-                  RowBox[{"2", " ", "\[ImaginaryI]", " ", 
-                   RowBox[{"Im", "[", "tss", "]"}]}]}]}], "}"}]}], "]"}]}], 
-            ";", 
-            RowBox[{"Sort", "[", 
-             RowBox[{"FindComplexRoots", "[", 
-              RowBox[{
-               RowBox[{
-                RowBox[{"2", " ", 
-                 RowBox[{
-                  RowBox[{"(", 
-                   RowBox[{
-                    RowBox[{"{", 
-                    RowBox[{"xinit", ",", "yinit", ",", "zinit"}], "}"}], "+", 
-                    RowBox[{
-                    RowBox[{"{", 
-                    RowBox[{"po", ",", "py", ",", "pp"}], "}"}], " ", 
-                    RowBox[{"(", 
-                    RowBox[{"tCA", "-", "tss"}], ")"}]}], "+", 
-                    RowBox[{"{", 
-                    RowBox[{"0", ",", "0", ",", 
-                    FractionBox[
-                    RowBox[{"F", " ", 
-                    RowBox[{"(", 
-                    RowBox[{
-                    RowBox[{"Cos", "[", 
-                    RowBox[{"\[Omega]", " ", "tCA"}], "]"}], "-", 
-                    RowBox[{"Cos", "[", 
-                    RowBox[{"\[Omega]", " ", "tss"}], "]"}]}], ")"}]}], 
-                    SuperscriptBox["\[Omega]", "2"]]}], "}"}]}], ")"}], ".", 
-                  RowBox[{"{", 
-                   RowBox[{"po", ",", "py", ",", 
-                    RowBox[{"pp", "-", 
-                    FractionBox[
-                    RowBox[{"F", " ", 
-                    RowBox[{"Sin", "[", 
-                    RowBox[{"\[Omega]", " ", "tCA"}], "]"}]}], 
-                    "\[Omega]"]}]}], "}"}]}]}], "\[Equal]", "0"}], ",", 
-               RowBox[{"{", 
-                RowBox[{"tCA", ",", 
-                 RowBox[{
-                 "range", "\[LeftDoubleBracket]", "1", 
-                  "\[RightDoubleBracket]"}], ",", 
-                 RowBox[{
-                 "range", "\[LeftDoubleBracket]", "2", 
-                  "\[RightDoubleBracket]"}]}], "}"}], ",", 
-               RowBox[{"Sequence", "@@", 
-                RowBox[{"FilterRules", "[", 
-                 RowBox[{
-                  RowBox[{"{", "options", "}"}], ",", 
-                  RowBox[{"Options", "[", "FindComplexRoots", "]"}]}], 
-                 "]"}]}], ",", 
-               RowBox[{"Seeds", "\[Rule]", "200"}], ",", 
-               RowBox[{"Tolerance", "\[Rule]", 
-                SuperscriptBox["10", 
-                 RowBox[{"4", "-", "$MachinePrecision"}]]}]}], "]"}], 
-             "]"}]}]}], "]"}]}]}
-      },
-      BaselinePosition->{Baseline, {1, 1}},
-      GridBoxAlignment->{
-       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
-        "RowsIndexed" -> {}},
-      GridBoxItemSize->{"Columns" -> {{
-           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
-        "RowsIndexed" -> {}}]},
-    {" "},
-    {GridBox[{
-       {
-        RowBox[{
-         RowBox[{"Options", "[", "allQuantumClosestApproachTimes", "]"}], "=", 
-         RowBox[{"{", 
-          RowBox[{
-           RowBox[{"AccuracyGoal", "\[Rule]", "Automatic"}], ",", 
-           RowBox[{"Compiled", "\[Rule]", "Automatic"}], ",", 
-           RowBox[{"DampingFactor", "\[Rule]", "1"}], ",", 
-           RowBox[{"Evaluated", "\[Rule]", "True"}], ",", 
-           RowBox[{"EvaluationMonitor", "\[Rule]", "None"}], ",", 
-           RowBox[{"Jacobian", "\[Rule]", "Automatic"}], ",", 
-           RowBox[{"MaxIterations", "\[Rule]", "100"}], ",", 
-           RowBox[{"Method", "\[Rule]", "Automatic"}], ",", 
-           RowBox[{"PrecisionGoal", "\[Rule]", "Automatic"}], ",", 
-           RowBox[{"StepMonitor", "\[Rule]", "None"}], ",", 
-           RowBox[{"WorkingPrecision", "\[Rule]", "MachinePrecision"}], ",", 
-           RowBox[{"Seeds", "\[Rule]", "50"}], ",", 
-           RowBox[{"SeedGenerator", "\[Rule]", "RandomComplex"}], ",", 
-           RowBox[{"Tolerance", "\[Rule]", "Automatic"}], ",", 
-           RowBox[{"Verbose", "\[Rule]", "False"}], ",", 
-           RowBox[{"\<\"rules\"\>", "\[Rule]", "Automatic"}], ",", 
-           RowBox[{"\<\"Range\"\>", "\[Rule]", "Automatic"}]}], "}"}]}]}
-      },
-      BaselinePosition->{Baseline, {1, 1}},
-      GridBoxAlignment->{
-       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
-        "RowsIndexed" -> {}},
-      GridBoxItemSize->{"Columns" -> {{
-           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
-        "RowsIndexed" -> {}}]}
-   },
-   BaselinePosition->{Baseline, {1, 1}},
-   GridBoxAlignment->{
-    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
-     "RowsIndexed" -> {}}],
-  Definition[$CellContext`allQuantumClosestApproachTimes],
-  Editable->False]], "Print",
- CellTags->"Info3641837674-5484926"]
-}, Open  ]]
-}, Open  ]],
-
 Cell[BoxData[
  RowBox[{
   RowBox[{"dashboardPlotter", "[", 
@@ -16866,13 +15947,8 @@ Cell[BoxData[
       RowBox[{"pp", "=", "ppinit"}], ",", 
       RowBox[{"py", "=", "0"}], ",", 
       RowBox[{"sMan", "=", "0.1"}], ",", "t", ",", "rules", 
-      "\[IndentingNewLine]", 
-      RowBox[{"(*", 
-       RowBox[{
-       ",", "r2", ",", "poTrajectory", ",", "pyTrajectory", ",", 
-        "ppTrajectory", ",", "re2Trajecotry"}], "*)"}], "\[IndentingNewLine]",
-       ",", "trajectory", "\[IndentingNewLine]", ",", "expr", ",", "labels", 
-      "\[IndentingNewLine]", ",", "path", ",", 
+      "\[IndentingNewLine]", ",", "trajectory", "\[IndentingNewLine]", ",", 
+      "expr", ",", "labels", "\[IndentingNewLine]", ",", "path", ",", 
       RowBox[{"barepath", "=", "initialpath"}], ",", 
       RowBox[{"\[CapitalDelta]path", "=", 
        RowBox[{"Table", "[", 
@@ -16903,8 +15979,6 @@ Cell[BoxData[
          RowBox[{"{", 
           RowBox[{"All", ",", "All"}], "}"}]}], "}"}]}], ",", "tRangeNumeric",
        "\[IndentingNewLine]", ",", "updateDefinitions"}], 
-     RowBox[{"(*", 
-      RowBox[{",", " ", "timecontours", ",", "timepath"}], "*)"}], 
      "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
     RowBox[{
      RowBox[{
@@ -16958,7 +16032,7 @@ Cell[BoxData[
                     RowBox[{"\"\<t0\>\"", "-", "10"}], ",", 
                     RowBox[{"#", "\[LeftDoubleBracket]", 
                     RowBox[{"1", ",", "1"}], "\[RightDoubleBracket]"}]}], 
-                   "]"}], ",", "\[IndentingNewLine]", 
+                   "]"}], ",", 
                   RowBox[{"If", "[", 
                    RowBox[{
                     RowBox[{
@@ -16983,7 +16057,7 @@ Cell[BoxData[
                     RowBox[{"-", "10"}], ",", 
                     RowBox[{"#", "\[LeftDoubleBracket]", 
                     RowBox[{"2", ",", "1"}], "\[RightDoubleBracket]"}]}], 
-                   "]"}], ",", "\[IndentingNewLine]", 
+                   "]"}], ",", 
                   RowBox[{"If", "[", 
                    RowBox[{
                     RowBox[{
@@ -17183,44 +16257,49 @@ Cell[BoxData[
                  RowBox[{
                   RowBox[{"Dynamic", "[", "\[IndentingNewLine]", 
                    RowBox[{
-                    RowBox[{
+                    RowBox[{"Join", "[", 
+                    RowBox[{"(*", 
                     RowBox[{
                     RowBox[{"{", 
                     RowBox[{
                     RowBox[{"Re", "[", "path", "]"}], ",", 
                     RowBox[{"Im", "[", "path", "]"}]}], "}"}], 
-                    "\[Transpose]"}], "~", "Join", "~", 
+                    "\[Transpose]"}], "*)"}], 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"Re", "[", "#", "]"}], ",", 
+                    RowBox[{"Im", "[", "#", "]"}]}], "}"}], "&"}], "/@", 
+                    "path"}], ",", 
                     RowBox[{"{", 
                     RowBox[{"{", 
                     RowBox[{
                     RowBox[{"Re", "[", "tss", "]"}], ",", 
-                    RowBox[{"Im", "[", "tss", "]"}]}], "}"}], "}"}]}], ",", 
-                    "\[IndentingNewLine]", 
+                    RowBox[{"Im", "[", "tss", "]"}]}], "}"}], "}"}]}], "]"}], 
+                    ",", "\[IndentingNewLine]", 
                     RowBox[{"Function", "[", 
-                    RowBox[{"points", ",", 
+                    RowBox[{"points", ",", "\[IndentingNewLine]", 
                     RowBox[{
                     RowBox[{"(", 
                     RowBox[{"\[CapitalDelta]path", "=", 
                     RowBox[{
                     RowBox[{"(", 
                     RowBox[{"Complex", "@@@", 
-                    RowBox[{"points", "\[LeftDoubleBracket]", 
-                    RowBox[{"1", ";;", 
-                    RowBox[{"-", "2"}]}], "\[RightDoubleBracket]"}]}], ")"}], 
-                    "-", 
+                    RowBox[{"Most", "[", "points", "]"}]}], ")"}], "-", 
                     RowBox[{"Evaluate", "[", 
                     RowBox[{"barepath", "/.", "rules"}], "]"}]}]}], ")"}], 
-                    ";", 
+                    ";", "\[IndentingNewLine]", 
                     RowBox[{"(", 
                     RowBox[{"\[CapitalDelta]tss", "=", 
                     RowBox[{
                     RowBox[{"Complex", "@@", 
-                    RowBox[{"points", "\[LeftDoubleBracket]", 
-                    RowBox[{"-", "1"}], "\[RightDoubleBracket]"}]}], "-", 
-                    "baretss"}]}], ")"}], ";", 
-                    RowBox[{"updateDefinitions", "[", "]"}]}], ",", 
-                    "HoldRest"}], "]"}]}], "\[IndentingNewLine]", "]"}], ",", 
-                  "\[IndentingNewLine]", 
+                    RowBox[{"Last", "[", "points", "]"}]}], "-", 
+                    "baretss"}]}], ")"}], ";", "\[IndentingNewLine]", 
+                    RowBox[{"updateDefinitions", "[", "]"}]}], 
+                    "\[IndentingNewLine]", ",", "HoldRest"}], "]"}]}], 
+                   "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", 
                   RowBox[{"Dynamic", "[", "\[IndentingNewLine]", 
                    RowBox[{"Show", "[", "\[IndentingNewLine]", 
                     RowBox[{
