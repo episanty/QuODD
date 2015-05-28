@@ -43,15 +43,15 @@ EvaluationElements->"InitializationCell"
 
 
 Options[timeContours]={ImageSize->{360,360}};
-timeContours[r2function_,rules_,tss_,path_,range_:{{All,All},{All,All}},OptionsPattern[]]:=Show[{
+timeContours[r2function_,rules_,tss_,path_,tRangeNumeric_,OptionsPattern[]]:=Show[{
 RegionPlot[
 Tooltip[Re[r2function[ret+I imt]]<0,DisplayForm[Row[{"Re(",Superscript["\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)","2"],")<0"}]]]
-,{ret,
-Evaluate[If[#===All,"t0"-10/.rules,#]&[range[[1,1]]]],
-Evaluate[If[#===All,Re[Last[path]]+10/.rules,#]&[range[[1,2]]]]
-},{imt,
-Evaluate[If[#===All,-10,#]&[range[[2,1]]]],
-Evaluate[If[#===All,Max[Im[tss]+10,15],#]&[range[[2,2]]]]
+,{ret,tRangeNumeric[[1,1]],tRangeNumeric[[1,2]]
+(*Evaluate[If[#===All,"t0"-10/.rules,#]&[range\[LeftDoubleBracket]1,1\[RightDoubleBracket]]],
+Evaluate[If[#===All,Re[Last[path]]+10/.rules,#]&[range\[LeftDoubleBracket]1,2\[RightDoubleBracket]]]*)
+},{imt,tRangeNumeric[[2,1]],tRangeNumeric[[2,2]]
+(*Evaluate[If[#===All,-10,#]&[range\[LeftDoubleBracket]2,1\[RightDoubleBracket]]],
+Evaluate[If[#===All,Max[Im[tss]+10,15],#]&[range\[LeftDoubleBracket]2,2\[RightDoubleBracket]]]*)
 },AspectRatio->Automatic,AxesOrigin->{0,0},PlotRangePadding->0
 ,FrameLabel->{"Re(t)","Im(t)"}
 ,PlotLabel->"time contour"
@@ -61,12 +61,12 @@ Evaluate[If[#===All,Max[Im[tss]+10,15],#]&[range[[2,2]]]]
 Sequence@@Table[
 ContourPlot[
 Im[r2function[ret+I imt]]==0
-,{ret,
-Evaluate[If[#===All,"t0"-10/.rules,#]&[range[[1,1]]]],
-Evaluate[If[#===All,Re[Last[path]]+10/.rules,#]&[range[[1,2]]]]
-},{imt,
-Evaluate[If[#===All,-10,#]&[range[[2,1]]]],
-Evaluate[If[#===All,Max[Im[tss]+10,15],#]&[range[[2,2]]]]
+,{ret,tRangeNumeric[[1,1]],tRangeNumeric[[1,2]]
+(*Evaluate[If[#===All,"t0"-10/.rules,#]&[range\[LeftDoubleBracket]1,1\[RightDoubleBracket]]],
+Evaluate[If[#===All,Re[Last[path]]+10/.rules,#]&[range\[LeftDoubleBracket]1,2\[RightDoubleBracket]]]*)
+},{imt,tRangeNumeric[[2,1]],tRangeNumeric[[2,2]]
+(*Evaluate[If[#===All,-10,#]&[range\[LeftDoubleBracket]2,1\[RightDoubleBracket]]],
+Evaluate[If[#===All,Max[Im[tss]+10,15],#]&[range\[LeftDoubleBracket]2,2\[RightDoubleBracket]]]*)
 },AspectRatio->Automatic,AxesOrigin->{0,0},PlotRangePadding->0
 ,ContourStyle->{Thick,selector/.{Less->Red,Greater->RGBColor[0,0.6,0]}}
 ,ContourLabels->{None,Tooltip[Null,
@@ -353,20 +353,11 @@ dashboardPlotter[{F_,\[Omega]_},\[Kappa]_,initialpath_: {"t\[Kappa]","t0","T"},{
 ,tRangeSymbolic={{All,All},{All,All}},tRangeNumeric
 ,updateDefinitions(*, timecontours,timepath*)
 },
-
-(*ret,
-Evaluate[If[#===All,"t0"-10/.rules,#]&[range\[LeftDoubleBracket]1,1\[RightDoubleBracket]]],
-Evaluate[If[#===All,Re[Last[path]]+10/.rules,#]&[range\[LeftDoubleBracket]1,2\[RightDoubleBracket]]]
-},{imt,
-Evaluate[If[#===All,-10,#]&[range\[LeftDoubleBracket]2,1\[RightDoubleBracket]]],
-Evaluate[If[#===All,Max[Im[tss]+10,15],#]&[range\[LeftDoubleBracket]2,2\[RightDoubleBracket]]]
-}*)
 updateDefinitions[]:=(
 baretss=ts[{po,py,pp},{F,\[Omega],\[Kappa]}];
 tss=baretss+\[CapitalDelta]tss;
 rules={"t\[Kappa]"->tss-I/\[Kappa]^2,"ts"->tss,"t0"->Re[tss],"\[Tau]"->Im[tss],"T"-> 2\[Pi]/\[Omega]};
-tRangeNumeric=(({
-{
+tRangeNumeric=(({{
 If[#[[1,1]]===All,"t0"-10,#[[1,1]]],
 If[#[[1,2]]===All,Re[Last[path]]+10,#[[1,2]]]
 },{
@@ -413,7 +404,6 @@ timePathPlotter[rules,t,sMan]
 ]
 ]
 ]
-,Dynamic[trajectory]
 ,(*Time plane range controls*)
 rangeReset[tRangeSymbolic,{"Re(t)","Im(t)"}]
 },Center]
