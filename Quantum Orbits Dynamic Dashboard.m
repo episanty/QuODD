@@ -21,7 +21,7 @@
 
 Needs["EPToolbox`"]
 NotebookEvaluate[
-"/home/episanty/Work/CQD/Project/Scratch/functions 08.05 functions file v1.0.4.nb",
+"/home/episanty/Work/CQD/Project/Scratch/functions 28.05 functions file v1.0.5.nb",
 EvaluationElements->"InitializationCell"
 ];
 
@@ -319,6 +319,28 @@ colourScale[{1,0,1.5},{F,\[Omega]},\[Kappa]]
 }}]
 
 
+SetAttributes[contourProgressController,HoldAll];
+contourProgressController[sMan_]:=Row[{Text["Contour progress: "],Manipulator[Dynamic[sMan],Appearance->{"Labeled"}]}]
+
+
+SetAttributes[tsController,HoldAll];
+tsController[\[CapitalDelta]tss_,baretss_,tss_,{F_,\[Omega]_,\[Kappa]_}]:=Row[{Text["\!\(\*SubscriptBox[\(t\), \(s\)]\)="],
+InputField[
+Dynamic[tss,Function[input,(\[CapitalDelta]tss=Evaluate[input/.{"t\[Kappa]"->baretss-I/\[Kappa]^2,"ts"->baretss,"t0"->Re[baretss],"\[Tau]"->Im[baretss],"T"->2\[Pi]/\[Omega]}]-baretss),HoldRest]],
+FieldSize->12]
+,Button["\!\(\*SubscriptBox[\(t\), \(s\)]\)",\[CapitalDelta]tss=0],Button["\!\(\*SubscriptBox[\(t\), \(0\)]\)",\[CapitalDelta]tss=-I Im[baretss]]
+}]
+
+
+SetAttributes[rInitController,HoldAll];
+rInitController[xinit_,zinit_,rInitRange_]:=Grid[{
+{Text["\!\(\*SubscriptBox[\(x\), \(init\)]\) "],Button[Dynamic[xinit/.{a_/;(a>=0)->"+",a_/;(a<0)->"-"}],xinit=-xinit],
+Manipulator[Dynamic[Abs[xinit],(xinit=If[xinit!=0,Sign[xinit]#,#])&],{0,rInitRange},Appearance->{"Labeled"}]},
+{Text["\!\(\*SubscriptBox[\(z\), \(init\)]\) "],Button[Dynamic[zinit/.{a_/;(a>=0)->"+",a_/;(a<0)->"-"}],zinit=-zinit],
+Manipulator[Dynamic[Abs[zinit],(zinit=If[zinit!=0,Sign[zinit]#,#])&],{0,rInitRange},Appearance->{"Labeled"}]}
+}]
+
+
 dashboardPlotter[{F_,\[Omega]_},\[Kappa]_,initialpath_: {"t\[Kappa]","t0","T"},{poinit_:0.15,ppinit_:0.15}]:=DynamicModule[
 {po=poinit,pp=ppinit,py=0,sMan=0.1,t,rules
 (*,r2,poTrajectory,pyTrajectory,ppTrajectory,re2Trajecotry*)
@@ -326,7 +348,7 @@ dashboardPlotter[{F_,\[Omega]_},\[Kappa]_,initialpath_: {"t\[Kappa]","t0","T"},{
 ,expr,labels
 ,path,barepath=initialpath,\[CapitalDelta]path=Table[0,{Length[initialpath]}]
 ,tss,baretss,\[CapitalDelta]tss=0
-,xinit=0,zinit=0,range=0.15
+,xinit=0,zinit=0,rInitRange=0.15
 ,r2range={{All,All},{All,All}},r2FullRange=All,r2plot
 ,trange={{All,All},{All,All}}
 ,updateDefinitions, timecontours,timepath
@@ -337,31 +359,16 @@ tss=baretss+\[CapitalDelta]tss;
 rules={"t\[Kappa]"->tss-I/\[Kappa]^2,"ts"->tss,"t0"->Re[tss],"\[Tau]"->Im[tss],"T"-> 2\[Pi]/\[Omega]};
 path=Evaluate[barepath/.rules]+\[CapitalDelta]path;
 t=Interpolation[Evaluate[{Range[0,1,1/(Length[path]-1)],path}\[Transpose]],InterpolationOrder->1];
-(*r2=(xinit+po(tt-tss))^2+py^2(tt-tss)^2+(zinit+pp(tt-tss)+F/\[Omega]^2(Cos[\[Omega] tt]-Cos[\[Omega] tss]))^2;
-poTrajectory=xinit+po(t[s]-tss);
-pyTrajectory=py(t[s]-tss);
-ppTrajectory=zinit+pp(t[s]-tss)+F/\[Omega]^2(Cos[\[Omega] t[s]]-Cos[\[Omega] tss]);
-re2Trajecotry=r2/.{tt\[Rule]t[s]};*)
-trajectory:=Function[t,complexTrajectory[t,{po,py,pp}, {F,\[Omega],\[Kappa]}]];
+trajectory:=Function[t,complexTrajectory[t,{po,py,pp}, {F,\[Omega],\[Kappa]},rInit->{xinit,0,zinit}]];
 );
 Dynamic[updateDefinitions[];""]
 
 Framed[Grid[
 {
 {(*Top row: controllers.*)
-Row[{Text["Contour progress: "],Manipulator[Dynamic[sMan],Appearance->{"Labeled"}]}],
-Row[{Text["\!\(\*SubscriptBox[\(t\), \(s\)]\)="],
-InputField[
-Dynamic[tss,Function[input,(\[CapitalDelta]tss=Evaluate[input/.{"t\[Kappa]"->baretss-I/\[Kappa]^2,"ts"->baretss,"t0"->Re[baretss],"\[Tau]"->Im[baretss],"T"->2\[Pi]/\[Omega]}]-baretss),HoldRest]],
-FieldSize->12]
-,Button["\!\(\*SubscriptBox[\(t\), \(s\)]\)",\[CapitalDelta]tss=0],Button["\!\(\*SubscriptBox[\(t\), \(0\)]\)",\[CapitalDelta]tss=-I Im[baretss]]
-}],
-Grid[{
-{Text["\!\(\*SubscriptBox[\(x\), \(init\)]\) "],Button[Dynamic[xinit/.{a_/;(a>=0)->"+",a_/;(a<0)->"-"}],xinit=-xinit],
-Manipulator[Dynamic[Abs[xinit],(xinit=If[xinit!=0,Sign[xinit]#,#])&],{0,range},Appearance->{"Labeled"}]},
-{Text["\!\(\*SubscriptBox[\(z\), \(init\)]\) "],Button[Dynamic[zinit/.{a_/;(a>=0)->"+",a_/;(a<0)->"-"}],zinit=-zinit],
-Manipulator[Dynamic[Abs[zinit],(zinit=If[zinit!=0,Sign[zinit]#,#])&],{0,range},Appearance->{"Labeled"}]}
-}]
+contourProgressController[sMan],
+tsController[\[CapitalDelta]tss,baretss,tss,{F,\[Omega],\[Kappa]}],
+rInitController[xinit,zinit,rInitRange]
 }
 ,
 {(*Middle row*)
@@ -390,12 +397,6 @@ Dynamic[
 {Re[path],Im[path]}\[Transpose]~Join~{{Re[tss],Im[tss]}},
 Function[points,(\[CapitalDelta]path=(Complex@@@points[[1;;-2]])-Evaluate[barepath/.rules]);(\[CapitalDelta]tss=Complex@@points[[-1]]-baretss);updateDefinitions[],HoldRest]
 ],
-(*Dynamic[
-Show[
-timecontours=timeContours[r2,rules,tss,path,trange,ImageSize\[Rule]{720,360}],
-timepath=timePathPlotter[rules,t,sMan]
-]
-]*)
 Dynamic[
 Show[
 timeContours[Total[trajectory[#]^2]&,rules,tss,path,trange,ImageSize->{720,360}],
