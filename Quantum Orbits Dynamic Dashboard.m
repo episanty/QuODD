@@ -80,7 +80,7 @@ selector/.{Less->DisplayForm[Row[{"Branch cut.\nIm(",Superscript["\!\(\*Subscrip
 
 
 Options[timePathPlotter]={ImageSize->{360,360}};
-timePathPlotter[rules_,t_,sman_,OptionsPattern[]]:=Show[{
+timePathPlotter[rules_,t_,sman_,OptionsPattern[]]:=Show[Join[{
 ParametricPlot[
 {Re[t[s]],Im[t[s]]}
 ,{s,0,1}
@@ -93,13 +93,15 @@ ParametricPlot[
 ,Graphics[{PointSize[Large],Red,Tooltip[Point[{Re[t[1]],Im[t[1]]}(*/.s\[Rule]1*)],"Contour end"]}]
 ,Graphics[{PointSize[Large],Blue,Tooltip[Point[{0,0}],"Time origin"]}]
 ,Graphics[{PointSize[Large],Black,Tooltip[Point[{Re[t[sman]],Im[t[sman]]}],"t(s)"]}]
-}]
+},
+Graphics[{PointSize[Large],GrayLevel[0.7],Tooltip[Point[{Re[#],Im[#]}],"\!\(\*SubscriptBox[\(t\), \(CA\)]\)"]}]&/@("tCAset"/.rules)
+]]
 
 
 Options[trajectoryPlotter]={"PlotRange"->All};
 trajectoryPlotter[trajectoryFunction_,label_,sman_,OptionsPattern[]]:=
 Show[#,PlotRange->OptionValue["PlotRange"],PlotRangePadding->0.05Max[(#[[2]]-#[[1]]&)/@(PlotRange/. AbsoluteOptions[#,PlotRange])]]&@(*For better padding, as per mm.se:42495.*)
-Show[
+Show[{
 ParametricPlot[
 {Re[trajectoryFunction[s]],Im[trajectoryFunction[s]]},{s,0,1}
 ,AspectRatio->Automatic
@@ -120,7 +122,7 @@ Red,Thick,Tooltip[Line[{{-1000,0},{0,0}}],DisplayForm[Row[{"Branch cut\n",Supers
 ,Graphics[{PointSize[Large],Red,Tooltip[Point[{Re[trajectoryFunction[1]],Im[trajectoryFunction[1]]}],"Contour end"]}]
 ,Graphics[{PointSize[Large],Blue,Tooltip[Point[{0,0}],"Origin"]}]
 ,Graphics[{PointSize[Large],Black,Tooltip[Point[{Re[trajectoryFunction[sman]],Im[trajectoryFunction[sman]]}],label]}]
-]
+}]
 
 
 Options[timeIntegrandPlotter]={ImageSize->{360,360}};
@@ -348,6 +350,7 @@ dashboardPlotter[{F_,\[Omega]_},\[Kappa]_,initialpath_: {"t\[Kappa]","t0","T"},{
 ,expr,labels
 ,path,barepath=initialpath,\[CapitalDelta]path=Table[0,{Length[initialpath]}]
 ,tss,baretss,\[CapitalDelta]tss=0
+,tCAset,showtCAs=True
 ,xinit=0,zinit=0,rInitRange=0.15
 ,r2range={{All,All},{All,All}},r2FullRange=All,r2plot
 ,tRangeSymbolic={{All,All},{All,All}},tRangeNumeric
@@ -356,7 +359,7 @@ dashboardPlotter[{F_,\[Omega]_},\[Kappa]_,initialpath_: {"t\[Kappa]","t0","T"},{
 updateDefinitions[]:=(
 baretss=ts[{po,py,pp},{F,\[Omega],\[Kappa]}];
 tss=baretss+\[CapitalDelta]tss;
-rules={"t\[Kappa]"->tss-I/\[Kappa]^2,"ts"->tss,"t0"->Re[tss],"\[Tau]"->Im[tss],"T"-> 2\[Pi]/\[Omega]};
+rules:={"t\[Kappa]"->tss-I/\[Kappa]^2,"ts"->tss,"t0"->Re[tss],"\[Tau]"->Im[tss],"T"-> 2\[Pi]/\[Omega],"tCAset"->tCAset};
 tRangeNumeric=(({{
 If[#[[1,1]]===All,"t0"-10,#[[1,1]]],
 If[#[[1,2]]===All,Re[Last[path]]+10,#[[1,2]]]
@@ -364,6 +367,7 @@ If[#[[1,2]]===All,Re[Last[path]]+10,#[[1,2]]]
 If[#[[2,1]]===All,-10,#[[2,1]]],
 If[#[[2,2]]===All,Max[Im[tss]+10,15],#[[2,2]]]
 }}&[tRangeSymbolic])/.rules);
+tCAset=If[TrueQ[showtCAs],(tCA/.allQuantumClosestApproachTimes[{po,0,pp},{F,\[Omega],\[Kappa]},{xinit,0,zinit},"Range"->Complex@@@Transpose[tRangeNumeric]]),{}];
 path=Evaluate[barepath/.rules]+\[CapitalDelta]path;
 t=Interpolation[Evaluate[{Range[0,1,1/(Length[path]-1)],path}\[Transpose]],InterpolationOrder->1];
 trajectory:=Function[t,complexTrajectory[t,{po,py,pp}, {F,\[Omega],\[Kappa]},rInit->{xinit,0,zinit},forcets->tss]];
