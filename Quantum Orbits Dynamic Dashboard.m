@@ -26,6 +26,9 @@ EvaluationElements->"InitializationCell"
 ];
 
 
+$HistoryLength=5;
+
+
 Options[timeContours]={ImageSize->{360,360}};
 timeContours[r2function_,rules_,tss_,path_,tRangeNumeric_,OptionsPattern[]]:=Show[{
 RegionPlot[
@@ -114,6 +117,9 @@ Tooltip[{s,Abs[-(rer2function[s])^(-1/2)D[t[ss],ss]/.{ss->s}]},"Abs"]
 ,PlotLabel->"Re, Im and Abs of \!\(\*FractionBox[\(-1\), SqrtBox[\(\*SubscriptBox[\(r\), \(cl\)] \*SuperscriptBox[\((t)\), \(2\)]\)]]\)\!\(\*FractionBox[\(dt\), \(ds\)]\) over the contour"
 ,ImageSize->OptionValue[ImageSize]
 ]
+
+
+ionizationProbabilityColorFunction=(Blend[{RGBColor[0.4,0,0],Red,Orange,Yellow},#]&);
 
 
 colourScale[{pomax_,ppmax_},{F_,\[Omega]_},\[Kappa]_]:=colourScale[{pomax,0,ppmax},{F,\[Omega]},\[Kappa]]=ContourPlot[
@@ -241,6 +247,7 @@ dashboardPlotter[{F_,\[Omega]_},\[Kappa]_,initialpath_: {"t\[Kappa]","t0","T"},{
 ,r2range={{All,All},{All,All}},r2FullRange=All,r2plot
 ,tRangeSymbolic={{All,All},{All,All}},tRangeNumeric
 ,updateDefinitions
+,scale=1
 },
 updateDefinitions[]:=(
 baretss=ts[{po,py,pp},{F,\[Omega],\[Kappa]}];
@@ -296,6 +303,7 @@ timePathPlotter[rules,t,sMan]
 ]
 ]
 ]
+,InputField[Dynamic[scale]]
 ,(*Time plane range controls*)
 rangeReset[tRangeSymbolic,{"Re(t)","Im(t)"}]
 },Center]

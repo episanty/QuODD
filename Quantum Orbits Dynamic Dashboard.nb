@@ -715,6 +715,11 @@ Cell[BoxData[{
 file v1.0.6.nb\>\"", ",", "\[IndentingNewLine]", 
     RowBox[{"EvaluationElements", "\[Rule]", "\"\<InitializationCell\>\""}]}],
     "\[IndentingNewLine]", "]"}], ";"}]}], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"$HistoryLength", "=", "5"}], ";"}]], "Input",
  InitializationCell->True]
 }, Open  ]],
 
@@ -1381,7 +1386,8 @@ Cell[BoxData[
          RowBox[{"RGBColor", "[", 
           RowBox[{"0.4", ",", "0", ",", "0"}], "]"}], ",", "Red", ",", 
          "Orange", ",", "Yellow"}], "}"}], ",", "#"}], "]"}], "&"}], ")"}]}], 
-  ";"}]], "Input"]
+  ";"}]], "Input",
+ InitializationCell->True]
 }, Closed]],
 
 Cell[CellGroupData[{
@@ -15452,7 +15458,7 @@ puW/XPTGpjcecOmfL/mUfEj+BwYGLzw=
   Ticks->{Automatic, Automatic}]], "Output"]
 }, Open  ]]
 }, Closed]]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -15978,8 +15984,10 @@ Cell[BoxData[
           RowBox[{"All", ",", "All"}], "}"}], ",", 
          RowBox[{"{", 
           RowBox[{"All", ",", "All"}], "}"}]}], "}"}]}], ",", "tRangeNumeric",
-       "\[IndentingNewLine]", ",", "updateDefinitions"}], 
-     "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", ",", "updateDefinitions", "\[IndentingNewLine]",
+       ",", 
+      RowBox[{"scale", "=", "1"}]}], "\[IndentingNewLine]", "}"}], ",", 
+    "\[IndentingNewLine]", 
     RowBox[{
      RowBox[{
       RowBox[{"updateDefinitions", "[", "]"}], ":=", 
@@ -16319,6 +16327,9 @@ Cell[BoxData[
                     RowBox[{"rules", ",", "t", ",", "sMan"}], "]"}]}], 
                     "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", 
                    "]"}]}], "\[IndentingNewLine]", "]"}], 
+                "\[IndentingNewLine]", ",", 
+                RowBox[{"InputField", "[", 
+                 RowBox[{"Dynamic", "[", "scale", "]"}], "]"}], 
                 "\[IndentingNewLine]", ",", 
                 RowBox[{"(*", 
                  RowBox[{
