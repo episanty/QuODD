@@ -19,11 +19,8 @@
 
 
 
-Needs["EPToolbox`"]
-(*NotebookEvaluate[
-"/home/episanty/Work/CQD/Project/Scratch/functions 28.05 functions file v1.0.6.nb",
-EvaluationElements\[Rule]"InitializationCell"
-];*)
+Needs["EPToolbox`",NotebookDirectory[]<>"EPToolbox.m"]
+Needs["ARMSupport`",NotebookDirectory[]<>"ARMSupport.m"]
 
 
 $HistoryLength=5;
