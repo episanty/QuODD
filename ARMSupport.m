@@ -28,9 +28,6 @@ stdpars={0.05,0.055,1.007};
 r0={0,0,0};
 
 
-(*Needs["EPToolbox`"]*)
-
-
 ts[pp_,\[Kappa]_,\[Omega]_,F_,po_,py_]:=1/\[Omega] ArcSin[\[Omega]/F pp+I \[Omega]/F Sqrt[\[Kappa]^2+po^2+py^2]]
 ts[{po_,py_,pp_},{F_,\[Omega]_,\[Kappa]_}]:=ts[pp,\[Kappa],\[Omega],F,po,py]
 

@@ -722,10 +722,7 @@ Cell[BoxData[{
 Cell[BoxData[
  RowBox[{
   RowBox[{"$HistoryLength", "=", "5"}], ";"}]], "Input",
- InitializationCell->True],
-
-Cell[BoxData[
- RowBox[{"Quit", "[", "]"}]], "Input"]
+ InitializationCell->True]
 }, Open  ]],
 
 Cell[CellGroupData[{
