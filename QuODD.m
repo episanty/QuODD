@@ -35,7 +35,11 @@ dynamicDashboardPlotter[{F, \[Omega]}, \[Kappa], path, {poinit, ppinit}] specifi
 Begin["`Private`"]
 
 
-Options[timeContours]={ImageSize->{360,360}};
+$smallBlockSize={360,360};
+$largeBlockSize={720,360};
+
+
+Options[timeContours]={ImageSize->$smallBlockSize};
 timeContours[r2function_,rules_,tss_,path_,tRangeNumeric_,OptionsPattern[]]:=Show[{
 RegionPlot[
 Tooltip[Re[r2function[ret+I imt]]<0,DisplayForm[Row[{"Re(",Superscript["\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)","2"],")<0"}]]]
@@ -62,7 +66,7 @@ selector/.{Less->DisplayForm[Row[{"Branch cut.\nIm(",Superscript["\!\(\*Subscrip
 }]
 
 
-Options[timePathPlotter]={ImageSize->{360,360}};
+Options[timePathPlotter]={ImageSize->$smallBlockSize};
 timePathPlotter[rules_,t_,sman_,OptionsPattern[]]:=Show[Join[{
 ParametricPlot[
 {Re[t[s]],Im[t[s]]}
@@ -81,7 +85,7 @@ Graphics[{PointSize[Large],GrayLevel[0.7],Tooltip[Point[{Re[#],Im[#]}],"\!\(\*Su
 ]]
 
 
-Options[trajectoryPlotter]={"PlotRange"->All};
+Options[trajectoryPlotter]={"PlotRange"->All,ImageSize->$smallBlockSize};
 trajectoryPlotter[trajectoryFunction_,label_,sman_,OptionsPattern[]]:=
 Show[#,PlotRange->OptionValue["PlotRange"],PlotRangePadding->0.05Max[(#[[2]]-#[[1]]&)/@(PlotRange/. AbsoluteOptions[#,PlotRange])]]&@(*For better padding, as per mm.se:42495.*)
 Show[{
@@ -99,7 +103,7 @@ GrayLevel[0.8],Tooltip[Rectangle[{-1000,-1000},{0,1000}],DisplayForm[Row[{"Re(",
 Red,Thick,Tooltip[Line[{{-1000,0},{0,0}}],DisplayForm[Row[{"Branch cut\n",Superscript["\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)","2"],")<0"}]]]
 },##&[]
 ]
-,ImageSize->{360,360}
+,ImageSize->OptionValue[ImageSize]
 ]
 ,Graphics[{PointSize[Large],Green,Tooltip[Point[{Re[trajectoryFunction[0]],Im[trajectoryFunction[0]]}],"Contour start"]}]
 ,Graphics[{PointSize[Large],Red,Tooltip[Point[{Re[trajectoryFunction[1]],Im[trajectoryFunction[1]]}],"Contour end"]}]
@@ -108,7 +112,7 @@ Red,Thick,Tooltip[Line[{{-1000,0},{0,0}}],DisplayForm[Row[{"Branch cut\n",Supers
 }]
 
 
-Options[timeIntegrandPlotter]={ImageSize->{360,360}};
+Options[timeIntegrandPlotter]={ImageSize->$smallBlockSize};
 timeIntegrandPlotter[rer2function_,t_,OptionsPattern[]]:=ParametricPlot[{
 Tooltip[{s,Re[-(rer2function[s])^(-1/2)D[t[ss],ss]/.{ss->s}]},"Re"],
 Tooltip[{s,Im[-(rer2function[s])^(-1/2)D[t[ss],ss]/.{ss->s}]},"Im"],
@@ -142,12 +146,8 @@ y,
 ]
 
 
-colourScale[{1,1.5},{0.05,0.055},1.007]
-
-
 ClearAll[ionizationProbabilityPlot]
-ionizationProbabilityPlot[{F_,\[Omega]_,\[Kappa]_}]:=ionizationProbabilityPlot[{F,\[Omega],\[Kappa]},a]=Module[
-{ppmax=1.5,pomax=1},
+ionizationProbabilityPlot[{F_,\[Omega]_,\[Kappa]_},{pomax_,ppmax_}]:=ionizationProbabilityPlot[{F,\[Omega],\[Kappa]},{pomax,ppmax}]=Block[{},
 Show[
 cleanContourPlot[ContourPlot[
 E^(2volkovExponent[{ppo,0,ppp},{F,\[Omega],\[Kappa]}])/E^(2volkovExponent[{0,0,0},{F,\[Omega],\[Kappa]}])
@@ -159,7 +159,7 @@ E^(2volkovExponent[{ppo,0,ppp},{F,\[Omega],\[Kappa]}])/E^(2volkovExponent[{0,0,0
 ,PlotPoints->20
 ,AspectRatio->Automatic
 ,PlotRangePadding->None
-,ImageSize->{{360},{340}}
+,ImageSize->{{$smallBlockSize[[1]]},{$smallBlockSize[[2]]-20}}
 ]],
 ContourPlot[
 E^(2volkovExponent[{ppo,0,ppp},{F,\[Omega],\[Kappa]}])/E^(2volkovExponent[{0,0,0},{F,\[Omega],\[Kappa]}])
@@ -183,7 +183,7 @@ Tooltip[expr_,tooltip_]:>Tooltip[expr,DisplayForm[SuperscriptBox[10,Log[10,toolt
 })
 ]
 ]
-ionizationProbabilityPlot[stdpars]
+(*ionizationProbabilityPlot[stdpars]*)
 
 
 (*ClearAll[rangeReset];*)
@@ -199,7 +199,7 @@ Button["Reset",range={{All,All},{All,All}},ImageSize->Medium]
 
 
 SetAttributes[momentumPlaneControls,HoldAll];
-momentumPlaneControls[{po_,py_,pp_},{F_,\[Omega]_,\[Kappa]_}]:=Grid[{
+momentumPlaneControls[{po_,py_,pp_},{F_,\[Omega]_,\[Kappa]_},{pomax_,ppmax_}]:=Grid[{
 {Dynamic[Text[
 "Probability = "<>(If[#<=10^-2,
 ToString[ScientificForm[#,2],TraditionalForm],
@@ -212,9 +212,9 @@ Dynamic[
 {Abs[po],Abs[pp]},
 ((po=If[po!=0,Sign[po]#[[1]],#[[1]]]);(pp=If[pp!=0,Sign[pp]#[[2]],#[[2]]]);updateDefinitions[])&
 ],
-ionizationProbabilityPlot[{F,\[Omega],\[Kappa]}]
+ionizationProbabilityPlot[{F,\[Omega],\[Kappa]},{pomax,ppmax}]
 ],
-colourScale[{1,0,1.5},{F,\[Omega]},\[Kappa]]
+colourScale[{pomax,0,ppmax},{F,\[Omega]},\[Kappa]]
 }
 ,{Row[{Text["\!\(\*SubscriptBox[\(p\), \(\[Perpendicular]\)]\)="],Button[Dynamic[po/.{a_/;(a>=0)->"+",a_/;(a<0)->"-"}],po=-po],InputField[Dynamic[Abs[po],(po=If[po!=0,Sign[po]#,#])&],FieldSize->3],Text[" \!\(\*SubscriptBox[\(p\), \(\[DoubleVerticalBar]\)]\)="],Button[Dynamic[pp/.{a_/;(a>=0)->"+",a_/;(a<0)->"-"}],pp=-pp],InputField[Dynamic[Abs[pp],(pp=If[pp!=0,Sign[pp]#,#])&],FieldSize->3]}]
 }}]
@@ -249,6 +249,7 @@ dashboardPlotter[{F_,\[Omega]_},\[Kappa]_,initialpath_: {"t\[Kappa]","t0","T"},{
 ,path,barepath=initialpath,\[CapitalDelta]path=Table[0,{Length[initialpath]}]
 ,tss,baretss,\[CapitalDelta]tss=0
 ,tCAset,showtCAs=False
+,pomax=1.,ppmax=1.5
 ,xinit=0,zinit=0,rInitRange=0.15
 ,r2range={{All,All},{All,All}},r2FullRange=All,r2plot
 ,tRangeSymbolic={{All,All},{All,All}},tRangeNumeric
@@ -283,7 +284,7 @@ Dynamic[trajectoryPlotter[trajectory[t[#]][[3]]&,"\!\(\*SubscriptBox[\(z\), \(cl
 Dynamic[timeIntegrandPlotter[Total[trajectory[t[#]]^2]&,t,ImageSize->{720,360}]]
 },{(*Bottom row*)
 (*Momentum plane / ionization probability*)
-momentumPlaneControls[{po,py,pp},{F,\[Omega],\[Kappa]}]
+momentumPlaneControls[{po,py,pp},{F,\[Omega],\[Kappa]},{pomax,ppmax}]
 ,(*r^2 plane - trajectory*)
 Column[{
 Dynamic[
@@ -305,7 +306,7 @@ updateDefinitions[]
 ],
 Dynamic[
 Show[
-timeContours[Total[trajectory[#]^2]&,rules,tss,path,tRangeNumeric,ImageSize->{720,360}],
+timeContours[Total[trajectory[#]^2]&,rules,tss,path,tRangeNumeric,ImageSize->$largeBlockSize],
 timePathPlotter[rules,t,sMan]
 ]
 ]
