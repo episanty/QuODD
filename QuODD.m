@@ -19,11 +19,20 @@
 
 
 
-Needs["EPToolbox`",NotebookDirectory[]<>"EPToolbox.m"]
-Needs["ARMSupport`",NotebookDirectory[]<>"ARMSupport.m"]
+BeginPackage["QuODD`",{"EPToolbox`","ARMSupport`"}]
 
 
 $HistoryLength=5;
+
+
+dashboardPlotter::usage="dynamicDashboardPlotter[{F, \[Omega]}, \[Kappa]] plots a dashboard for field amplitude F at frequency \[Omega], for ionization potential \!\(\*SuperscriptBox[\(\[Kappa]\), \(2\)]\)/2.
+  
+dynamicDashboardPlotter[{F, \[Omega]}, \[Kappa], path] institutes the desired path, where the strings \"t\[Kappa]\", \"ts\", \"t0\" and \"\[Tau]\" will be replaced by the corresponding functions of momentum, and \"T\" is a laser period. Default is {\"t\[Kappa]\", \"t0\", \"T\"}.
+  
+dynamicDashboardPlotter[{F, \[Omega]}, \[Kappa], path, {poinit, ppinit}] specifies initial values of poinit and pp init for \!\(\*SubscriptBox[\(p\), \(\[UpTee]\)]\) and \!\(\*SubscriptBox[\(p\), \(\[DoubleVerticalBar]\)]\).";
+
+
+Begin["`Private`"]
 
 
 Options[timeContours]={ImageSize->{360,360}};
@@ -309,4 +318,5 @@ rangeReset[tRangeSymbolic,{"Re(t)","Im(t)"}]
 ,SaveDefinitions->True]
 
 
-
+End[]
+EndPackage[]
