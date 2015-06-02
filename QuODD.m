@@ -214,7 +214,7 @@ Dynamic[
 ],
 ionizationProbabilityPlot[{F,\[Omega],\[Kappa]},{pomax,ppmax}]
 ],
-colourScale[{pomax,0,ppmax},{F,\[Omega]},\[Kappa]]
+colourScale[{pomax,ppmax},{F,\[Omega]},\[Kappa]]
 }
 ,{Row[{Text["\!\(\*SubscriptBox[\(p\), \(\[Perpendicular]\)]\)="],Button[Dynamic[po/.{a_/;(a>=0)->"+",a_/;(a<0)->"-"}],po=-po],InputField[Dynamic[Abs[po],(po=If[po!=0,Sign[po]#,#])&],FieldSize->3],Text[" \!\(\*SubscriptBox[\(p\), \(\[DoubleVerticalBar]\)]\)="],Button[Dynamic[pp/.{a_/;(a>=0)->"+",a_/;(a<0)->"-"}],pp=-pp],InputField[Dynamic[Abs[pp],(pp=If[pp!=0,Sign[pp]#,#])&],FieldSize->3]}]
 }}]

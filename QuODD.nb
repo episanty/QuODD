@@ -162,7 +162,6 @@ Cell[BoxData[{
        "\[IndentingNewLine]", ",", 
        RowBox[{"PlotStyle", "\[Rule]", 
         RowBox[{"GrayLevel", "[", "0.8", "]"}]}], "\[IndentingNewLine]", ",", 
-       
        RowBox[{"ImageSize", "\[Rule]", 
         RowBox[{"OptionValue", "[", "ImageSize", "]"}]}]}], 
       "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", 
@@ -489,7 +488,6 @@ Cell[BoxData[{
         RowBox[{"AspectRatio", "\[Rule]", "Automatic"}], 
         "\[IndentingNewLine]", ",", 
         RowBox[{"PlotRange", "\[Rule]", "Full"}], "\[IndentingNewLine]", ",", 
-        
         RowBox[{"Frame", "\[Rule]", "True"}], "\[IndentingNewLine]", ",", 
         RowBox[{"Axes", "\[Rule]", "False"}], "\[IndentingNewLine]", ",", 
         RowBox[{"AxesOrigin", "\[Rule]", 
@@ -967,7 +965,6 @@ t8fGucnIusrJvMzLg5OSwdHQvs7Nv8/OwtLR8Ofmx9fWydnYxdXUxtbVwNDP
 yNjXytrZ6+QOzNzbzd3czt7dz9/eHeQe0ODf8u7jy9va7uriEOIR6ODRpZWW
 5OUe+fHhvc3M8eno7ObU6Ong8+/r9u4B4uoC9PDs9fHt5ufE0ujR4+7i9+8P
 7vIB7PDm7fHo7/MPxebE8PTT7vbq6+/k+PDT8fXh7/fl8fnpl2heKQ==
-       
        "]]]}, {}, {}, {}, {}}],
   DisplayFunction->Identity,
   Frame->True,
@@ -1430,7 +1427,7 @@ Cell[BoxData[{
        RowBox[{"colourScale", "[", 
         RowBox[{
          RowBox[{"{", 
-          RowBox[{"pomax", ",", "0", ",", "ppmax"}], "}"}], ",", 
+          RowBox[{"pomax", ",", "ppmax"}], "}"}], ",", 
          RowBox[{"{", 
           RowBox[{"F", ",", "\[Omega]"}], "}"}], ",", "\[Kappa]"}], "]"}]}], 
       "\[IndentingNewLine]", "}"}], "\[IndentingNewLine]", ",", 
@@ -2201,7 +2198,7 @@ PrintingOptions->{"PaperOrientation"->"Landscape",
 PrivateNotebookOptions->{"FileOutlineCache"->False},
 ShowSelection->True,
 TrackCellChangeTimes->False,
-FrontEndVersion->"10.1 for Linux x86 (64-bit) (March 23, 2015)",
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (September 9, 2014)",
 StyleDefinitions->"Default.nb"
 ]
 
