@@ -32,7 +32,35 @@ dynamicDashboardPlotter[{F, \[Omega]}, \[Kappa], path] institutes the desired pa
 dynamicDashboardPlotter[{F, \[Omega]}, \[Kappa], path, {poinit, ppinit}] specifies initial values of poinit and pp init for \!\(\*SubscriptBox[\(p\), \(\[UpTee]\)]\) and \!\(\*SubscriptBox[\(p\), \(\[DoubleVerticalBar]\)]\).";
 
 
-Begin["`Private`"]
+$smallBlockSize::usage="$smallBlockSize is an option which specifies the {width, height} pair for small blocks on the Dashboard.";
+$largeBlockSize::usage="$smallBlockSize is an option which specifies the {width, height} pair for large blocks on the Dashboard.";
+
+
+timeContours::usage="";
+
+
+timeIntegrandPlotter::usage="";
+
+
+timePathPlotter::usage="";
+
+
+ionizationProbabilityColorFunction::usage="";
+ionizationProbabilityPlot::usage="";
+colourScale::usage="";
+momentumPlaneControls::usage="";
+
+
+contourProgressController::usage="";
+
+
+rangeReset::usage="";
+
+
+rInitController::usage="";
+
+
+Begin["`aPrivate`"]
 
 
 $smallBlockSize={360,360};
