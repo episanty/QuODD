@@ -7,10 +7,6 @@ Cell[CellGroupData[{
 
 Cell["Introduction", "Section"],
 
-Cell[BoxData[
- RowBox[{"\"\<To initialize the Dashboard, evaluate this cell and select Yes \
-to evaluate the initialization cells.\>\"", ";"}]], "Input"],
-
 Cell[CellGroupData[{
 
 Cell[BoxData[
@@ -37,10 +33,11 @@ Cell[BoxData[
   InterpolatingFunction[{{0., 1.}}, {
    5, 15, 0, {4}, {2}, 0, 0, 0, 0, Automatic, {}, {}, False}, {{0., 
    0.3333333333333333, 0.6666666666666666, 1.}}, {
-   Developer`PackedArrayForm, {0, 1, 2, 3, 4}, {Complex[5.303627496195924, 
-    16.991914396531634`], Complex[5.303627496195924, 0.], Complex[
-    119.5433603540066, 5.], Complex[153.8152802113498, 0.]}}, {Automatic}], 
-  QuODD`Private`rules$$ = {
+   Developer`PackedArrayForm, {0, 1, 2, 3, 4}, {
+     Complex[5.303627496195924, 16.991914396531634`], 
+     Complex[5.303627496195924, 0.], 
+     Complex[119.5433603540066, 5.], 
+     Complex[153.8152802113498, 0.]}}, {Automatic}], QuODD`Private`rules$$ = {
   "t\[Kappa]" -> Complex[5.303627496195924, 16.991914396531634`], "ts" -> 
    Complex[5.303627496195924, 17.97806003643661], "t0" -> 5.303627496195924, 
    "\[Tau]" -> 17.97806003643661, "T" -> 114.23973285781067`, "tCAset" -> {}},
@@ -48,10 +45,10 @@ Cell[BoxData[
    ARMSupport`complexTrajectory[
    QuODD`Private`t$, {
     QuODD`Private`po$$, QuODD`Private`py$$, QuODD`Private`pp$$}, {0.05, 0.055,
-     1.007}, 
-    ARMSupport`rInit -> {QuODD`Private`xinit$$, 0, QuODD`Private`zinit$$}, 
-    ARMSupport`forcets -> QuODD`Private`tss$$]], QuODD`Private`expr$$, 
-  QuODD`Private`labels$$, QuODD`Private`path$$ = {
+     1.007}, ARMSupport`rInit -> {
+     QuODD`Private`xinit$$, 0, QuODD`Private`zinit$$}, ARMSupport`forcets -> 
+    QuODD`Private`tss$$]], QuODD`Private`expr$$, QuODD`Private`labels$$, 
+  QuODD`Private`path$$ = {
    Complex[5.303627496195924, 16.991914396531634`], 5.303627496195924, 
    Complex[119.5433603540066, 5.], 153.8152802113498}, 
   QuODD`Private`barepath$$ = {
@@ -87,19 +84,20 @@ Cell[BoxData[
               Automatic, Typeset`dir$$ = Forward}, 
              StyleBox[
               DynamicBox[
-               FEPrivate`FrontEndResource["FEExpressions", "Manipulator04"][
+               FEPrivate`FrontEndResource["FEExpressions", "Manipulator05"][
                 Dynamic[QuODD`Private`sMan$$], 
                 Dynamic[QuODD`Private`sMan$$], {0, 1}, Medium, Small, 
                 Automatic, True, Automatic, True, True, True, All, False, {}, 
                 Dynamic[Typeset`open$$], 
                 Dynamic[Typeset`paused$$], 
                 Dynamic[Typeset`rate$$], 
-                Dynamic[Typeset`dir$$]], ImageSizeCache -> {259., {8., 15.}}],
-               DynamicUpdating -> True], DynamicModuleValues :> {}], 
+                Dynamic[Typeset`dir$$], {ImageSize -> 131.2}, {}, {}, {}, 
+                Expression, {}, {}], ImageSizeCache -> {191., {6., 13.}}], 
+              DynamicUpdating -> True], DynamicModuleValues :> {}], 
             BaselinePosition -> Baseline, ImageMargins -> 0], 
            Manipulate`InterpretManipulator[
             Dynamic[QuODD`Private`sMan$$], {0, 1}, {
-            Appearance -> {"Labeled"}}]]},
+            ImageSize -> 131.2, Appearance -> {"Labeled"}}]]},
          "RowDefault"], 
         TemplateBox[{InterpretationBox[
            Cell[
@@ -117,7 +115,7 @@ Cell[BoxData[
                  "t\[Kappa]" -> QuODD`Private`baretss$$ - I/1.007^2, "ts" -> 
                   QuODD`Private`baretss$$, "t0" -> 
                   Re[QuODD`Private`baretss$$], "\[Tau]" -> 
-                  Im[QuODD`Private`baretss$$], "T" -> 2 Pi/0.055}]] - 
+                  Im[QuODD`Private`baretss$$], "T" -> 2 (Pi/0.055)}]] - 
               QuODD`Private`baretss$$, HoldRest]], FieldSize -> 12],ButtonBox[
           "\"\\!\\(\\*SubscriptBox[\\(t\\), \\(s\\)]\\)\"", 
            ButtonFunction :> (QuODD`Private`\[CapitalDelta]tss$$ = 0), 
@@ -125,7 +123,7 @@ Cell[BoxData[
            "Preemptive"],ButtonBox[
           "\"\\!\\(\\*SubscriptBox[\\(t\\), \\(0\\)]\\)\"", 
            ButtonFunction :> (
-            QuODD`Private`\[CapitalDelta]tss$$ = -I 
+            QuODD`Private`\[CapitalDelta]tss$$ = (-I) 
              Im[QuODD`Private`baretss$$]), Appearance -> Automatic, Evaluator -> 
            Automatic, Method -> "Preemptive"]},
          "RowDefault"], 
@@ -242,24 +240,26 @@ Cell[BoxData[
          "Grid"]},
        {
         DynamicBox[ToBoxes[
-          QuODD`Private`trajectoryPlotter[Part[
+          QuODD`trajectoryPlotter[Part[
             QuODD`Private`trajectory$$[
              QuODD`Private`t$$[#]], 1]& , 
            "\!\(\*SubscriptBox[\(x\), \(cl\)]\)(t)", QuODD`Private`sMan$$, 
-           "PlotRange" -> All], StandardForm],
-         ImageSizeCache->{360., {178., 182.}}], 
+           "PlotRange" -> All, ImageSize -> QuODD`$smallBlockSize], 
+          StandardForm],
+         ImageSizeCache->{262., {131., 135.}}], 
         DynamicBox[ToBoxes[
-          QuODD`Private`trajectoryPlotter[Part[
+          QuODD`trajectoryPlotter[Part[
             QuODD`Private`trajectory$$[
              QuODD`Private`t$$[#]], 3]& , 
            "\!\(\*SubscriptBox[\(z\), \(cl\)]\)(t)", QuODD`Private`sMan$$, 
-           "PlotRange" -> All], StandardForm],
-         ImageSizeCache->{360., {178., 182.}}], 
+           "PlotRange" -> All, ImageSize -> QuODD`$smallBlockSize], 
+          StandardForm],
+         ImageSizeCache->{262., {131., 135.}}], 
         DynamicBox[ToBoxes[
           QuODD`timeIntegrandPlotter[Total[QuODD`Private`trajectory$$[
-              QuODD`Private`t$$[#]]^2]& , QuODD`Private`t$$, 
-           ImageSize -> {720, 360}], StandardForm],
-         ImageSizeCache->{720., {178., 182.}}]},
+              QuODD`Private`t$$[#]]^2]& , QuODD`Private`t$$, ImageSize -> 
+           QuODD`$largeBlockSize], StandardForm],
+         ImageSizeCache->{525., {131., 135.}}]},
        {
         TagBox[GridBox[{
            {
@@ -3776,7 +3776,7 @@ puW/XPTGpjcecOmfL/mUfEj+BwYGLzw=
               FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
               GridLinesStyle->Directive[
                 GrayLevel[0.5, 0.4]],
-              ImageSize->{{360}, {340}},
+              ImageSize->{192.39999999999998`, 266.},
               Method->{"DefaultBoundaryStyle" -> Automatic},
               PlotRange->{{0, 1.}, {0, 1.5}},
               PlotRangeClipping->True,
@@ -14153,7 +14153,7 @@ G91Nk33SnmhuCF7Ww9Ft/516Jgixd+AfGqRYwg==
                None, None}},
              GridLinesStyle->Directive[
                GrayLevel[0.5, 0.4]],
-             ImageSize->{70, 200},
+             ImageSize->{70, 146.3},
              Method->{"DefaultBoundaryStyle" -> Automatic},
              PlotRange->{{0, 0.075}, {0, 1}},
              PlotRangeClipping->True,
@@ -14215,12 +14215,12 @@ G91Nk33SnmhuCF7Ww9Ft/516Jgixd+AfGqRYwg==
         TagBox[GridBox[{
            {
             DynamicBox[ToBoxes[
-              QuODD`Private`trajectoryPlotter[Total[QuODD`Private`trajectory$$[
+              QuODD`trajectoryPlotter[Total[QuODD`Private`trajectory$$[
                   QuODD`Private`t$$[#]]^2]& , 
                "\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t\!\(\*SuperscriptBox[\()\
-\), \(2\)]\)", QuODD`Private`sMan$$, "PlotRange" -> QuODD`Private`r2range$$], 
-              StandardForm],
-             ImageSizeCache->{360., {178., 182.}}]},
+\), \(2\)]\)", QuODD`Private`sMan$$, "PlotRange" -> QuODD`Private`r2range$$, 
+               ImageSize -> QuODD`$smallBlockSize], StandardForm],
+             ImageSizeCache->{262., {131., 135.}}]},
            {
             TemplateBox[{TagBox[
                GridBox[{{
@@ -14285,7 +14285,7 @@ G91Nk33SnmhuCF7Ww9Ft/516Jgixd+AfGqRYwg==
                 QuODD`timePathPlotter[
                 QuODD`Private`rules$$, QuODD`Private`t$$, 
                  QuODD`Private`sMan$$]], StandardForm],
-              ImageSizeCache->{720., {178., 182.}}]]},
+              ImageSizeCache->{525., {131., 135.}}]]},
            {
             TemplateBox[{TagBox[
                GridBox[{{
@@ -14323,7 +14323,8 @@ G91Nk33SnmhuCF7Ww9Ft/516Jgixd+AfGqRYwg==
          "Column"]}
       },
       AutoDelete->False,
-      GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+      GridBoxSpacings->{"Columns" -> {{0}}}],
      "Grid"],
     StripOnInput->False]}],
   DynamicModuleValues:>{{
@@ -14338,7 +14339,7 @@ G91Nk33SnmhuCF7Ww9Ft/516Jgixd+AfGqRYwg==
         QuODD`Private`rules$$ := {
           "t\[Kappa]" -> QuODD`Private`tss$$ - I/1.007^2, "ts" -> 
            QuODD`Private`tss$$, "t0" -> Re[QuODD`Private`tss$$], "\[Tau]" -> 
-           Im[QuODD`Private`tss$$], "T" -> 2 Pi/0.055, "tCAset" -> 
+           Im[QuODD`Private`tss$$], "T" -> 2 (Pi/0.055), "tCAset" -> 
            QuODD`Private`tCAset$$}; QuODD`Private`tRangeNumeric$$ = ReplaceAll[
            ({{
              If[Part[#, 1, 1] === All, "t0" - 10, 
@@ -14369,318 +14370,352 @@ G91Nk33SnmhuCF7Ww9Ft/516Jgixd+AfGqRYwg==
             ARMSupport`rInit -> {
              QuODD`Private`xinit$$, 0, QuODD`Private`zinit$$}, 
             ARMSupport`forcets -> QuODD`Private`tss$$]]; Null)}}},
-  Initialization:>{
-   Attributes[QuODD`Private`input$] = {Temporary}, 
-    QuODD`Private`trajectoryPlotter[
-      Pattern[QuODD`Private`trajectoryFunction, 
-       Blank[]], 
-      Pattern[QuODD`Private`label, 
-       Blank[]], 
-      Pattern[QuODD`Private`sman, 
-       Blank[]], 
-      OptionsPattern[]] := (
-     Show[#, PlotRange -> OptionValue["PlotRange"], PlotRangePadding -> 
-      0.05 Max[
-         Map[Part[#, 2] - Part[#, 1]& , 
-          ReplaceAll[PlotRange, 
-           AbsoluteOptions[#, PlotRange]]]]]& )[
-      Show[{
-        ParametricPlot[{
-          Re[
-           QuODD`Private`trajectoryFunction[QuODD`Private`s]], 
-          Im[
-           QuODD`Private`trajectoryFunction[QuODD`Private`s]]}, {
-         QuODD`Private`s, 0, 1}, AspectRatio -> Automatic, PlotRange -> Full, 
-         Frame -> True, Axes -> False, AxesOrigin -> {0, 0}, FrameLabel -> {
-           StringJoin["Re(", QuODD`Private`label, ")"], 
-           StringJoin["Im(", QuODD`Private`label, ")"]}, PlotLabel -> 
-         QuODD`Private`label, 
-         Evaluate[
-          If[
-          QuODD`Private`label == 
-           "\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t\!\(\*SuperscriptBox[\()\), \
+  Initialization:>({
+    Attributes[QuODD`Private`input$] = {Temporary}, QuODD`trajectoryPlotter[
+       Pattern[QuODD`Private`trajectoryFunction, 
+        Blank[]], 
+       Pattern[QuODD`Private`label, 
+        Blank[]], 
+       Pattern[QuODD`Private`sman, 
+        Blank[]], 
+       OptionsPattern[]] := (
+      Show[#, ImageSize -> OptionValue[ImageSize], PlotRange -> 
+       OptionValue["PlotRange"], PlotRangePadding -> 0.05 Max[
+          Map[Part[#, 2] - Part[#, 1]& , 
+           ReplaceAll[PlotRange, 
+            AbsoluteOptions[#, PlotRange]]]]]& )[
+       Show[{
+         ParametricPlot[{
+           Re[
+            QuODD`Private`trajectoryFunction[QuODD`Private`s]], 
+           Im[
+            QuODD`Private`trajectoryFunction[QuODD`Private`s]]}, {
+          QuODD`Private`s, 0, 1}, AspectRatio -> Automatic, PlotRange -> Full,
+           ImageSize -> OptionValue[ImageSize], Frame -> True, Axes -> False, 
+          AxesOrigin -> {0, 0}, FrameLabel -> {
+            StringJoin["Re(", QuODD`Private`label, ")"], 
+            StringJoin["Im(", QuODD`Private`label, ")"]}, PlotLabel -> 
+          QuODD`Private`label, 
+          Evaluate[
+           If[
+           QuODD`Private`label == 
+            "\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t\!\(\*SuperscriptBox[\()\), \
 \(2\)]\)", Prolog -> {
-             GrayLevel[0.8], 
-             Tooltip[
-              Rectangle[{-1000, -1000}, {0, 1000}], 
-              DisplayForm[
-               Row[{"Re(", 
-                 Superscript["\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)", "2"], 
-                 ")<0"}]]], Red, Thick, 
-             Tooltip[
-              Line[{{-1000, 0}, {0, 0}}], 
-              DisplayForm[
-               Row[{"Branch cut\n", 
-                 Superscript["\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)", "2"], 
-                 ")<0"}]]]}, 
-           (SlotSequence[1]& )[]]], ImageSize -> OptionValue[ImageSize]], 
-        Graphics[{
-          PointSize[Large], Green, 
-          Tooltip[
-           Point[{
-             Re[
-              QuODD`Private`trajectoryFunction[0]], 
-             Im[
-              QuODD`Private`trajectoryFunction[0]]}], "Contour start"]}], 
-        Graphics[{
-          PointSize[Large], Red, 
-          Tooltip[
-           Point[{
-             Re[
-              QuODD`Private`trajectoryFunction[1]], 
-             Im[
-              QuODD`Private`trajectoryFunction[1]]}], "Contour end"]}], 
-        Graphics[{
-          PointSize[Large], Blue, 
-          Tooltip[
-           Point[{0, 0}], "Origin"]}], 
-        Graphics[{
-          PointSize[Large], Black, 
-          Tooltip[
-           Point[{
-             Re[
-              QuODD`Private`trajectoryFunction[QuODD`Private`sman]], 
-             Im[
-              QuODD`Private`trajectoryFunction[QuODD`Private`sman]]}], 
-           QuODD`Private`label]}]}]], 
-    Options[QuODD`Private`trajectoryPlotter] = {
-     "PlotRange" -> All, ImageSize -> {360, 360}}, 
-    Attributes[Superscript] = {NHoldRest, ReadProtected}, 
-    QuODD`timeIntegrandPlotter[
-      Pattern[QuODD`Private`rer2function, 
-       Blank[]], 
-      Pattern[QuODD`Private`t, 
-       Blank[]], 
-      OptionsPattern[]] := ParametricPlot[{
-       Tooltip[{QuODD`Private`s, 
-         Re[
-          ReplaceAll[-(D[
-              QuODD`Private`t[QuODD`Private`ss], QuODD`Private`ss]/
-            QuODD`Private`rer2function[QuODD`Private`s]^(2^(-1))), {
-           QuODD`Private`ss -> QuODD`Private`s}]]}, "Re"], 
-       Tooltip[{QuODD`Private`s, 
-         Im[
-          ReplaceAll[-(D[
-              QuODD`Private`t[QuODD`Private`ss], QuODD`Private`ss]/
-            QuODD`Private`rer2function[QuODD`Private`s]^(2^(-1))), {
-           QuODD`Private`ss -> QuODD`Private`s}]]}, "Im"], 
-       Tooltip[{QuODD`Private`s, 
-         Abs[
-          ReplaceAll[-(D[
-              QuODD`Private`t[QuODD`Private`ss], QuODD`Private`ss]/
-            QuODD`Private`rer2function[QuODD`Private`s]^(2^(-1))), {
-           QuODD`Private`ss -> QuODD`Private`s}]]}, "Abs"]}, {
-      QuODD`Private`s, 0, 1}, PlotRange -> {{0, 1}, Full}, AspectRatio -> 1/3,
-       Frame -> True, AxesStyle -> Gray, FrameLabel -> {
-        Style[
-         ToString[QuODD`Private`s, TraditionalForm], Larger], ""}, PlotLabel -> 
-      "Re, Im and Abs of \!\(\*FractionBox[\(-1\), \
-SqrtBox[\(\*SubscriptBox[\(r\), \(cl\)] \*SuperscriptBox[\((t)\), \
+              GrayLevel[0.8], 
+              Tooltip[
+               Rectangle[{-1000, -1000}, {0, 1000}], 
+               DisplayForm[
+                Row[{"Re(", 
+                  Superscript["\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)", "2"], 
+                  ")<0"}]]], Red, Thick, 
+              Tooltip[
+               Line[{{-1000, 0}, {0, 0}}], 
+               DisplayForm[
+                Row[{"Branch cut\n", 
+                  Superscript["\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)", "2"], 
+                  ")<0"}]]]}, 
+            (SlotSequence[1]& )[]]]], 
+         Graphics[{
+           PointSize[Large], Green, 
+           Tooltip[
+            Point[{
+              Re[
+               QuODD`Private`trajectoryFunction[0]], 
+              Im[
+               QuODD`Private`trajectoryFunction[0]]}], "Contour start"]}], 
+         Graphics[{
+           PointSize[Large], Red, 
+           Tooltip[
+            Point[{
+              Re[
+               QuODD`Private`trajectoryFunction[1]], 
+              Im[
+               QuODD`Private`trajectoryFunction[1]]}], "Contour end"]}], 
+         Graphics[{
+           PointSize[Large], Blue, 
+           Tooltip[
+            Point[{0, 0}], "Origin"]}], 
+         Graphics[{
+           PointSize[Large], Black, 
+           Tooltip[
+            Point[{
+              Re[
+               QuODD`Private`trajectoryFunction[QuODD`Private`sman]], 
+              Im[
+               QuODD`Private`trajectoryFunction[QuODD`Private`sman]]}], 
+            QuODD`Private`label]}]}]], 
+     Options[QuODD`trajectoryPlotter] = {
+      "PlotRange" -> All, ImageSize -> {262.4, 266.}}, 
+     TagSet[QuODD`trajectoryPlotter, 
+      MessageName[QuODD`trajectoryPlotter, "usage"], ""], 
+     Attributes[Superscript] = {NHoldRest, ReadProtected}, 
+     QuODD`$smallBlockSize = {262.4, 266.}, 
+     TagSet[QuODD`$smallBlockSize, 
+      MessageName[QuODD`$smallBlockSize, "usage"], 
+      "$smallBlockSize is a global option which specifies the {width, height} \
+pair for small blocks on the Dashboard."], QuODD`timeIntegrandPlotter[
+       Pattern[QuODD`Private`rer2function, 
+        Blank[]], 
+       Pattern[QuODD`Private`t, 
+        Blank[]], 
+       OptionsPattern[]] := ParametricPlot[{
+        Tooltip[{QuODD`Private`s, 
+          Re[
+           ReplaceAll[-(D[
+               QuODD`Private`t[QuODD`Private`ss], QuODD`Private`ss]/
+             QuODD`Private`rer2function[QuODD`Private`s]^(2^(-1))), {
+            QuODD`Private`ss -> QuODD`Private`s}]]}, "Re"], 
+        Tooltip[{QuODD`Private`s, 
+          Im[
+           ReplaceAll[-(D[
+               QuODD`Private`t[QuODD`Private`ss], QuODD`Private`ss]/
+             QuODD`Private`rer2function[QuODD`Private`s]^(2^(-1))), {
+            QuODD`Private`ss -> QuODD`Private`s}]]}, "Im"], 
+        Tooltip[{QuODD`Private`s, 
+          Abs[
+           ReplaceAll[-(D[
+               QuODD`Private`t[QuODD`Private`ss], QuODD`Private`ss]/
+             QuODD`Private`rer2function[QuODD`Private`s]^(2^(-1))), {
+            QuODD`Private`ss -> QuODD`Private`s}]]}, "Abs"]}, {
+       QuODD`Private`s, 0, 1}, PlotRange -> {{0, 1}, Full}, AspectRatio -> 
+       1/3, Frame -> True, AxesStyle -> Gray, FrameLabel -> {
+         Style["\!\(TraditionalForm\`s\)", Larger], ""}, PlotLabel -> 
+       "Re, Im and Abs of \!\(\*FractionBox[\(-1\), SqrtBox[\(\*SubscriptBox[\
+\(r\), \(cl\)] \*SuperscriptBox[\((t)\), \
 \(2\)]\)]]\)\!\(\*FractionBox[\(dt\), \(ds\)]\) over the contour", ImageSize -> 
-      OptionValue[ImageSize]], 
-    Options[QuODD`timeIntegrandPlotter] = {ImageSize -> {360, 360}}, 
-    TagSet[QuODD`timeIntegrandPlotter, 
-     MessageName[QuODD`timeIntegrandPlotter, "usage"], ""], 
-    ARMSupport`volkovExponent[{
-       Pattern[ARMSupport`Private`po, 
-        Blank[]], 
-       Pattern[ARMSupport`Private`py, 
-        Blank[]], 
-       Pattern[ARMSupport`Private`pp, 
-        Blank[]]}, {
-       Pattern[ARMSupport`Private`F, 
-        Blank[]], 
-       Pattern[ARMSupport`Private`\[Omega], 
-        Blank[]]}, 
-      Pattern[ARMSupport`Private`\[Kappa], 
-       Blank[]]] := -((1/8) 
-      Im[(1 (2 ARMSupport`Private`F 
-           ARMSupport`Private`\[Omega] ((-4) ARMSupport`Private`pp + 
-            3 ARMSupport`Private`pp 
+       OptionValue[ImageSize]], 
+     Options[QuODD`timeIntegrandPlotter] = {ImageSize -> {262.4, 266.}}, 
+     TagSet[QuODD`timeIntegrandPlotter, 
+      MessageName[QuODD`timeIntegrandPlotter, "usage"], ""], 
+     QuODD`$largeBlockSize = {524.8, 266.}, 
+     TagSet[QuODD`$largeBlockSize, 
+      MessageName[QuODD`$largeBlockSize, "usage"], 
+      "$smallBlockSize is a global option which specifies the {width, height} \
+pair for large blocks on the Dashboard."], ARMSupport`volkovExponent[{
+        Pattern[ARMSupport`Private`po, 
+         Blank[]], 
+        Pattern[ARMSupport`Private`py, 
+         Blank[]], 
+        Pattern[ARMSupport`Private`pp, 
+         Blank[]]}, {
+        Pattern[ARMSupport`Private`F, 
+         Blank[]], 
+        Pattern[ARMSupport`Private`\[Omega], 
+         Blank[]]}, 
+       Pattern[ARMSupport`Private`\[Kappa], 
+        Blank[]]] := -((1/8) 
+       Im[(1 (((2 ARMSupport`Private`F) 
+             ARMSupport`Private`\[Omega]) ((-4) 
+              ARMSupport`Private`pp + (3 ARMSupport`Private`pp) 
+              Sqrt[1 + ((-(I ARMSupport`Private`pp) + 
+                    Sqrt[ARMSupport`Private`po^2 + ARMSupport`Private`py^2 + 
+                    ARMSupport`Private`\[Kappa]^2])^2 
+                  ARMSupport`Private`\[Omega]^2)/ARMSupport`Private`F^2] - (I 
+              Sqrt[ARMSupport`Private`po^2 + ARMSupport`Private`py^2 + 
+                ARMSupport`Private`\[Kappa]^2]) 
              Sqrt[1 + ((-(I ARMSupport`Private`pp) + 
                    Sqrt[ARMSupport`Private`po^2 + ARMSupport`Private`py^2 + 
                     ARMSupport`Private`\[Kappa]^2])^2 
-                 ARMSupport`Private`\[Omega]^2)/ARMSupport`Private`F^2] - I 
-            Sqrt[ARMSupport`Private`po^2 + ARMSupport`Private`py^2 + 
-              ARMSupport`Private`\[Kappa]^2] 
-            Sqrt[1 + ((-(I ARMSupport`Private`pp) + 
-                  Sqrt[ARMSupport`Private`po^2 + ARMSupport`Private`py^2 + 
-                    ARMSupport`Private`\[Kappa]^2])^2 
-                ARMSupport`Private`\[Omega]^2)/ARMSupport`Private`F^2]) + 
-          2 (ARMSupport`Private`F^2 + 
-            2 (ARMSupport`Private`po^2 + ARMSupport`Private`pp^2 + 
-              ARMSupport`Private`py^2 + ARMSupport`Private`\[Kappa]^2) 
-             ARMSupport`Private`\[Omega]^2) 
-           ArcSin[((ARMSupport`Private`pp + 
-               I Sqrt[ARMSupport`Private`po^2 + ARMSupport`Private`py^2 + 
-                  ARMSupport`Private`\[Kappa]^2]) 
-              ARMSupport`Private`\[Omega])/ARMSupport`Private`F]))/
-        ARMSupport`Private`\[Omega]^3]), ARMSupport`volkovExponent[{
-       Pattern[ARMSupport`Private`po, 
-        Blank[]], 
-       Pattern[ARMSupport`Private`py, 
-        Blank[]], 
-       Pattern[ARMSupport`Private`pp, 
-        Blank[]]}, {
-       Pattern[ARMSupport`Private`F, 
-        Blank[]], 
-       Pattern[ARMSupport`Private`\[Omega], 
-        Blank[]], 
-       Pattern[ARMSupport`Private`\[Kappa], 
-        Blank[]]}] := 
-    ARMSupport`volkovExponent[{
-      ARMSupport`Private`po, ARMSupport`Private`py, ARMSupport`Private`pp}, {
-      ARMSupport`Private`F, ARMSupport`Private`\[Omega]}, 
-      ARMSupport`Private`\[Kappa]], 
-    TagSet[ARMSupport`volkovExponent, 
-     MessageName[ARMSupport`volkovExponent, "usage"], 
-     "volkovExponent[{po, py, pp}, {F, \[Omega], \[Kappa]}] calculates Re(\
+                 ARMSupport`Private`\[Omega]^2)/ARMSupport`Private`F^2]) + (
+             2 (ARMSupport`Private`F^2 + (
+                2 (ARMSupport`Private`po^2 + ARMSupport`Private`pp^2 + 
+                 ARMSupport`Private`py^2 + ARMSupport`Private`\[Kappa]^2)) 
+               ARMSupport`Private`\[Omega]^2)) 
+            ArcSin[((ARMSupport`Private`pp + 
+                I Sqrt[ARMSupport`Private`po^2 + ARMSupport`Private`py^2 + 
+                   ARMSupport`Private`\[Kappa]^2]) 
+               ARMSupport`Private`\[Omega])/ARMSupport`Private`F]))/
+         ARMSupport`Private`\[Omega]^3]), ARMSupport`volkovExponent[{
+        Pattern[ARMSupport`Private`po, 
+         Blank[]], 
+        Pattern[ARMSupport`Private`py, 
+         Blank[]], 
+        Pattern[ARMSupport`Private`pp, 
+         Blank[]]}, {
+        Pattern[ARMSupport`Private`F, 
+         Blank[]], 
+        Pattern[ARMSupport`Private`\[Omega], 
+         Blank[]], 
+        Pattern[ARMSupport`Private`\[Kappa], 
+         Blank[]]}] := 
+     ARMSupport`volkovExponent[{
+       ARMSupport`Private`po, ARMSupport`Private`py, ARMSupport`Private`pp}, {
+       ARMSupport`Private`F, ARMSupport`Private`\[Omega]}, 
+       ARMSupport`Private`\[Kappa]], 
+     TagSet[ARMSupport`volkovExponent, 
+      MessageName[ARMSupport`volkovExponent, "usage"], 
+      "volkovExponent[{po, py, pp}, {F, \[Omega], \[Kappa]}] calculates Re(\
 \[ImaginaryI]\!\(\*SubsuperscriptBox[\(\[Integral]\), \(0\), SubscriptBox[\(t\
 \), \(s\)]]\)(\!\(\*SubscriptBox[\(I\), \(p\)]\)+\!\(\*FractionBox[\(1\), \(2\
 \)]\)(p+A(\[Tau])\!\(\*SuperscriptBox[\()\), \
 \(2\)]\))\[DifferentialD]\[Tau])."], 
-    Attributes[QuODD`Private`points$] = {Temporary}, QuODD`timeContours[
-      Pattern[QuODD`Private`r2function, 
-       Blank[]], 
-      Pattern[QuODD`Private`rules, 
-       Blank[]], 
-      Pattern[QuODD`Private`tss, 
-       Blank[]], 
-      Pattern[QuODD`Private`path, 
-       Blank[]], 
-      Pattern[QuODD`Private`tRangeNumeric, 
-       Blank[]], 
-      OptionsPattern[]] := Show[{
-       RegionPlot[
-        Tooltip[Re[
-           QuODD`Private`r2function[QuODD`Private`ret + I QuODD`Private`imt]] < 
-         0, 
-         DisplayForm[
-          Row[{"Re(", 
-            Superscript["\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)", "2"], 
-            ")<0"}]]], {QuODD`Private`ret, 
-         Part[QuODD`Private`tRangeNumeric, 1, 1], 
-         Part[QuODD`Private`tRangeNumeric, 1, 2]}, {QuODD`Private`imt, 
-         Part[QuODD`Private`tRangeNumeric, 2, 1], 
-         Part[QuODD`Private`tRangeNumeric, 2, 2]}, AspectRatio -> Automatic, 
-        AxesOrigin -> {0, 0}, PlotRangePadding -> 0, 
-        FrameLabel -> {"Re(t)", "Im(t)"}, PlotLabel -> "time contour", 
-        PlotStyle -> GrayLevel[0.8], ImageSize -> OptionValue[ImageSize]], 
-       Apply[Sequence, 
-        Table[
-         ContourPlot[Im[
+     Attributes[QuODD`Private`points$] = {Temporary}, QuODD`timeContours[
+       Pattern[QuODD`Private`r2function, 
+        Blank[]], 
+       Pattern[QuODD`Private`rules, 
+        Blank[]], 
+       Pattern[QuODD`Private`tss, 
+        Blank[]], 
+       Pattern[QuODD`Private`path, 
+        Blank[]], 
+       Pattern[QuODD`Private`tRangeNumeric, 
+        Blank[]], 
+       OptionsPattern[]] := Show[{
+        RegionPlot[
+         Tooltip[Re[
             QuODD`Private`r2function[
-            QuODD`Private`ret + I QuODD`Private`imt]] == 0, {
-          QuODD`Private`ret, 
-           Part[QuODD`Private`tRangeNumeric, 1, 1], 
-           Part[QuODD`Private`tRangeNumeric, 1, 2]}, {QuODD`Private`imt, 
-           Part[QuODD`Private`tRangeNumeric, 2, 1], 
-           Part[QuODD`Private`tRangeNumeric, 2, 2]}, AspectRatio -> Automatic,
-           AxesOrigin -> {0, 0}, PlotRangePadding -> 0, 
-          ContourStyle -> {Thick, 
-            ReplaceAll[
-            QuODD`Private`selector, {
-             Less -> Red, Greater -> RGBColor[0, 0.6, 0]}]}, 
-          ContourLabels -> {None, Tooltip[Null, 
-             ReplaceAll[QuODD`Private`selector, {Less -> DisplayForm[
-                 Row[{"Branch cut.\nIm(", 
-                   Superscript["\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)", "2"],
+            QuODD`Private`ret + I QuODD`Private`imt]] < 0, 
+          DisplayForm[
+           Row[{"Re(", 
+             Superscript["\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)", "2"], 
+             ")<0"}]]], {QuODD`Private`ret, 
+          Part[QuODD`Private`tRangeNumeric, 1, 1], 
+          Part[QuODD`Private`tRangeNumeric, 1, 2]}, {QuODD`Private`imt, 
+          Part[QuODD`Private`tRangeNumeric, 2, 1], 
+          Part[QuODD`Private`tRangeNumeric, 2, 2]}, AspectRatio -> Automatic, 
+         AxesOrigin -> {0, 0}, PlotRangePadding -> 0, 
+         FrameLabel -> {"Re(t)", "Im(t)"}, PlotLabel -> "time contour", 
+         PlotStyle -> GrayLevel[0.8], ImageSize -> OptionValue[ImageSize]], 
+        Apply[Sequence, 
+         Table[
+          ContourPlot[Im[
+             QuODD`Private`r2function[
+             QuODD`Private`ret + I QuODD`Private`imt]] == 0, {
+           QuODD`Private`ret, 
+            Part[QuODD`Private`tRangeNumeric, 1, 1], 
+            Part[QuODD`Private`tRangeNumeric, 1, 2]}, {QuODD`Private`imt, 
+            Part[QuODD`Private`tRangeNumeric, 2, 1], 
+            Part[QuODD`Private`tRangeNumeric, 2, 2]}, AspectRatio -> 
+           Automatic, AxesOrigin -> {0, 0}, PlotRangePadding -> 0, 
+           ContourStyle -> {Thick, 
+             ReplaceAll[
+             QuODD`Private`selector, {
+              Less -> Red, Greater -> RGBColor[0, 0.6, 0]}]}, 
+           ContourLabels -> {None, Tooltip[Null, 
+              ReplaceAll[QuODD`Private`selector, {Less -> DisplayForm[
+                  Row[{"Branch cut.\nIm(", 
+                    Superscript[
+                    "\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)", "2"], 
                     ")=0,\nRe(", 
-                   Superscript["\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)", "2"],
-                    ")<0"}]], Greater -> DisplayForm[
-                 Row[{"Im(", 
-                   Superscript["\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)", "2"],
+                    Superscript[
+                    "\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)", "2"], ")<0"}]], 
+                Greater -> DisplayForm[
+                  Row[{"Im(", 
+                    Superscript[
+                    "\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)", "2"], 
                     ")=0,\nRe(", 
-                   Superscript["\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)", "2"],
+                    Superscript[
+                    "\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)", "2"], 
                     ")>0"}]]}]]& }, RegionFunction -> 
-          Function[{QuODD`Private`ret, QuODD`Private`imt}, 
-            QuODD`Private`selector[
-             Re[
-              QuODD`Private`r2function[
-              QuODD`Private`ret + I QuODD`Private`imt]], 0]]], {
-         QuODD`Private`selector, {Greater, Less}}]]}], 
-    Options[QuODD`timeContours] = {ImageSize -> {360, 360}}, 
-    TagSet[QuODD`timeContours, 
-     MessageName[QuODD`timeContours, "usage"], ""], 
-    QuODD`$largeBlockSize = {720, 360}, 
-    TagSet[QuODD`$largeBlockSize, 
-     MessageName[QuODD`$largeBlockSize, "usage"], 
-     "$smallBlockSize is an option which specifies the {width, height} pair \
-for large blocks on the Dashboard."], QuODD`timePathPlotter[
-      Pattern[QuODD`Private`rules, 
-       Blank[]], 
-      Pattern[QuODD`Private`t, 
-       Blank[]], 
-      Pattern[QuODD`Private`sman, 
-       Blank[]], 
-      OptionsPattern[]] := Show[
-      Join[{
-        ParametricPlot[{
-          Re[
-           QuODD`Private`t[QuODD`Private`s]], 
-          Im[
-           QuODD`Private`t[QuODD`Private`s]]}, {QuODD`Private`s, 0, 1}, Frame -> 
-         True, Axes -> False, AxesOrigin -> {0, 0}, PlotRangePadding -> 2], 
-        Graphics[{
-          PointSize[Large], Purple, 
-          Tooltip[
-           Point[
-            ({
-             Re[#], 
-             Im[#]}& )[
-             Evaluate[
-              ReplaceAll["ts", QuODD`Private`rules]]]], 
-           "\!\(\*SubscriptBox[\(t\), \(s\)]\)"]}], 
-        Graphics[{
-          PointSize[Large], Gray, 
-          Tooltip[
-           Point[
-            ({
-             Re[#], 
-             Im[#]}& )[
-             Evaluate[
-              ReplaceAll["t\[Kappa]", QuODD`Private`rules]]]], 
-           "\!\(\*SubscriptBox[\(t\), \(\[Kappa]\)]\)"]}], 
-        Graphics[{
-          PointSize[Large], Green, 
-          Tooltip[
-           Point[{
-             Re[
-              QuODD`Private`t[0]], 
-             Im[
-              QuODD`Private`t[0]]}], "Contour start"]}], 
-        Graphics[{
-          PointSize[Large], Red, 
-          Tooltip[
-           Point[{
-             Re[
-              QuODD`Private`t[1]], 
-             Im[
-              QuODD`Private`t[1]]}], "Contour end"]}], 
-        Graphics[{
-          PointSize[Large], Blue, 
-          Tooltip[
-           Point[{0, 0}], "Time origin"]}], 
-        Graphics[{
-          PointSize[Large], Black, 
-          Tooltip[
-           Point[{
-             Re[
-              QuODD`Private`t[QuODD`Private`sman]], 
-             Im[
-              QuODD`Private`t[QuODD`Private`sman]]}], "t(s)"]}]}, 
-       Map[Graphics[{
-          PointSize[Large], 
-          GrayLevel[0.7], 
-          Tooltip[
-           Point[{
-             Re[#], 
-             Im[#]}], "\!\(\*SubscriptBox[\(t\), \(CA\)]\)"]}]& , 
-        ReplaceAll["tCAset", QuODD`Private`rules]]]], 
-    Options[QuODD`timePathPlotter] = {ImageSize -> {360, 360}}, 
-    TagSet[QuODD`timePathPlotter, 
-     MessageName[QuODD`timePathPlotter, "usage"], ""]}]], "Output"]
+           Function[{QuODD`Private`ret, QuODD`Private`imt}, 
+             QuODD`Private`selector[
+              Re[
+               QuODD`Private`r2function[
+               QuODD`Private`ret + I QuODD`Private`imt]], 0]]], {
+          QuODD`Private`selector, {Greater, Less}}]]}], 
+     Options[QuODD`timeContours] = {ImageSize -> {262.4, 266.}}, 
+     TagSet[QuODD`timeContours, 
+      MessageName[QuODD`timeContours, "usage"], ""], QuODD`timePathPlotter[
+       Pattern[QuODD`Private`rules, 
+        Blank[]], 
+       Pattern[QuODD`Private`t, 
+        Blank[]], 
+       Pattern[QuODD`Private`sman, 
+        Blank[]], 
+       OptionsPattern[]] := Show[
+       Join[{
+         ParametricPlot[{
+           Re[
+            QuODD`Private`t[QuODD`Private`s]], 
+           Im[
+            QuODD`Private`t[QuODD`Private`s]]}, {QuODD`Private`s, 0, 1}, 
+          Frame -> True, Axes -> False, AxesOrigin -> {0, 0}, 
+          PlotRangePadding -> 2], 
+         Graphics[{
+           PointSize[Large], Purple, 
+           Tooltip[
+            Point[
+             ({
+              Re[#], 
+              Im[#]}& )[
+              Evaluate[
+               ReplaceAll["ts", QuODD`Private`rules]]]], 
+            "\!\(\*SubscriptBox[\(t\), \(s\)]\)"]}], 
+         Graphics[{
+           PointSize[Large], Gray, 
+           Tooltip[
+            Point[
+             ({
+              Re[#], 
+              Im[#]}& )[
+              Evaluate[
+               ReplaceAll["t\[Kappa]", QuODD`Private`rules]]]], 
+            "\!\(\*SubscriptBox[\(t\), \(\[Kappa]\)]\)"]}], 
+         Graphics[{
+           PointSize[Large], Green, 
+           Tooltip[
+            Point[{
+              Re[
+               QuODD`Private`t[0]], 
+              Im[
+               QuODD`Private`t[0]]}], "Contour start"]}], 
+         Graphics[{
+           PointSize[Large], Red, 
+           Tooltip[
+            Point[{
+              Re[
+               QuODD`Private`t[1]], 
+              Im[
+               QuODD`Private`t[1]]}], "Contour end"]}], 
+         Graphics[{
+           PointSize[Large], Blue, 
+           Tooltip[
+            Point[{0, 0}], "Time origin"]}], 
+         Graphics[{
+           PointSize[Large], Black, 
+           Tooltip[
+            Point[{
+              Re[
+               QuODD`Private`t[QuODD`Private`sman]], 
+              Im[
+               QuODD`Private`t[QuODD`Private`sman]]}], "t(s)"]}]}, 
+        Map[Graphics[{
+           PointSize[Large], 
+           GrayLevel[0.7], 
+           Tooltip[
+            Point[{
+              Re[#], 
+              Im[#]}], "\!\(\*SubscriptBox[\(t\), \(CA\)]\)"]}]& , 
+         ReplaceAll["tCAset", QuODD`Private`rules]]]], 
+     Options[QuODD`timePathPlotter] = {ImageSize -> {262.4, 266.}}, 
+     TagSet[QuODD`timePathPlotter, 
+      MessageName[QuODD`timePathPlotter, "usage"], ""]}; (Needs["EPToolbox`", 
+      StringJoin[
+       NotebookDirectory[], "EPToolbox.m"]]; Needs["ARMSupport`", 
+      StringJoin[
+       NotebookDirectory[], "ARMSupport.m"]]; Null))]], "Output"]
 }, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"dif", "/.", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"GraphicsComplex", "[", 
+      RowBox[{
+       RowBox[{"{", "___", "}"}], ",", "a___"}], "]"}], "\[Rule]", 
+     RowBox[{"GraphicsComplex", "[", 
+      RowBox[{
+       RowBox[{"{", "\"\<long list\>\"", "}"}], ",", "a"}], "]"}]}], ",", 
+    RowBox[{
+     RowBox[{"FilledCurve", "[", "___", "]"}], "\[Rule]", 
+     RowBox[{"FilledCurve", "[", "\"\<stuff\>\"", "]"}]}]}], 
+   "}"}]}]], "Input"],
 
 Cell["\<\
 This is a basic example of the Quantum Orbits Dynamic Dashboard (or just \

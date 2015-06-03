@@ -32,8 +32,9 @@ dynamicDashboardPlotter[{F, \[Omega]}, \[Kappa], path] institutes the desired pa
 dynamicDashboardPlotter[{F, \[Omega]}, \[Kappa], path, {poinit, ppinit}] specifies initial values of poinit and pp init for \!\(\*SubscriptBox[\(p\), \(\[UpTee]\)]\) and \!\(\*SubscriptBox[\(p\), \(\[DoubleVerticalBar]\)]\).";
 
 
-$smallBlockSize::usage="$smallBlockSize is an option which specifies the {width, height} pair for small blocks on the Dashboard.";
-$largeBlockSize::usage="$smallBlockSize is an option which specifies the {width, height} pair for large blocks on the Dashboard.";
+$dashboardMainSize::usage="$dashboardMainSize is a global which specifies the {width, height} pair for the lower two rows of the dashboard.";
+$smallBlockSize::usage="$smallBlockSize is a global option which specifies the {width, height} pair for small blocks on the Dashboard.";
+$largeBlockSize::usage="$smallBlockSize is a global option which specifies the {width, height} pair for large blocks on the Dashboard.";
 
 
 timeContours::usage="";
@@ -43,6 +44,10 @@ timeIntegrandPlotter::usage="";
 
 
 timePathPlotter::usage="";
+
+
+(* ::Input::Italic:: *)
+trajectoryPlotter::usage="";
 
 
 ionizationProbabilityColorFunction::usage="";
@@ -60,11 +65,20 @@ rangeReset::usage="";
 rInitController::usage="";
 
 
-Begin["`Private`"]
+Begin["`Private`"];
 
 
-$smallBlockSize={360,360};
-$largeBlockSize={720,360};
+$dashboardMainSize=Which[
+SystemInformation["Kernel","OperatingSystem"]=="Windows",
+{0.82,0.7}*First[MaximalBy[
+{#[[1,2]],#[[2,2]]}&/@("ScreenArea"/.SystemInformation["Devices","ScreenInformation"])
+,First[#]Last[#]&]]
+,True
+,{1050,532}];
+$smallBlockSize={0.25,0.5}$dashboardMainSize;
+$largeBlockSize={0.5,0.5}$dashboardMainSize;
+(*$smallBlockSize={360,360};
+$largeBlockSize={720,360};*)
 
 
 Options[timeContours]={ImageSize->$smallBlockSize};
@@ -115,12 +129,13 @@ Graphics[{PointSize[Large],GrayLevel[0.7],Tooltip[Point[{Re[#],Im[#]}],"\!\(\*Su
 
 Options[trajectoryPlotter]={"PlotRange"->All,ImageSize->$smallBlockSize};
 trajectoryPlotter[trajectoryFunction_,label_,sman_,OptionsPattern[]]:=
-Show[#,PlotRange->OptionValue["PlotRange"],PlotRangePadding->0.05Max[(#[[2]]-#[[1]]&)/@(PlotRange/. AbsoluteOptions[#,PlotRange])]]&@(*For better padding, as per mm.se:42495.*)
+Show[#,ImageSize->OptionValue[ImageSize],PlotRange->OptionValue["PlotRange"],PlotRangePadding->0.05Max[(#[[2]]-#[[1]]&)/@(PlotRange/. AbsoluteOptions[#,PlotRange])]]&@(*For better padding, as per mm.se:42495.*)
 Show[{
 ParametricPlot[
 {Re[trajectoryFunction[s]],Im[trajectoryFunction[s]]},{s,0,1}
 ,AspectRatio->Automatic
 ,PlotRange->Full
+,ImageSize->OptionValue[ImageSize]
 ,Frame->True
 ,Axes->False
 ,AxesOrigin->{0,0}
@@ -131,7 +146,6 @@ GrayLevel[0.8],Tooltip[Rectangle[{-1000,-1000},{0,1000}],DisplayForm[Row[{"Re(",
 Red,Thick,Tooltip[Line[{{-1000,0},{0,0}}],DisplayForm[Row[{"Branch cut\n",Superscript["\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)","2"],")<0"}]]]
 },##&[]
 ]
-,ImageSize->OptionValue[ImageSize]
 ]
 ,Graphics[{PointSize[Large],Green,Tooltip[Point[{Re[trajectoryFunction[0]],Im[trajectoryFunction[0]]}],"Contour start"]}]
 ,Graphics[{PointSize[Large],Red,Tooltip[Point[{Re[trajectoryFunction[1]],Im[trajectoryFunction[1]]}],"Contour end"]}]
@@ -148,10 +162,9 @@ Tooltip[{s,Abs[-(rer2function[s])^(-1/2)D[t[ss],ss]/.{ss->s}]},"Abs"]
 },{s,0,1}
 ,PlotRange->{{0,1},Full}
 ,AspectRatio->1/3
-(*,PlotPoints\[Rule]20*)
 ,Frame->True
 ,AxesStyle->Gray
-,FrameLabel->{Style[ToString[s,TraditionalForm],Larger],""}
+,FrameLabel->{Style["\!\(TraditionalForm\`s\)",Larger],""}
 ,PlotLabel->"Re, Im and Abs of \!\(\*FractionBox[\(-1\), SqrtBox[\(\*SubscriptBox[\(r\), \(cl\)] \*SuperscriptBox[\((t)\), \(2\)]\)]]\)\!\(\*FractionBox[\(dt\), \(ds\)]\) over the contour"
 ,ImageSize->OptionValue[ImageSize]
 ]
@@ -160,9 +173,9 @@ Tooltip[{s,Abs[-(rer2function[s])^(-1/2)D[t[ss],ss]/.{ss->s}]},"Abs"]
 ionizationProbabilityColorFunction=(Blend[{RGBColor[0.4,0,0],Red,Orange,Yellow},#]&);
 
 
-colourScale[{pomax_,ppmax_},{F_,\[Omega]_},\[Kappa]_]:=colourScale[{pomax,0,ppmax},{F,\[Omega]},\[Kappa]]=ContourPlot[
-y,
-{x,0,0.075},{y,0,1}
+Options[colourScale]={ImageSize->{70,0.55$smallBlockSize[[2]]}}
+colourScale[{pomax_,ppmax_},{F_,\[Omega]_},\[Kappa]_,opts:OptionsPattern[]]:=(*colourScale[{pomax,0,ppmax},{F,\[Omega]},\[Kappa],opts]=*)ContourPlot[
+y,{x,0,0.075},{y,0,1}
 ,AspectRatio->Automatic
 ,Contours->10^Range[Floor[Log[10,E^(2volkovExponent[{pomax,0,ppmax},{F,\[Omega],\[Kappa]}])/E^(2volkovExponent[{0,0,0},{F,\[Omega],\[Kappa]}])]],-0,0.1]
 ,PlotRangePadding->None
@@ -170,12 +183,13 @@ y,
 \!\(\*SuperscriptBox[\(10\), \("\<0.\>"\)]\)->1}]}\[Transpose]},{None,None}}
 ,ContourLabels->None
 ,ColorFunction->ionizationProbabilityColorFunction
-,ImageSize->{70,200}
+,ImageSize->OptionValue[ImageSize]
 ]
 
 
 ClearAll[ionizationProbabilityPlot]
-ionizationProbabilityPlot[{F_,\[Omega]_,\[Kappa]_},{pomax_,ppmax_}]:=ionizationProbabilityPlot[{F,\[Omega],\[Kappa]},{pomax,ppmax}]=Block[{},
+Options[ionizationProbabilityPlot]={ImageSize->{{0.95$smallBlockSize[[1]]},{$smallBlockSize[[2]]}}}
+ionizationProbabilityPlot[{F_,\[Omega]_,\[Kappa]_},{pomax_,ppmax_},opts:OptionsPattern[]]:=ionizationProbabilityPlot[{F,\[Omega],\[Kappa]},{pomax,ppmax},opts]=Block[{},
 Show[
 cleanContourPlot[ContourPlot[
 E^(2volkovExponent[{ppo,0,ppp},{F,\[Omega],\[Kappa]}])/E^(2volkovExponent[{0,0,0},{F,\[Omega],\[Kappa]}])
@@ -187,7 +201,8 @@ E^(2volkovExponent[{ppo,0,ppp},{F,\[Omega],\[Kappa]}])/E^(2volkovExponent[{0,0,0
 ,PlotPoints->20
 ,AspectRatio->Automatic
 ,PlotRangePadding->None
-,ImageSize->{{$smallBlockSize[[1]]},{$smallBlockSize[[2]]-20}}
+(*,ImageSize\[Rule]{{340},{360}}*)
+,ImageSize->OptionValue[ImageSize]
 ]],
 ContourPlot[
 E^(2volkovExponent[{ppo,0,ppp},{F,\[Omega],\[Kappa]}])/E^(2volkovExponent[{0,0,0},{F,\[Omega],\[Kappa]}])
@@ -211,10 +226,8 @@ Tooltip[expr_,tooltip_]:>Tooltip[expr,DisplayForm[SuperscriptBox[10,Log[10,toolt
 })
 ]
 ]
-(*ionizationProbabilityPlot[stdpars]*)
 
 
-(*ClearAll[rangeReset];*)
 SetAttributes[rangeReset,HoldFirst]
 rangeReset[range_,{label1_,label2_}]:=Row[{
 Grid[{
@@ -240,16 +253,16 @@ Dynamic[
 {Abs[po],Abs[pp]},
 ((po=If[po!=0,Sign[po]#[[1]],#[[1]]]);(pp=If[pp!=0,Sign[pp]#[[2]],#[[2]]]);updateDefinitions[])&
 ],
-ionizationProbabilityPlot[{F,\[Omega],\[Kappa]},{pomax,ppmax}]
+ionizationProbabilityPlot[{F,\[Omega],\[Kappa]},{pomax,ppmax},ImageSize->{$smallBlockSize[[1]]-70,$smallBlockSize[[2]]}]
 ],
-colourScale[{pomax,ppmax},{F,\[Omega]},\[Kappa]]
+colourScale[{pomax,ppmax},{F,\[Omega]},\[Kappa],ImageSize->{70,0.55$smallBlockSize[[2]]}]
 }
 ,{Row[{Text["\!\(\*SubscriptBox[\(p\), \(\[Perpendicular]\)]\)="],Button[Dynamic[po/.{a_/;(a>=0)->"+",a_/;(a<0)->"-"}],po=-po],InputField[Dynamic[Abs[po],(po=If[po!=0,Sign[po]#,#])&],FieldSize->3],Text[" \!\(\*SubscriptBox[\(p\), \(\[DoubleVerticalBar]\)]\)="],Button[Dynamic[pp/.{a_/;(a>=0)->"+",a_/;(a<0)->"-"}],pp=-pp],InputField[Dynamic[Abs[pp],(pp=If[pp!=0,Sign[pp]#,#])&],FieldSize->3]}]
 }}]
 
 
 SetAttributes[contourProgressController,HoldAll];
-contourProgressController[sMan_]:=Row[{Text["Contour progress: "],Manipulator[Dynamic[sMan],Appearance->{"Labeled"}]}]
+contourProgressController[sMan_]:=Row[{Text["Contour progress: "],Manipulator[Dynamic[sMan],ImageSize->0.5First[$smallBlockSize],Appearance->{"Labeled"}]}]
 
 
 SetAttributes[tsController,HoldAll];
@@ -307,16 +320,16 @@ contourProgressController[sMan],
 tsController[\[CapitalDelta]tss,baretss,tss,{F,\[Omega],\[Kappa]}],
 rInitController[xinit,zinit,rInitRange]
 },{(*Middle row*)
-Dynamic[trajectoryPlotter[trajectory[t[#]][[1]]&,"\!\(\*SubscriptBox[\(x\), \(cl\)]\)(t)",sMan,"PlotRange"->All]],
-Dynamic[trajectoryPlotter[trajectory[t[#]][[3]]&,"\!\(\*SubscriptBox[\(z\), \(cl\)]\)(t)",sMan,"PlotRange"->All]],
-Dynamic[timeIntegrandPlotter[Total[trajectory[t[#]]^2]&,t,ImageSize->{720,360}]]
+Dynamic[trajectoryPlotter[trajectory[t[#]][[1]]&,"\!\(\*SubscriptBox[\(x\), \(cl\)]\)(t)",sMan,"PlotRange"->All,ImageSize->$smallBlockSize]],
+Dynamic[trajectoryPlotter[trajectory[t[#]][[3]]&,"\!\(\*SubscriptBox[\(z\), \(cl\)]\)(t)",sMan,"PlotRange"->All,ImageSize->$smallBlockSize]],
+Dynamic[timeIntegrandPlotter[Total[trajectory[t[#]]^2]&,t,ImageSize->$largeBlockSize]]
 },{(*Bottom row*)
 (*Momentum plane / ionization probability*)
 momentumPlaneControls[{po,py,pp},{F,\[Omega],\[Kappa]},{pomax,ppmax}]
 ,(*r^2 plane - trajectory*)
 Column[{
 Dynamic[
-trajectoryPlotter[Total[trajectory[t[#]]^2]&,"\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t\!\(\*SuperscriptBox[\()\), \(2\)]\)",sMan,"PlotRange"->r2range]
+trajectoryPlotter[Total[trajectory[t[#]]^2]&,"\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t\!\(\*SuperscriptBox[\()\), \(2\)]\)",sMan,"PlotRange"->r2range,ImageSize->$smallBlockSize]
 ]
 ,(*r^2 plane range controls*)
 rangeReset[r2range,{"Re(\!\(\*SuperscriptBox[\(r\), \(2\)]\))","Im(\!\(\*SuperscriptBox[\(r\), \(2\)]\))"}]
@@ -343,8 +356,14 @@ timePathPlotter[rules,t,sMan]
 rangeReset[tRangeSymbolic,{"Re(t)","Im(t)"}]
 },Center]
 }}
+,Spacings->0
 ]]
-,SaveDefinitions->True]
+,SaveDefinitions->True
+,Initialization:>(
+Needs["EPToolbox`",NotebookDirectory[]<>"EPToolbox.m"];
+Needs["ARMSupport`",NotebookDirectory[]<>"ARMSupport.m"];
+)
+]
 
 
 End[]
