@@ -156,7 +156,7 @@ Cell[CellGroupData[{
 Cell["Implementation", "Section"],
 
 Cell[BoxData[
- RowBox[{"Begin", "[", "\"\<`aPrivate`\>\"", "]"}]], "Input",
+ RowBox[{"Begin", "[", "\"\<`Private`\>\"", "]"}]], "Input",
  InitializationCell->True],
 
 Cell[CellGroupData[{

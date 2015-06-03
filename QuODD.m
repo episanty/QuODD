@@ -60,7 +60,7 @@ rangeReset::usage="";
 rInitController::usage="";
 
 
-Begin["`aPrivate`"]
+Begin["`Private`"]
 
 
 $smallBlockSize={360,360};

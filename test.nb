@@ -1,0 +1,235 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8420,        226]
+NotebookOptionsPosition[      7396,        186]
+NotebookOutlinePosition[      7891,        207]
+CellTagsIndexPosition[      7807,        202]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"Quit", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.642311483283365*^9, 3.642311485462489*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", 
+  RowBox[{"\"\<ARMSupport`\>\"", ",", 
+   RowBox[{
+    RowBox[{"NotebookDirectory", "[", "]"}], "<>", "\"\<ARMSupport.m\>\""}]}],
+   "]"}]], "Input",
+ CellChangeTimes->{{3.642308029573824*^9, 3.6423080558483267`*^9}, {
+  3.6423131818765187`*^9, 3.6423131838306303`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Names", "[", "\"\<ARMSupport`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.642308167288701*^9, 3.6423081755491734`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"allQuantumClosestApproachTimes\"\>", 
+   ",", "\<\"classicalClosestApproach\"\>", 
+   ",", "\<\"classicalTrajectory\"\>", 
+   ",", "\<\"closestApproachTimesPath\"\>", ",", "\<\"complexTrajectory\"\>", 
+   ",", "\<\"coulombCorrection\"\>", ",", "\<\"d2r2\"\>", 
+   ",", "\<\"forcets\"\>", ",", "\<\"getClassicalTransition\"\>", 
+   ",", "\<\"getComplexTransition\"\>", 
+   ",", "\<\"getFullLinearizedTransition\"\>", 
+   ",", "\<\"getFullReducedLinearizedTransition\"\>", 
+   ",", "\<\"getReducedLinearizedTransition\"\>", 
+   ",", "\<\"makeTCAsFromCircuit\"\>", ",", "\<\"makeTCAsFromRange\"\>", 
+   ",", "\<\"r0\"\>", ",", "\<\"rDotV\"\>", ",", "\<\"ReportingFunction\"\>", 
+   ",", "\<\"ReportToFile\"\>", ",", "\<\"rInit\"\>", 
+   ",", "\<\"Softening\"\>", ",", "\<\"stdpars\"\>", ",", "\<\"t0\"\>", 
+   ",", "\<\"tCA\"\>", ",", "\<\"ts\"\>", ",", "\<\"t\[Kappa]\"\>", 
+   ",", "\<\"v2Tolerance\"\>", ",", "\<\"volkovExponent\"\>", 
+   ",", "\<\"zInit\"\>", ",", "\<\"\[Tau]\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.642308175948196*^9, 3.6423112604696207`*^9, 
+  3.642311423519946*^9, 3.6423114879976344`*^9, 3.642311852919507*^9, 
+  3.642312052093899*^9, 3.642312430422538*^9, 3.642313187183822*^9, 
+  3.6423135051100063`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "coulombCorrection"}]], "Input",
+ CellChangeTimes->{{3.642311553114359*^9, 3.6423115550724707`*^9}}],
+
+Cell[BoxData[
+ StyleBox["\<\"coulombCorrection[{px, py, pz}, {F, \[Omega], \[Kappa]}, path] \
+Calculates the Coulomb correction integral over the specified path. The path \
+is a list which may contain \\\"t\[Kappa]\\\", \\\"ts\\\", \\\"t0\\\", \\\"\
+\[Tau]\\\", \\\"tCApath\\\" and \\\"T\\\", which will be replaced by the \
+appropriate points.\"\>", "MSG"]], "Print", "PrintUsage",
+ CellChangeTimes->{3.642313508677211*^9},
+ CellTags->"Info3642317108-7930552"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"coulombCorrection", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"2", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.05", ",", "0.055", ",", "1.007"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\"\<t\[Kappa]\>\"", ",", "\"\<t0\>\""}], "}"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"NIntegrate", "::", "slwcon"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Numerical integration converging too slowly; suspect one \
+of the following: singularity, value of the integration is 0, highly \
+oscillatory integrand, or WorkingPrecision too small. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/NIntegrate/slwcon\\\", ButtonNote -> \
+\\\"NIntegrate::slwcon\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.642312435904852*^9, 3.642312790776149*^9, 
+  3.6423135097252703`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"NIntegrate", "::", "ncvb"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"NIntegrate failed to converge to prescribed accuracy after \
+\[NoBreak]\\!\\(9\\)\[NoBreak] recursive bisections in \
+\[NoBreak]\\!\\(ARMSupport`Private`t\\)\[NoBreak] near \
+\[NoBreak]\\!\\({ARMSupport`Private`t}\\)\[NoBreak] = \
+\[NoBreak]\\!\\({\\(\\(0.` \[VeryThinSpace]\\)\\) + \\(\\(25.853304308243118`\
+\\\\ \[ImaginaryI]\\)\\)}\\)\[NoBreak]. NIntegrate obtained \
+\[NoBreak]\\!\\(\\(\\(2.671915348811694` \[VeryThinSpace]\\)\\) + \
+\\(\\(2.6859574151945393`\\\\ \[ImaginaryI]\\)\\)\\)\[NoBreak] and \[NoBreak]\
+\\!\\(0.061081270393560434`\\)\[NoBreak] for the integral and error \
+estimates. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\
+\\\", ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/NIntegrate/ncvb\\\
+\", ButtonNote -> \\\"NIntegrate::ncvb\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.642312435904852*^9, 3.642312790776149*^9, 
+  3.6423135097642727`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"coulombCorrection", "::", "intErrors"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Integration errors obtained at input {{po, py, pp}, {F, \
+\[Omega], \[Kappa]}, path}=\[NoBreak]\\!\\({\\(\\({2, 0, 0}\\)\\), \
+\\(\\({0.05`, 0.055`, 1.007`}\\)\\), \\(\\({\\\"t\\\\[Kappa]\\\", \\\"t0\\\"}\
+\\)\\)}\\)\[NoBreak]\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.642312435904852*^9, 3.642312790776149*^9, 
+  3.642313509921282*^9}],
+
+Cell[BoxData[
+ RowBox[{"2.671915348811694`", "\[VeryThinSpace]", "+", 
+  RowBox[{"2.6859574151945393`", " ", "\[ImaginaryI]"}]}]], "Output",
+ CellChangeTimes->{3.6423115920315847`*^9, 3.642311690048191*^9, 
+  3.64231235563426*^9, 3.642312436194868*^9, 3.6423127909731607`*^9, 
+  3.6423135099222817`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"allQuantumClosestApproachTimes", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", " ", "0", ",", " ", "1"}], "}"}], ",", " ", "stdpars", 
+   ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", " ", "0", ",", " ", "0"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.642312358931449*^9, 3.6423123782085514`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"tCA", "\[Rule]", 
+     RowBox[{"10.074888030492342`", "\[VeryThinSpace]", "+", 
+      RowBox[{"24.867094590892485`", " ", "\[ImaginaryI]"}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"tCA", "\[Rule]", 
+     RowBox[{"12.287675932266705`", "\[VeryThinSpace]", "-", 
+      RowBox[{"36.05489618875797`", " ", "\[ImaginaryI]"}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"tCA", "\[Rule]", 
+     RowBox[{"13.306130748188789`", "\[VeryThinSpace]", "+", 
+      RowBox[{"19.62317016118736`", " ", "\[ImaginaryI]"}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"tCA", "\[Rule]", 
+     RowBox[{"48.80728639102944`", "\[VeryThinSpace]", "-", 
+      RowBox[{"28.703862661800965`", " ", "\[ImaginaryI]"}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"tCA", "\[Rule]", 
+     RowBox[{"59.25017359371877`", "\[VeryThinSpace]", "+", 
+      RowBox[{"24.718714751592852`", " ", "\[ImaginaryI]"}]}]}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.642312378772584*^9, 3.6423126225745287`*^9, 
+  3.6423126830309863`*^9, 3.642312797001505*^9, 3.6423135253691654`*^9}]
+}, Open  ]]
+},
+WindowSize->{1264, 742},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (September 9, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "Info3642317108-7930552"->{
+  Cell[2608, 70, 461, 7, 58, "Print",
+   CellTags->"Info3642317108-7930552"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"Info3642317108-7930552", 7705, 196}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 118, 2, 31, "Input"],
+Cell[679, 24, 308, 7, 31, "Input"],
+Cell[CellGroupData[{
+Cell[1012, 35, 145, 2, 31, "Input"],
+Cell[1160, 39, 1280, 22, 92, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2477, 66, 128, 2, 31, "Input"],
+Cell[2608, 70, 461, 7, 58, "Print",
+ CellTags->"Info3642317108-7930552"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3106, 82, 306, 8, 31, "Input"],
+Cell[3415, 92, 627, 12, 21, "Message"],
+Cell[4045, 106, 1035, 18, 39, "Message"],
+Cell[5083, 126, 478, 10, 21, "Message"],
+Cell[5564, 138, 303, 5, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5904, 148, 342, 8, 31, "Input"],
+Cell[6249, 158, 1131, 25, 31, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
