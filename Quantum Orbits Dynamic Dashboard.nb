@@ -7,6 +7,10 @@ Cell[CellGroupData[{
 
 Cell["Introduction", "Section"],
 
+Cell[BoxData[
+ RowBox[{"\"\<To initialize the Dashboard, evaluate this cell and select Yes \
+to evaluate the initialization cells.\>\"", ";"}]], "Input"],
+
 Cell[CellGroupData[{
 
 Cell[BoxData[
@@ -44,10 +48,10 @@ Cell[BoxData[
    ARMSupport`complexTrajectory[
    QuODD`Private`t$, {
     QuODD`Private`po$$, QuODD`Private`py$$, QuODD`Private`pp$$}, {0.05, 0.055,
-     1.007}, ARMSupport`rInit -> {
-     QuODD`Private`xinit$$, 0, QuODD`Private`zinit$$}, ARMSupport`forcets -> 
-    QuODD`Private`tss$$]], QuODD`Private`expr$$, QuODD`Private`labels$$, 
-  QuODD`Private`path$$ = {
+     1.007}, 
+    ARMSupport`rInit -> {QuODD`Private`xinit$$, 0, QuODD`Private`zinit$$}, 
+    ARMSupport`forcets -> QuODD`Private`tss$$]], QuODD`Private`expr$$, 
+  QuODD`Private`labels$$, QuODD`Private`path$$ = {
    Complex[5.303627496195924, 16.991914396531634`], 5.303627496195924, 
    Complex[119.5433603540066, 5.], 153.8152802113498}, 
   QuODD`Private`barepath$$ = {
@@ -270,8 +274,7 @@ Cell[BoxData[
                 E^(2 ARMSupport`volkovExponent[{
                     QuODD`Private`po$$, QuODD`Private`py$$, 
                     QuODD`Private`pp$$}, {0.05, 0.055, 1.007}])/
-                 E^(2 
-                  ARMSupport`volkovExponent[{0, 0, 0}, {0.05, 0.055, 
+                 E^(2 ARMSupport`volkovExponent[{0, 0, 0}, {0.05, 0.055, 
                     1.007}])]]], StandardForm],
              ImageSizeCache->{87., {3., 12.}}], ""},
            {
@@ -14155,43 +14158,7 @@ G91Nk33SnmhuCF7Ww9Ft/516Jgixd+AfGqRYwg==
              PlotRange->{{0, 0.075}, {0, 1}},
              PlotRangeClipping->True,
              PlotRangePadding->{{None, None}, {None, None}},
-             Ticks->{Automatic, Automatic},
-             ImageCache->GraphicsData["CompressedBitmap", "\<\
-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
-JFYS8j19NLPZjez9IbIdJxqya0n1IR78BxHIdP4=\
-\>"]]},
+             Ticks->{Automatic, Automatic}]},
            {
             TemplateBox[{InterpretationBox[
                Cell[
@@ -14236,9 +14203,8 @@ JFYS8j19NLPZjez9IbIdJxqya0n1IR78BxHIdP4=\
                "Preemptive"],InputFieldBox[
                Dynamic[
                 Abs[QuODD`Private`pp$$], (QuODD`Private`pp$$ = 
-                If[
-                 QuODD`Private`pp$$ != 0, Sign[QuODD`Private`pp$$] #, #])& ], 
-               FieldSize -> 3]},
+                If[QuODD`Private`pp$$ != 0, 
+                  Sign[QuODD`Private`pp$$] #, #])& ], FieldSize -> 3]},
              "RowDefault"], ""}
           },
           AutoDelete->False,
@@ -15405,7 +15371,8 @@ Cell[BoxData[{
    RowBox[{
     RowBox[{"NotebookDirectory", "[", "]"}], "<>", "\"\<QuODD.m\>\""}]}], 
   "]"}]}], "Input",
- InitializationCell->True],
+ InitializationCell->True,
+ EmphasizeSyntaxErrors->True],
 
 Cell[BoxData[
  RowBox[{
