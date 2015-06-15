@@ -40,11 +40,10 @@ Cell[BoxData[
   InterpolatingFunction[{{0., 1.}}, {
    5, 15, 0, {4}, {2}, 0, 0, 0, 0, Automatic, {}, {}, False}, {{0., 
    0.3333333333333333, 0.6666666666666666, 1.}}, {
-   Developer`PackedArrayForm, {0, 1, 2, 3, 4}, {
-     Complex[5.303627496195924, 16.991914396531634`], 
-     Complex[5.303627496195924, 0.], 
-     Complex[119.5433603540066, 5.], 
-     Complex[153.8152802113498, 0.]}}, {Automatic}], QuODD`Private`rules$$ = {
+   Developer`PackedArrayForm, {0, 1, 2, 3, 4}, {Complex[5.303627496195924, 
+    16.991914396531634`], Complex[5.303627496195924, 0.], Complex[
+    119.5433603540066, 5.], Complex[153.8152802113498, 0.]}}, {Automatic}], 
+  QuODD`Private`rules$$ = {
   "t\[Kappa]" -> Complex[5.303627496195924, 16.991914396531634`], "ts" -> 
    Complex[5.303627496195924, 17.97806003643661], "t0" -> 5.303627496195924, 
    "\[Tau]" -> 17.97806003643661, "T" -> 114.23973285781067`, "tCAset" -> {}},
@@ -123,7 +122,7 @@ Cell[BoxData[
                  "t\[Kappa]" -> QuODD`Private`baretss$$ - I/1.007^2, "ts" -> 
                   QuODD`Private`baretss$$, "t0" -> 
                   Re[QuODD`Private`baretss$$], "\[Tau]" -> 
-                  Im[QuODD`Private`baretss$$], "T" -> 2 (Pi/0.055)}]] - 
+                  Im[QuODD`Private`baretss$$], "T" -> 2 Pi/0.055}]] - 
               QuODD`Private`baretss$$, HoldRest]], FieldSize -> 12],ButtonBox[
           "\"\\!\\(\\*SubscriptBox[\\(t\\), \\(s\\)]\\)\"", 
            ButtonFunction :> (QuODD`Private`\[CapitalDelta]tss$$ = 0), 
@@ -131,7 +130,7 @@ Cell[BoxData[
            "Preemptive"],ButtonBox[
           "\"\\!\\(\\*SubscriptBox[\\(t\\), \\(0\\)]\\)\"", 
            ButtonFunction :> (
-            QuODD`Private`\[CapitalDelta]tss$$ = (-I) 
+            QuODD`Private`\[CapitalDelta]tss$$ = -I 
              Im[QuODD`Private`baretss$$]), Appearance -> Automatic, Evaluator -> 
            Automatic, Method -> "Preemptive"]},
          "RowDefault"], 
@@ -14457,7 +14456,7 @@ iyFJPA==\
         QuODD`Private`rules$$ := {
           "t\[Kappa]" -> QuODD`Private`tss$$ - I/1.007^2, "ts" -> 
            QuODD`Private`tss$$, "t0" -> Re[QuODD`Private`tss$$], "\[Tau]" -> 
-           Im[QuODD`Private`tss$$], "T" -> 2 (Pi/0.055), "tCAset" -> 
+           Im[QuODD`Private`tss$$], "T" -> 2 Pi/0.055, "tCAset" -> 
            QuODD`Private`tCAset$$}; QuODD`Private`tRangeNumeric$$ = ReplaceAll[
            ({{
              If[Part[#, 1, 1] === All, "t0" - 10, 
@@ -14622,23 +14621,23 @@ pair for large blocks on the Dashboard."], ARMSupport`volkovExponent[{
          Blank[]]}, 
        Pattern[ARMSupport`Private`\[Kappa], 
         Blank[]]] := -((1/8) 
-       Im[(1 (((2 ARMSupport`Private`F) 
-             ARMSupport`Private`\[Omega]) ((-4) 
-              ARMSupport`Private`pp + (3 ARMSupport`Private`pp) 
+       Im[(1 (2 ARMSupport`Private`F 
+            ARMSupport`Private`\[Omega] ((-4) ARMSupport`Private`pp + 
+             3 ARMSupport`Private`pp 
               Sqrt[1 + ((-(I ARMSupport`Private`pp) + 
                     Sqrt[ARMSupport`Private`po^2 + ARMSupport`Private`py^2 + 
                     ARMSupport`Private`\[Kappa]^2])^2 
-                  ARMSupport`Private`\[Omega]^2)/ARMSupport`Private`F^2] - (I 
-              Sqrt[ARMSupport`Private`po^2 + ARMSupport`Private`py^2 + 
-                ARMSupport`Private`\[Kappa]^2]) 
+                  ARMSupport`Private`\[Omega]^2)/ARMSupport`Private`F^2] - I 
+             Sqrt[ARMSupport`Private`po^2 + ARMSupport`Private`py^2 + 
+               ARMSupport`Private`\[Kappa]^2] 
              Sqrt[1 + ((-(I ARMSupport`Private`pp) + 
                    Sqrt[ARMSupport`Private`po^2 + ARMSupport`Private`py^2 + 
                     ARMSupport`Private`\[Kappa]^2])^2 
-                 ARMSupport`Private`\[Omega]^2)/ARMSupport`Private`F^2]) + (
-             2 (ARMSupport`Private`F^2 + (
-                2 (ARMSupport`Private`po^2 + ARMSupport`Private`pp^2 + 
-                 ARMSupport`Private`py^2 + ARMSupport`Private`\[Kappa]^2)) 
-               ARMSupport`Private`\[Omega]^2)) 
+                 ARMSupport`Private`\[Omega]^2)/ARMSupport`Private`F^2]) + 
+           2 (ARMSupport`Private`F^2 + 
+             2 (ARMSupport`Private`po^2 + ARMSupport`Private`pp^2 + 
+               ARMSupport`Private`py^2 + ARMSupport`Private`\[Kappa]^2) 
+              ARMSupport`Private`\[Omega]^2) 
             ArcSin[((ARMSupport`Private`pp + 
                 I Sqrt[ARMSupport`Private`po^2 + ARMSupport`Private`py^2 + 
                    ARMSupport`Private`\[Kappa]^2]) 

@@ -75,10 +75,8 @@ SystemInformation["Kernel","OperatingSystem"]=="Windows",
 ,First[#]Last[#]&]]
 ,True
 ,{1050,532}];
-$smallBlockSize={0.25,0.5}$dashboardMainSize;
-$largeBlockSize={0.5,0.5}$dashboardMainSize;
-(*$smallBlockSize={360,360};
-$largeBlockSize={720,360};*)
+$smallBlockSize={0.25,0.5}*$dashboardMainSize;
+$largeBlockSize={0.5,0.5}*$dashboardMainSize;
 
 
 Options[timeContours]={ImageSize->$smallBlockSize};
