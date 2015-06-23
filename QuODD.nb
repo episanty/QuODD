@@ -17,6 +17,28 @@ Cell[BoxData[
   "]"}]], "Input",
  InitializationCell->True],
 
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Get", "::", "noopen"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Cannot open \[NoBreak]\\!\\(\\\"ARMSupport`\\\"\\)\
+\[NoBreak]. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/noopen\\\", ButtonNote -> \
+\\\"Get::noopen\\\"]\\)\"\>"}]], "Message", "MSG"],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Needs", "::", "nocont"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Context \[NoBreak]\\!\\(\\\"ARMSupport`\\\"\\)\[NoBreak] \
+was not created when Needs was evaluated. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Needs/nocont\\\", ButtonNote -> \
+\\\"Needs::nocont\\\"]\\)\"\>"}]], "Message", "MSG"],
+
 Cell[BoxData["\<\"QuODD`\"\>"], "Output"]
 }, Open  ]],
 
@@ -120,6 +142,12 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{"momentumPlaneControls", "::", "usage"}], "=", "\"\<\>\""}], 
   ";"}]}], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"tsController", "::", "usage"}], "=", "\"\<\>\""}], ";"}]], "Input",
  InitializationCell->True],
 
 Cell[BoxData[
@@ -870,6 +898,8 @@ Cell[CellGroupData[{
 
 Cell["colourScale and colorfunction", "Subsubsection"],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[{
  RowBox[{
   RowBox[{"Options", "[", "colourScale", "]"}], "=", 
@@ -977,6 +1007,13 @@ Cell[BoxData[{
      RowBox[{"OptionValue", "[", "ImageSize", "]"}]}]}], 
    "\[IndentingNewLine]", "]"}]}]}], "Input",
  InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"ImageSize", "\[Rule]", 
+   RowBox[{"{", 
+    RowBox[{"70", ",", "146.3`"}], "}"}]}], "}"}]], "Output"]
+}, Open  ]],
 
 Cell[BoxData[
  RowBox[{"colourScale", "[", 
@@ -11283,6 +11320,8 @@ Cell[CellGroupData[{
 
 Cell["ionizationProbabilityPlot", "Subsubsection"],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[{
  RowBox[{"ClearAll", "[", "ionizationProbabilityPlot", 
   "]"}], "\[IndentingNewLine]", 
@@ -11500,7 +11539,16 @@ Cell[BoxData[{
             "]"}]}], "\[IndentingNewLine]", "}"}]}], ")"}]}], 
       "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
     "]"}]}]}]}], "Input",
- InitializationCell->True]
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"ImageSize", "\[Rule]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", "249.375`", "}"}], ",", 
+     RowBox[{"{", "266.`", "}"}]}], "}"}]}], "}"}]], "Output"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]],
 
@@ -11579,7 +11627,7 @@ Cell[BoxData[{
        RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]}], 
     "\[IndentingNewLine]", "}"}], "]"}]}]}], "Input",
  InitializationCell->True]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -12413,22 +12461,23 @@ Cell[BoxData[
          "\[IndentingNewLine]", ",", 
          RowBox[{"Spacings", "\[Rule]", "0"}]}], "\[IndentingNewLine]", "]"}],
         "]"}]}]}], "\[IndentingNewLine]", ",", 
-    RowBox[{"SaveDefinitions", "\[Rule]", "True"}], "\[IndentingNewLine]", 
-    ",", 
-    RowBox[{"Initialization", "\[RuleDelayed]", 
-     RowBox[{"(", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"Needs", "[", 
-        RowBox[{"\"\<EPToolbox`\>\"", ",", 
-         RowBox[{
-          RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
-          "\"\<EPToolbox.m\>\""}]}], "]"}], ";", "\[IndentingNewLine]", 
-       RowBox[{"Needs", "[", 
-        RowBox[{"\"\<ARMSupport`\>\"", ",", 
-         RowBox[{
-          RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
-          "\"\<ARMSupport.m\>\""}]}], "]"}], ";"}], "\[IndentingNewLine]", 
-      ")"}]}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
+    RowBox[{"SaveDefinitions", "\[Rule]", "True"}]}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{",", 
+     RowBox[{"Initialization", "\[RuleDelayed]", 
+      RowBox[{"(", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Needs", "[", 
+         RowBox[{"\"\<EPToolbox`\>\"", ",", 
+          RowBox[{
+           RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+           "\"\<EPToolbox.m\>\""}]}], "]"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"Needs", "[", 
+         RowBox[{"\"\<ARMSupport`\>\"", ",", 
+          RowBox[{
+           RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+           "\"\<ARMSupport.m\>\""}]}], "]"}], ";"}], "\[IndentingNewLine]", 
+       ")"}]}]}], "*)"}], "\[IndentingNewLine]", "]"}]}]], "Input",
  InitializationCell->True],
 
 Cell[BoxData[

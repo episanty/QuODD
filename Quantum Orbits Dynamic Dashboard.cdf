@@ -1,51 +1,4 @@
 Notebook[{
-
-Cell[CellGroupData[{
-Cell["The Quantum Orbits Dynamic Dashboard", "Title"],
-
-Cell[CellGroupData[{
-
-Cell["Introduction", "Section"],
-
-Cell[BoxData[
- TagBox[
-  StyleBox[
-   RowBox[{"Button", "[", 
-    RowBox[{"\"\<Initialize\>\"", ",", 
-     RowBox[{
-     "FrontEndTokenExecute", "[", "\"\<EvaluateInitialization\>\"", "]"}], 
-     ",", 
-     RowBox[{"Rule", "[", 
-      RowBox[{"Appearance", ",", "Automatic"}], "]"}], ",", 
-     RowBox[{"Rule", "[", 
-      RowBox[{"Evaluator", ",", "Automatic"}], "]"}], ",", 
-     RowBox[{"Rule", "[", 
-      RowBox[{"Method", ",", "\"\<Preemptive\>\""}], "]"}]}], "]"}],
-   ShowSpecialCharacters->False,
-   ShowStringCharacters->True,
-   NumberMarks->True],
-  FullForm]], "Input"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"dashboardPlotter", "[", 
-  RowBox[{
-   RowBox[{"{", 
-    RowBox[{"0.05", ",", "0.055"}], "}"}], ",", "1.007", ",", 
-   RowBox[{"{", 
-    RowBox[{"\"\<t\[Kappa]\>\"", ",", "\"\<t0\>\"", ",", 
-     RowBox[{"\"\<t0\>\"", "+", 
-      FractionBox[
-       RowBox[{"2", "\[Pi]"}], "0.055"], "+", 
-      RowBox[{"5", "\[ImaginaryI]"}]}], ",", 
-     RowBox[{"\"\<t0\>\"", "+", 
-      RowBox[{"1.3", 
-       FractionBox[
-        RowBox[{"2", "\[Pi]"}], "0.055"]}]}]}], "}"}], ",", " ", 
-   RowBox[{"{", 
-    RowBox[{"0.05", ",", "0.4"}], "}"}]}], "]"}]], "Input"],
-
 Cell[BoxData[
  DynamicModuleBox[{QuODD`Private`po$$ = 0.05, QuODD`Private`pp$$ = 0.4, 
   QuODD`Private`py$$ = 0, QuODD`Private`sMan$$ = 0.1, QuODD`Private`t$$ = 
@@ -56,10 +9,14 @@ Cell[BoxData[
     16.991914396531634`], Complex[5.303627496195924, 0.], Complex[
     119.5433603540066, 5.], Complex[153.8152802113498, 0.]}}, {Automatic}], 
   QuODD`Private`rules$$ = {
-  "t\[Kappa]" -> Complex[5.303627496195924, 16.991914396531634`], "ts" -> 
-   Complex[5.303627496195924, 17.97806003643661], "t0" -> 5.303627496195924, 
-   "\[Tau]" -> 17.97806003643661, "T" -> 114.23973285781067`, "tCAset" -> {}},
-   QuODD`Private`trajectory$$ = Function[QuODD`Private`t$, 
+  "t\[Kappa]" -> 
+   Complex[0., -0.9861456399049753] + 
+    ARMSupport`ts[{0.05, 0, 0.4}, {0.05, 0.055, 1.007}], "ts" -> 
+   ARMSupport`ts[{0.05, 0, 0.4}, {0.05, 0.055, 1.007}], "t0" -> Re[
+     ARMSupport`ts[{0.05, 0, 0.4}, {0.05, 0.055, 1.007}]], "\[Tau]" -> Im[
+     ARMSupport`ts[{0.05, 0, 0.4}, {0.05, 0.055, 1.007}]], "T" -> 
+   114.23973285781067`, "tCAset" -> {}}, QuODD`Private`trajectory$$ = 
+  Function[QuODD`Private`t$, 
    ARMSupport`complexTrajectory[
    QuODD`Private`t$, {
     QuODD`Private`po$$, QuODD`Private`py$$, QuODD`Private`pp$$}, {0.05, 0.055,
@@ -67,13 +24,21 @@ Cell[BoxData[
      QuODD`Private`xinit$$, 0, QuODD`Private`zinit$$}, ARMSupport`forcets -> 
     QuODD`Private`tss$$]], QuODD`Private`expr$$, QuODD`Private`labels$$, 
   QuODD`Private`path$$ = {
-   Complex[5.303627496195924, 16.991914396531634`], 5.303627496195924, 
-   Complex[119.5433603540066, 5.], 153.8152802113498}, 
+  Complex[0., -0.9861456399049753] + 
+   ARMSupport`ts[{0.05, 0, 0.4}, {0.05, 0.055, 1.007}], 
+   Re[
+    ARMSupport`ts[{0.05, 0, 0.4}, {0.05, 0.055, 1.007}]], 
+   Complex[114.23973285781067`, 5.] + Re[
+     ARMSupport`ts[{0.05, 0, 0.4}, {0.05, 0.055, 1.007}]], 
+   148.51165271515387` + Re[
+     ARMSupport`ts[{0.05, 0, 0.4}, {0.05, 0.055, 1.007}]]}, 
   QuODD`Private`barepath$$ = {
   "t\[Kappa]", "t0", Complex[114.23973285781067`, 5.] + "t0", 
    148.51165271515387` + "t0"}, QuODD`Private`\[CapitalDelta]path$$ = {0, 0, 
-  0, 0}, QuODD`Private`tss$$ = Complex[5.303627496195924, 17.97806003643661], 
-  QuODD`Private`baretss$$ = Complex[5.303627496195924, 17.97806003643661], 
+  0, 0}, QuODD`Private`tss$$ = 
+  ARMSupport`ts[{0.05, 0, 0.4}, {0.05, 0.055, 1.007}], 
+  QuODD`Private`baretss$$ = 
+  ARMSupport`ts[{0.05, 0, 0.4}, {0.05, 0.055, 1.007}], 
   QuODD`Private`\[CapitalDelta]tss$$ = 0, QuODD`Private`tCAset$$ = {}, 
   QuODD`Private`showtCAs$$ = False, QuODD`Private`pomax$$ = 1., 
   QuODD`Private`ppmax$$ = 1.5, QuODD`Private`xinit$$ = 0, 
@@ -81,8 +46,12 @@ Cell[BoxData[
   QuODD`Private`r2range$$ = {{All, All}, {All, All}}, 
   QuODD`Private`r2FullRange$$ = All, QuODD`Private`r2plot$$, 
   QuODD`Private`tRangeSymbolic$$ = {{All, All}, {All, All}}, 
-  QuODD`Private`tRangeNumeric$$ = {{-4.696372503804076, 
-   163.8152802113498}, {-10, 27.97806003643661}}, 
+  QuODD`Private`tRangeNumeric$$ = {{-10 + Re[
+      ARMSupport`ts[{0.05, 0, 0.4}, {0.05, 0.055, 1.007}]], 
+    158.51165271515387` + Re[
+      ARMSupport`ts[{0.05, 0, 0.4}, {0.05, 0.055, 1.007}]]}, {-10, 
+    Max[15, 10 + Im[
+       ARMSupport`ts[{0.05, 0, 0.4}, {0.05, 0.055, 1.007}]]]}}, 
   QuODD`Private`updateDefinitions$$}, 
   RowBox[{
    DynamicBox[ToBoxes[QuODD`Private`updateDefinitions$$[]; "", StandardForm],
@@ -134,7 +103,7 @@ Cell[BoxData[
                  "t\[Kappa]" -> QuODD`Private`baretss$$ - I/1.007^2, "ts" -> 
                   QuODD`Private`baretss$$, "t0" -> 
                   Re[QuODD`Private`baretss$$], "\[Tau]" -> 
-                  Im[QuODD`Private`baretss$$], "T" -> 2 Pi/0.055}]] - 
+                  Im[QuODD`Private`baretss$$], "T" -> 2 (Pi/0.055)}]] - 
               QuODD`Private`baretss$$, HoldRest]], FieldSize -> 12],ButtonBox[
           "\"\\!\\(\\*SubscriptBox[\\(t\\), \\(s\\)]\\)\"", 
            ButtonFunction :> (QuODD`Private`\[CapitalDelta]tss$$ = 0), 
@@ -142,7 +111,7 @@ Cell[BoxData[
            "Preemptive"],ButtonBox[
           "\"\\!\\(\\*SubscriptBox[\\(t\\), \\(0\\)]\\)\"", 
            ButtonFunction :> (
-            QuODD`Private`\[CapitalDelta]tss$$ = -I 
+            QuODD`Private`\[CapitalDelta]tss$$ = (-I) 
              Im[QuODD`Private`baretss$$]), Appearance -> Automatic, Evaluator -> 
            Automatic, Method -> "Preemptive"]},
          "RowDefault"], 
@@ -250,7 +219,8 @@ Cell[BoxData[
              Manipulate`InterpretManipulator[
               Dynamic[
                Abs[QuODD`Private`zinit$$], (QuODD`Private`zinit$$ = 
-               If[QuODD`Private`zinit$$ != 0, 
+               If[
+                QuODD`Private`zinit$$ != 0, 
                  Sign[QuODD`Private`zinit$$] #, #])& ], {0, 0.15}, {
               Appearance -> {"Labeled"}}]]}
           },
@@ -11289,8 +11259,8 @@ vNvRdm3DneKqQ+4P7C9sP9uzNiidkGumJgM3xM/j7r3t3d+YUcZV/ufbPWxn
                     4892}, {6004, 676, 6006}, {17312, 1388, 22081}, {17831, 
                     994, 22100}, {4896, 589, 5804}, {5428, 560, 5430}, {17842,
                      999, 17841}, {17843, 999, 4897}, {4885, 1395, 22098}, {
-                    6000, 589, 5805}, {17832, 995, 17834}, {5997, 672, 5996},
-                     {4271, 560, 5429}, {5794, 584, 5793}, {5998, 672, 
+                    6000, 589, 5805}, {17832, 995, 17834}, {5997, 672, 
+                    5996}, {4271, 560, 5429}, {5794, 584, 5793}, {5998, 672, 
                     4273}, {4894, 995, 17833}}], PolygonBox[CompressedData["
 1:eJwtlctvlGUUhw/QRhYKdYZOCy2Uyq1CpYXeJB2jEYapXOqAQQWjCzcgEliA
 l39A/wOqCcYbUhITJQGja5Wl0YA7NkBJJHJJUS5i5OLz5HyLJ3nn+973e8/5
@@ -14386,7 +14356,7 @@ G91Nk33SnmhuCF7Ww9Ft/516Jgixd+AfGqRYwg==
         QuODD`Private`rules$$ := {
           "t\[Kappa]" -> QuODD`Private`tss$$ - I/1.007^2, "ts" -> 
            QuODD`Private`tss$$, "t0" -> Re[QuODD`Private`tss$$], "\[Tau]" -> 
-           Im[QuODD`Private`tss$$], "T" -> 2 Pi/0.055, "tCAset" -> 
+           Im[QuODD`Private`tss$$], "T" -> 2 (Pi/0.055), "tCAset" -> 
            QuODD`Private`tCAset$$}; QuODD`Private`tRangeNumeric$$ = ReplaceAll[
            ({{
              If[Part[#, 1, 1] === All, "t0" - 10, 
@@ -14417,1056 +14387,321 @@ G91Nk33SnmhuCF7Ww9Ft/516Jgixd+AfGqRYwg==
             ARMSupport`rInit -> {
              QuODD`Private`xinit$$, 0, QuODD`Private`zinit$$}, 
             ARMSupport`forcets -> QuODD`Private`tss$$]]; Null)}}},
-  Initialization:>({
-    Attributes[QuODD`Private`input$] = {Temporary}, QuODD`trajectoryPlotter[
-       Pattern[QuODD`Private`trajectoryFunction, 
-        Blank[]], 
-       Pattern[QuODD`Private`label, 
-        Blank[]], 
-       Pattern[QuODD`Private`sman, 
-        Blank[]], 
-       OptionsPattern[]] := (
-      Show[#, ImageSize -> OptionValue[ImageSize], PlotRange -> 
-       OptionValue["PlotRange"], PlotRangePadding -> 0.05 Max[
-          Map[Part[#, 2] - Part[#, 1]& , 
-           ReplaceAll[PlotRange, 
-            AbsoluteOptions[#, PlotRange]]]]]& )[
-       Show[{
-         ParametricPlot[{
-           Re[
-            QuODD`Private`trajectoryFunction[QuODD`Private`s]], 
-           Im[
-            QuODD`Private`trajectoryFunction[QuODD`Private`s]]}, {
-          QuODD`Private`s, 0, 1}, AspectRatio -> Automatic, PlotRange -> Full,
-           ImageSize -> OptionValue[ImageSize], Frame -> True, Axes -> False, 
-          AxesOrigin -> {0, 0}, FrameLabel -> {
-            StringJoin["Re(", QuODD`Private`label, ")"], 
-            StringJoin["Im(", QuODD`Private`label, ")"]}, PlotLabel -> 
-          QuODD`Private`label, 
-          Evaluate[
-           If[
-           QuODD`Private`label == 
-            "\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t\!\(\*SuperscriptBox[\()\), \
-\(2\)]\)", Prolog -> {
-              GrayLevel[0.8], 
-              Tooltip[
-               Rectangle[{-1000, -1000}, {0, 1000}], 
-               DisplayForm[
-                Row[{"Re(", 
-                  Superscript["\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)", "2"], 
-                  ")<0"}]]], Red, Thick, 
-              Tooltip[
-               Line[{{-1000, 0}, {0, 0}}], 
-               DisplayForm[
-                Row[{"Branch cut\n", 
-                  Superscript["\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)", "2"], 
-                  ")<0"}]]]}, 
-            (SlotSequence[1]& )[]]]], 
-         Graphics[{
-           PointSize[Large], Green, 
-           Tooltip[
-            Point[{
-              Re[
-               QuODD`Private`trajectoryFunction[0]], 
-              Im[
-               QuODD`Private`trajectoryFunction[0]]}], "Contour start"]}], 
-         Graphics[{
-           PointSize[Large], Red, 
-           Tooltip[
-            Point[{
-              Re[
-               QuODD`Private`trajectoryFunction[1]], 
-              Im[
-               QuODD`Private`trajectoryFunction[1]]}], "Contour end"]}], 
-         Graphics[{
-           PointSize[Large], Blue, 
-           Tooltip[
-            Point[{0, 0}], "Origin"]}], 
-         Graphics[{
-           PointSize[Large], Black, 
-           Tooltip[
-            Point[{
-              Re[
-               QuODD`Private`trajectoryFunction[QuODD`Private`sman]], 
-              Im[
-               QuODD`Private`trajectoryFunction[QuODD`Private`sman]]}], 
-            QuODD`Private`label]}]}]], 
-     Options[QuODD`trajectoryPlotter] = {
-      "PlotRange" -> All, ImageSize -> {262.5, 266.}}, 
-     TagSet[QuODD`trajectoryPlotter, 
-      MessageName[QuODD`trajectoryPlotter, "usage"], ""], 
-     Attributes[Superscript] = {NHoldRest, ReadProtected}, 
-     QuODD`$smallBlockSize = {262.5, 266.}, 
-     TagSet[QuODD`$smallBlockSize, 
-      MessageName[QuODD`$smallBlockSize, "usage"], 
-      "$smallBlockSize is a global option which specifies the {width, height} \
-pair for small blocks on the Dashboard."], QuODD`timeIntegrandPlotter[
-       Pattern[QuODD`Private`rer2function, 
-        Blank[]], 
-       Pattern[QuODD`Private`t, 
-        Blank[]], 
-       OptionsPattern[]] := ParametricPlot[{
-        Tooltip[{QuODD`Private`s, 
+  Initialization:>{
+   Attributes[QuODD`Private`input$] = {Temporary}, QuODD`trajectoryPlotter[
+      Pattern[QuODD`Private`trajectoryFunction, 
+       Blank[]], 
+      Pattern[QuODD`Private`label, 
+       Blank[]], 
+      Pattern[QuODD`Private`sman, 
+       Blank[]], 
+      OptionsPattern[]] := (
+     Show[#, ImageSize -> OptionValue[ImageSize], PlotRange -> 
+      OptionValue["PlotRange"], PlotRangePadding -> 0.05 Max[
+         Map[Part[#, 2] - Part[#, 1]& , 
+          ReplaceAll[PlotRange, 
+           AbsoluteOptions[#, PlotRange]]]]]& )[
+      Show[{
+        ParametricPlot[{
           Re[
-           ReplaceAll[-(D[
-               QuODD`Private`t[QuODD`Private`ss], QuODD`Private`ss]/
-             QuODD`Private`rer2function[QuODD`Private`s]^(2^(-1))), {
-            QuODD`Private`ss -> QuODD`Private`s}]]}, "Re"], 
-        Tooltip[{QuODD`Private`s, 
+           QuODD`Private`trajectoryFunction[QuODD`Private`s]], 
           Im[
-           ReplaceAll[-(D[
-               QuODD`Private`t[QuODD`Private`ss], QuODD`Private`ss]/
-             QuODD`Private`rer2function[QuODD`Private`s]^(2^(-1))), {
-            QuODD`Private`ss -> QuODD`Private`s}]]}, "Im"], 
-        Tooltip[{QuODD`Private`s, 
-          Abs[
-           ReplaceAll[-(D[
-               QuODD`Private`t[QuODD`Private`ss], QuODD`Private`ss]/
-             QuODD`Private`rer2function[QuODD`Private`s]^(2^(-1))), {
-            QuODD`Private`ss -> QuODD`Private`s}]]}, "Abs"]}, {
-       QuODD`Private`s, 0, 1}, PlotRange -> {{0, 1}, Full}, AspectRatio -> 
-       1/3, Frame -> True, AxesStyle -> Gray, FrameLabel -> {
-         Style["\!\(TraditionalForm\`s\)", Larger], ""}, PlotLabel -> 
-       "Re, Im and Abs of \!\(\*FractionBox[\(-1\), SqrtBox[\(\*SubscriptBox[\
-\(r\), \(cl\)] \*SuperscriptBox[\((t)\), \
+           QuODD`Private`trajectoryFunction[QuODD`Private`s]]}, {
+         QuODD`Private`s, 0, 1}, AspectRatio -> Automatic, PlotRange -> Full, 
+         ImageSize -> OptionValue[ImageSize], Frame -> True, Axes -> False, 
+         AxesOrigin -> {0, 0}, FrameLabel -> {
+           StringJoin["Re(", QuODD`Private`label, ")"], 
+           StringJoin["Im(", QuODD`Private`label, ")"]}, PlotLabel -> 
+         QuODD`Private`label, 
+         Evaluate[
+          If[
+          QuODD`Private`label == 
+           "\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t\!\(\*SuperscriptBox[\()\), \
+\(2\)]\)", Prolog -> {
+             GrayLevel[0.8], 
+             Tooltip[
+              Rectangle[{-1000, -1000}, {0, 1000}], 
+              DisplayForm[
+               Row[{"Re(", 
+                 Superscript["\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)", "2"], 
+                 ")<0"}]]], Red, Thick, 
+             Tooltip[
+              Line[{{-1000, 0}, {0, 0}}], 
+              DisplayForm[
+               Row[{"Branch cut\n", 
+                 Superscript["\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)", "2"], 
+                 ")<0"}]]]}, 
+           (SlotSequence[1]& )[]]]], 
+        Graphics[{
+          PointSize[Large], Green, 
+          Tooltip[
+           Point[{
+             Re[
+              QuODD`Private`trajectoryFunction[0]], 
+             Im[
+              QuODD`Private`trajectoryFunction[0]]}], "Contour start"]}], 
+        Graphics[{
+          PointSize[Large], Red, 
+          Tooltip[
+           Point[{
+             Re[
+              QuODD`Private`trajectoryFunction[1]], 
+             Im[
+              QuODD`Private`trajectoryFunction[1]]}], "Contour end"]}], 
+        Graphics[{
+          PointSize[Large], Blue, 
+          Tooltip[
+           Point[{0, 0}], "Origin"]}], 
+        Graphics[{
+          PointSize[Large], Black, 
+          Tooltip[
+           Point[{
+             Re[
+              QuODD`Private`trajectoryFunction[QuODD`Private`sman]], 
+             Im[
+              QuODD`Private`trajectoryFunction[QuODD`Private`sman]]}], 
+           QuODD`Private`label]}]}]], 
+    Options[QuODD`trajectoryPlotter] = {
+     "PlotRange" -> All, ImageSize -> {262.5, 266.}}, 
+    TagSet[QuODD`trajectoryPlotter, 
+     MessageName[QuODD`trajectoryPlotter, "usage"], ""], 
+    Attributes[Superscript] = {NHoldRest, ReadProtected}, 
+    QuODD`$smallBlockSize = {262.5, 266.}, 
+    TagSet[QuODD`$smallBlockSize, 
+     MessageName[QuODD`$smallBlockSize, "usage"], 
+     "$smallBlockSize is a global option which specifies the {width, height} \
+pair for small blocks on the Dashboard."], QuODD`timeIntegrandPlotter[
+      Pattern[QuODD`Private`rer2function, 
+       Blank[]], 
+      Pattern[QuODD`Private`t, 
+       Blank[]], 
+      OptionsPattern[]] := ParametricPlot[{
+       Tooltip[{QuODD`Private`s, 
+         Re[
+          ReplaceAll[-(D[
+              QuODD`Private`t[QuODD`Private`ss], QuODD`Private`ss]/
+            QuODD`Private`rer2function[QuODD`Private`s]^(2^(-1))), {
+           QuODD`Private`ss -> QuODD`Private`s}]]}, "Re"], 
+       Tooltip[{QuODD`Private`s, 
+         Im[
+          ReplaceAll[-(D[
+              QuODD`Private`t[QuODD`Private`ss], QuODD`Private`ss]/
+            QuODD`Private`rer2function[QuODD`Private`s]^(2^(-1))), {
+           QuODD`Private`ss -> QuODD`Private`s}]]}, "Im"], 
+       Tooltip[{QuODD`Private`s, 
+         Abs[
+          ReplaceAll[-(D[
+              QuODD`Private`t[QuODD`Private`ss], QuODD`Private`ss]/
+            QuODD`Private`rer2function[QuODD`Private`s]^(2^(-1))), {
+           QuODD`Private`ss -> QuODD`Private`s}]]}, "Abs"]}, {
+      QuODD`Private`s, 0, 1}, PlotRange -> {{0, 1}, Full}, AspectRatio -> 1/3,
+       Frame -> True, AxesStyle -> Gray, FrameLabel -> {
+        Style["\!\(TraditionalForm\`s\)", Larger], ""}, PlotLabel -> 
+      "Re, Im and Abs of \!\(\*FractionBox[\(-1\), \
+SqrtBox[\(\*SubscriptBox[\(r\), \(cl\)] \*SuperscriptBox[\((t)\), \
 \(2\)]\)]]\)\!\(\*FractionBox[\(dt\), \(ds\)]\) over the contour", ImageSize -> 
-       OptionValue[ImageSize]], 
-     Options[QuODD`timeIntegrandPlotter] = {ImageSize -> {262.5, 266.}}, 
-     TagSet[QuODD`timeIntegrandPlotter, 
-      MessageName[QuODD`timeIntegrandPlotter, "usage"], ""], 
-     QuODD`$largeBlockSize = {525., 266.}, 
-     TagSet[QuODD`$largeBlockSize, 
-      MessageName[QuODD`$largeBlockSize, "usage"], 
-      "$smallBlockSize is a global option which specifies the {width, height} \
+      OptionValue[ImageSize]], 
+    Options[QuODD`timeIntegrandPlotter] = {ImageSize -> {262.5, 266.}}, 
+    TagSet[QuODD`timeIntegrandPlotter, 
+     MessageName[QuODD`timeIntegrandPlotter, "usage"], ""], 
+    QuODD`$largeBlockSize = {525., 266.}, 
+    TagSet[QuODD`$largeBlockSize, 
+     MessageName[QuODD`$largeBlockSize, "usage"], 
+     "$smallBlockSize is a global option which specifies the {width, height} \
 pair for large blocks on the Dashboard."], ARMSupport`volkovExponent[{
-        Pattern[ARMSupport`Private`po, 
-         Blank[]], 
-        Pattern[ARMSupport`Private`py, 
-         Blank[]], 
-        Pattern[ARMSupport`Private`pp, 
-         Blank[]]}, {
-        Pattern[ARMSupport`Private`F, 
-         Blank[]], 
-        Pattern[ARMSupport`Private`\[Omega], 
-         Blank[]]}, 
-       Pattern[ARMSupport`Private`\[Kappa], 
-        Blank[]]] := -((1/8) 
-       Im[(1 (2 ARMSupport`Private`F 
-            ARMSupport`Private`\[Omega] ((-4) ARMSupport`Private`pp + 
-             3 ARMSupport`Private`pp 
-              Sqrt[1 + ((-(I ARMSupport`Private`pp) + 
-                    Sqrt[ARMSupport`Private`po^2 + ARMSupport`Private`py^2 + 
-                    ARMSupport`Private`\[Kappa]^2])^2 
-                  ARMSupport`Private`\[Omega]^2)/ARMSupport`Private`F^2] - I 
-             Sqrt[ARMSupport`Private`po^2 + ARMSupport`Private`py^2 + 
-               ARMSupport`Private`\[Kappa]^2] 
+       Pattern[ARMSupport`Private`po, 
+        Blank[]], 
+       Pattern[ARMSupport`Private`py, 
+        Blank[]], 
+       Pattern[ARMSupport`Private`pp, 
+        Blank[]]}, {
+       Pattern[ARMSupport`Private`F, 
+        Blank[]], 
+       Pattern[ARMSupport`Private`\[Omega], 
+        Blank[]]}, 
+      Pattern[ARMSupport`Private`\[Kappa], 
+       Blank[]]] := -((1/8) 
+      Im[(1 (((2 ARMSupport`Private`F) 
+            ARMSupport`Private`\[Omega]) ((-4) 
+             ARMSupport`Private`pp + (3 ARMSupport`Private`pp) 
              Sqrt[1 + ((-(I ARMSupport`Private`pp) + 
                    Sqrt[ARMSupport`Private`po^2 + ARMSupport`Private`py^2 + 
                     ARMSupport`Private`\[Kappa]^2])^2 
-                 ARMSupport`Private`\[Omega]^2)/ARMSupport`Private`F^2]) + 
-           2 (ARMSupport`Private`F^2 + 
-             2 (ARMSupport`Private`po^2 + ARMSupport`Private`pp^2 + 
-               ARMSupport`Private`py^2 + ARMSupport`Private`\[Kappa]^2) 
-              ARMSupport`Private`\[Omega]^2) 
-            ArcSin[((ARMSupport`Private`pp + 
-                I Sqrt[ARMSupport`Private`po^2 + ARMSupport`Private`py^2 + 
-                   ARMSupport`Private`\[Kappa]^2]) 
-               ARMSupport`Private`\[Omega])/ARMSupport`Private`F]))/
-         ARMSupport`Private`\[Omega]^3]), ARMSupport`volkovExponent[{
-        Pattern[ARMSupport`Private`po, 
-         Blank[]], 
-        Pattern[ARMSupport`Private`py, 
-         Blank[]], 
-        Pattern[ARMSupport`Private`pp, 
-         Blank[]]}, {
-        Pattern[ARMSupport`Private`F, 
-         Blank[]], 
-        Pattern[ARMSupport`Private`\[Omega], 
-         Blank[]], 
-        Pattern[ARMSupport`Private`\[Kappa], 
-         Blank[]]}] := 
-     ARMSupport`volkovExponent[{
-       ARMSupport`Private`po, ARMSupport`Private`py, ARMSupport`Private`pp}, {
-       ARMSupport`Private`F, ARMSupport`Private`\[Omega]}, 
-       ARMSupport`Private`\[Kappa]], 
-     TagSet[ARMSupport`volkovExponent, 
-      MessageName[ARMSupport`volkovExponent, "usage"], 
-      "volkovExponent[{po, py, pp}, {F, \[Omega], \[Kappa]}] calculates Re(\
+                 ARMSupport`Private`\[Omega]^2)/ARMSupport`Private`F^2] - (I 
+             Sqrt[ARMSupport`Private`po^2 + ARMSupport`Private`py^2 + 
+               ARMSupport`Private`\[Kappa]^2]) 
+            Sqrt[1 + ((-(I ARMSupport`Private`pp) + 
+                  Sqrt[ARMSupport`Private`po^2 + ARMSupport`Private`py^2 + 
+                    ARMSupport`Private`\[Kappa]^2])^2 
+                ARMSupport`Private`\[Omega]^2)/ARMSupport`Private`F^2]) + (
+            2 (ARMSupport`Private`F^2 + (
+               2 (ARMSupport`Private`po^2 + ARMSupport`Private`pp^2 + 
+                ARMSupport`Private`py^2 + ARMSupport`Private`\[Kappa]^2)) 
+              ARMSupport`Private`\[Omega]^2)) 
+           ArcSin[((ARMSupport`Private`pp + 
+               I Sqrt[ARMSupport`Private`po^2 + ARMSupport`Private`py^2 + 
+                  ARMSupport`Private`\[Kappa]^2]) 
+              ARMSupport`Private`\[Omega])/ARMSupport`Private`F]))/
+        ARMSupport`Private`\[Omega]^3]), ARMSupport`volkovExponent[{
+       Pattern[ARMSupport`Private`po, 
+        Blank[]], 
+       Pattern[ARMSupport`Private`py, 
+        Blank[]], 
+       Pattern[ARMSupport`Private`pp, 
+        Blank[]]}, {
+       Pattern[ARMSupport`Private`F, 
+        Blank[]], 
+       Pattern[ARMSupport`Private`\[Omega], 
+        Blank[]], 
+       Pattern[ARMSupport`Private`\[Kappa], 
+        Blank[]]}] := 
+    ARMSupport`volkovExponent[{
+      ARMSupport`Private`po, ARMSupport`Private`py, ARMSupport`Private`pp}, {
+      ARMSupport`Private`F, ARMSupport`Private`\[Omega]}, 
+      ARMSupport`Private`\[Kappa]], 
+    TagSet[ARMSupport`volkovExponent, 
+     MessageName[ARMSupport`volkovExponent, "usage"], 
+     "volkovExponent[{po, py, pp}, {F, \[Omega], \[Kappa]}] calculates Re(\
 \[ImaginaryI]\!\(\*SubsuperscriptBox[\(\[Integral]\), \(0\), SubscriptBox[\(t\
 \), \(s\)]]\)(\!\(\*SubscriptBox[\(I\), \(p\)]\)+\!\(\*FractionBox[\(1\), \(2\
 \)]\)(p+A(\[Tau])\!\(\*SuperscriptBox[\()\), \
 \(2\)]\))\[DifferentialD]\[Tau])."], 
-     Attributes[QuODD`Private`points$] = {Temporary}, QuODD`timeContours[
-       Pattern[QuODD`Private`r2function, 
-        Blank[]], 
-       Pattern[QuODD`Private`rules, 
-        Blank[]], 
-       Pattern[QuODD`Private`tss, 
-        Blank[]], 
-       Pattern[QuODD`Private`path, 
-        Blank[]], 
-       Pattern[QuODD`Private`tRangeNumeric, 
-        Blank[]], 
-       OptionsPattern[]] := Show[{
-        RegionPlot[
-         Tooltip[Re[
+    Attributes[QuODD`Private`points$] = {Temporary}, QuODD`timeContours[
+      Pattern[QuODD`Private`r2function, 
+       Blank[]], 
+      Pattern[QuODD`Private`rules, 
+       Blank[]], 
+      Pattern[QuODD`Private`tss, 
+       Blank[]], 
+      Pattern[QuODD`Private`path, 
+       Blank[]], 
+      Pattern[QuODD`Private`tRangeNumeric, 
+       Blank[]], 
+      OptionsPattern[]] := Show[{
+       RegionPlot[
+        Tooltip[Re[
+           QuODD`Private`r2function[QuODD`Private`ret + I QuODD`Private`imt]] < 
+         0, 
+         DisplayForm[
+          Row[{"Re(", 
+            Superscript["\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)", "2"], 
+            ")<0"}]]], {QuODD`Private`ret, 
+         Part[QuODD`Private`tRangeNumeric, 1, 1], 
+         Part[QuODD`Private`tRangeNumeric, 1, 2]}, {QuODD`Private`imt, 
+         Part[QuODD`Private`tRangeNumeric, 2, 1], 
+         Part[QuODD`Private`tRangeNumeric, 2, 2]}, AspectRatio -> Automatic, 
+        AxesOrigin -> {0, 0}, PlotRangePadding -> 0, 
+        FrameLabel -> {"Re(t)", "Im(t)"}, PlotLabel -> "time contour", 
+        PlotStyle -> GrayLevel[0.8], ImageSize -> OptionValue[ImageSize]], 
+       Apply[Sequence, 
+        Table[
+         ContourPlot[Im[
             QuODD`Private`r2function[
-            QuODD`Private`ret + I QuODD`Private`imt]] < 0, 
-          DisplayForm[
-           Row[{"Re(", 
-             Superscript["\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)", "2"], 
-             ")<0"}]]], {QuODD`Private`ret, 
-          Part[QuODD`Private`tRangeNumeric, 1, 1], 
-          Part[QuODD`Private`tRangeNumeric, 1, 2]}, {QuODD`Private`imt, 
-          Part[QuODD`Private`tRangeNumeric, 2, 1], 
-          Part[QuODD`Private`tRangeNumeric, 2, 2]}, AspectRatio -> Automatic, 
-         AxesOrigin -> {0, 0}, PlotRangePadding -> 0, 
-         FrameLabel -> {"Re(t)", "Im(t)"}, PlotLabel -> "time contour", 
-         PlotStyle -> GrayLevel[0.8], ImageSize -> OptionValue[ImageSize]], 
-        Apply[Sequence, 
-         Table[
-          ContourPlot[Im[
-             QuODD`Private`r2function[
-             QuODD`Private`ret + I QuODD`Private`imt]] == 0, {
-           QuODD`Private`ret, 
-            Part[QuODD`Private`tRangeNumeric, 1, 1], 
-            Part[QuODD`Private`tRangeNumeric, 1, 2]}, {QuODD`Private`imt, 
-            Part[QuODD`Private`tRangeNumeric, 2, 1], 
-            Part[QuODD`Private`tRangeNumeric, 2, 2]}, AspectRatio -> 
-           Automatic, AxesOrigin -> {0, 0}, PlotRangePadding -> 0, 
-           ContourStyle -> {Thick, 
-             ReplaceAll[
-             QuODD`Private`selector, {
-              Less -> Red, Greater -> RGBColor[0, 0.6, 0]}]}, 
-           ContourLabels -> {None, Tooltip[Null, 
-              ReplaceAll[QuODD`Private`selector, {Less -> DisplayForm[
-                  Row[{"Branch cut.\nIm(", 
-                    Superscript[
-                    "\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)", "2"], 
+            QuODD`Private`ret + I QuODD`Private`imt]] == 0, {
+          QuODD`Private`ret, 
+           Part[QuODD`Private`tRangeNumeric, 1, 1], 
+           Part[QuODD`Private`tRangeNumeric, 1, 2]}, {QuODD`Private`imt, 
+           Part[QuODD`Private`tRangeNumeric, 2, 1], 
+           Part[QuODD`Private`tRangeNumeric, 2, 2]}, AspectRatio -> Automatic,
+           AxesOrigin -> {0, 0}, PlotRangePadding -> 0, 
+          ContourStyle -> {Thick, 
+            ReplaceAll[
+            QuODD`Private`selector, {
+             Less -> Red, Greater -> RGBColor[0, 0.6, 0]}]}, 
+          ContourLabels -> {None, Tooltip[Null, 
+             ReplaceAll[QuODD`Private`selector, {Less -> DisplayForm[
+                 Row[{"Branch cut.\nIm(", 
+                   Superscript["\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)", "2"],
                     ")=0,\nRe(", 
-                    Superscript[
-                    "\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)", "2"], ")<0"}]], 
-                Greater -> DisplayForm[
-                  Row[{"Im(", 
-                    Superscript[
-                    "\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)", "2"], 
+                   Superscript["\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)", "2"],
+                    ")<0"}]], Greater -> DisplayForm[
+                 Row[{"Im(", 
+                   Superscript["\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)", "2"],
                     ")=0,\nRe(", 
-                    Superscript[
-                    "\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)", "2"], 
+                   Superscript["\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)", "2"],
                     ")>0"}]]}]]& }, RegionFunction -> 
-           Function[{QuODD`Private`ret, QuODD`Private`imt}, 
-             QuODD`Private`selector[
-              Re[
-               QuODD`Private`r2function[
-               QuODD`Private`ret + I QuODD`Private`imt]], 0]]], {
-          QuODD`Private`selector, {Greater, Less}}]]}], 
-     Options[QuODD`timeContours] = {ImageSize -> {262.5, 266.}}, 
-     TagSet[QuODD`timeContours, 
-      MessageName[QuODD`timeContours, "usage"], ""], QuODD`timePathPlotter[
-       Pattern[QuODD`Private`rules, 
-        Blank[]], 
-       Pattern[QuODD`Private`t, 
-        Blank[]], 
-       Pattern[QuODD`Private`sman, 
-        Blank[]], 
-       OptionsPattern[]] := Show[
-       Join[{
-         ParametricPlot[{
-           Re[
-            QuODD`Private`t[QuODD`Private`s]], 
-           Im[
-            QuODD`Private`t[QuODD`Private`s]]}, {QuODD`Private`s, 0, 1}, 
-          Frame -> True, Axes -> False, AxesOrigin -> {0, 0}, 
-          PlotRangePadding -> 2], 
-         Graphics[{
-           PointSize[Large], Purple, 
-           Tooltip[
-            Point[
-             ({
-              Re[#], 
-              Im[#]}& )[
-              Evaluate[
-               ReplaceAll["ts", QuODD`Private`rules]]]], 
-            "\!\(\*SubscriptBox[\(t\), \(s\)]\)"]}], 
-         Graphics[{
-           PointSize[Large], Gray, 
-           Tooltip[
-            Point[
-             ({
-              Re[#], 
-              Im[#]}& )[
-              Evaluate[
-               ReplaceAll["t\[Kappa]", QuODD`Private`rules]]]], 
-            "\!\(\*SubscriptBox[\(t\), \(\[Kappa]\)]\)"]}], 
-         Graphics[{
-           PointSize[Large], Green, 
-           Tooltip[
-            Point[{
-              Re[
-               QuODD`Private`t[0]], 
-              Im[
-               QuODD`Private`t[0]]}], "Contour start"]}], 
-         Graphics[{
-           PointSize[Large], Red, 
-           Tooltip[
-            Point[{
-              Re[
-               QuODD`Private`t[1]], 
-              Im[
-               QuODD`Private`t[1]]}], "Contour end"]}], 
-         Graphics[{
-           PointSize[Large], Blue, 
-           Tooltip[
-            Point[{0, 0}], "Time origin"]}], 
-         Graphics[{
-           PointSize[Large], Black, 
-           Tooltip[
-            Point[{
-              Re[
-               QuODD`Private`t[QuODD`Private`sman]], 
-              Im[
-               QuODD`Private`t[QuODD`Private`sman]]}], "t(s)"]}]}, 
-        Map[Graphics[{
-           PointSize[Large], 
-           GrayLevel[0.7], 
-           Tooltip[
-            Point[{
-              Re[#], 
-              Im[#]}], "\!\(\*SubscriptBox[\(t\), \(CA\)]\)"]}]& , 
-         ReplaceAll["tCAset", QuODD`Private`rules]]]], 
-     Options[QuODD`timePathPlotter] = {ImageSize -> {262.5, 266.}}, 
-     TagSet[QuODD`timePathPlotter, 
-      MessageName[QuODD`timePathPlotter, "usage"], ""]}; (
-    Needs["EPToolbox`", 
-      StringJoin[
-       NotebookDirectory[], "EPToolbox.m"]]; Needs["ARMSupport`", 
-      StringJoin[
-       NotebookDirectory[], "ARMSupport.m"]]; Null))]], "Output"]
-}, Open  ]],
-
-Cell[BoxData[
- RowBox[{"\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-  "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-  "\[IndentingNewLine]"}]], "Input"],
-
-Cell[BoxData[
- RowBox[{"dif", "/.", 
-  RowBox[{"{", 
-   RowBox[{
-    RowBox[{
-     RowBox[{"GraphicsComplex", "[", 
-      RowBox[{
-       RowBox[{"{", "___", "}"}], ",", "a___"}], "]"}], "\[Rule]", 
-     RowBox[{"GraphicsComplex", "[", 
-      RowBox[{
-       RowBox[{"{", "\"\<long list\>\"", "}"}], ",", "a"}], "]"}]}], ",", 
-    RowBox[{
-     RowBox[{"FilledCurve", "[", "___", "]"}], "\[Rule]", 
-     RowBox[{"FilledCurve", "[", "\"\<stuff\>\"", "]"}]}]}], 
-   "}"}]}]], "Input"],
-
-Cell["\<\
-This is a basic example of the Quantum Orbits Dynamic Dashboard (or just \
-Dashboard from here on out).
-
-See below for an documentation of what everything is, and how to use it, as \
-well as some examples of the physics it helps uncover.\
-\>", "Text"],
-
-Cell[CellGroupData[{
-
-Cell["The multiple elements of the Dashboard are:", "Subsubsection"],
-
-Cell[CellGroupData[{
-
-Cell[TextData[{
- "Three graphs which show the complex trajectory ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{
-    RowBox[{
-     SubscriptBox[
-      StyleBox["r",
-       FontWeight->"Bold"], "cl"], "(", "t", ")"}], "=", 
-    RowBox[{
-     SubsuperscriptBox["\[Integral]", 
-      SubscriptBox["t", "s"], "t"], 
-     RowBox[{
-      RowBox[{"(", 
-       RowBox[{
-        StyleBox["p",
-         FontWeight->"Bold"], "+", 
-        RowBox[{
-         StyleBox["A",
-          FontWeight->"Bold"], "(", "\[Tau]", ")"}]}], ")"}], "d\[Tau]"}]}]}],
-    TraditionalForm]]],
- " in the complex ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{"x", ",", " ", "z"}], TraditionalForm]]],
- " and ",
- Cell[BoxData[
-  FormBox[
-   SuperscriptBox["r", "2"], TraditionalForm]]],
- " planes (top left, top centre and bottom centre, respectively)."
-}], "Item"],
-
-Cell["\<\
-On bottom right, the time contour in the complex time plane is the blue line.\
-\
-\>", "Item"],
-
-Cell[TextData[{
- "On bottom left, the relative probability of ionization as a function of \
-momentum, with the current value of momentum as a selector (",
- Cell[BoxData[
-  GraphicsBox[LocatorBox[Scaled[{0.5399999999999991, 0.5400641025641004}]],
-   ImagePadding->{{0., 1.}, {1., 0.}},
-   ImageSize->{26., Automatic},
-   PlotRange->{{-1.0416666666666667`, 1.0416666666666667`}, {-1.04, 1.04}},
-   PlotRangePadding->Automatic]], "Output"],
- "). This shows exclusively the tunnelling probability, ",
- Cell[BoxData[
-  FormBox[
-   SuperscriptBox["e", 
-    RowBox[{
-     RowBox[{"-", "2"}], 
-     RowBox[{"Im", "(", 
-      RowBox[{
-       RowBox[{
-        SubsuperscriptBox["\[Integral]", 
-         SubscriptBox["t", "0"], 
-         SubscriptBox["t", "s"]], 
-        SubscriptBox["I", "p"]}], "+", 
-       RowBox[{
-        FractionBox["1", "2"], 
-        SuperscriptBox[
-         RowBox[{"(", 
-          RowBox[{
-           StyleBox["p",
-            FontWeight->"Bold"], "+", 
-           RowBox[{
-            StyleBox["A",
-             FontWeight->"Bold"], "(", "\[Tau]", ")"}]}], ")"}], "2"], 
-        "d\[Tau]"}]}], ")"}]}]], TraditionalForm]]],
- ", normalized to 1 at the maximum of the distribution, which is at ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{
-    StyleBox["p",
-     FontWeight->"Bold"], "=", "0"}], TraditionalForm]]],
- "."
-}], "Item"],
-
-Cell["\<\
-On top right, the integrand for the Coulomb correction as a function of \
-normalized path length, in its real, imaginary and absolute parts.\
-\>", "Item"]
-}, Open  ]]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["Some more details and extra information:", "Subsubsection"],
-
-Cell[CellGroupData[{
-
-Cell["\<\
-There\[CloseCurlyQuote]s tooltips all over the place (or there should be, but \
-they\[CloseCurlyQuote]ve playing up in MM10), so hover your mouse over stuff \
-to try and find out what it is. Try, for example,\
-\>", "Item"],
-
-Cell[CellGroupData[{
-
-Cell["dots in the trajectories and the time contour", "Subitem"],
-
-Cell["gray regions", "Subitem"],
-
-Cell["the green and red lines on top and bottom right", "Subitem"],
-
-Cell["the curves on bottom centre", "Subitem"],
-
-Cell["the contours on bottom left show the value of probability", "Subitem"]
-}, Open  ]],
-
-Cell[TextData[{
- "The gray regions on bottom centre and right represent regions where ",
- Cell[BoxData[
-  FormBox[
-   SuperscriptBox["r", "2"], TraditionalForm]]],
- " and ",
- Cell[BoxData[
-  FormBox[
-   SuperscriptBox[
-    RowBox[{
-     SubscriptBox["r", "cl"], "(", "t", ")"}], "2"], TraditionalForm]]],
- ", resp., have a negative real part. This is not catastrophic but these \
-regions should be avoided; for example, molecular correlation potentials must \
-not be trusted there."
-}], "Item"],
-
-Cell[TextData[{
- "The red lines on top and bottom right are the lines where ",
- Cell[BoxData[
-  FormBox[
-   SuperscriptBox["r", "2"], TraditionalForm]]],
- " and ",
- Cell[BoxData[
-  FormBox[
-   SuperscriptBox[
-    RowBox[{
-     SubscriptBox["r", "cl"], "(", "t", ")"}], "2"], TraditionalForm]]],
- ", resp., become real and negative; here ",
- Cell[BoxData[
-  FormBox[
-   SqrtBox[
-    SuperscriptBox["r", "2"]], TraditionalForm]]],
- " has a branch cut."
-}], "Item"],
-
-Cell[TextData[{
- "The green lines, on the other hand, are the positive real axis of ",
- Cell[BoxData[
-  FormBox[
-   SuperscriptBox["r", "2"], TraditionalForm]]],
- " and ",
- Cell[BoxData[
-  FormBox[
-   SuperscriptBox[
-    RowBox[{
-     SubscriptBox["r", "cl"], "(", "t", ")"}], "2"], TraditionalForm]]],
- ", where everything is fine."
-}], "Item"],
-
-Cell[TextData[{
- "Dots on the top and on bottom right indicate the origin of each plot, the \
-start and end of the contour, and a controllable point along it. The start of \
-the contour is usually ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{
-    SubscriptBox["t", "\[Kappa]"], "=", 
-    RowBox[{
-     SubscriptBox["t", "s"], "-", 
-     RowBox[{"\[ImaginaryI]", "/", 
-      SuperscriptBox["\[Kappa]", "2"]}]}]}], TraditionalForm]]],
- ", which can be identified as the tunnel entrance."
-}], "Item"],
-
-Cell[TextData[{
- "The colour scale on bottom left is linear but the contours are logarithmic. \
-Thus there is a drop of one order of magnitude between successive thick lines \
-and a drop of ",
- Cell[BoxData[
-  FormBox[Cell[TextData[Cell[BoxData[
-    FormBox[
-     RadicalBox["10", "10"], TraditionalForm]]]]], TraditionalForm]]],
- "between successive thin lines (which also mark colour changes)."
-}], "Item"],
-
-Cell["\<\
-This contour plot is normalized to the probability at the peak of the field, \
-to zero total momentum.\
-\>", "Item"],
-
-Cell[TextData[{
- "The contour on bottom right is parametrized uniformly between the different \
-dots. This causes the rate of change ",
- Cell[BoxData[
-  FormBox[
-   FractionBox["dt", "ds"], TraditionalForm]]],
- " to change from one segment to the next, which is what causes the abrupt \
-shifts in the graph on top right. "
-}], "Item"],
-
-Cell[TextData[{
- "The integral with respect to ",
- Cell[BoxData[
-  FormBox["s", TraditionalForm]]],
- " of the real and imaginary parts on bottom centre gives the invariant ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{
-    SubscriptBox["\[Integral]", "contour"], 
-    RowBox[{
-     FractionBox["1", 
-      SqrtBox[
-       SuperscriptBox[
-        RowBox[{
-         SubscriptBox["r", "cl"], "(", "t", ")"}], "2"]]], "dt"}]}], 
-   TraditionalForm]]],
- ", which is the desired Coulomb correction up to constants."
-}], "Item"]
-}, Open  ]]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["How to control the Dashboard", "Subsubsection"],
-
-Cell[CellGroupData[{
-
-Cell[TextData[{
- "Most importantly, the time contour itself is editable, by dragging the \
-selectors marked ",
- Cell[BoxData[
-  GraphicsBox[LocatorBox[Scaled[{0.5399999999999991, 0.5400641025641004}]],
-   ImagePadding->{{0., 1.}, {1., 0.}},
-   ImageSize->{26., Automatic},
-   PlotRange->{{-1.0416666666666667`, 1.0416666666666667`}, {-1.04, 1.04}},
-   PlotRangePadding->Automatic]], "Input",
-  FontWeight->"Plain"],
- "on the kinks of the contour, or by clicking near them (the nearest selector \
-moves)."
-}], "Item"],
-
-Cell[TextData[{
- "The momentum can also be changed by dragging the selector marked ",
- Cell[BoxData[
-  GraphicsBox[LocatorBox[Scaled[{0.5399999999999991, 0.5400641025641004}]],
-   ImagePadding->{{0., 1.}, {1., 0.}},
-   ImageSize->{26., Automatic},
-   PlotRange->{{-1.0416666666666667`, 1.0416666666666667`}, {-1.04, 1.04}},
-   PlotRangePadding->Automatic]], "Input",
-  FontWeight->"Plain"],
- " on the contour plot on bottom left, or by clicking anywhere on that plot."
-}], "Item"],
-
-Cell["\<\
-For finer control, the text fields below the momentum plot can be used to \
-input specific values for each component. This can also be used to enter \
-values outside those shown on the plot.\
-\>", "Item"],
-
-Cell[TextData[{
- "The sign of both components can be changed by clicking the ",
- Cell[BoxData[
-  ButtonBox["+",
-   Appearance->Automatic,
-   ButtonFunction:>($CellContext`trange$$ = {{All, All}, {All, All}}),
-   Evaluator->Automatic,
-   ImageSize->Medium,
-   Method->"Preemptive"]], "Input"],
- " button, which will turn it to a ",
- Cell[BoxData[
-  ButtonBox["-",
-   Appearance->Automatic,
-   ButtonFunction:>($CellContext`trange$$ = {{All, All}, {All, All}}),
-   Evaluator->Automatic,
-   ImageSize->Medium,
-   Method->"Preemptive"]], "Input"],
- " and then back."
-}], "Item"],
-
-Cell["\<\
-The slider marked Contour progress on the top moves a black dot along the \
-contour the time plane, and along the corresponding space plots.\
-\>", "Item"],
-
-Cell[TextData[{
- "The ",
- Cell[BoxData[
-  FormBox[
-   SuperscriptBox["r", "2"], TraditionalForm]]],
- " and time plots, on bottom centre and bottom right, have adjustable plot \
-ranges below them. Click ",
- Cell[BoxData[
-  ButtonBox["Reset",
-   Appearance->Automatic,
-   ButtonFunction:>($CellContext`trange$$ = {{All, All}, {All, All}}),
-   Evaluator->Automatic,
-   ImageSize->Medium,
-   Method->"Preemptive"]], "Input"],
- " to set them to the default setting. "
-}], "Item"],
-
-Cell[TextData[{
- "The ionization time ",
- Cell[BoxData[
-  FormBox[
-   SubscriptBox["t", "s"], TraditionalForm]]],
- ", at which the trajectory ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{
-    RowBox[{
-     SubscriptBox[
-      StyleBox["r",
-       FontWeight->"Bold"], "cl"], "(", "t", ")"}], "=", 
-    RowBox[{
-     SubsuperscriptBox["\[Integral]", 
-      SubscriptBox["t", "s"], "t"], 
-     RowBox[{
-      RowBox[{"(", 
-       RowBox[{
-        StyleBox["p",
-         FontWeight->"Bold"], "+", 
-        RowBox[{
-         StyleBox["A",
-          FontWeight->"Bold"], "(", "\[Tau]", ")"}]}], ")"}], "d\[Tau]"}]}]}],
-    TraditionalForm]]],
- " starts, can be controlled using the input box at top centre. Clicking the ",
- Cell[BoxData[
-  ButtonBox["\<\"\\!\\(\\*SubscriptBox[\\(t\\), \\(s\\)]\\)\"\>",
-   Appearance->Automatic,
-   ButtonFunction:>($CellContext`\[CapitalDelta]tss$$ = 0),
-   Evaluator->Automatic,
-   Method->"Preemptive"]], "Input"],
- " button sets it to the saddle point time (which obeys ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{
-    RowBox[{
-     RowBox[{
-      FractionBox["1", "2"], 
-      SuperscriptBox[
-       RowBox[{"(", 
-        RowBox[{
-         StyleBox["p",
-          FontWeight->"Bold"], "+", 
-         RowBox[{
-          StyleBox["A",
-           FontWeight->"Bold"], "(", 
-          SubscriptBox["t", "s"], ")"}]}], ")"}], "2"]}], "+", 
-     SubscriptBox["I", "p"]}], "=", "0"}], TraditionalForm]]],
- "), and the ",
- Cell[BoxData[
-  ButtonBox["\<\"\\!\\(\\*SubscriptBox[\\(t\\), \\(0\\)]\\)\"\>",
-   Appearance->Automatic,
-   ButtonFunction:>($CellContext`\[CapitalDelta]tss$$ = (-I) 
-     Im[$CellContext`baretss$$]),
-   Evaluator->Automatic,
-   Method->"Preemptive"]], "Input"],
- " button sets it to the real part of that. This is useful for investigating \
-the process of deforming the ionization-time integration contour up to the \
-saddle-point time."
-}], "Item"],
-
-Cell[TextData[{
- "The sliders and controls on top right add and control an initial position \
-to the classical position, ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{
-    RowBox[{
-     SubscriptBox[
-      StyleBox["r",
-       FontWeight->"Bold"], "cl"], "(", "t", ")"}], "=", 
-    RowBox[{
-     SubscriptBox[
-      StyleBox["r",
-       FontWeight->"Bold"], "init"], "+", 
-     RowBox[{
-      SubsuperscriptBox["\[Integral]", 
-       SubscriptBox["t", "s"], "t"], 
-      RowBox[{
-       RowBox[{"(", 
-        RowBox[{
-         StyleBox["p",
-          FontWeight->"Bold"], "+", 
-         RowBox[{
-          StyleBox["A",
-           FontWeight->"Bold"], "(", "\[Tau]", ")"}]}], ")"}], 
-       "d\[Tau]"}]}]}]}], TraditionalForm]]],
- ". This is required if the start time is set to zero, as the trajectory is \
-meant to start on the ARM boundary."
-}], "Item"]
-}, Open  ]]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["How to call the function", "Subsubsection"],
-
-Cell[TextData[{
- "To make new Dashboards, you can use the dashboardPlotter function, though \
-this requires full-blown ",
- StyleBox["Mathematica",
-  FontSlant->"Italic"],
- " and cannot be done on the CDF player. To see the calling syntax, use "
-}], "Text"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"?", "dashboardPlotter"}]], "Input"],
-
-Cell[BoxData[
- StyleBox["\<\"dynamicDashboardPlotter[{F, \[Omega]}, \[Kappa]] plots a \
-dashboard for field amplitude F at frequency \[Omega], for ionization \
-potential \!\(\*SuperscriptBox[\(\[Kappa]\), \(2\)]\)/2.\\n  \
-\\ndynamicDashboardPlotter[{F, \[Omega]}, \[Kappa], path] institutes the \
-desired path, where the strings \\\"t\[Kappa]\\\", \\\"ts\\\", \\\"t0\\\" and \
-\\\"\[Tau]\\\" will be replaced by the corresponding functions of momentum, \
-and \\\"T\\\" is a laser period. Default is {\\\"t\[Kappa]\\\", \\\"t0\\\", \
-\\\"T\\\"}.\\n  \\ndynamicDashboardPlotter[{F, \[Omega]}, \[Kappa], path, \
-{poinit, ppinit}] specifies initial values of poinit and pp init for \
-\!\(\*SubscriptBox[\(p\), \(\[UpTee]\)]\) and \!\(\*SubscriptBox[\(p\), \(\
-\[DoubleVerticalBar]\)]\).\"\>", "MSG"]], "Print", "PrintUsage",
- CellTags->"Info3620753336-8646734"]
-}, Open  ]],
-
-Cell["\<\
-Entering \[ControlKey]+k will pull up templates for convenience (possibly not \
-in V8, though, or it may need \[ControlKey]+\[AltKey]+k or something).\
-\>", "Text"],
-
-Cell[BoxData[
- RowBox[{"\[IndentingNewLine]", "\[IndentingNewLine]"}]], "Input"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["Some physics examples", "Subsection"],
-
-Cell[CellGroupData[{
-
-Cell["The \[OpenCurlyQuote]standard\[CloseCurlyQuote] contour can fail", \
-"Subsubsection"],
-
-Cell[TextData[{
- "because branch cuts of ",
- Cell[BoxData[
-  FormBox[
-   SqrtBox[
-    SuperscriptBox[
-     RowBox[{
-      SubscriptBox["r", "cl"], "(", "t", ")"}], "2"]], TraditionalForm]]],
- " can cross the real axis. Unfortunately, this specific case occurs out in \
-the wings of the distribution where nothing gets observed to begin with. (In \
-essence, the transverse momentum for this case is implausibly large. This \
-causes the transverse coordinate to become very imaginary, and the \
-longitudinal coordinate cannot offset the large and negative ",
- Cell[BoxData[
-  FormBox[
-   SuperscriptBox[
-    RowBox[{
-     SubscriptBox["x", "cl"], "(", "t", ")"}], "2"], TraditionalForm]]],
- ", so the sum becomes negative.)"
-}], "Text"],
-
-Cell[BoxData[
- RowBox[{"dashboardPlotter", "[", 
-  RowBox[{
-   RowBox[{"{", 
-    RowBox[{"0.05", ",", "0.055"}], "}"}], ",", "1.007", ",", 
-   RowBox[{"{", 
-    RowBox[{"\"\<t\[Kappa]\>\"", ",", 
-     RowBox[{"\"\<t\[Kappa]\>\"", "-", 
-      RowBox[{"10", "\[ImaginaryI]"}]}], ",", 
-     RowBox[{"\"\<t\[Kappa]\>\"", "-", 
-      RowBox[{"10", "\[ImaginaryI]"}], "+", "4"}], ",", 
-     RowBox[{"\"\<t0\>\"", "+", "4"}], ",", 
-     RowBox[{"\"\<t0\>\"", "+", "15"}]}], "}"}], ",", " ", 
-   RowBox[{"{", 
-    RowBox[{"0.7", ",", "0.3"}], "}"}]}], "]"}]], "Input"],
-
-Cell[TextData[{
- "There are two important drawbacks with this scenario, that I can see:\n \
-\[Bullet] It only happens at very low probability. The starting point for \
-this is for transverse momentum just above ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{
-    SubscriptBox["p", "\[Perpendicular]"], "=", "0.5"}], TraditionalForm]]],
- " for \[OpenCurlyQuote]standard\[CloseCurlyQuote] conditions, and zero \
-longitudinal momentum. This means that the ionization probability there is \
-low (less than 1%), and who knows whether other effects come in to cloud this \
-picture or not. Higher ",
- Cell[BoxData[
-  FormBox[
-   SubscriptBox["p", "\[Perpendicular]"], TraditionalForm]]],
- " make the behaviour a lot clearer but this really drives the amplitude \
-down.\n \[Bullet] There is still a horizontal bit of the contour before the \
-drop, and this still accumulates phase as any energy the electron has is \
-being integrated along a real time direction. This may or may not mean that \
-the time delay is not actually measurable, but it merits careful \
-consideration."
-}], "Text"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["Recolliding electrons", "Subsubsection"],
-
-Cell["\<\
-... look quite interesting with these tools.
-
-Consider a \[OpenCurlyQuote]standard\[CloseCurlyQuote] recolliding electron \
-(zero transverse momentum and small, reasonable and positive momentum along \
-the laser polarization) and take the time contour through slightly more than \
-one period. During the recollision, it crosses the branch cut twice!\
-\>", "Text"],
-
-Cell[BoxData[
- RowBox[{"dashboardPlotter", "[", 
-  RowBox[{
-   RowBox[{"{", 
-    RowBox[{"0.05", ",", "0.055"}], "}"}], ",", "1.007", ",", 
-   RowBox[{"{", 
-    RowBox[{"\"\<t\[Kappa]\>\"", ",", 
-     RowBox[{"\"\<t\[Kappa]\>\"", "+", 
-      RowBox[{"1.", 
-       FractionBox[
-        RowBox[{"2", "\[Pi]"}], "0.055"]}]}], ",", 
-     RowBox[{"\"\<t0\>\"", "+", 
-      RowBox[{"1.3", 
-       FractionBox[
-        RowBox[{"2", "\[Pi]"}], "0.055"]}]}]}], "}"}], ",", " ", 
-   RowBox[{"{", 
-    RowBox[{"0.005", ",", "0.1"}], "}"}]}], "]"}]], "Input"],
-
-Cell[TextData[{
- "There are two aspects of this behaviour which look very robust to me.\n \
-\[Bullet] This is very close to the peak of the ionization probability, with \
-probability as high as 98%. This cannot be ignored.\n \[Bullet] After about \
-",
- Cell[BoxData[
-  FormBox[
-   RowBox[{
-    SubscriptBox["p", "\[DoubleVerticalBar]"], "=", "0.075"}], 
-   TraditionalForm]]],
- ", the branch cuts cross completely the real time axis. It is not clear to \
-me, at all, that there is any way to avoid them.\n\nDuring the recollision, \
-most of the action is in the plot of ",
- Cell[BoxData[
-  FormBox[
-   SuperscriptBox[
-    RowBox[{
-     SubscriptBox["r", "cl"], "(", "t", ")"}], "2"], TraditionalForm]]],
- ", on bottom centre. It seems the trajectory ",
- StyleBox["must",
-  FontSlant->"Italic"],
- " loop twice around the origin of that plot, hence the two branch cut \
-crossings. This can be seen by playing with the contour progress slider, or \
-by adding an intermediate point to the contour path at ",
- Cell[BoxData[
-  RowBox[{"\"\<t\[Kappa]\>\"", "+", 
-   FractionBox[
-    RowBox[{"2", "\[Pi]"}], "0.055"]}]], "Input"],
- "."
-}], "Text"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["More recollisions", "Subsubsection"],
-
-Cell[TextData[{
- "Finally, branch cut crossings and loops around the zero of ",
- Cell[BoxData[
-  FormBox[
-   SuperscriptBox[
-    RowBox[{
-     SubscriptBox["r", "cl"], "(", "t", ")"}], "2"], TraditionalForm]]],
- " seem even more unavoidable if one takes the end of the contour a few \
-periods further down. (Note, also, that in principle this contour should end \
-after the pulse is finished, so this dragging-out is necessary.)"
-}], "Text"],
-
-Cell[BoxData[
- RowBox[{"dashboardPlotter", "[", 
-  RowBox[{
-   RowBox[{"{", 
-    RowBox[{"0.05", ",", "0.055"}], "}"}], ",", "1.007", ",", 
-   RowBox[{"{", 
-    RowBox[{"\"\<t\[Kappa]\>\"", ",", 
-     RowBox[{"\"\<t0\>\"", "+", 
-      RowBox[{"3", 
-       FractionBox[
-        RowBox[{"2", "\[Pi]"}], "0.055"]}]}]}], "}"}], ",", " ", 
-   RowBox[{"{", 
-    RowBox[{"0", ",", "0.1"}], "}"}]}], "]"}]], "Input"],
-
-Cell[TextData[{
- "Points of note:\n \[Bullet] It\[CloseCurlyQuote]s no longer clear to me \
-whether the branch cuts come in pairs or not. It would be nice if they did, \
-as crossing square-root branch cuts twice returns you to the same branch of \
-the Riemann surface, if that even makes sense in the current context, but I \
-don\[CloseCurlyQuote]t know yet whether it\[CloseCurlyQuote]s the case or \
-not.\n \[Bullet] All of the branch cuts definitely do cut the real axis and \
-at this point it\[CloseCurlyQuote]s anyone\[CloseCurlyQuote]s guess what to \
-do with the time integration over the contour.\n \[Bullet] I really, really \
-enjoy the multiple loops around the zero of ",
- Cell[BoxData[
-  FormBox[
-   SuperscriptBox[
-    RowBox[{
-     SubscriptBox["r", "cl"], "(", "t", ")"}], "2"], TraditionalForm]]],
- " ."
-}], "Text"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["What I\[CloseCurlyQuote]m working on now", "Subsubsection"],
-
-Cell["\<\
-is a way to automatically choose contours that will avoid the branch cuts in \
-situations like this,\
-\>", "Text"],
-
-Cell[BoxData[
- RowBox[{"dashboardPlotter", "[", 
-  RowBox[{
-   RowBox[{"{", 
-    RowBox[{"0.05", ",", "0.055"}], "}"}], ",", "1.007", ",", 
-   RowBox[{"{", 
-    RowBox[{"\"\<t\[Kappa]\>\"", ",", "\"\<t0\>\"", ",", "\"\<T\>\""}], "}"}],
-    ",", " ", 
-   RowBox[{"{", 
-    RowBox[{"0.02", ",", "0.9"}], "}"}]}], "]"}]], "Input"],
-
-Cell["or like this", "Text"],
-
-Cell[BoxData[
- RowBox[{"dashboardPlotter", "[", 
-  RowBox[{
-   RowBox[{"{", 
-    RowBox[{"0.05", ",", "0.055"}], "}"}], ",", "1.007", ",", 
-   RowBox[{"{", 
-    RowBox[{"\"\<t\[Kappa]\>\"", ",", "\"\<t0\>\"", ",", 
-     RowBox[{"1.5", "\"\<T\>\""}]}], "}"}], ",", " ", 
-   RowBox[{"{", 
-    RowBox[{"0.001", ",", "0.072"}], "}"}]}], "]"}]], "Input"],
-
-Cell["\<\
-Notice that these problem points have much higher ionization probabilities!\
-\>", "Text"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["Initialization", "Subsubsection"],
-
-Cell[BoxData[{
- RowBox[{"Needs", "[", 
-  RowBox[{"\"\<EPToolbox`\>\"", ",", 
-   RowBox[{
-    RowBox[{"NotebookDirectory", "[", "]"}], "<>", "\"\<EPToolbox.m\>\""}]}], 
-  "]"}], "\[IndentingNewLine]", 
- RowBox[{"Needs", "[", 
-  RowBox[{"\"\<ARMSupport`\>\"", ",", 
-   RowBox[{
-    RowBox[{"NotebookDirectory", "[", "]"}], "<>", "\"\<ARMSupport.m\>\""}]}],
-   "]"}], "\[IndentingNewLine]", 
- RowBox[{"Needs", "[", 
-  RowBox[{"\"\<QuODD`\>\"", ",", 
-   RowBox[{
-    RowBox[{"NotebookDirectory", "[", "]"}], "<>", "\"\<QuODD.m\>\""}]}], 
-  "]"}]}], "Input",
- InitializationCell->True,
- EmphasizeSyntaxErrors->True],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"$HistoryLength", "=", "5"}], ";"}]], "Input",
- InitializationCell->True]
-}, Open  ]]
-}, Open  ]]
-}, Open  ]]
-}, Open  ]]
+          Function[{QuODD`Private`ret, QuODD`Private`imt}, 
+            QuODD`Private`selector[
+             Re[
+              QuODD`Private`r2function[
+              QuODD`Private`ret + I QuODD`Private`imt]], 0]]], {
+         QuODD`Private`selector, {Greater, Less}}]]}], 
+    Options[QuODD`timeContours] = {ImageSize -> {262.5, 266.}}, 
+    TagSet[QuODD`timeContours, 
+     MessageName[QuODD`timeContours, "usage"], ""], QuODD`timePathPlotter[
+      Pattern[QuODD`Private`rules, 
+       Blank[]], 
+      Pattern[QuODD`Private`t, 
+       Blank[]], 
+      Pattern[QuODD`Private`sman, 
+       Blank[]], 
+      OptionsPattern[]] := Show[
+      Join[{
+        ParametricPlot[{
+          Re[
+           QuODD`Private`t[QuODD`Private`s]], 
+          Im[
+           QuODD`Private`t[QuODD`Private`s]]}, {QuODD`Private`s, 0, 1}, Frame -> 
+         True, Axes -> False, AxesOrigin -> {0, 0}, PlotRangePadding -> 2], 
+        Graphics[{
+          PointSize[Large], Purple, 
+          Tooltip[
+           Point[
+            ({
+             Re[#], 
+             Im[#]}& )[
+             Evaluate[
+              ReplaceAll["ts", QuODD`Private`rules]]]], 
+           "\!\(\*SubscriptBox[\(t\), \(s\)]\)"]}], 
+        Graphics[{
+          PointSize[Large], Gray, 
+          Tooltip[
+           Point[
+            ({
+             Re[#], 
+             Im[#]}& )[
+             Evaluate[
+              ReplaceAll["t\[Kappa]", QuODD`Private`rules]]]], 
+           "\!\(\*SubscriptBox[\(t\), \(\[Kappa]\)]\)"]}], 
+        Graphics[{
+          PointSize[Large], Green, 
+          Tooltip[
+           Point[{
+             Re[
+              QuODD`Private`t[0]], 
+             Im[
+              QuODD`Private`t[0]]}], "Contour start"]}], 
+        Graphics[{
+          PointSize[Large], Red, 
+          Tooltip[
+           Point[{
+             Re[
+              QuODD`Private`t[1]], 
+             Im[
+              QuODD`Private`t[1]]}], "Contour end"]}], 
+        Graphics[{
+          PointSize[Large], Blue, 
+          Tooltip[
+           Point[{0, 0}], "Time origin"]}], 
+        Graphics[{
+          PointSize[Large], Black, 
+          Tooltip[
+           Point[{
+             Re[
+              QuODD`Private`t[QuODD`Private`sman]], 
+             Im[
+              QuODD`Private`t[QuODD`Private`sman]]}], "t(s)"]}]}, 
+       Map[Graphics[{
+          PointSize[Large], 
+          GrayLevel[0.7], 
+          Tooltip[
+           Point[{
+             Re[#], 
+             Im[#]}], "\!\(\*SubscriptBox[\(t\), \(CA\)]\)"]}]& , 
+        ReplaceAll["tCAset", QuODD`Private`rules]]]], 
+    Options[QuODD`timePathPlotter] = {ImageSize -> {262.5, 266.}}, 
+    TagSet[QuODD`timePathPlotter, 
+     MessageName[QuODD`timePathPlotter, "usage"], ""]}]], "Output"]
 },
 WindowSize->{1855, 1056},
 Visible->True,
