@@ -360,10 +360,10 @@ rangeReset[tRangeSymbolic,{"Re(t)","Im(t)"}]
 ,Spacings->0
 ]]
 ,SaveDefinitions->True
-(*,Initialization\[RuleDelayed](
+,Initialization:>(
 Needs["EPToolbox`",NotebookDirectory[]<>"EPToolbox.m"];
 Needs["ARMSupport`",NotebookDirectory[]<>"ARMSupport.m"];
-)*)
+)
 ]
 
 
