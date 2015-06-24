@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      1623,         60]
-NotebookOptionsPosition[      1285,         43]
-NotebookOutlinePosition[      1621,         58]
-CellTagsIndexPosition[      1578,         55]
+NotebookDataLength[      1792,         62]
+NotebookOptionsPosition[      1452,         45]
+NotebookOutlinePosition[      1790,         60]
+CellTagsIndexPosition[      1747,         57]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -29,20 +29,22 @@ Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"Export", "[", 
-  RowBox[{"\"\<CDF export.cdf\>\"", ",", 
+  RowBox[{"\"\<Quantum Orbits Dynamic Dashboard.cdf\>\"", ",", 
    RowBox[{
    "Import", "[", "\"\<Quantum Orbits Dynamic Dashboard.nb\>\"", "]"}]}], 
   "]"}]], "Input",
  CellChangeTimes->{{3.6440803214352303`*^9, 3.644080324996764*^9}, {
   3.644080359489294*^9, 3.6440803841646223`*^9}, {3.64408041640267*^9, 
-  3.644080420193872*^9}}],
+  3.644080420193872*^9}, {3.6441331331533012`*^9, 3.644133135674513*^9}}],
 
-Cell[BoxData["\<\"CDF export.cdf\"\>"], "Output",
- CellChangeTimes->{3.6440803865045853`*^9, 3.644080754218466*^9}]
+Cell[BoxData["\<\"Quantum Orbits Dynamic Dashboard.cdf\"\>"], "Output",
+ CellChangeTimes->{
+  3.6440803865045853`*^9, 3.644080754218466*^9, 3.644131469120432*^9, {
+   3.644133139504724*^9, 3.644133147675024*^9}}]
 }, Open  ]]
 },
 WindowSize->{808, 911},
-WindowMargins->{{1027, Automatic}, {9, Automatic}},
+WindowMargins->{{1007, Automatic}, {-10, Automatic}},
 FrontEndVersion->"10.1 for Linux x86 (64-bit) (March 23, 2015)",
 StyleDefinitions->"Default.nb"
 ]
@@ -59,8 +61,8 @@ CellTagsIndex->{}
 Notebook[{
 Cell[558, 20, 215, 5, 32, "Input"],
 Cell[CellGroupData[{
-Cell[798, 29, 353, 8, 32, "Input"],
-Cell[1154, 39, 115, 1, 32, "Output"]
+Cell[798, 29, 423, 8, 55, "Input"],
+Cell[1224, 39, 212, 3, 32, "Output"]
 }, Open  ]]
 }
 ]

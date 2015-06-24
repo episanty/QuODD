@@ -23,72 +23,28 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[      1064,         20]
-NotebookDataLength[    888090,      15744]
-NotebookOptionsPosition[    884657,      15619]
-NotebookOutlinePosition[    885556,      15652]
-CellTagsIndexPosition[    885468,      15647]
+NotebookDataLength[    888393,      15242]
+NotebookOptionsPosition[    889049,      15242]
+NotebookOutlinePosition[    889386,      15257]
+CellTagsIndexPosition[    889343,      15254]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-
-Cell[CellGroupData[{
-Cell["The Quantum Orbits Dynamic Dashboard", "Title"],
-
-Cell[CellGroupData[{
-
-Cell["Introduction", "Section"],
-
-Cell[BoxData[
- ButtonBox["\<\"Initialize\"\>",
-  Appearance->Automatic,
-  ButtonFunction:>FrontEndTokenExecute["EvaluateInitialization"],
-  Evaluator->Automatic,
-  Method->"Preemptive"]], "Output"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"dashboardPlotter", "[", 
-  RowBox[{
-   RowBox[{"{", 
-    RowBox[{"0.05", ",", "0.055"}], "}"}], ",", "1.007", ",", 
-   RowBox[{"{", 
-    RowBox[{"\"\<t\[Kappa]\>\"", ",", "\"\<t0\>\"", ",", 
-     RowBox[{"\"\<t0\>\"", "+", 
-      FractionBox[
-       RowBox[{"2", "\[Pi]"}], "0.055"], "+", 
-      RowBox[{"5", "\[ImaginaryI]"}]}], ",", 
-     RowBox[{"\"\<t0\>\"", "+", 
-      RowBox[{"1.3", 
-       FractionBox[
-        RowBox[{"2", "\[Pi]"}], "0.055"]}]}]}], "}"}], ",", " ", 
-   RowBox[{"{", 
-    RowBox[{"0.05", ",", "0.4"}], "}"}]}], "]"}]], "Input"],
-
 Cell[BoxData[
  DynamicModuleBox[{QuODD`Private`po$$ = 0.05, QuODD`Private`pp$$ = 0.4, 
   QuODD`Private`py$$ = 0, QuODD`Private`sMan$$ = 0.1, QuODD`Private`t$$ = 
   InterpolatingFunction[{{0., 1.}}, {
-   5, 3, 0, {4}, {2}, 0, 0, 0, 0, Automatic, {}, {}, False}, {{0., 
-   0.3333333333333333, 0.6666666666666666, 
-   1.}}, {{Complex[0., -0.9861456399049753] + 
-     ARMSupport`ts[{0.05, 0., 0.4}, {0.05, 0.055, 1.007}]}, {
-     Re[
-      ARMSupport`ts[{0.05, 0., 0.4}, {0.05, 0.055, 1.007}]]}, {
-    Complex[114.23973285781067`, 5.] + Re[
-       ARMSupport`ts[{0.05, 0., 0.4}, {0.05, 0.055, 1.007}]]}, {
-    148.51165271515387` + Re[
-       ARMSupport`ts[{0.05, 0., 0.4}, {0.05, 0.055, 1.007}]]}}, {Automatic}], 
+   5, 15, 0, {4}, {2}, 0, 0, 0, 0, Automatic, {}, {}, False}, {{0., 
+   0.3333333333333333, 0.6666666666666666, 1.}}, {
+   Developer`PackedArrayForm, {0, 1, 2, 3, 4}, {Complex[5.303627496195924, 
+    16.991914396531634`], Complex[5.303627496195924, 0.], Complex[
+    119.5433603540066, 5.], Complex[153.8152802113498, 0.]}}, {Automatic}], 
   QuODD`Private`rules$$ = {
-  "t\[Kappa]" -> 
-   Complex[0., -0.9861456399049753] + 
-    ARMSupport`ts[{0.05, 0, 0.4}, {0.05, 0.055, 1.007}], "ts" -> 
-   ARMSupport`ts[{0.05, 0, 0.4}, {0.05, 0.055, 1.007}], "t0" -> Re[
-     ARMSupport`ts[{0.05, 0, 0.4}, {0.05, 0.055, 1.007}]], "\[Tau]" -> Im[
-     ARMSupport`ts[{0.05, 0, 0.4}, {0.05, 0.055, 1.007}]], "T" -> 
-   114.23973285781067`, "tCAset" -> {}}, QuODD`Private`trajectory$$ = 
-  Function[QuODD`Private`t$, 
+  "t\[Kappa]" -> Complex[5.303627496195924, 16.991914396531634`], "ts" -> 
+   Complex[5.303627496195924, 17.97806003643661], "t0" -> 5.303627496195924, 
+   "\[Tau]" -> 17.97806003643661, "T" -> 114.23973285781067`, "tCAset" -> {}},
+   QuODD`Private`trajectory$$ = Function[QuODD`Private`t$, 
    ARMSupport`complexTrajectory[
    QuODD`Private`t$, {
     QuODD`Private`po$$, QuODD`Private`py$$, QuODD`Private`pp$$}, {0.05, 0.055,
@@ -96,21 +52,13 @@ Cell[BoxData[
      QuODD`Private`xinit$$, 0, QuODD`Private`zinit$$}, ARMSupport`forcets -> 
     QuODD`Private`tss$$]], QuODD`Private`expr$$, QuODD`Private`labels$$, 
   QuODD`Private`path$$ = {
-  Complex[0., -0.9861456399049753] + 
-   ARMSupport`ts[{0.05, 0, 0.4}, {0.05, 0.055, 1.007}], 
-   Re[
-    ARMSupport`ts[{0.05, 0, 0.4}, {0.05, 0.055, 1.007}]], 
-   Complex[114.23973285781067`, 5.] + Re[
-     ARMSupport`ts[{0.05, 0, 0.4}, {0.05, 0.055, 1.007}]], 
-   148.51165271515387` + Re[
-     ARMSupport`ts[{0.05, 0, 0.4}, {0.05, 0.055, 1.007}]]}, 
+   Complex[5.303627496195924, 16.991914396531634`], 5.303627496195924, 
+   Complex[119.5433603540066, 5.], 153.8152802113498}, 
   QuODD`Private`barepath$$ = {
   "t\[Kappa]", "t0", Complex[114.23973285781067`, 5.] + "t0", 
    148.51165271515387` + "t0"}, QuODD`Private`\[CapitalDelta]path$$ = {0, 0, 
-  0, 0}, QuODD`Private`tss$$ = 
-  ARMSupport`ts[{0.05, 0, 0.4}, {0.05, 0.055, 1.007}], 
-  QuODD`Private`baretss$$ = 
-  ARMSupport`ts[{0.05, 0, 0.4}, {0.05, 0.055, 1.007}], 
+  0, 0}, QuODD`Private`tss$$ = Complex[5.303627496195924, 17.97806003643661], 
+  QuODD`Private`baretss$$ = Complex[5.303627496195924, 17.97806003643661], 
   QuODD`Private`\[CapitalDelta]tss$$ = 0, QuODD`Private`tCAset$$ = {}, 
   QuODD`Private`showtCAs$$ = False, QuODD`Private`pomax$$ = 1., 
   QuODD`Private`ppmax$$ = 1.5, QuODD`Private`xinit$$ = 0, 
@@ -118,15 +66,12 @@ Cell[BoxData[
   QuODD`Private`r2range$$ = {{All, All}, {All, All}}, 
   QuODD`Private`r2FullRange$$ = All, QuODD`Private`r2plot$$, 
   QuODD`Private`tRangeSymbolic$$ = {{All, All}, {All, All}}, 
-  QuODD`Private`tRangeNumeric$$ = {{-10 + Re[
-      ARMSupport`ts[{0.05, 0, 0.4}, {0.05, 0.055, 1.007}]], 
-    163.8152802113498}, {-10, 
-    Max[15, 10 + Im[
-       ARMSupport`ts[{0.05, 0, 0.4}, {0.05, 0.055, 1.007}]]]}}, 
+  QuODD`Private`tRangeNumeric$$ = {{-4.696372503804076, 
+   163.8152802113498}, {-10, 27.97806003643661}}, 
   QuODD`Private`updateDefinitions$$}, 
   RowBox[{
    DynamicBox[ToBoxes[QuODD`Private`updateDefinitions$$[]; "", StandardForm],
-    ImageSizeCache->{0., {0., 7.}}], " ", 
+    ImageSizeCache->{16., {-4., 8.}}], " ", 
    FrameBox[
     TagBox[GridBox[{
        {
@@ -151,7 +96,7 @@ Cell[BoxData[
                 Dynamic[Typeset`paused$$], 
                 Dynamic[Typeset`rate$$], 
                 Dynamic[Typeset`dir$$], {ImageSize -> 131.25}, {}, {}, {}, 
-                Expression, {}, {}], ImageSizeCache -> {187., {5., 13.}}], 
+                Expression, {}, {}], ImageSizeCache -> {187., {6., 12.}}], 
               DynamicUpdating -> True], DynamicModuleValues :> {}], 
             BaselinePosition -> Baseline, ImageMargins -> 0], 
            Manipulate`InterpretManipulator[
@@ -189,9 +134,9 @@ Cell[BoxData[
         TagBox[GridBox[{
            {
             InterpretationBox[Cell[BoxData[
-              
-              FormBox["\<\"\\!\\(\\*SubscriptBox[\\(x\\), \\(init\\)]\\) \
-\"\>", TextForm]], "InlineText"],
+              FormBox[
+              "\"\<\\!\\(\\*SubscriptBox[\\(x\\), \\(init\\)]\\) \>\"", 
+               TextForm]], "InlineText"],
              Text["\!\(\*SubscriptBox[\(x\), \(init\)]\) "]], 
             ButtonBox[
              DynamicBox[ToBoxes[
@@ -229,7 +174,7 @@ Cell[BoxData[
                   Dynamic[Typeset`paused$$], 
                   Dynamic[Typeset`rate$$], 
                   Dynamic[Typeset`dir$$]],
-                 ImageSizeCache->{255., {7., 14.}}],
+                 ImageSizeCache->{255., {8., 13.}}],
                 DynamicUpdating->True],
                DynamicModuleValues:>{}],
               BaselinePosition->Baseline,
@@ -242,9 +187,9 @@ Cell[BoxData[
               Appearance -> {"Labeled"}}]]},
            {
             InterpretationBox[Cell[BoxData[
-              
-              FormBox["\<\"\\!\\(\\*SubscriptBox[\\(z\\), \\(init\\)]\\) \
-\"\>", TextForm]], "InlineText"],
+              FormBox[
+              "\"\<\\!\\(\\*SubscriptBox[\\(z\\), \\(init\\)]\\) \>\"", 
+               TextForm]], "InlineText"],
              Text["\!\(\*SubscriptBox[\(z\), \(init\)]\) "]], 
             ButtonBox[
              DynamicBox[ToBoxes[
@@ -282,7 +227,7 @@ Cell[BoxData[
                   Dynamic[Typeset`paused$$], 
                   Dynamic[Typeset`rate$$], 
                   Dynamic[Typeset`dir$$]],
-                 ImageSizeCache->{255., {7., 14.}}],
+                 ImageSizeCache->{255., {8., 13.}}],
                 DynamicUpdating->True],
                DynamicModuleValues:>{}],
               BaselinePosition->Baseline,
@@ -337,7 +282,7 @@ Cell[BoxData[
                     QuODD`Private`pp$$}, {0.05, 0.055, 1.007}])/
                  E^(2 ARMSupport`volkovExponent[{0, 0, 0}, {0.05, 0.055, 
                     1.007}])]]], StandardForm],
-             ImageSizeCache->{115., {3., 13.}}], ""},
+             ImageSizeCache->{120., {3., 12.}}], ""},
            {
             LocatorPaneBox[Dynamic[{
                Abs[QuODD`Private`po$$], 
@@ -14245,90 +14190,7 @@ G91Nk33SnmhuCF7Ww9Ft/516Jgixd+AfGqRYwg==
              PlotRange->{{0, 0.075}, {0, 1}},
              PlotRangeClipping->True,
              PlotRangePadding->{{None, None}, {None, None}},
-             Ticks->{Automatic, Automatic},
-             ImageCache->GraphicsData["CompressedBitmap", "\<\
-eJztWnlYk0caHwmn4LF9trXaQ6xtrdpaa1vrtd36tKW2fardbd3Wo3WtFuRS
-iwgkQBISAoEgEOQShIqoLCj1QC2KFQEraDjlUpFLBBG5QoGEJF+yM98XNDEf
-5EtIV599/GPmnW+Ymd+bmXd+78w7fLHRc8uP7hs9nTdttP/EY+P2Lc6bdtg7
-bPOAVbRxAAAHmHbbA1RWwaI6cwAqFSzZIGELHB0dF2hUALym2Q6AVlsAWmBq
-g6l5IiFbhuuhRO2AbtfMmQCctgfgKJSnoMx8GYCTM6CE31lQHn9pxK6BCwEI
-fRsArlpy3gOA/w4AqJ7/LlEeoav/YgB4sLn/EkIylhHS52+EZC4dsevmFQC4
-fgzAD58ScqNaDtc7O5B1tUZVH68F4JNvAfh4HSEd1qglrDdDBUDDe6IOKM3X
-GWHFegC+QL3Ucvj7cziiGSqMNgKuPmqJGn66TnsEzZHxISzwPuOfxcSi6yH+
-iRMaJSr1sPKvu0vSysM57Eo2m+cfffI6rR9TzdRBWuAGwNswLXAn5FskUgPJ
-9mGkFxVdBXUCv+jninoUNkpZ65UzQX6fxFf1AyVs/ZIO3JyfAJi7HYDZHmpJ
-8j0KnPJrcUlolm907bgBJfrGNncXBB32ja8HElK4VZsAWL0BgJUjyFU/jAon
-928/ydnFzrgNZMRSvT94I7KQzhfRxNhDcMSKRsDhULLCc+1VphEQ8+S304e2
-utCnXurBIfzaTwVk+UfvLd9FLFWSMIVX6BNcbCZWkkEs2wrAEpiAGSoB2lKY
-o9LibcOABM4EM5VS+kH79Uq3svMxMjfnYTylU3ee34Cre/Dzed1owVqajtJd
-891Dq8Eg7EUAWf198HpkUkBKE5ASur+AdV9s5NGjJ96E0/KUjk4fwUVb7oF0
-QiVg+SEs43U7CPmBJzHLas1oKqzf40bOofIYzja5k4ZmPflQM7fAV3PaZZOw
-wfqW/3i7QM2qRtPMXIUNzOzs6DaTKck0AwkQOQFfkIQRFmTCK4qOU5Kdrozh
-BYFrjhYkuWYXi97kTeckCffxirzxNcfW9RTFVfHYbGBWxYY5rYLNCZuX0SLF
-RzIjRtVS8RljVNIxQ2gjnPCHzPASnU/YiI0+WJyTvP8JgAtkME3ptoaQVMzm
-K3FJSKlPYEy5ADfTwBPh0f6HGeqNZ433nTgO9t19M82z23W77xVWUPz8c7ck
-iAc0zcdCpeiJFR0Mvk338j3HDk9/rrRHbqeprQVSxiYFAOv9sApKm/1omlAJ
-0Ibr8Ekb3ZxUi2QNP8u2OXss21cnmaIQXxkId3NmeJ3uABgyJLzvZGQ+P9YV
-JLbRd3qmMJIb3xS3ZJUFco9bt8m0TGvZYN3eX9nCS1YdcmxFX9WBfLYg16JT
-AT2tzvKmQe3S8OVNo2hxiNRCin148TVhhMUdj4hhHqHHobl92OLGa1qcpUre
-eTJ3t0ev+za3JO+UJiupvF10ise3z+1UEFCWtpi0b0KfBENfNipZW+kv3JAX
-LnZjRiluGD0SU4zyociWdI5PyK/psbsONplJleK8EgHnzbSWIfW4ltYqWWfE
-lfSIWi6Tk8mPy7iaHsBGf9fSEif0xRxId2xIdwGEXKKWS1FSl0cj9FF30gON
-ZRG30znrQ4t6kLHALYFrPC8damx2vw32XU9heAZzj8iyS469JbmV0xG6g74g
-tVkKtNTGd98HoZAJgyEThhByOZ+QH/JNsPvUtoxUcurKC85hRgiv8gLYIjYv
-skbICpp+vlOhsQOlKU0/+2exdofUsfwYtb6s4Lowv4BXT7TLSUwiG05mNm4S
-KP+LlknAZNTOI7hi0qeDVbskrq7B0y52K+BEhg66ugkmVwxo7jpZQlPqT80u
-3hnjG4ew5YPX9sM94z3reLsC6FX1T912MCmcOy8EZTOFwgYuw6eczomsiWIF
-2cOJfmAe0rTGRL+jrFgBnGc/kT8v5vKBYObCxEaJcdqPae+te8iS8b2nYcmr
-xcVxRwLiC23uypQzZPeuVCRy4qaKejETqTrmTaemCWhvfUfK4z37Xd13SNxd
-d66ML+9DbXX3myM8Ea33gkygIb/3JCTZfvuuvDCznsW4f8yE+y30NCOqelw/
-fsxUbOnM42X47jFmv6kWSJtT6/196UGso63z/mjJrRKw901okKh0yW3aGQCm
-ngUAl2cIOW34Wy3JPJ8olrej1dXr/pkcoTcIGBGv5N1FB6mGimMchkN8NXEm
-p77/VAuljcnFrMDwfGaoaG5na36tgJk4sV6iIjOLUqhaKW4WpRT3H0qSsPrD
-XMlPLs4yZ2e33zx3nbVql+PnemP3n9pS0CkjqjQtCLKQa+N2uuBfaaJuIFeR
-+Wv9iht256Gy9czxNiiXMe9k8b8RinpRGztTaDf6FYnKbiNcJ20KJi7JjxNk
-2bTKVMAkqlHlLMyxK58fxD3ahtpZqeTtxVk8/nR4qFGrhk+cd1t2xOqEYrEO
-ARit3ag0RWwby1ny9pOVXHbG5BsD2OLB+szyAA5+WLQkBp6glDTm/hKW8tfK
-PzCSY8Bq6P6/3AWvnlCuDCfkqghCjpmWCA0nQ1LozRTFeQ+5uTgPOLt5rY29
-jC+xBiXJBK1H/DDXLU4qJ0cnlaOTo9LJcetKPiRTaMDjdWhpbj4Acwrg/RzK
-2RfVUv09J5+QpqKl12R3TpRxucdtb0mVb0rJD+NvyG5nXggMy7G9LVVOVfSW
-VyWzw9GZloyW7kLV7uJmcHckWpqolNQXHuQna8VOOksyasKJYwEzOqvGvA+j
-REtwQficwOP3DXf4NP7A18p3dJwN8gjO6UB0BL8HztZGsBfubZQaqv3TBrn4
-od0tab6FHvzsSY2D2PPy7tLqZFaY8ZNGOeBkTYFvHmiJDDMgln0w/WJ8CKec
-yYlYl1bUMQ5d7Y3S0ljiHpl/NM5Ma3qvCKI4aS1gCMfEnpb29dGkmIlUHZ3F
-9ZCR2gk+j3X/XhXBTp4Gr9gvy+4WVu1mJ0y+PqA0iYKjc7laQbjMkq23fkto
-CGT4lNG58e/kNOEBAbWC6Hd9Jq7MrBByGM1ePkFrUy+P5KWNUHBUOtcNrH2/
-G4A1cSiIhUqAtj4GHhlh6ds9IwTWjCDnSShCsq3l3J6rQQHsK2zyCAk0uK7I
-kvTwRhadUerHjX3/9I1+/OakOy0v1VuDGQ3WAJijEjBH5ft1ugG3P4mQsQ3d
-l8LSWIki6w6Z8hXZ3fyyKO5+aJNKsq2gsgF4ssLzx4CQsaX9NyumXBPLUQ1c
-n/6cqoiABfsfvsbr154KIauPCbCuL69MwHo3iZz3qcHovS+9J2lI2xOXWmh3
-Rypf1F9/6kawXwI8mZARADXEkYlRjTh/6NYhuCfCa4JZjGJfXoxDVrXuDU0/
-4jNU+I32HNZTmB8muIACcWCiMaZG2Y3ZUOIzO5W0sXWv1xbFli14anbx2WfX
-JDX01xvjvEjeIgyHMOB1xVgIQ19UlhVYgSW/W6HnDlgClksvWgFUWnzpgUTt
-jAn36aJ9lGMPlp+3Rw8ZsARoH56zB0TdDJP5ABsqPmD4LQHmksz6uIBFCfUS
-sjuY6nWAJys8HzFAZwTx21A5iRun5iMmfWu4AH9kVwrpzTt96E10us+Ap5vL
-HTdPlkMcMQPjDfsB1A/iiP3lrvdyo3ZEnr0Dlbs/ZwZOGXUXYAF//r2sC9GR
-s8+0iTNvGrdCVPhfHdGYIb+XdzY64tjpgihjfpge3n8QNpH/2Jkv7PPe6rUo
-3liQkbhcHf1AbyvZBUKWMRM237DmBvqimcaMPnZvYjCE4d7EYAhDvcm01tfA
-1LbX4OCoBCxQGZWGk9EvR1pQRAR6z7tgc+JCgOSGfYtwuT51MS7/l7cJO6W0
-5cBvSaHXOP5+V/0DIldllvcChYr0mqpaA/Bkheem9CZUrhEK185cfgz7UC0y
-cnt5Z1FVDDvu6Yo+8muElqqPwTVC5tWenTHrTLtMPVM9BUWh3NePtMoM1d6A
-a8R0eaeoJp4V+axITBrHoQYzsg8h+NYC1vUfro73k7q7eG6IudSFR66MhqMS
-XFHOlrbVvni9SwZNSDlnqO18JZ99AJqOwbB6HIoG4pd9ZcIUdnK5uRhTvi5t
-PV8bzMTP7kYi6rkpjFcO3dmfm8y7xfD2vunlK/hm5PeJ0cDIHM3/aXMTOEm9
-o4/dSRoMYbiTNBjCUCc5t+ozMLvmcwDMUQmYz6n+HNyvM9lVa3XGv8E/ftkE
-r1qoBGhfH94IUGnVsc0mu2rZUnCQ0tTGJC+Zs7MLMJO6uLgAWp/LVn+c/XB7
-I1kAIcCTFZ6b0knaUYm1rRYXC6O5h+rGDSpVZDEPLe0emV8koMwhzbVlnxP6
-RvDTi8e3DyknGKYwFVeo9lFWSnlXYMWxqEp/dtKsi+0yfFrJ2JQSnL63UQSK
-vT9w4xj0EklPVfeTRtQoIVF6aviqt2T/2pTLPejcBk2670JFGPvtfU3kocNR
-YCmF1SwXS+p/LmIGn7a7hT+vldUksUKnX+hUGAemxxGi7cK8nhVdx/Vj1NH9
-gjenFLSjBx8DwcicyZPmj11zEzhxvaOP3YkbDGG4EzcYwuD/RDcCwuAb7jdg
-OG3Ytw6X61O/w+WjiJVq/QO0bsRmWms+QAnd/fPxu38B/j21TV2PZmjsD2YG
-xU31qAxU1wCerPD8kXlzi7FrS8WVmxRG7783mQZG34uYBVr2FY1V5b6XT3GT
-mMbBUfLbFpYqeU9A8Ymk5jCfrUk+Y0LSExt9Q3b7eGz4QaMQyDzGk+ZPmj9p
-rsHqNC3XPOexG8L2QRyAtNHUkf80hSAr0kOBdhNSJ6wNoOX81H9yGEWAcf8F
-iyFJPA==\
-\>"]]},
+             Ticks->{Automatic, Automatic}]},
            {
             TemplateBox[{InterpretationBox[
                Cell[
@@ -14423,6 +14285,7 @@ iyFJPA==\
           },
           DefaultBaseStyle->"Column",
           GridBoxAlignment->{"Columns" -> {{Center}}},
+          
           GridBoxItemSize->{
            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
          "Column"], 
@@ -14454,7 +14317,7 @@ iyFJPA==\
                 QuODD`timePathPlotter[
                 QuODD`Private`rules$$, QuODD`Private`t$$, 
                  QuODD`Private`sMan$$]], StandardForm],
-              ImageSizeCache->{515.5, {2038., 16.}}]]},
+              ImageSizeCache->{525., {130., 136.}}]]},
            {
             TemplateBox[{TagBox[
                GridBox[{{
@@ -14858,779 +14721,527 @@ pair for large blocks on the Dashboard."], ARMSupport`volkovExponent[{
          ReplaceAll["tCAset", QuODD`Private`rules]]]], 
      Options[QuODD`timePathPlotter] = {ImageSize -> {262.5, 266.}}, 
      TagSet[QuODD`timePathPlotter, 
-      MessageName[QuODD`timePathPlotter, "usage"], ""]}; (
-    Needs["EPToolbox`", 
-      StringJoin[
-       NotebookDirectory[], "EPToolbox.m"]]; Needs["ARMSupport`", 
-      StringJoin[
-       NotebookDirectory[], "ARMSupport.m"]]; Null))]], "Output"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"Export", "[", 
-  RowBox[{
-   RowBox[{
-    RowBox[{"NotebookDirectory", "[", "]"}], "<>", "\"\<test.cdf\>\""}], ",", 
-   
-   RowBox[{"dashboardPlotter", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{"0.05", ",", "0.055"}], "}"}], ",", "1.007", ",", 
-     RowBox[{"{", 
-      RowBox[{"\"\<t\[Kappa]\>\"", ",", "\"\<t0\>\"", ",", 
-       RowBox[{"\"\<t0\>\"", "+", 
-        FractionBox[
-         RowBox[{"2", "\[Pi]"}], "0.055"], "+", 
-        RowBox[{"5", "\[ImaginaryI]"}]}], ",", 
-       RowBox[{"\"\<t0\>\"", "+", 
-        RowBox[{"1.3", 
-         FractionBox[
-          RowBox[{"2", "\[Pi]"}], "0.055"]}]}]}], "}"}], ",", " ", 
-     RowBox[{"{", 
-      RowBox[{"0.05", ",", "0.4"}], "}"}]}], "]"}]}], "]"}]], "Input"],
-
-Cell[BoxData["\<\"/home/episanty/Work/CQD/Project/Code/QuODD/test.cdf\"\>"], \
-"Output"]
-}, Open  ]],
-
-Cell[BoxData[
- RowBox[{"\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-  "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-  "\[IndentingNewLine]"}]], "Input"],
-
-Cell[BoxData[
- RowBox[{"dif", "/.", 
-  RowBox[{"{", 
-   RowBox[{
-    RowBox[{
-     RowBox[{"GraphicsComplex", "[", 
-      RowBox[{
-       RowBox[{"{", "___", "}"}], ",", "a___"}], "]"}], "\[Rule]", 
-     RowBox[{"GraphicsComplex", "[", 
-      RowBox[{
-       RowBox[{"{", "\"\<long list\>\"", "}"}], ",", "a"}], "]"}]}], ",", 
-    RowBox[{
-     RowBox[{"FilledCurve", "[", "___", "]"}], "\[Rule]", 
-     RowBox[{"FilledCurve", "[", "\"\<stuff\>\"", "]"}]}]}], "}"}]}]], "Input"],
-
-Cell["\<\
-This is a basic example of the Quantum Orbits Dynamic Dashboard (or just \
-Dashboard from here on out).
-
-See below for an documentation of what everything is, and how to use it, as \
-well as some examples of the physics it helps uncover.\
-\>", "Text"],
-
-Cell[CellGroupData[{
-
-Cell["The multiple elements of the Dashboard are:", "Subsubsection"],
-
-Cell[CellGroupData[{
-
-Cell[TextData[{
- "Three graphs which show the complex trajectory ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{
-    RowBox[{
-     SubscriptBox[
-      StyleBox["r",
-       FontWeight->"Bold"], "cl"], "(", "t", ")"}], "=", 
-    RowBox[{
-     SubsuperscriptBox["\[Integral]", 
-      SubscriptBox["t", "s"], "t"], 
-     RowBox[{
-      RowBox[{"(", 
-       RowBox[{
-        StyleBox["p",
-         FontWeight->"Bold"], "+", 
-        RowBox[{
-         StyleBox["A",
-          FontWeight->"Bold"], "(", "\[Tau]", ")"}]}], ")"}], "d\[Tau]"}]}]}],
-    TraditionalForm]]],
- " in the complex ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{"x", ",", " ", "z"}], TraditionalForm]]],
- " and ",
- Cell[BoxData[
-  FormBox[
-   SuperscriptBox["r", "2"], TraditionalForm]]],
- " planes (top left, top centre and bottom centre, respectively)."
-}], "Item"],
-
-Cell["\<\
-On bottom right, the time contour in the complex time plane is the blue line.\
-\
-\>", "Item"],
-
-Cell[TextData[{
- "On bottom left, the relative probability of ionization as a function of \
-momentum, with the current value of momentum as a selector (",
- Cell[BoxData[
-  GraphicsBox[LocatorBox[Scaled[{0.5399999999999991, 0.5400641025641004}]],
-   ImagePadding->{{0., 1.}, {1., 0.}},
-   ImageSize->{26., Automatic},
-   PlotRange->{{-1.0416666666666667`, 1.0416666666666667`}, {-1.04, 1.04}},
-   PlotRangePadding->Automatic]], "Output"],
- "). This shows exclusively the tunnelling probability, ",
- Cell[BoxData[
-  FormBox[
-   SuperscriptBox["e", 
-    RowBox[{
-     RowBox[{"-", "2"}], 
-     RowBox[{"Im", "(", 
-      RowBox[{
-       RowBox[{
-        SubsuperscriptBox["\[Integral]", 
-         SubscriptBox["t", "0"], 
-         SubscriptBox["t", "s"]], 
-        SubscriptBox["I", "p"]}], "+", 
-       RowBox[{
-        FractionBox["1", "2"], 
-        SuperscriptBox[
-         RowBox[{"(", 
-          RowBox[{
-           StyleBox["p",
-            FontWeight->"Bold"], "+", 
-           RowBox[{
-            StyleBox["A",
-             FontWeight->"Bold"], "(", "\[Tau]", ")"}]}], ")"}], "2"], 
-        "d\[Tau]"}]}], ")"}]}]], TraditionalForm]]],
- ", normalized to 1 at the maximum of the distribution, which is at ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{
-    StyleBox["p",
-     FontWeight->"Bold"], "=", "0"}], TraditionalForm]]],
- "."
-}], "Item"],
-
-Cell["\<\
-On top right, the integrand for the Coulomb correction as a function of \
-normalized path length, in its real, imaginary and absolute parts.\
-\>", "Item"]
-}, Open  ]]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["Some more details and extra information:", "Subsubsection"],
-
-Cell[CellGroupData[{
-
-Cell["\<\
-There\[CloseCurlyQuote]s tooltips all over the place, so hover your mouse \
-over stuff to try and find out what it is. Try, for example,\
-\>", "Item"],
-
-Cell[CellGroupData[{
-
-Cell["dots in the trajectories and the time contour", "Subitem"],
-
-Cell["gray regions", "Subitem"],
-
-Cell["the green and red lines on top and bottom right", "Subitem"],
-
-Cell["the curves on bottom centre", "Subitem"],
-
-Cell["the contours on bottom left show the value of probability", "Subitem"]
-}, Open  ]],
-
-Cell[TextData[{
- "The gray regions on bottom centre and right represent regions where ",
- Cell[BoxData[
-  FormBox[
-   SuperscriptBox["r", "2"], TraditionalForm]]],
- " and ",
- Cell[BoxData[
-  FormBox[
-   SuperscriptBox[
-    RowBox[{
-     SubscriptBox["r", "cl"], "(", "t", ")"}], "2"], TraditionalForm]]],
- ", resp., have a negative real part. This is not catastrophic but these \
-regions should be avoided; for example, molecular correlation potentials must \
-not be trusted there."
-}], "Item"],
-
-Cell[TextData[{
- "The red lines on top and bottom right are the lines where ",
- Cell[BoxData[
-  FormBox[
-   SuperscriptBox["r", "2"], TraditionalForm]]],
- " and ",
- Cell[BoxData[
-  FormBox[
-   SuperscriptBox[
-    RowBox[{
-     SubscriptBox["r", "cl"], "(", "t", ")"}], "2"], TraditionalForm]]],
- ", resp., become real and negative; here ",
- Cell[BoxData[
-  FormBox[
-   SqrtBox[
-    SuperscriptBox["r", "2"]], TraditionalForm]]],
- " has a branch cut."
-}], "Item"],
-
-Cell[TextData[{
- "The green lines, on the other hand, are the positive real axis of ",
- Cell[BoxData[
-  FormBox[
-   SuperscriptBox["r", "2"], TraditionalForm]]],
- " and ",
- Cell[BoxData[
-  FormBox[
-   SuperscriptBox[
-    RowBox[{
-     SubscriptBox["r", "cl"], "(", "t", ")"}], "2"], TraditionalForm]]],
- ", where everything is fine."
-}], "Item"],
-
-Cell[TextData[{
- "Dots on the top and on bottom right indicate the origin of each plot, the \
-start and end of the contour, and a controllable point along it. The start of \
-the contour is usually ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{
-    SubscriptBox["t", "\[Kappa]"], "=", 
-    RowBox[{
-     SubscriptBox["t", "s"], "-", 
-     RowBox[{"\[ImaginaryI]", "/", 
-      SuperscriptBox["\[Kappa]", "2"]}]}]}], TraditionalForm]]],
- ", which can be identified as the tunnel entrance."
-}], "Item"],
-
-Cell[TextData[{
- "The colour scale on bottom left is linear but the contours are logarithmic. \
-Thus there is a drop of one order of magnitude between successive thick lines \
-and a drop of ",
- Cell[BoxData[
-  FormBox[Cell[TextData[Cell[BoxData[
-    FormBox[
-     RadicalBox["10", "10"], TraditionalForm]]]]], TraditionalForm]]],
- "between successive thin lines (which also mark colour changes)."
-}], "Item"],
-
-Cell["\<\
-This contour plot is normalized to the probability at the peak of the field, \
-to zero total momentum.\
-\>", "Item"],
-
-Cell[TextData[{
- "The contour on bottom right is parametrized uniformly between the different \
-dots. This causes the rate of change ",
- Cell[BoxData[
-  FormBox[
-   FractionBox["dt", "ds"], TraditionalForm]]],
- " to change from one segment to the next, which is what causes the abrupt \
-shifts in the graph on top right. "
-}], "Item"],
-
-Cell[TextData[{
- "The integral with respect to ",
- Cell[BoxData[
-  FormBox["s", TraditionalForm]]],
- " of the real and imaginary parts on bottom centre gives the invariant ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{
-    SubscriptBox["\[Integral]", "contour"], 
-    RowBox[{
-     FractionBox["1", 
-      SqrtBox[
-       SuperscriptBox[
-        RowBox[{
-         SubscriptBox["r", "cl"], "(", "t", ")"}], "2"]]], "dt"}]}], 
-   TraditionalForm]]],
- ", which is the desired Coulomb correction up to constants."
-}], "Item"]
-}, Open  ]]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["How to control the Dashboard", "Subsubsection"],
-
-Cell[CellGroupData[{
-
-Cell[TextData[{
- "Most importantly, the time contour itself is editable, by dragging the \
-selectors marked ",
- Cell[BoxData[
-  GraphicsBox[LocatorBox[Scaled[{0.5399999999999991, 0.5400641025641004}]],
-   ImagePadding->{{0., 1.}, {1., 0.}},
-   ImageSize->{26., Automatic},
-   PlotRange->{{-1.0416666666666667`, 1.0416666666666667`}, {-1.04, 1.04}},
-   PlotRangePadding->Automatic]], "Input",
-  FontWeight->"Plain"],
- "on the kinks of the contour, or by clicking near them (the nearest selector \
-moves)."
-}], "Item"],
-
-Cell[TextData[{
- "The momentum can also be changed by dragging the selector marked ",
- Cell[BoxData[
-  GraphicsBox[LocatorBox[Scaled[{0.5399999999999991, 0.5400641025641004}]],
-   ImagePadding->{{0., 1.}, {1., 0.}},
-   ImageSize->{26., Automatic},
-   PlotRange->{{-1.0416666666666667`, 1.0416666666666667`}, {-1.04, 1.04}},
-   PlotRangePadding->Automatic]], "Input",
-  FontWeight->"Plain"],
- " on the contour plot on bottom left, or by clicking anywhere on that plot."
-}], "Item"],
-
-Cell["\<\
-For finer control, the text fields below the momentum plot can be used to \
-input specific values for each component. This can also be used to enter \
-values outside those shown on the plot.\
-\>", "Item"],
-
-Cell[TextData[{
- "The sign of both components can be changed by clicking the ",
- Cell[BoxData[
-  ButtonBox["+",
-   Appearance->Automatic,
-   ButtonFunction:>($CellContext`trange$$ = {{All, All}, {All, All}}),
-   Evaluator->Automatic,
-   ImageSize->Medium,
-   Method->"Preemptive"]], "Input"],
- " button, which will turn it to a ",
- Cell[BoxData[
-  ButtonBox["-",
-   Appearance->Automatic,
-   ButtonFunction:>($CellContext`trange$$ = {{All, All}, {All, All}}),
-   Evaluator->Automatic,
-   ImageSize->Medium,
-   Method->"Preemptive"]], "Input"],
- " and then back."
-}], "Item"],
-
-Cell["\<\
-The slider marked Contour progress on the top moves a black dot along the \
-contour the time plane, and along the corresponding space plots.\
-\>", "Item"],
-
-Cell[TextData[{
- "The ",
- Cell[BoxData[
-  FormBox[
-   SuperscriptBox["r", "2"], TraditionalForm]]],
- " and time plots, on bottom centre and bottom right, have adjustable plot \
-ranges below them. Click ",
- Cell[BoxData[
-  ButtonBox["Reset",
-   Appearance->Automatic,
-   ButtonFunction:>($CellContext`trange$$ = {{All, All}, {All, All}}),
-   Evaluator->Automatic,
-   ImageSize->Medium,
-   Method->"Preemptive"]], "Input"],
- " to set them to the default setting. "
-}], "Item"],
-
-Cell[TextData[{
- "The ionization time ",
- Cell[BoxData[
-  FormBox[
-   SubscriptBox["t", "s"], TraditionalForm]]],
- ", at which the trajectory ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{
-    RowBox[{
-     SubscriptBox[
-      StyleBox["r",
-       FontWeight->"Bold"], "cl"], "(", "t", ")"}], "=", 
-    RowBox[{
-     SubsuperscriptBox["\[Integral]", 
-      SubscriptBox["t", "s"], "t"], 
-     RowBox[{
-      RowBox[{"(", 
-       RowBox[{
-        StyleBox["p",
-         FontWeight->"Bold"], "+", 
-        RowBox[{
-         StyleBox["A",
-          FontWeight->"Bold"], "(", "\[Tau]", ")"}]}], ")"}], "d\[Tau]"}]}]}],
-    TraditionalForm]]],
- " starts, can be controlled using the input box at top centre. Clicking the ",
- Cell[BoxData[
-  ButtonBox["\<\"\\!\\(\\*SubscriptBox[\\(t\\), \\(s\\)]\\)\"\>",
-   Appearance->Automatic,
-   ButtonFunction:>($CellContext`\[CapitalDelta]tss$$ = 0),
-   Evaluator->Automatic,
-   Method->"Preemptive"]], "Input"],
- " button sets it to the saddle point time (which obeys ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{
-    RowBox[{
-     RowBox[{
-      FractionBox["1", "2"], 
-      SuperscriptBox[
-       RowBox[{"(", 
-        RowBox[{
-         StyleBox["p",
-          FontWeight->"Bold"], "+", 
-         RowBox[{
-          StyleBox["A",
-           FontWeight->"Bold"], "(", 
-          SubscriptBox["t", "s"], ")"}]}], ")"}], "2"]}], "+", 
-     SubscriptBox["I", "p"]}], "=", "0"}], TraditionalForm]]],
- "), and the ",
- Cell[BoxData[
-  ButtonBox["\<\"\\!\\(\\*SubscriptBox[\\(t\\), \\(0\\)]\\)\"\>",
-   Appearance->Automatic,
-   ButtonFunction:>($CellContext`\[CapitalDelta]tss$$ = (-I) 
-     Im[$CellContext`baretss$$]),
-   Evaluator->Automatic,
-   Method->"Preemptive"]], "Input"],
- " button sets it to the real part of that. This is useful for investigating \
-the process of deforming the ionization-time integration contour up to the \
-saddle-point time."
-}], "Item"],
-
-Cell[TextData[{
- "The sliders and controls on top right add and control an initial position \
-to the classical position, ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{
-    RowBox[{
-     SubscriptBox[
-      StyleBox["r",
-       FontWeight->"Bold"], "cl"], "(", "t", ")"}], "=", 
-    RowBox[{
-     SubscriptBox[
-      StyleBox["r",
-       FontWeight->"Bold"], "init"], "+", 
-     RowBox[{
-      SubsuperscriptBox["\[Integral]", 
-       SubscriptBox["t", "s"], "t"], 
-      RowBox[{
-       RowBox[{"(", 
-        RowBox[{
-         StyleBox["p",
-          FontWeight->"Bold"], "+", 
-         RowBox[{
-          StyleBox["A",
-           FontWeight->"Bold"], "(", "\[Tau]", ")"}]}], ")"}], 
-       "d\[Tau]"}]}]}]}], TraditionalForm]]],
- ". This is required if the start time is set to zero, as the trajectory is \
-meant to start on the ARM boundary."
-}], "Item"]
-}, Open  ]]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["How to call the function", "Subsubsection"],
-
-Cell[TextData[{
- "To make new Dashboards, you can use the dashboardPlotter function, though \
-this requires full-blown ",
- StyleBox["Mathematica",
-  FontSlant->"Italic"],
- " and cannot be done on the CDF player. To see the calling syntax, use "
-}], "Text"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"?", "dashboardPlotter"}]], "Input"],
-
-Cell[BoxData[
- StyleBox["\<\"dynamicDashboardPlotter[{F, \[Omega]}, \[Kappa]] plots a \
-dashboard for field amplitude F at frequency \[Omega], for ionization \
-potential \!\(\*SuperscriptBox[\(\[Kappa]\), \(2\)]\)/2.\\n  \
-\\ndynamicDashboardPlotter[{F, \[Omega]}, \[Kappa], path] institutes the \
-desired path, where the strings \\\"t\[Kappa]\\\", \\\"ts\\\", \\\"t0\\\" and \
-\\\"\[Tau]\\\" will be replaced by the corresponding functions of momentum, \
-and \\\"T\\\" is a laser period. Default is {\\\"t\[Kappa]\\\", \\\"t0\\\", \
-\\\"T\\\"}.\\n  \\ndynamicDashboardPlotter[{F, \[Omega]}, \[Kappa], path, \
-{poinit, ppinit}] specifies initial values of poinit and pp init for \
-\!\(\*SubscriptBox[\(p\), \(\[UpTee]\)]\) and \!\(\*SubscriptBox[\(p\), \(\
-\[DoubleVerticalBar]\)]\).\"\>", "MSG"]], "Print", "PrintUsage",
- CellTags->"Info3620753336-8646734"]
-}, Open  ]],
-
-Cell["\<\
-Entering \[ControlKey]+k will pull up templates for convenience (possibly not \
-in V8, though, or it may need \[ControlKey]+\[AltKey]+k or something).\
-\>", "Text"],
-
-Cell[BoxData[
- RowBox[{"\[IndentingNewLine]", "\[IndentingNewLine]"}]], "Input"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["Some physics examples", "Subsection"],
-
-Cell[CellGroupData[{
-
-Cell["The \[OpenCurlyQuote]standard\[CloseCurlyQuote] contour can fail", \
-"Subsubsection"],
-
-Cell[TextData[{
- "because branch cuts of ",
- Cell[BoxData[
-  FormBox[
-   SqrtBox[
-    SuperscriptBox[
-     RowBox[{
-      SubscriptBox["r", "cl"], "(", "t", ")"}], "2"]], TraditionalForm]]],
- " can cross the real axis. Unfortunately, this specific case occurs out in \
-the wings of the distribution where nothing gets observed to begin with. (In \
-essence, the transverse momentum for this case is implausibly large. This \
-causes the transverse coordinate to become very imaginary, and the \
-longitudinal coordinate cannot offset the large and negative ",
- Cell[BoxData[
-  FormBox[
-   SuperscriptBox[
-    RowBox[{
-     SubscriptBox["x", "cl"], "(", "t", ")"}], "2"], TraditionalForm]]],
- ", so the sum becomes negative.)"
-}], "Text"],
-
-Cell[BoxData[
- RowBox[{"dashboardPlotter", "[", 
-  RowBox[{
-   RowBox[{"{", 
-    RowBox[{"0.05", ",", "0.055"}], "}"}], ",", "1.007", ",", 
-   RowBox[{"{", 
-    RowBox[{"\"\<t\[Kappa]\>\"", ",", 
-     RowBox[{"\"\<t\[Kappa]\>\"", "-", 
-      RowBox[{"10", "\[ImaginaryI]"}]}], ",", 
-     RowBox[{"\"\<t\[Kappa]\>\"", "-", 
-      RowBox[{"10", "\[ImaginaryI]"}], "+", "4"}], ",", 
-     RowBox[{"\"\<t0\>\"", "+", "4"}], ",", 
-     RowBox[{"\"\<t0\>\"", "+", "15"}]}], "}"}], ",", " ", 
-   RowBox[{"{", 
-    RowBox[{"0.7", ",", "0.3"}], "}"}]}], "]"}]], "Input"],
-
-Cell[TextData[{
- "There are two important drawbacks with this scenario, that I can see:\n \
-\[Bullet] It only happens at very low probability. The starting point for \
-this is for transverse momentum just above ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{
-    SubscriptBox["p", "\[Perpendicular]"], "=", "0.5"}], TraditionalForm]]],
- " for \[OpenCurlyQuote]standard\[CloseCurlyQuote] conditions, and zero \
-longitudinal momentum. This means that the ionization probability there is \
-low (less than 1%), and who knows whether other effects come in to cloud this \
-picture or not. Higher ",
- Cell[BoxData[
-  FormBox[
-   SubscriptBox["p", "\[Perpendicular]"], TraditionalForm]]],
- " make the behaviour a lot clearer but this really drives the amplitude \
-down.\n \[Bullet] There is still a horizontal bit of the contour before the \
-drop, and this still accumulates phase as any energy the electron has is \
-being integrated along a real time direction. This may or may not mean that \
-the time delay is not actually measurable, but it merits careful \
-consideration."
-}], "Text"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["Recolliding electrons", "Subsubsection"],
-
-Cell["\<\
-... look quite interesting with these tools.
-
-Consider a \[OpenCurlyQuote]standard\[CloseCurlyQuote] recolliding electron \
-(zero transverse momentum and small, reasonable and positive momentum along \
-the laser polarization) and take the time contour through slightly more than \
-one period. During the recollision, it crosses the branch cut twice!\
-\>", "Text"],
-
-Cell[BoxData[
- RowBox[{"dashboardPlotter", "[", 
-  RowBox[{
-   RowBox[{"{", 
-    RowBox[{"0.05", ",", "0.055"}], "}"}], ",", "1.007", ",", 
-   RowBox[{"{", 
-    RowBox[{"\"\<t\[Kappa]\>\"", ",", 
-     RowBox[{"\"\<t\[Kappa]\>\"", "+", 
-      RowBox[{"1.", 
-       FractionBox[
-        RowBox[{"2", "\[Pi]"}], "0.055"]}]}], ",", 
-     RowBox[{"\"\<t0\>\"", "+", 
-      RowBox[{"1.3", 
-       FractionBox[
-        RowBox[{"2", "\[Pi]"}], "0.055"]}]}]}], "}"}], ",", " ", 
-   RowBox[{"{", 
-    RowBox[{"0.005", ",", "0.1"}], "}"}]}], "]"}]], "Input"],
-
-Cell[TextData[{
- "There are two aspects of this behaviour which look very robust to me.\n \
-\[Bullet] This is very close to the peak of the ionization probability, with \
-probability as high as 98%. This cannot be ignored.\n \[Bullet] After about \
-",
- Cell[BoxData[
-  FormBox[
-   RowBox[{
-    SubscriptBox["p", "\[DoubleVerticalBar]"], "=", "0.075"}], 
-   TraditionalForm]]],
- ", the branch cuts cross completely the real time axis. It is not clear to \
-me, at all, that there is any way to avoid them.\n\nDuring the recollision, \
-most of the action is in the plot of ",
- Cell[BoxData[
-  FormBox[
-   SuperscriptBox[
-    RowBox[{
-     SubscriptBox["r", "cl"], "(", "t", ")"}], "2"], TraditionalForm]]],
- ", on bottom centre. It seems the trajectory ",
- StyleBox["must",
-  FontSlant->"Italic"],
- " loop twice around the origin of that plot, hence the two branch cut \
-crossings. This can be seen by playing with the contour progress slider, or \
-by adding an intermediate point to the contour path at ",
- Cell[BoxData[
-  RowBox[{"\<\"t\[Kappa]\"\>", "+", 
-   FractionBox[
-    RowBox[{"2", "\[Pi]"}], "0.055"]}]], "Input"],
- "."
-}], "Text"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["More recollisions", "Subsubsection"],
-
-Cell[TextData[{
- "Finally, branch cut crossings and loops around the zero of ",
- Cell[BoxData[
-  FormBox[
-   SuperscriptBox[
-    RowBox[{
-     SubscriptBox["r", "cl"], "(", "t", ")"}], "2"], TraditionalForm]]],
- " seem even more unavoidable if one takes the end of the contour a few \
-periods further down. (Note, also, that in principle this contour should end \
-after the pulse is finished, so this dragging-out is necessary.)"
-}], "Text"],
-
-Cell[BoxData[
- RowBox[{"dashboardPlotter", "[", 
-  RowBox[{
-   RowBox[{"{", 
-    RowBox[{"0.05", ",", "0.055"}], "}"}], ",", "1.007", ",", 
-   RowBox[{"{", 
-    RowBox[{"\"\<t\[Kappa]\>\"", ",", 
-     RowBox[{"\"\<t0\>\"", "+", 
-      RowBox[{"3", 
-       FractionBox[
-        RowBox[{"2", "\[Pi]"}], "0.055"]}]}]}], "}"}], ",", " ", 
-   RowBox[{"{", 
-    RowBox[{"0", ",", "0.1"}], "}"}]}], "]"}]], "Input"],
-
-Cell[TextData[{
- "Points of note:\n \[Bullet] It\[CloseCurlyQuote]s no longer clear to me \
-whether the branch cuts come in pairs or not. It would be nice if they did, \
-as crossing square-root branch cuts twice returns you to the same branch of \
-the Riemann surface, if that even makes sense in the current context, but I \
-don\[CloseCurlyQuote]t know yet whether it\[CloseCurlyQuote]s the case or \
-not.\n \[Bullet] All of the branch cuts definitely do cut the real axis and \
-at this point it\[CloseCurlyQuote]s anyone\[CloseCurlyQuote]s guess what to \
-do with the time integration over the contour.\n \[Bullet] I really, really \
-enjoy the multiple loops around the zero of ",
- Cell[BoxData[
-  FormBox[
-   SuperscriptBox[
-    RowBox[{
-     SubscriptBox["r", "cl"], "(", "t", ")"}], "2"], TraditionalForm]]],
- " ."
-}], "Text"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["What I\[CloseCurlyQuote]m working on now", "Subsubsection"],
-
-Cell["\<\
-is a way to automatically choose contours that will avoid the branch cuts in \
-situations like this,\
-\>", "Text"],
-
-Cell[BoxData[
- RowBox[{"dashboardPlotter", "[", 
-  RowBox[{
-   RowBox[{"{", 
-    RowBox[{"0.05", ",", "0.055"}], "}"}], ",", "1.007", ",", 
-   RowBox[{"{", 
-    RowBox[{"\"\<t\[Kappa]\>\"", ",", "\"\<t0\>\"", ",", "\"\<T\>\""}], "}"}],
-    ",", " ", 
-   RowBox[{"{", 
-    RowBox[{"0.02", ",", "0.9"}], "}"}]}], "]"}]], "Input"],
-
-Cell["or like this", "Text"],
-
-Cell[BoxData[
- RowBox[{"dashboardPlotter", "[", 
-  RowBox[{
-   RowBox[{"{", 
-    RowBox[{"0.05", ",", "0.055"}], "}"}], ",", "1.007", ",", 
-   RowBox[{"{", 
-    RowBox[{"\"\<t\[Kappa]\>\"", ",", "\"\<t0\>\"", ",", 
-     RowBox[{"1.5", "\"\<T\>\""}]}], "}"}], ",", " ", 
-   RowBox[{"{", 
-    RowBox[{"0.001", ",", "0.072"}], "}"}]}], "]"}]], "Input"],
-
-Cell["\<\
-Notice that these problem points have much higher ionization probabilities!\
-\>", "Text"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["Initialization", "Subsubsection"],
-
-Cell[BoxData[{
- RowBox[{"Needs", "[", 
-  RowBox[{"\"\<EPToolbox`\>\"", ",", 
-   RowBox[{
-    RowBox[{"NotebookDirectory", "[", "]"}], "<>", "\"\<EPToolbox.m\>\""}]}], 
-  "]"}], "\[IndentingNewLine]", 
- RowBox[{"Needs", "[", 
-  RowBox[{"\"\<ARMSupport`\>\"", ",", 
-   RowBox[{
-    RowBox[{"NotebookDirectory", "[", "]"}], "<>", "\"\<ARMSupport.m\>\""}]}],
-   "]"}], "\[IndentingNewLine]", 
- RowBox[{"Needs", "[", 
-  RowBox[{"\"\<QuODD`\>\"", ",", 
-   RowBox[{
-    RowBox[{"NotebookDirectory", "[", "]"}], "<>", "\"\<QuODD.m\>\""}]}], 
-  "]"}]}], "Input",
- InitializationCell->True,
- EmphasizeSyntaxErrors->True],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"$HistoryLength", "=", "5"}], ";"}]], "Input",
- InitializationCell->True]
-}, Open  ]]
-}, Open  ]]
-}, Open  ]]
-}, Open  ]]
+      MessageName[QuODD`timePathPlotter, "usage"], ""]}; {
+     (Get[#]& )[
+      StringToStream[
+      "(* ::Package:: *)\n\n\
+(************************************************************************)\n\
+(* This file was generated automatically by the Mathematica front end.  *)\n\
+(* It contains Initialization cells from a Notebook file, which         *)\n\
+(* typically will have the same name as this file except ending in      *)\n\
+(* \".nb\" instead of \".m\".                                               \
+*)\n(*                                                                      \
+*)\n(* This file is intended to be loaded into the Mathematica kernel using \
+*)\n(* the package loading commands Get or Needs.  Doing so is equivalent   \
+*)\n(* to using the Evaluate Initialization Cells menu command in the front \
+*)\n(* end.                                                                 \
+*)\n(*                                                                      \
+*)\n(* DO NOT EDIT THIS FILE.  This entire file is regenerated              \
+*)\n(* automatically each time the parent Notebook file is saved in the     \
+*)\n(* Mathematica front end.  Any changes you make to this file will be    \
+*)\n(* overwritten.                                                         \
+*)\n(************************************************************************)\
+\n\n\n\nBeginPackage[\"ARMSupport`\",{\"EPToolbox`\"}]\n\n\n\
+stdpars={0.05,0.055,1.007};\n\n\nr0={0,0,0};\n\n\nts::usage=\"ts[{po, py, \
+pp}, {F, \\[Omega], \\[Kappa]}] Returns the saddle point \
+\\!\\(\\*SubscriptBox[\\(t\\), \\(s\\)]\\) directly.\n\nts[pp, \\[Kappa], \
+\\[Omega], F, po, py] Returns the saddle point \\!\\(\\*SubscriptBox[\\(t\\), \
+\\(s\\)]\\) directly.\";\nt0::usage=\"t0[{po, py, pp}, {F, \\[Omega], \
+\\[Kappa]}] Returns \\!\\(\\*SubscriptBox[\\(t\\), \
+\\(0\\)]\\)=Re[\\!\\(\\*SubscriptBox[\\(t\\), \\(s\\)]\\)] directly.\n\n\
+t0[pp, \\[Kappa], \\[Omega], F, po, py] Returns \
+\\!\\(\\*SubscriptBox[\\(t\\), \\(0\\)]\\)=Re[\\!\\(\\*SubscriptBox[\\(t\\), \
+\\(s\\)]\\)] directly.\";\n\\[Tau]::usage=\"\\[Tau][{po, py, pp}, {F, \
+\\[Omega], \\[Kappa]}] Returns \\!\\(\\*SubscriptBox[\\(\\[Tau]\\), \
+\\(T\\)]\\)=Im[\\!\\(\\*SubscriptBox[\\(t\\), \\(s\\)]\\)] directly.\n\n\
+\\[Tau][pp, \\[Kappa], \\[Omega], F, po, py] Returns \
+\\!\\(\\*SubscriptBox[\\(\\[Tau]\\), \
+\\(T\\)]\\)=Im[\\!\\(\\*SubscriptBox[\\(t\\), \\(s\\)]\\)] directly.\";\n\
+t\\[Kappa]::usage=\"t\\[Kappa][{po, py, pp}, {F, \\[Omega], \\[Kappa]}] \
+Returns the starting point \\!\\(\\*SubscriptBox[\\(t\\), \\(\\[Kappa]\\)]\\) \
+directly.\n\nt\\[Kappa][pp, \\[Kappa], \\[Omega], F, po, py] Returns the \
+starting point \\!\\(\\*SubscriptBox[\\(t\\), \\(\\[Kappa]\\)]\\) \
+directly.\";\n\n\nBegin[\"`Private`\"]\n\
+ts[pp_,\\[Kappa]_,\\[Omega]_,F_,po_,py_]:=1/\\[Omega] ArcSin[\\[Omega]/F pp+I \
+\\[Omega]/F Sqrt[\\[Kappa]^2+po^2+py^2]]\n\
+ts[{po_,py_,pp_},{F_,\\[Omega]_,\\[Kappa]_}]:=ts[pp,\\[Kappa],\\[Omega],F,po,\
+py]\n\nt0[{po_,py_,pp_},{F_,\\[Omega]_,\\[Kappa]_}]:=Re[ts[pp,\\[Kappa],\\[\
+Omega],F,po,py]]\n\
+t0[pp_,\\[Kappa]_,\\[Omega]_,F_,po_,py_]:=Re[ts[pp,\\[Kappa],\\[Omega],F,po,\
+py]]\n\n\\[Tau][{po_,py_,pp_},{F_,\\[Omega]_,\\[Kappa]_}]:=Im[ts[pp,\\[Kappa],\
+\\[Omega],F,po,py]]\n\\[Tau][pp_,\\[Kappa]_,\\[Omega]_,F_,po_,py_]:=Im[ts[pp,\
+\\[Kappa],\\[Omega],F,po,py]]\n\n\
+t\\[Kappa][pp_,\\[Kappa]_,\\[Omega]_,F_,po_,py_]:=ts[pp,\\[Kappa],\\[Omega],F,\
+po,py]-I/\\[Kappa]^2\nt\\[Kappa][{po_,py_,pp_},{F_,\\[Omega]_,\\[Kappa]_}]:=t\
+\\[Kappa][pp,\\[Kappa],\\[Omega],F,po,py]\nEnd[]\n\n\n\
+getClassicalTransition::usage=\"getClassicalTransition[n, {F, \\[Omega], \
+\\[Kappa]}] Returns pz and tr in atomic units as a list of replacement rules.\
+\ngetClassicalTransition[range, {F, \\[Omega], \\[Kappa]}]\n\
+getClassicalTransition[n, F, \\[Omega], \\[Kappa]]\";\n\n\n\
+Begin[\"`Private`\"]\n\
+getClassicalTransition[n_,{F_,\\[Omega]_,\\[Kappa]_}]:=getClassicalTransition[\
+n,F,\\[Omega],\\[Kappa]]\n\
+getClassicalTransition[range_List,{F_,\\[Omega]_,\\[Kappa]_}]:=(\
+getClassicalTransition[#,{F,\\[Omega],\\[Kappa]}]&/@range)\n\
+getClassicalTransition[n_,F_,\\[Omega]_,\\[Kappa]_]:=Module[{getTimes,t00,\
+zinit},\ngetTimes[pz_]:=({t0->Re[#],\\[Tau]->Im[#]}&[1/\\[Omega] \
+ArcSin[\\[Omega]/F (pz+I \\[Kappa])]]);\n\
+t00[pz_?NumericQ]:=(t0/.getTimes[pz]);\nzinit[pz_?NumericQ]:=Re[F/\\[Omega]^2 \
+(Cos[\\[Omega] t0]-Cos[\\[Omega] (t0+I \
+\\[Tau]-I/\\[Kappa]^2)])/.getTimes[pz]];\nFindRoot[\n\
+{pz(tr-t00[pz])+F/\\[Omega]^2 (Cos[\\[Omega] tr]-Cos[\\[Omega] \
+t00[pz]])+zinit[pz]==0,\npz-F/\\[Omega] Sin[\\[Omega] tr]==0}\n\
+,{{pz,0},{tr,(n+1) \\[Pi]/\\[Omega]}}\n]\n]\nEnd[]\n\n\nBegin[\"`Private`\"]\n\
+getLinearizedTransition[n_,{F_,\\[Omega]_,\\[Kappa]_}]:=\
+getClassicalTransition[n,F,\\[Omega],\\[Kappa]]\n\
+getLinearizedTransition[range_List,{F_,\\[Omega]_,\\[Kappa]_}]:=(\
+getClassicalTransition[#,{F,\\[Omega],\\[Kappa]}]&/@range)\n\
+getLinearizedTransition[n_,F_,\\[Omega]_,\\[Kappa]_]:={pz->F/\\[Omega] \
+getReducedLinearizedTransition[n,(\\[Omega] \\[Kappa])/F],tr->1/\\[Omega] \
+((n+1)\\[Pi]+ArcSin[getReducedLinearizedTransition[n,(\\[Omega] \
+\\[Kappa])/F]])}\nEnd[]\n\n\n\
+getReducedLinearizedTransition::usage=\"getReducedLinearizedTransition[n, {F, \
+\\[Omega], \\[Kappa]}] Returns \\[Omega]pz/F directly.\n\
+getReducedLinearizedTransition[range, {F, \\[Omega], \\[Kappa]}]\n\
+getReducedLinearizedTransition[n, F, \\[Omega], \\[Kappa]]\";\n\n\n\
+Begin[\"`Private`\"]\n\
+getReducedLinearizedTransition[range_List,\\[Gamma]_]:=(\
+getReducedLinearizedTransition[#,\\[Gamma]]&/@range)\n\
+getReducedLinearizedTransition[n_,\\[Gamma]_]:=((-1)^n+Sqrt[1+\\[Gamma]^2])/(\
+\\[Pi](n+1))\nEnd[]\n\n\n\
+getFullLinearizedTransition::usage=\"getFullLinearizedTransition[n, {F, \
+\\[Omega], \\[Kappa]}] Returns pz and tr in atomic units as a list of \
+replacement rules, for the linearized case without neglecting \
+\\[Omega]/\\[Kappa]^2.\ngetFullLinearizedTransition[range, {F, \\[Omega], \
+\\[Kappa]}]\ngetFullLinearizedTransition[n, F, \\[Omega], \\[Kappa]]\";\n\
+getFullReducedLinearizedTransition::usage=\"\
+getFullReducedLinearizedTransition[n, {F, \\[Omega], \\[Kappa]}] Returns \
+\\[Omega]pz/F directly.\ngetFullReducedLinearizedTransition[range, {F, \
+\\[Omega], \\[Kappa]}]\ngetFullReducedLinearizedTransition[n, F, \\[Omega], \
+\\[Kappa]]\";\n\n\nBegin[\"`Private`\"]\n\
+getFullLinearizedTransition[n_,{F_,\\[Omega]_,\\[Kappa]_}]:=\
+getFullLinearizedTransition[n,F,\\[Omega],\\[Kappa]]\n\
+getFullLinearizedTransition[range_List,{F_,\\[Omega]_,\\[Kappa]_}]:=(\
+getFullLinearizedTransition[#,{F,\\[Omega],\\[Kappa]}]&/@range)\n\
+getFullLinearizedTransition[n_,F_,\\[Omega]_,\\[Kappa]_]:={pz->F/\\[Omega] \
+getFullReducedLinearizedTransition[n,(\\[Omega] \\[Kappa])/F],tr->1/\\[Omega] \
+((n+1)\\[Pi]+ArcSin[getReducedLinearizedTransition[n,(\\[Omega] \
+\\[Kappa])/F]])}\n\
+getFullReducedLinearizedTransition[range_List,F_,\\[Omega]_,\\[Kappa]_]:=(\
+getFullReducedLinearizedTransition[#,F,\\[Omega],\\[Kappa]]&/@range)\n\
+getFullReducedLinearizedTransition[n_,F_,\\[Omega]_,\\[Kappa]_]:=((-1)^n+Sqrt[\
+1+((\\[Omega] \\[Kappa])/F)^2]Cosh[\\[Omega]/\\[Kappa]^2]-(\\[Omega] \
+\\[Kappa])/F Sinh[\\[Omega]/\\[Kappa]^2])/((n+1)\\[Pi])\nEnd[]\n\n\n\
+getComplexTransition::usage=\"getComplexTransition[n, {F, \\[Omega], \
+\\[Kappa]}] Returns pz and tr in atomic units as a list of replacement rules.\
+\ngetComplexTransition[range, {F, \\[Omega], \\[Kappa]}]\n\
+getComplexTransition[n, F, \\[Omega], \\[Kappa]]\";\n\n\nBegin[\"`Private`\"]\
+\ngetComplexTransition[n_,{F_,\\[Omega]_,\\[Kappa]_}]:=getComplexTransition[n,\
+F,\\[Omega],\\[Kappa]]\n\
+getComplexTransition[range_List,{F_,\\[Omega]_,\\[Kappa]_}]:=(\
+getComplexTransition[#,{F,\\[Omega],\\[Kappa]}]&/@range)\n\
+getComplexTransition[n_,F_,\\[Omega]_,\\[Kappa]_]:=Module[{t\\[Kappa]\\[Kappa]\
+},\nt\\[Kappa]\\[Kappa][pz_]:=ts[pz,\\[Kappa],\\[Omega],F,0,0]-I/\\[Kappa]^2;\
+\nFindRoot[\n(\\[Omega] pz)/F ((n+1) \\[Pi]+ArcSin[(\\[Omega] \
+pz)/F]-\\[Omega] t\\[Kappa]\\[Kappa][pz])+(-1)^(n+1) Sqrt[1-((\\[Omega] \
+pz)/F)^2]-Cos[\\[Omega] t\\[Kappa]\\[Kappa][pz]]==0\n,{pz,0.0}]\n]\nEnd[]\n\n\
+\ncomplexTrajectory::usage=\"complexTrajectory[t,{px,py,pz},{F,\\[Omega],\\[\
+Kappa]}] Returns the vector-valued complex trajectory \
+\\!\\(\\*SubscriptBox[\\(r\\), \\(cl\\)]\\)(t)=\\!\\(\\*SubsuperscriptBox[\\(\
+\\[Integral]\\), SubscriptBox[\\(t\\), \\(s\\)], \
+\\(t\\)]\\)(p+A(\\[Tau]))\\[DifferentialD]\\[Tau].\n\n\
+complexTrajectory[t,pz,{F,\\[Omega],\\[Kappa]}] Returns the z component of \
+the complex trajectory \\!\\(\\*SubscriptBox[\\(z\\), \
+\\(cl\\)]\\)(t)=\\!\\(\\*SubsuperscriptBox[\\(\\[Integral]\\), \
+SubscriptBox[\\(t\\), \\(s\\)], \\(t\\)]\\)(\\!\\(\\*SubscriptBox[\\(p\\), \
+\\(z\\)]\\)+A(\\[Tau]))\\[DifferentialD]\\[Tau].\";\n\n\nrInit::usage=\"rInit \
+is an option for complexTrajectory and classicalTrajectory which specifies \
+the initial position for the trajectory at time \
+\\!\\(\\*SubscriptBox[\\(t\\), \\(s\\)]\\).\";\nzInit::usage=\"zInit is an \
+option for complexTrajectory and classicalTrajectory which specifies the \
+initial z position for the trajectory at time \\!\\(\\*SubscriptBox[\\(t\\), \
+\\(s\\)]\\).\";\nforcets::usage=\"forcets is an option for complexTrajectory \
+and classicalTrajectory which specifies a start time \
+\\!\\(\\*SubscriptBox[\\(t\\), \\(s\\)]\\) to use for the trajectory, or uses \
+the Automatic one.\";\nProtect[rInit,zInit,forcets];\n\n\n\
+Begin[\"`Private`\"]\n\
+Options[complexTrajectory]={zInit->0,rInit->{0,0,0},forcets->Automatic};\n\
+complexTrajectory[t_,pz_,{F_,\\[Omega]_,\\[Kappa]_},OptionsPattern[]]:=With[{\
+tss=If[OptionValue[forcets]===Automatic,ts[{0,0,pz},{F,\\[Omega],\\[Kappa]}],\
+OptionValue[forcets]]},\nOptionValue[zInit]+pz(t-tss)+F/\\[Omega]^2 \
+(Cos[\\[Omega] t]-Cos[\\[Omega] tss])\n]\n\
+complexTrajectory[t_,{px_,py_,pz_},{F_,\\[Omega]_,\\[Kappa]_},OptionsPattern[]\
+]:=With[{tss=If[OptionValue[forcets]===Automatic,ts[{px,py,pz},{F,\\[Omega],\\\
+[Kappa]}],OptionValue[forcets]]},\n\
+OptionValue[rInit]+{px,py,pz}(t-tss)+{0,0,1} F/\\[Omega]^2 (Cos[\\[Omega] \
+t]-Cos[\\[Omega] tss])\n]\nEnd[]\n\n\n\
+classicalTrajectory::usage=\"classicalTrajectory[t, {px, py, pz}, {F, \
+\\[Omega], \\[Kappa]}] Returns the real part of the vector-valued complex \
+trajectory, Re(\\!\\(\\*SubscriptBox[\\(r\\), \
+\\(cl\\)]\\)(t))=Re(\\!\\(\\*SubsuperscriptBox[\\(\\[Integral]\\), \
+SubscriptBox[\\(t\\), \\(s\\)], \
+\\(t\\)]\\)(p+A(\\[Tau]))\\[DifferentialD]\\[Tau]).\n\nclassicalTrajectory[t, \
+pz, {F, \\[Omega], \\[Kappa]}] Returns the real part of the z component  of \
+the complex trajectory, Re(\\!\\(\\*SubscriptBox[\\(z\\), \
+\\(cl\\)]\\)(t))=Re(\\!\\(\\*SubsuperscriptBox[\\(\\[Integral]\\), \
+SubscriptBox[\\(t\\), \\(s\\)], \\(t\\)]\\)(\\!\\(\\*SubscriptBox[\\(p\\), \
+\\(z\\)]\\)+A(\\[Tau]))\\[DifferentialD]\\[Tau]).\";\n\n\n\
+Begin[\"`Private`\"]\n\
+classicalTrajectory[t_,pz_,{F_,\\[Omega]_,\\[Kappa]_},OptionsPattern[zInit->0]\
+]:=Re[complexTrajectory[t,pz,{F,\\[Omega],\\[Kappa]},zInit->OptionValue[zInit]\
+]]\nclassicalTrajectory[t_?NumericQ,{px_,py_,pz_},{F_,\\[Omega]_,\\[Kappa]_},\
+OptionsPattern[rInit->0]]:=Re[complexTrajectory[t,{px,py,pz},{F,\\[Omega],\\[\
+Kappa]},rInit->OptionValue[rInit]]]\nEnd[]\n\n\n\
+classicalClosestApproach::usage=\"classicalClosestApproach[{px, py, pz}, {F, \
+\\[Omega], \\[Kappa]}] Returns \\!\\(\\*SubscriptBox[\\(t\\), \\(CA\\)]\\), \
+such that Re[\\!\\(\\*SubscriptBox[\\(r\\), \
+\\(cl\\)]\\)(\\!\\(\\*SubscriptBox[\\(t\\), \
+\\(CA\\)]\\))]\\[CenterDot]v(\\!\\(\\*SubscriptBox[\\(t\\), \\(CA\\)]\\))=0, \
+for the given momentum and parameters. Accepts \\\"rules\\\" as an option, as \
+well as \\\"Range\\\" in the format {t1, t2}, where both can contain the \
+laser period \\\"T\\\".\";\n\n\nBegin[\"`Private`\"]\n\
+Options[classicalClosestApproach]={\"rules\"->Automatic,\"Range\"->{0,2\"T\"}}\
+;\nclassicalClosestApproach[{px_,py_,pz_},{F_,\\[Omega]_,\\[Kappa]_},\
+OptionsPattern[]]:=Module[\n{tstart,zinit},\n\
+tstart=If[NumberQ[OptionValue[\"rules\"]],\n\"t0\"/.OptionValue[\"rules\"],\n\
+Re[1/\\[Omega] ArcSin[\\[Omega]/F (pz+I Sqrt[\\[Kappa]^2+px^2+py^2])]]\n];\n\
+zinit=F/\\[Omega]^2 Cos[\\[Omega] tstart]-F/\\[Omega]^2 \
+Re[Cos[ArcSin[\\[Omega]/F (pz+I Sqrt[\\[Kappa]^2+px^2+py^2])]]];\n\
+If[Length[#]>0,t/.#,{}]&@Quiet[\nNSolve[{\n{px,py,pz-F/\\[Omega] \
+Sin[\\[Omega] \
+t]}.classicalTrajectory[t,{px,py,pz},{F,\\[Omega],\\[Kappa]}]==0,\n\
+Evaluate[OptionValue[\"Range\"][[1]]<t<OptionValue[\"Range\"][[2]]/.{\"T\"->(\
+2\\[Pi])/\\[Omega]}]\n},t]\n]\n]\nEnd[]\n\n\nrDotV::usage=\"rDotV[t, px, pz, \
+{F, \\[Omega], \\[Kappa]}] Returns the classical r(t)\\[CenterDot]v(t) for \
+the given momentum and parameters.\";\n\n\nBegin[\"`Private`\"]\n\
+rDotV[t_,{px_,py_,pz_},{F_,\\[Omega]_,\\[Kappa]_}]:=Module[{tss,zinit=F/\\[\
+Omega]^2 (1-Sqrt[1+((\\[Kappa] \\[Omega])/F)^2])},\n\
+tss=If[NumberQ[OptionValue[\"rules\"]],\n\"t0\"/.OptionValue[\"rules\"],\n\
+Re[1/\\[Omega] ArcSin[\\[Omega]/F (pz+I Sqrt[\\[Kappa]^2+px^2+py^2])]]\n];\n\
+(px^2+py^2)(t-tss)+(pz(t-tss)+F/\\[Omega]^2 (Cos[\\[Omega] t]-Cos[\\[Omega] \
+tss])+zinit)(pz-F/\\[Omega] Sin[\\[Omega] t])\n]\nEnd[]\n\n\n\
+Begin[\"`Private`\"]\n\
+rDotV[t_,px_,pz_,{F_,\\[Omega]_,\\[Kappa]_}]:=rDotV[t,px,pz,{F,\\[Omega],\\[\
+Kappa]}]=rDotV[t,{px,0,pz},{F,\\[Omega],\\[Kappa]}]\nEnd[]\n\n\n\
+d2r2::usage=\"d2r2[t, {px, py, pz}, {F, \\[Omega], \\[Kappa]}] Returns the \
+classical second time derivative \\!\\(\\*FractionBox[SuperscriptBox[\\(d\\), \
+\\(2\\)], SuperscriptBox[\\(dt\\), \
+\\(2\\)]]\\)\\!\\(\\*SubsuperscriptBox[\\(r\\), \\(cl\\), \\(2\\)]\\) at the \
+given momentum and parameers.\";\n\n\nBegin[\"`Private`\"]\n\
+d2r2[t_,{px_,py_,pz_},{F_,\\[Omega]_,\\[Kappa]_}]:=d2r2[t,{px,py,pz},{F,\\[\
+Omega],\\[Kappa]}]=2(Norm[{px,py,pz}-{0,0,1} F/\\[Omega] Sin[\\[Omega] \
+t]]^2-classicalTrajectory[t,pz,{F,\\[Omega],\\[Kappa]}]F Cos[\\[Omega] t])\n\
+End[]\n\n\n\
+allQuantumClosestApproachTimes::usage=\"allQuantumClosestApproachTimes[{px, \
+py, pz}, {F, \\[Omega], \\[Kappa]}, {xinit, yinit, zinit}] returns the \
+quantum tCAs as a list of complex values. It accepts as options an explicit \
+\\\"ts\\\" and a \\\"Range\\\", set to {-2\\[ImaginaryI]\\[Tau], \
+T+2\\[ImaginaryI]\\[Tau]} by default, as well as all the options of \
+EPToolbox`FindComplexRoots.\";\ntCA::usage=\"tCA represents a closest \
+approach time \\!\\(\\*SubscriptBox[\\(t\\), \\(CA\\)]\\).\";\n\n\n\
+Begin[\"`Private`\"]\n\
+Options[allQuantumClosestApproachTimes]=Join[Options[FindComplexRoots],{\"\
+rules\"->Automatic,\"Range\"->Automatic}];\n\
+allQuantumClosestApproachTimes[{po_,py_,pp_},{F_,\\[Omega]_,\\[Kappa]_},{\
+xinit_,yinit_,zinit_},options:OptionsPattern[]]:=Module[\n{tss,range,rules},\n\
+tss=If[OptionValue[\"rules\"]===Automatic,ts[pp,\\[Kappa],\\[Omega],F,po,py],\
+\"ts\"/.OptionValue[\"rules\"]];\n\
+rules=If[OptionValue[\"rules\"]===Automatic,\n\
+{\"t\\[Kappa]\"->tss-I/\\[Kappa]^2,\"ts\"->tss,\"t0\"->Re[tss],\"\\[Tau]\"->\
+Im[tss],\"T\"->2\\[Pi]/\\[Omega]},\nOptionValue[rules]\n];\nrange=Which[\n\
+MatchQ[OptionValue[\"Range\"]/.rules,{a_?NumericQ,b_?NumericQ}/;Im[b-a]<=0],(\
+OptionValue[Range]/.rules)+{-2I Im[tss],2I Im[tss]},\n\
+MatchQ[OptionValue[\"Range\"]/.rules,{_?NumericQ,_?NumericQ}],(OptionValue[\
+Range]/.rules),\nTrue,{-2I Im[tss],(2\\[Pi])/\\[Omega]+2I Im[tss]}\n];\n\
+Sort@FindComplexRoots[\n\
+2({xinit,yinit,zinit}+{po,py,pp}(tCA-tss)+{0,0,F/\\[Omega]^2 (Cos[\\[Omega] \
+tCA]-Cos[\\[Omega] tss])}).{po,py,pp-F/\\[Omega] Sin[\\[Omega] tCA]}==0\n\
+,{tCA,range[[1]],range[[2]]}\n\
+,Sequence@@FilterRules[{options},Options[FindComplexRoots]]\n,Seeds->200\n\
+,Tolerance->10^(4-$MachinePrecision)\n]\n]\nEnd[]\n\n\n\
+makeTCAsFromCircuit::usage=\"makeTCAsFromCircuit[{{n1, {px1, py1, pz1}}, ..., \
+{nN, {pxnN, pynN, pznN}}}, {F, \\[Omega], \\[Kappa]}, {xinit, yinit, zinit}] \
+Calculates the tCAs for the given circuit and parameters. The ni can be any \
+tags which are returned with the output, which is of the form {{n1, {px1, \
+py1, pz1}, tCA11}, {n1, {px1, py1, pz1}, tCA12}, ..., {nN, {pxnN, pynN, \
+pznN}, tCAnNk}}, with all the appropriate tCA in separate entries. Same \
+\\\"rules\\\" and \\\"Range\\\" options as allQuantumClosestApproachTimes.\";\
+\n\n\nBegin[\"`Private`\"]\n\
+Options[makeTCAsFromCircuit]=Join[{\"rules\"->Automatic,OptionValue[\"Range\"]\
+->Automatic,PlotRange->Automatic},Options[allQuantumClosestApproachTimes]];\n\
+makeTCAsFromCircuit[circuit_,{F_,\\[Omega]_,\\[Kappa]_},{xinit_,yinit_,zinit_}\
+,options:OptionsPattern[]]:=Module[\n{range,rules,tss,n,pvec},\n\
+Flatten[ParallelTable[\n{n,pvec}=element;\n\
+Needs[\"EPToolbox`\",\"/home/episanty/Work/CQD/Project/Code/EPToolbox/\
+EPToolbox/EPToolbox.m\"];\n\
+tss=If[OptionValue[\"rules\"]===Automatic,ts[pvec[[1]],\\[Kappa],\\[Omega],F,\
+pvec[[1]]],\"ts\"/.OptionValue[\"rules\"]];\n\
+rules=If[OptionValue[\"rules\"]===Automatic,\n\
+{\"t\\[Kappa]\"->tss-I/\\[Kappa]^2,\"ts\"->tss,\"t0\"->Re[tss],\"\\[Tau]\"->\
+Im[tss],\"T\"->2\\[Pi]/\\[Omega]},\nOptionValue[rules]\n];\nrange=Automatic;\n\
+range=Which[\n\
+MatchQ[OptionValue[\"Range\"]/.rules,{_?NumericQ,_?NumericQ}],OptionValue[\"\
+Range\"]/.rules,\n\
+MatchQ[OptionValue[PlotRange]/.rules,{{_?NumericQ,_?NumericQ},{_?NumericQ,_?\
+NumericQ}}],Complex@@@(OptionValue[PlotRange]\\[Transpose]/.rules),\n\
+True,{-2I Im[tss],(2\\[Pi])/\\[Omega]+2I Im[tss]}\n];(*ugly logic inside the \
+Table because range depends on tss which depends on p*)\n\
+{n,pvec,tCA}/.allQuantumClosestApproachTimes[{pvec[[1]],0,pvec[[2]]},{F,\\[\
+Omega],\\[Kappa]},{xinit,yinit,zinit}\n\
+,Sequence@@FilterRules[{options},Options[allQuantumClosestApproachTimes]],\"\
+Range\"->range\n]\n,{element,circuit}],1]\n]\nEnd[]\n\n\n\
+makeTCAsFromRange::usage=\"makeTCAsFromRange[{pomin, pomax, \\[Delta]po}, \
+{ppmin, ppmax, \\[Delta]pp}, fixedMomenta, {F, \\[Omega], \\[Kappa]}, {xinit, \
+yinit, zinit}, \\\"Range\\\"\\[Rule]{t1, t2}] Returns a list with elements of \
+the form {{po, py, pp}, tCA} for a rectangular grid in momentum with the \
+given spans and separations. fixedMomenta should be a list of replacement \
+rules such as {py\\[Rule]0}.\";\n\n\nBegin[\"`Private`\"]\n\
+Options[makeTCAsFromRange]=Join[{\"rules\"->Automatic,OptionValue[\"Range\"]},\
+Options[allQuantumClosestApproachTimes]];\n\
+makeTCAsFromRange[{pomin_,pomax_,\\[Delta]po_},{ppmin_,ppmax_,\\[Delta]pp_},\
+fixedMomenta_,{F_,\\[Omega]_,\\[Kappa]_},{xinit_,yinit_,zinit_},options:\
+OptionsPattern[]]:=Module[\n{range,rules,tss},\n\
+tss=If[OptionValue[\"rules\"]===Automatic,ts[pp,\\[Kappa],\\[Omega],F,po,py],\
+\"ts\"/.OptionValue[\"rules\"]];\n\
+rules=If[OptionValue[\"rules\"]===Automatic,\n\
+{\"t\\[Kappa]\"->tss-I/\\[Kappa]^2,\"ts\"->tss,\"t0\"->Re[tss],\"\\[Tau]\"->\
+Im[tss],\"T\"->2\\[Pi]/\\[Omega]},\nOptionValue[rules]\n];\nFlatten[\nTable[\n\
+range=Which[\n\
+MatchQ[OptionValue[\"Range\"]/.rules/.fixedMomenta,{_?NumericQ,_?NumericQ}],\
+OptionValue[\"Range\"]/.rules,\n\
+MatchQ[OptionValue[PlotRange]/.rules/.fixedMomenta,{{_?NumericQ,_?NumericQ},{_\
+?NumericQ,_?NumericQ}}],Complex@@@(OptionValue[PlotRange]\\[Transpose]/.rules)\
+,\nTrue,{-2I Im[tss],(2\\[Pi])/\\[Omega]+2I Im[tss]}\n]/.fixedMomenta;(*ugly \
+logic inside the Table because range depends on tss which depends on p*)\n\
+{{po,py,pp}/.fixedMomenta,tCA}/.allQuantumClosestApproachTimes[{po,py,pp}/.\
+fixedMomenta,{F,\\[Omega],\\[Kappa]},{xinit,yinit,zinit}\n\
+,\"Range\"->range,Sequence@@FilterRules[{options},Options[\
+allQuantumClosestApproachTimes]]\n]\n\
+,{po,pomin,pomax,\\[Delta]po},{pp,ppmin,ppmax,\\[Delta]pp}]\n,{1,2,3}]\n]\n\
+End[]\n\n\nclosestApproachTimesPath::usage=\"closestApproachTimesPath[{px, \
+py, pz}, {F, \\[Omega], \\[Kappa]}, {xinit, yinit, zinit}] Returns a selected \
+and ordered list of complex tCAs as replacement rules, in atomic units. \
+Accepts the same \\\"rules\\\" and \\\"Range\\\" options as \
+allQuantumClosestApproachTimes.\";\nv2Tolerance::usage=\"v2Tolerance is an \
+option for closestApproachTimesPath which determines the tolerance v2tol to \
+be used when selecting tCAs for the path. Time tCA is included in the path if \
+Re[v[tCA]^2]\\[GreaterEqual]-v2tol.\";Protect[v2Tolerance];\n\n\n\
+Begin[\"`Private`\"]\n\
+Options[closestApproachTimesPath]=Join[{v2Tolerance->Automatic},Options[\
+allQuantumClosestApproachTimes],Options[ListPlot]];\n\
+closestApproachTimesPath[{po_,py_,pp_},{F_,\\[Omega]_,\\[Kappa]_},{xinit_,\
+yinit_,zinit_},options:OptionsPattern[]]:=Module[\n\
+{tss,r,v,range,rules,v2tol},\n\
+tss=If[OptionValue[\"rules\"]===Automatic,ts[pp,\\[Kappa],\\[Omega],F,po,py],\
+\"ts\"/.OptionValue[\"rules\"]];\n\
+rules=If[OptionValue[\"rules\"]===Automatic,\n\
+{\"t\\[Kappa]\"->tss-I/\\[Kappa]^2,\"ts\"->tss,\"t0\"->Re[tss],\"\\[Tau]\"->\
+Im[tss],\"T\"->2\\[Pi]/\\[Omega]},\nOptionValue[rules]\n];\n\
+v2tol=Which[OptionValue[v2Tolerance]===Automatic,10^-8,True,OptionValue[\
+v2Tolerance]];\n\
+r[tt_]:=({xinit,yinit,zinit}+{po,py,pp}(tt-tss)+{0,0,F/\\[Omega]^2 \
+(Cos[\\[Omega] tt]-Cos[\\[Omega] tss])});\n\
+v[tt_]:=({po,py,pp}+{0,0,-(F/\\[Omega])Sin[\\[Omega] tt]});\nrange=Which[\n\
+MatchQ[OptionValue[\"Range\"]/.rules,{_?NumericQ,_?NumericQ}],OptionValue[\"\
+Range\"]/.rules,\n\
+MatchQ[OptionValue[PlotRange]/.rules,{{_?NumericQ,_?NumericQ},{_?NumericQ,_?\
+NumericQ}}],Complex@@@(OptionValue[PlotRange]\\[Transpose]/.rules),\n\
+True,{-2I Im[tss],(2\\[Pi])/\\[Omega]+2I Im[tss]}\n];\nSelect[\nSort[\n\
+allQuantumClosestApproachTimes[{po,py,pp},{F,\\[Omega],\\[Kappa]},{xinit,\
+yinit,zinit}\n,\"Range\"->range\n\
+,Sequence@@FilterRules[{options},Options[allQuantumClosestApproachTimes]]\n\
+,Tolerance->10^(4-$MachinePrecision)],\n((Re[tCA]/.#1)<(Re[tCA]/.#2))&\n],\n\
+(Or[\nAnd[1/4 (2\\[Pi])/\\[Omega]<Re[tCA]<3/4 (2\\[Pi])/\\[Omega],Im[tCA]>0],\
+\nAnd[-(1/4) (2\\[Pi])/\\[Omega]<Re[tCA]<1/4 \
+(2\\[Pi])/\\[Omega],Im[tCA]>=0,Im[Sin[\\[Omega] tCA]]<\\[Omega] \\[Kappa]/F],\
+\nAnd[(-0.3Im[tss]<=Im[tCA]<Im[tss]-1/\\[Kappa]^2),(Re[tCA]-0.1 \
+(2\\[Pi])/\\[Omega]>Re[tss]),(Re[v[tCA].v[tCA]]>=-v2tol)]\n]/.#&)\n]\n]\n\
+End[]\n(*closestApproachTimesPath[{0.05,0,1.2},stdpars,{0,0,0},\"Range\"\\[\
+Rule]{-5\\[ImaginaryI],5.6\"T\"+30\\[ImaginaryI]}]*)\n\n\n\
+volkovExponent::usage=\"volkovExponent[{po, py, pp}, {F, \\[Omega], \
+\\[Kappa]}] calculates \
+Re(\\[ImaginaryI]\\!\\(\\*SubsuperscriptBox[\\(\\[Integral]\\), \\(0\\), \
+SubscriptBox[\\(t\\), \\(s\\)]]\\)(\\!\\(\\*SubscriptBox[\\(I\\), \
+\\(p\\)]\\)+\\!\\(\\*FractionBox[\\(1\\), \
+\\(2\\)]\\)(p+A(\\[Tau])\\!\\(\\*SuperscriptBox[\\()\\), \
+\\(2\\)]\\))\\[DifferentialD]\\[Tau]).\";\n\n\nBegin[\"`Private`\"]\n\
+(*FullSimplify[Re[\n\\[ImaginaryI] \
+Integrate[\\[Kappa]^2/2+1/2(po^2+py^2)+1/2(pp-F/\\[Omega]Sin[\\[Omega] \
+t])^2,{t,0,1/\\[Omega]ArcSin[\\[Omega]/F(pp+\\[ImaginaryI] \
+Sqrt[\\[Kappa]^2+po^2+py^2])]}]/.{Sin[2u_]\\[Rule]2Sin[u]Cos[u]}\n]]*)\n\
+volkovExponent[{po_,py_,pp_},{F_,\\[Omega]_},\\[Kappa]_]:=-(1/8) \
+Im[1/\\[Omega]^3 (2 F \\[Omega] (-4 pp+3 pp Sqrt[1+((-I \
+pp+Sqrt[po^2+py^2+\\[Kappa]^2])^2 \\[Omega]^2)/F^2]-I \
+Sqrt[po^2+py^2+\\[Kappa]^2] Sqrt[1+((-I pp+Sqrt[po^2+py^2+\\[Kappa]^2])^2 \
+\\[Omega]^2)/F^2])+2 (F^2+2 (po^2+pp^2+py^2+\\[Kappa]^2) \\[Omega]^2) \
+ArcSin[((pp+I Sqrt[po^2+py^2+\\[Kappa]^2]) \\[Omega])/F])]\n\
+volkovExponent[{po_,py_,pp_},{F_,\\[Omega]_,\\[Kappa]_}]:=volkovExponent[{po,\
+py,pp},{F,\\[Omega]},\\[Kappa]]\nEnd[]\n\n\n\
+coulombCorrection::usage=\"coulombCorrection[{px, py, pz}, {F, \\[Omega], \
+\\[Kappa]}, path] Calculates the Coulomb correction integral over the \
+specified path. The path is a list which may contain \\\"t\\[Kappa]\\\", \
+\\\"ts\\\", \\\"t0\\\", \\\"\\[Tau]\\\", \\\"tCApath\\\" and \\\"T\\\", which \
+will be replaced by the appropriate points.\";\ncoulombCorrection::intErrors=\
+\"Integration errors obtained at input {{po, py, pp}, {F, \\[Omega], \
+\\[Kappa]}, path}=`1`\";\nSoftening::usage=\"Softening is an option for \
+coulombCorrection which specifies whether the Coulomb kernel should be \
+softened by a length \\[Sigma]. It is set by default to None (\\[Sigma]=0), \
+and it can be changed to Automatic (\\[Sigma]=1/\\[Kappa]) or a numeric value \
+for \\[Sigma].\";\nReportingFunction::usage=\"ReportingFunction is an option \
+for coulombCorrection to specify the reporting of error-producing inputs. It \
+should speficy a function f, set by default to Sow, which will be called as \
+f[{{po, py, pp}, {F, \\[Omega], \\[Kappa]}, path}] if the inputs produce any \
+errors during the NIntegrate call. To print to a file use ReportToFile.\";\n\
+ReportToFile::usage=\"ReportToFile[directory, file] returns a function which \
+can be used as a value for ReportingFunction inside \
+coulombCorrection.\\n\\nReportToFile[directory, file][expr] adds a line with \
+expr (properly parsed to ASCII for spaces, backslashes and quote marks) to \
+directory/file.\";\n\n\nBegin[\"`Private`\"]\nSetSharedFunction[Sow];\n\
+Quiet[ReportingFunction=ReportingFunction;Softening=Softening;]\n\
+Protect[ReportingFunction];Protect[Softening];\n\n\
+Options[coulombCorrection]=Join[{Softening->None,ReportingFunction->Sow},\
+Options[closestApproachTimesPath]];\n\
+coulombCorrection[{po_,py_,pp_},{F_,\\[Omega]_,\\[Kappa]_},path_:{\"t\\[Kappa]\
+\",\"t0\"},options:OptionsPattern[]]:=Block[\n\
+{tss,iterator,rules,range,tCApath,int,\\[Sigma]},\n\
+\\[Sigma]=Which[NumberQ[OptionValue[Softening]],OptionValue[Softening],\
+OptionValue[Softening]===Automatic,1/\\[Kappa],True,0];(*Coulomb softening*)\n\
+tss=ts[pp,\\[Kappa],\\[Omega],F,po,py];\n\
+rules={\"t\\[Kappa]\"->tss-I/\\[Kappa]^2,\"ts\"->tss,\"t0\"->Re[tss],\"\\[Tau]\
+\"->Im[tss],\"T\"->2\\[Pi]/\\[Omega]};\nrange=({Re[First[path]]-2I \
+\"\\[Tau]\",Re[Last[path]]+2I \"\\[Tau]\"}/.rules);\nIf[\n\
+!FreeQ[path,\"tCApath\"],\n\
+tCApath=Chop[tCA/.closestApproachTimesPath[{po,py,pp},{F,\\[Omega],\\[Kappa]},\
+{0,0,0},Sequence@@FilterRules[{options},Options[closestApproachTimesPath]],\"\
+Range\"->range]];\nIf[Length[tCApath]>0,\n\
+AppendTo[rules,\"tCApath\"->Apply[Sequence,tCApath]],\n\
+AppendTo[rules,\"tCApath\"->(##&[])]\n]\n];(*Print[rules];*)\n\
+iterator={t,Sequence@@Evaluate[path/.rules]};(*Print[iterator];*)\nCheck[\n\
+int=NIntegrate[-((po^2+py^2)(t-tss)^2+(pp(t-tss)+F/\\[Omega]^2 (Cos[\\[Omega] \
+t]-Cos[\\[Omega] tss]))^2+\\[Sigma]^2)^(-1/2),Evaluate@iterator],\n\
+OptionValue[ReportingFunction][Chop[{{po,py,pp},{F,\\[Omega],\\[Kappa]},path}]\
+];Message[coulombCorrection::intErrors,Chop[{{po,py,pp},{F,\\[Omega],\\[Kappa]\
+},path}]];int\n]\n]\nEnd[]\n\n\nBegin[\"`Private`\"]\n\
+ReportToFile[directory_,file_]:=Function[expr,Run[\"cd \"<>directory<>\" && \
+echo \"<>StringReplace[ToString[expr/.{s_String:>StringJoin[\"\\\"\",s,\"\\\"\
+\"]},CharacterEncoding->\"ASCII\"],{\" \"->\"\\\\ \
+\",\"\\\\\"->\"\\\\\\\\\",\"\\\"\"->\"\\\\\\\"\"}]<>\" >> \
+\"<>StringReplace[file,{\" \"->\"\\\\ \
+\",\"\\\\\"->\"\\\\\\\\\",\"\\\"\"->\"\\\\\\\"\"}]]]\nEnd[]\n\n\n\
+EndPackage[]"]], 
+     (Get[#]& )[
+      StringToStream[
+      "(* ::Package:: *)\n\n(* Mathematica Package *)\n\n(* Created by the \
+Wolfram Workbench 21-Aug-2014 *)\n\nBeginPackage[\"EPToolbox`\"]\n(* Exported \
+symbols added here with SymbolName::usage *) \n\n\n(*FindComplexRoots*)\n\
+FindComplexRoots::usage = \"FindComplexRoots[e1==e2, {z, zmin, zmax}] \
+attempts to find complex roots \\\nof the equation e1==e2 in the rectangle \
+with corners zmin and zmax.\";\nSeeds::usage = \"Seeds is an option for \
+FindComplexRoots which determines how many initial seeds are \\\nused to \
+attempt to find roots of the given equation.\";\nSeedGenerator::usage \
+=\"SeedGenerator is an option for FindComplexRoots which determines the \
+function \\\nused to generate the seeds for the internal FindRoot call. Its \
+value can be RandomComplex, \\\nRandomNiederreiterComplexes, \
+RandomSobolComplexes, DeterministicComplexGrid, or any function \\\nf such \
+that f[{zmin, zmax}, n] returns n complex numbers in the rectancle with \
+corners zmin and zmax.\";\n\n\n(*Quasirandom generators*)\n\
+RandomSobolComplexes::usage=\"RandomSobolComplexes[{zmin, zmax}, n] generates \
+a low-discrepancy Sobol \\\nsequence of n quasirandom complex numbers in the \
+rectangle with corners zmin and zmax.\"\n\
+RandomNiederreiterComplexes::usage=\"RandomNiederreiterComplexes[{zmin, \
+zmax}, n] generates a low-discrepancy \\\nNiederreiter sequence of n \
+quasirandom complex numbers in the rectangle with corners zmin and zmax.\"\n\
+DeterministicComplexGrid::usage=\"DeterministicComplexGrid[{zmin, zmax}, n] \
+generates a grid of about n \\\nequally spaced complex numbers in the \
+rectangle with corners zmin and zmax.\"\n\n\n(*Contour plot cleaner*)\n\
+cleanContourPlot::usage=\"cleanContourPlot[plot] Cleans up a contour plot by \
+coalescing complex polygons into single \\\nFilledCurve instances. See \
+MM.SE/a/3279 for source and documentation.\"\n\n\n(*Dynamics profiler*)\n\
+profileDynamics::usage=\"profileDynamics[dynamicsConstruct] Produces a \
+profiling suite for the Dynamic statements in its argument. \\\nSee \
+MM.SE/a/8047 for source and documentation.\"\n\n\nBegin[\"`Private`\"]\n(* \
+Implementation of the package *)\n\n\n(*\nFindComplexRoots - root finder for \
+complex-valued equations of a complex variable in a given rectangular patch \
+of the complex plane.\nDocumented in MM.SE/a/57821.\n*)\n\
+Options[FindComplexRoots] = Join[Options[FindRoot], {Seeds -> 50, \
+SeedGenerator -> RandomComplex, Tolerance -> Automatic, Verbose -> False}];\n\
+SyntaxInformation[FindComplexRoots] = {\"ArgumentsPattern\" -> {_, {_, _, _}, \
+OptionsPattern[]},    \"LocalVariables\" -> {\"Table\", {2, \\[Infinity]}}};\n\
+FindComplexRoots::seeds = \"Value of option Seeds -> `1` is not a positive \
+integer.\";\nFindComplexRoots::tol = \"Value of option Tolerance -> `1` is \
+not Automatic or a number in [0,\\[Infinity]).\";\n\n\nProtect[Seeds];\n\
+Protect[SeedGenerator];\n\n\nFindComplexRoots[e1_ == e2_, {z_, zmin_, zmax_}, \
+ops : OptionsPattern[]] := Module[{seeds},\n  If[! \
+IntegerQ[Rationalize[OptionValue[Seeds]]] || OptionValue[Seeds] <= 0, \n   \
+Message[FindComplexRoots::seeds, OptionValue[Seeds]]];\n  If[! \
+(OptionValue[Tolerance] === Automatic || OptionValue[Tolerance] >= 0), \n   \
+Message[FindComplexRoots::tol, OptionValue[Seeds]]];\n  \n  seeds = \
+OptionValue[SeedGenerator][{zmin, zmax}, OptionValue[Seeds]];\n  \n  \
+If[OptionValue[Verbose], Hold[], Hold[FindRoot::lstol]] /. {\n    \
+Hold[messageSequence___] :> Quiet[\n      DeleteDuplicates[\n       Select[\n \
+       Check[\n           FindRoot[e1 == e2, {z, #},\n            \
+Evaluate[Sequence @@ FilterRules[{ops}, Options[FindRoot]]]\n            ]\n  \
+         , ## &[]\n           ] & /@ seeds\n        , (Re[zmin] < (Re[z] /. \
+#) < Re[zmax] && \n           Im[zmin] < (Im[z] /. #) < Im[zmax]) &]\n       \
+, Abs[(z /. #1) - (z /. #2)] < If[\n          \
+NumberQ[OptionValue[Tolerance]],\n          OptionValue[Tolerance],\n         \
+ \n          10^If[NumberQ[OptionValue[WorkingPrecision]], \n            2 - \
+OptionValue[WorkingPrecision], 2 - $MachinePrecision]\n          ] &]\n      \
+, {messageSequence}]}\n  ]\n\n\n\n\n\n\n\n\n(*Quasirandom number generators \
+to use with FindComplexRoot*)\nRandomSobolComplexes[{zmin_, zmax_}, number_] \
+:= (\n  ((Re[zmax] - Re[zmin]) #1 + Re[zmin] + \n      I ((Im[zmax] - \
+Im[zmin]) #2 + Im[zmin])) & @@@ BlockRandom[\n    SeedRandom[Method -> {\"MKL\
+\", Method -> {\"Sobol\", \"Dimension\" -> 2}}];\n    SeedRandom[];\n    \
+RandomReal[{0, 1}, {number, 2}]\n    ]\n  )\n\n\n\
+RandomNiederreiterComplexes[{zmin_, zmax_}, number_] := (\n  ((Re[zmax] - \
+Re[zmin]) #1 + Re[zmin] + \n      I ((Im[zmax] - Im[zmin]) #2 + Im[zmin])) & \
+@@@ BlockRandom[\n    SeedRandom[ Method -> {\"MKL\", Method -> \
+{\"Niederreiter\", \"Dimension\" -> 2}}];\n    SeedRandom[];\n    \
+RandomReal[{0, 1}, {number, 2}]\n    ]\n  )\n\n\n\
+DeterministicComplexGrid[{zmin_, zmax_}, number_] := Module[\n  {p = Round[ \
+Sqrt[(Re[zmax] - Re[zmin])/(Im[zmax] - Im[zmin]) number]], \n   q = Round[ \
+Sqrt[(Im[zmax] - Im[zmin])/(Re[zmax] - Re[zmin]) number]]},\n  \
+Flatten[Outer[#1 + I #2 &,\n    Most@Rest@N[Range[Re[zmin], Re[zmax], \
+(Re[zmax] - Re[zmin])/(p + 2)]],\n    Most@Rest@N[Range[Im[zmin], Im[zmax], \
+(Im[zmax] - Im[zmin])/(q + 2)]]\n    ], 2]\n  ]\n\n\n(*Due credit to Szabolcs \
+Horv\\[AAcute]t (http://mathematica.stackexchange.com/users/12/szabolcs), via \
+http://mathematica.stackexchange.com/a/3279, CC-BY-SA license.*)\n\
+cleanContourPlot[cp_] :=\n Module[{points, groups, regions, lines},\n  groups \
+= \n   Cases[cp, {style__, g_GraphicsGroup} :> {{style}, g}, Infinity];\n  \
+points = \n   First@Cases[cp, GraphicsComplex[pts_, ___] :> pts, Infinity];\n \
+ regions = Table[\n    Module[{group, style, polys, edges, cover, graph},\n   \
+  {style, group} = g;\n     polys = Join @@ Cases[group, Polygon[pt_, ___] :> \
+pt, Infinity];\n     edges = Join @@ (Partition[#, 2, 1, 1] & /@ polys);\n    \
+ cover = Cases[Tally[Sort /@ edges], {e_, 1} :> e];\n     graph = \
+Graph[UndirectedEdge @@@ cover];\n     {Sequence @@ style, \n      \
+FilledCurve[\n       List /@ Line /@ First /@ \n          Map[First, \n       \
+    FindEulerianCycle /@ (Subgraph[graph, #] &) /@ \n             \
+ConnectedComponents[graph], {3}]]}\n     ],\n    {g, groups}];\n  lines = \
+Cases[cp, _Tooltip, Infinity];\n  Graphics[GraphicsComplex[points, {regions, \
+lines}], \n   Sequence @@ Options[cp]]\n  ]\n\n\n(*Due credit to Rui Rojo \
+(http://mathematica.stackexchange.com/users/109/rojo), via \
+http://mathematica.stackexchange.com/a/8047, CC-BY-SA license.*)\n\
+ClearAll[profileDynamics];\nOptions[profileDynamics] = {\"Print\" -> False};\n\
+profileDynamics[d_, OptionsPattern[]] := With[\n  {print = \
+OptionValue[\"Print\"]},\n  Module[{counter = {}},\n   DynamicModule[\n    \
+{diag, start, tag},\n    diag[] := CreateDocument[Column[{\n        \
+Button[\"Reset counter\", counter = start],\n        Dynamic@Grid[Join[\n     \
+      {{\"Dynamic expression\", \"Count\", \"Time\"}}, \n           \
+MapAt[Short, #, 1] & /@ counter\n           ]]\n        }]];\n    CellPrint@\n\
+     ExpressionCell[Button[\"See profiling information\", diag[]]];\n    d \
+//. {\n       i : Annotation[_, {tag, ___}] :> i,\n       e : Dynamic[sth : \
+Except[First[{_, tag}]], rest___] :> With[\n         {pos = 1 + \
+Length@counter, \n          catalog = \n           Annotation[\n            \
+InputForm@e, {tag, Unique[\"profileDynamics`annot\"]}]},\n         \
+AppendTo[counter, {catalog, 0, 0.}];\n         Dynamic[First@{Refresh[\n      \
+        If[print, Print[catalog]]; ++counter[[pos, 2]];\n              \
+(counter[[pos, 3]] += First@#; Last@#) &[\n               \
+AbsoluteTiming[Refresh[sth]]],\n              None], tag}, rest] /; True\n    \
+     ]\n       } // (start = counter; #) &\n    ]\n   ]\n  ]\n\n\nEnd[]\n\n\
+EndPackage[]\n"]]})]]]
 },
-WindowSize->{1855, 1056},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
-PrintingCopies->1,
-PrintingPageRange->{Automatic, Automatic},
-PrintingOptions->{"PaperOrientation"->"Landscape",
-"PaperSize"->{Automatic, Automatic},
-"PostScriptOutputFile"->"",
-"PrintCellBrackets"->False,
-"PrintMultipleHorizontalPages"->False,
-"PrintRegistrationMarks"->False,
-"PrintingMargins"->0},
-PrivateNotebookOptions->{"FileOutlineCache"->False},
-ShowSelection->True,
-TrackCellChangeTimes->False,
+WindowSize->{808, 876},
+WindowMargins->{{1163, Automatic}, {Automatic, 90}},
 FrontEndVersion->"10.1 for Linux x86 (64-bit) (March 23, 2015)",
 StyleDefinitions->"Default.nb"
 ]
@@ -15638,130 +15249,17 @@ StyleDefinitions->"Default.nb"
 
 (* Internal cache information *)
 (*CellTagsOutline
-CellTagsIndex->{
- "Info3620753336-8646734"->{
-  Cell[875140, 15343, 858, 12, 70, "Print",
-   CellTags->"Info3620753336-8646734"]}
- }
+CellTagsIndex->{}
 *)
 (*CellTagsIndex
-CellTagsIndex->{
- {"Info3620753336-8646734", 885360, 15641}
- }
+CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[CellGroupData[{
-Cell[1486, 35, 53, 0, 70, "Title"],
-Cell[CellGroupData[{
-Cell[1564, 39, 31, 0, 70, "Section"],
-Cell[1598, 41, 197, 5, 70, "Output"],
-Cell[CellGroupData[{
-Cell[1820, 50, 577, 16, 70, "Input"],
-Cell[2400, 68, 858760, 14797, 70, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[861197, 14870, 749, 21, 70, "Input"],
-Cell[861949, 14893, 88, 1, 70, "Output"]
-}, Open  ]],
-Cell[862052, 14897, 201, 3, 70, "Input"],
-Cell[862256, 14902, 478, 13, 70, "Input"],
-Cell[862737, 14917, 261, 6, 70, "Text"],
-Cell[CellGroupData[{
-Cell[863023, 14927, 68, 0, 70, "Subsubsection"],
-Cell[CellGroupData[{
-Cell[863116, 14931, 819, 30, 70, "Item"],
-Cell[863938, 14963, 103, 3, 70, "Item"],
-Cell[864044, 14968, 1343, 40, 70, "Item"],
-Cell[865390, 15010, 164, 3, 70, "Item"]
-}, Open  ]]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[865603, 15019, 65, 0, 70, "Subsubsection"],
-Cell[CellGroupData[{
-Cell[865693, 15023, 160, 3, 70, "Item"],
-Cell[CellGroupData[{
-Cell[865878, 15030, 64, 0, 70, "Subitem"],
-Cell[865945, 15032, 31, 0, 70, "Subitem"],
-Cell[865979, 15034, 66, 0, 70, "Subitem"],
-Cell[866048, 15036, 46, 0, 70, "Subitem"],
-Cell[866097, 15038, 76, 0, 70, "Subitem"]
-}, Open  ]],
-Cell[866188, 15041, 494, 14, 70, "Item"],
-Cell[866685, 15057, 462, 17, 70, "Item"],
-Cell[867150, 15076, 345, 12, 70, "Item"],
-Cell[867498, 15090, 492, 13, 70, "Item"],
-Cell[867993, 15105, 408, 9, 70, "Item"],
-Cell[868404, 15116, 126, 3, 70, "Item"],
-Cell[868533, 15121, 334, 8, 70, "Item"],
-Cell[868870, 15131, 515, 17, 70, "Item"]
-}, Open  ]]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[869434, 15154, 53, 0, 70, "Subsubsection"],
-Cell[CellGroupData[{
-Cell[869512, 15158, 516, 12, 70, "Item"],
-Cell[870031, 15172, 480, 10, 70, "Item"],
-Cell[870514, 15184, 214, 4, 70, "Item"],
-Cell[870731, 15190, 574, 18, 70, "Item"],
-Cell[871308, 15210, 164, 3, 70, "Item"],
-Cell[871475, 15215, 474, 15, 70, "Item"],
-Cell[871952, 15232, 1891, 60, 70, "Item"],
-Cell[873846, 15294, 850, 28, 70, "Item"]
-}, Open  ]]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[874745, 15328, 49, 0, 70, "Subsubsection"],
-Cell[874797, 15330, 256, 6, 70, "Text"],
-Cell[CellGroupData[{
-Cell[875078, 15340, 59, 1, 70, "Input"],
-Cell[875140, 15343, 858, 12, 70, "Print",
- CellTags->"Info3620753336-8646734"]
-}, Open  ]],
-Cell[876013, 15358, 174, 3, 70, "Text"],
-Cell[876190, 15363, 80, 1, 70, "Input"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[876307, 15369, 43, 0, 70, "Subsection"],
-Cell[CellGroupData[{
-Cell[876375, 15373, 91, 1, 70, "Subsubsection"],
-Cell[876469, 15376, 734, 19, 70, "Text"],
-Cell[877206, 15397, 560, 14, 70, "Input"],
-Cell[877769, 15413, 1074, 21, 70, "Text"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[878880, 15439, 46, 0, 70, "Subsubsection"],
-Cell[878929, 15441, 373, 7, 70, "Text"],
-Cell[879305, 15450, 547, 16, 70, "Input"],
-Cell[879855, 15468, 1139, 29, 70, "Text"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[881031, 15502, 42, 0, 70, "Subsubsection"],
-Cell[881076, 15504, 441, 10, 70, "Text"],
-Cell[881520, 15516, 408, 12, 70, "Input"],
-Cell[881931, 15530, 831, 16, 70, "Text"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[882799, 15551, 65, 0, 70, "Subsubsection"],
-Cell[882867, 15553, 124, 3, 70, "Text"],
-Cell[882994, 15558, 327, 9, 70, "Input"],
-Cell[883324, 15569, 28, 0, 70, "Text"],
-Cell[883355, 15571, 349, 9, 70, "Input"],
-Cell[883707, 15582, 99, 2, 70, "Text"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[883843, 15589, 39, 0, 70, "Subsubsection"],
-Cell[883885, 15591, 610, 17, 70, "Input",
- InitializationCell->True],
-Cell[884498, 15610, 107, 3, 70, "Input",
- InitializationCell->True]
-}, Open  ]]
-}, Open  ]]
-}, Open  ]]
-}, Open  ]]
+Cell[1464, 33, 887581, 15207, 70, InheritFromParent]
 }
 ]
 *)
 
 (* End of internal cache information *)
-(* NotebookSignature oxDtgIgvE87o4AgpVIm8EeXy *)
+(* NotebookSignature #wpstIzHdqlzqDwKQ9MHnDdp *)

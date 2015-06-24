@@ -284,7 +284,9 @@ Manipulator[Dynamic[Abs[zinit],(zinit=If[zinit!=0,Sign[zinit]#,#])&],{0,rInitRan
 }]
 
 
-dashboardPlotter[{F_,\[Omega]_},\[Kappa]_,initialpath_: {"t\[Kappa]","t0","T"},{poinit_:0.15,ppinit_:0.15}]:=DynamicModule[
+dashboardPlotter[{F_,\[Omega]_},\[Kappa]_,initialpath_: {"t\[Kappa]","t0","T"},{poinit_:0.15,ppinit_:0.15}]:=With[
+{ARMSupportString=Import[NotebookDirectory[]<>"ARMSupport.m","Text"],EPToolboxString=Import[NotebookDirectory[]<>"EPToolbox.m","Text"]},
+DynamicModule[
 {po=poinit,pp=ppinit,py=0,sMan=0.1,t,rules
 ,trajectory
 ,expr,labels
@@ -361,9 +363,11 @@ rangeReset[tRangeSymbolic,{"Re(t)","Im(t)"}]
 ]]
 ,SaveDefinitions->True
 ,Initialization:>(
-Needs["EPToolbox`",NotebookDirectory[]<>"EPToolbox.m"];
-Needs["ARMSupport`",NotebookDirectory[]<>"ARMSupport.m"];
+(*Needs["EPToolbox`",NotebookDirectory[]<>"EPToolbox.m"];
+Needs["ARMSupport`",NotebookDirectory[]<>"ARMSupport.m"];*)
+{Get[#]&[StringToStream[ARMSupportString]],Get[#]&[StringToStream[EPToolboxString]]}
 )
+]
 ]
 
 
