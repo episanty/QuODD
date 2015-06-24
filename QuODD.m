@@ -68,7 +68,20 @@ rangeReset::usage="";
 rInitController::usage="";
 
 
+statifyDashboard::usage="statifyDashboard[dashboard] Removes the locator panes from a dashboard.."
+
+
 Begin["`Private`"];
+
+
+statifyDashboard[dashboard_]:=Quiet[
+dashboard/.{LocatorPane->locatorpane}/.{locatorpane[points_,contents_]->contents}
+(*/.{
+LocatorPane[points_,background_]\[Rule]background,DynamicModule\[Rule]placeholder
+}/.{
+placeholder[{init__},contents_,packages_,DynamicModuleValues\[RuleDelayed]{values___},options___]\[RuleDelayed]Module[{init},contents]
+}*)
+]
 
 
 $dashboardMainSize=Which[

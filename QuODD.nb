@@ -165,6 +165,13 @@ Cell[BoxData[
   RowBox[{
    RowBox[{"rInitController", "::", "usage"}], "=", "\"\<\>\""}], 
   ";"}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"statifyDashboard", "::", "usage"}], "=", 
+  "\"\<statifyDashboard[dashboard] Removes the locator panes from a \
+dashboard..\>\""}]], "Input",
  InitializationCell->True]
 }, Open  ]],
 
@@ -176,6 +183,51 @@ Cell[BoxData[
  RowBox[{
   RowBox[{"Begin", "[", "\"\<`Private`\>\"", "]"}], ";"}]], "Input",
  InitializationCell->True],
+
+Cell[CellGroupData[{
+
+Cell["statify Dashboard", "Subsection"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"statifyDashboard", "[", "dashboard_", "]"}], ":=", 
+  RowBox[{"Quiet", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"dashboard", "/.", 
+     RowBox[{"{", 
+      RowBox[{"LocatorPane", "\[Rule]", "locatorpane"}], "}"}]}], "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"locatorpane", "[", 
+       RowBox[{"points_", ",", "contents_"}], "]"}], "\[Rule]", "contents"}], 
+     "}"}]}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"/.", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"LocatorPane", "[", 
+          RowBox[{"points_", ",", "background_"}], "]"}], "\[Rule]", 
+         "background"}], ",", 
+        RowBox[{"DynamicModule", "\[Rule]", "placeholder"}]}], 
+       "\[IndentingNewLine]", "}"}]}], "/.", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"placeholder", "[", 
+        RowBox[{
+         RowBox[{"{", "init__", "}"}], ",", "contents_", ",", "packages_", 
+         ",", 
+         RowBox[{"DynamicModuleValues", "\[RuleDelayed]", 
+          RowBox[{"{", "values___", "}"}]}], ",", "options___"}], "]"}], 
+       "\[RuleDelayed]", 
+       RowBox[{"Module", "[", 
+        RowBox[{
+         RowBox[{"{", "init", "}"}], ",", "contents"}], "]"}]}], 
+      "\[IndentingNewLine]", "}"}]}], "*)"}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ InitializationCell->True]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
