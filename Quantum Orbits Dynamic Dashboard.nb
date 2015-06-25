@@ -3,21 +3,9 @@ Notebook[{
 Cell[CellGroupData[{
 Cell["The Quantum Orbits Dynamic Dashboard", "Title"],
 
-Cell[BoxData[
- ButtonBox["\<\"Export CDF\"\>",
-  Appearance->Automatic,
-  ButtonFunction:>Export[
-    StringJoin[
-     NotebookDirectory[], "Quantum Orbits Dynamic Dashboard.cdf"], 
-    Import[
-     StringJoin[
-      NotebookDirectory[], "Quantum Orbits Dynamic Dashboard.nb"]]],
-  Evaluator->Automatic,
-  Method->"Preemptive"]], "Output"],
-
 Cell[CellGroupData[{
 
-Cell["Motivation", "Section"],
+Cell["Introduction", "Section"],
 
 Cell[TextData[{
  "The Quantum Orbits Dynamic Dashboard is a ",
@@ -25,8 +13,270 @@ Cell[TextData[{
   FontSlant->"Italic"],
  " application to aid in the visualization and understanding of the role of \
 complex variables - specifically, complex time and complex position - in the \
-semiclassical theory of tunnel ionization.\n"
+semiclassical theory of tunnel ionization."
 }], "Text"],
+
+Cell[CellGroupData[{
+
+Cell["References and mild legalities", "Subsubsection"],
+
+Cell["\<\
+The Dashboard was developed as an aid for the research presented in\
+\>", "Text"],
+
+Cell[TextData[{
+ "\t",
+ StyleBox["1",
+  FontVariations->{"CompatibilityType"->"Superscript"}],
+ "\t",
+ "Slalom",
+ " ",
+ "in",
+ " ",
+ "complex",
+ " ",
+ "time",
+ ":",
+ " ",
+ "emergence",
+ " ",
+ "of",
+ " ",
+ "low",
+ "-",
+ "energy",
+ " ",
+ "structures",
+ " ",
+ "in",
+ " ",
+ "tunnel",
+ " ",
+ "ionization",
+ " ",
+ "via",
+ " ",
+ "complex",
+ " ",
+ "time",
+ " ",
+ "contours",
+ ".",
+ " ",
+ "E",
+ ".",
+ " ",
+ "Pisanty",
+ " ",
+ "and",
+ " ",
+ "M",
+ ".",
+ " ",
+ "Ivanov",
+ ".",
+ " ",
+ "In",
+ " ",
+ "preparation",
+ "."
+}], "Reference",
+ Editable->False,
+ TaggingRules->{ReferenceNoteData -> ""},
+ CellTags->"00007310"],
+
+Cell["and it is also documented in", "Text"],
+
+Cell[TextData[{
+ "\t",
+ StyleBox["2",
+  FontVariations->{"CompatibilityType"->"Superscript"}],
+ "\t",
+ "Quantum",
+ " ",
+ "Orbit",
+ " ",
+ "Dynamic",
+ " ",
+ "Dashboard",
+ ":",
+ " ",
+ "a",
+ " ",
+ "navigation",
+ " ",
+ "tool",
+ " ",
+ "for",
+ " ",
+ "complex",
+ " ",
+ "time",
+ " ",
+ "and",
+ " ",
+ "complex",
+ " ",
+ "space",
+ " ",
+ "in",
+ " ",
+ "tunnel",
+ " ",
+ "ionization",
+ ".",
+ " ",
+ "E",
+ ".",
+ " ",
+ "Pisanty",
+ ".",
+ " ",
+ "In",
+ " ",
+ "preparation",
+ "."
+}], "Reference",
+ Editable->False,
+ TaggingRules->{ReferenceNoteData -> ""},
+ CellTags->"00005E01"],
+
+Cell["\<\
+If this software is useful for your research, please cite either or both \
+papers, or cite this software directly. An example citation is\
+\>", "Text"],
+
+Cell[TextData[{
+ "\t",
+ StyleBox["3",
+  FontVariations->{"CompatibilityType"->"Superscript"}],
+ "\t",
+ "E",
+ ".",
+ " ",
+ "Pisanty",
+ ".",
+ " ",
+ "QuODD",
+ ":",
+ " ",
+ "Quantum",
+ " ",
+ "Orbits",
+ " ",
+ "Dynamic",
+ " ",
+ "Dashboard",
+ ".",
+ " ",
+ "https",
+ ":",
+ "//",
+ "github",
+ ".",
+ "com",
+ "/",
+ "episanty",
+ "/",
+ "QuODD",
+ " ",
+ "(",
+ "2015",
+ ")",
+ "."
+}], "Reference",
+ Editable->False,
+ TaggingRules->{ReferenceNoteData -> ""},
+ CellTags->"00005EA2"],
+
+Cell[TextData[{
+ "This software is available under the MIT license, with the exception of the \
+file ",
+ StyleBox["Quantum Orbits Dynamic Dashboard.cdf", "Code",
+  FontWeight->"Plain"],
+ ", which is licensed under the ",
+ ButtonBox["Creative Commons Attribution-ShareAlike",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://creativecommons.org/licenses/by-sa/3.0/us/"], None},
+  ButtonNote->"https://creativecommons.org/licenses/by-sa/3.0/us/"],
+ " (CC BY-SA) license."
+}], "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Table of contents", "Subsubsection"],
+
+Cell["This document is structured as follows:", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Motivation",
+  FontWeight->"Bold"],
+ ", describing the quantities "
+}], "Item"],
+
+Cell[TextData[{
+ StyleBox["The Dashboard",
+  FontWeight->"Bold"],
+ " itself."
+}], "Item"],
+
+Cell[TextData[{
+ StyleBox["Dashboard Elements",
+  FontWeight->"Bold"],
+ ", with a detailed explanation of each component."
+}], "Item"],
+
+Cell[TextData[{
+ StyleBox["Interaction with the Dashboard",
+  FontWeight->"Bold"],
+ ", detailing the different controls."
+}], "Item"],
+
+Cell[TextData[{
+ StyleBox["How to make new Dashboards",
+  FontWeight->"Bold"],
+ "."
+}], "Item"],
+
+Cell[TextData[{
+ StyleBox["Some physics examples",
+  FontWeight->"Bold"],
+ "."
+}], "Item"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  ButtonBox["\<\"Export CDF\"\>",
+   Appearance->Automatic,
+   ButtonFunction:>Export[
+     StringJoin[
+      NotebookDirectory[], "Quantum Orbits Dynamic Dashboard.cdf"], 
+     Import[
+      StringJoin[
+       NotebookDirectory[], "Quantum Orbits Dynamic Dashboard.nb"]]],
+   Evaluator->Automatic,
+   Method->"Preemptive"], 
+  ButtonBox["\<\"Export PDF\"\>",
+   Appearance->Automatic,
+   ButtonFunction:>Export[
+     StringJoin[
+      NotebookDirectory[], "Quantum Orbits Dynamic Dashboard.pdf"], 
+     Import[
+      StringJoin[
+       NotebookDirectory[], "Quantum Orbits Dynamic Dashboard.nb"]]],
+   Evaluator->Automatic,
+   Method->"Preemptive"]}]], "Input"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Motivation", "Section"],
 
 Cell[TextData[{
  "Tunnel ionization occurs when an atom or molecule of ionization potential \
@@ -37,22 +287,18 @@ Cell[TextData[{
     SubscriptBox["I", "p"], "=", 
     RowBox[{
      FractionBox["1", "2"], 
-     SuperscriptBox["\[Kappa]", "2"]}]}], TraditionalForm]],
-  FormatType->"TraditionalForm"],
+     SuperscriptBox["\[Kappa]", "2"]}]}], TraditionalForm]]],
  " is ionized by a laser of low frequency ",
  Cell[BoxData[
-  FormBox["\[Omega]", TraditionalForm]],
-  FormatType->"TraditionalForm"],
+  FormBox["\[Omega]", TraditionalForm]]],
  " and high peak field ",
  Cell[BoxData[
-  FormBox["F", TraditionalForm]],
-  FormatType->"TraditionalForm"],
+  FormBox["F", TraditionalForm]]],
  ". In the regime where the adiabaticity parameter ",
  Cell[BoxData[
   FormBox[
    RowBox[{"\[Gamma]", "=", 
-    RowBox[{"\[Omega]\[Kappa]", "/", "F"}]}], TraditionalForm]],
-  FormatType->"TraditionalForm"],
+    RowBox[{"\[Omega]\[Kappa]", "/", "F"}]}], TraditionalForm]]],
  " is small, the field is best thought of as oscillating slowly, thus \
 providing a potential energy barrier which the atomic electrons can then \
 tunnel through. Somewhat surprisingly, the tunnelling process can still be \
@@ -65,8 +311,7 @@ Cell[TextData[{
  "In the standard theory, the ionization happens at a complex time ",
  Cell[BoxData[
   FormBox[
-   SubscriptBox["t", "s"], TraditionalForm]],
-  FormatType->"TraditionalForm"],
+   SubscriptBox["t", "s"], TraditionalForm]]],
  " which satisfies the energy conservation condition"
 }], "Text"],
 
@@ -85,8 +330,7 @@ Cell[TextData[Cell[BoxData[
          StyleBox["A",
           FontWeight->"Bold"], "(", 
          SubscriptBox["t", "s"], ")"}]}], ")"}], "2"]}], "+", 
-    SubscriptBox["I", "p"]}], "=", "0."}], TraditionalForm]],
- FormatType->"TraditionalForm"]], "Text",
+    SubscriptBox["I", "p"]}], "=", "0."}], TraditionalForm]]]], "Text",
  TextAlignment->Center],
 
 Cell[TextData[{
@@ -94,15 +338,13 @@ Cell[TextData[{
  Cell[BoxData[
   FormBox[
    StyleBox["p",
-    FontWeight->"Bold"], TraditionalForm]],
-  FormatType->"TraditionalForm"],
+    FontWeight->"Bold"], TraditionalForm]]],
  " is the electron\[CloseCurlyQuote]s final momentum and ",
  Cell[BoxData[
   FormBox[
    RowBox[{
     StyleBox["A",
-     FontWeight->"Bold"], "(", "t", ")"}], TraditionalForm]],
-  FormatType->"TraditionalForm"],
+     FontWeight->"Bold"], "(", "t", ")"}], TraditionalForm]]],
  " is the laser field\[CloseCurlyQuote]s vector potential, which we take to \
 be linearly polarized and monochromatic (i.e. ",
  Cell[BoxData[
@@ -117,8 +359,7 @@ be linearly polarized and monochromatic (i.e. ",
      StyleBox["z",
       FontWeight->"Bold"], " ", 
      RowBox[{"sin", "(", 
-      RowBox[{"\[Omega]", " ", "t"}], ")"}]}]}], TraditionalForm]],
-  FormatType->"TraditionalForm"],
+      RowBox[{"\[Omega]", " ", "t"}], ")"}]}]}], TraditionalForm]]],
  "); their sum ",
  Cell[BoxData[
   FormBox[
@@ -127,22 +368,18 @@ be linearly polarized and monochromatic (i.e. ",
      FontWeight->"Bold"], "+", 
     RowBox[{
      StyleBox["A",
-      FontWeight->"Bold"], "(", "t", ")"}]}], TraditionalForm]],
-  FormatType->"TraditionalForm"],
+      FontWeight->"Bold"], "(", "t", ")"}]}], TraditionalForm]]],
  " is the electron\[CloseCurlyQuote]s velocity at time ",
  Cell[BoxData[
-  FormBox["t", TraditionalForm]],
-  FormatType->"TraditionalForm"],
+  FormBox["t", TraditionalForm]]],
  ". The electron trajectory is simply the integral of this velocity, from the \
 ionization time ",
  Cell[BoxData[
   FormBox[
-   SubscriptBox["t", "s"], TraditionalForm]],
-  FormatType->"TraditionalForm"],
+   SubscriptBox["t", "s"], TraditionalForm]]],
  " to any other time ",
  Cell[BoxData[
-  FormBox["t", TraditionalForm]],
-  FormatType->"TraditionalForm"],
+  FormBox["t", TraditionalForm]]],
  ", either real or complex:"
 }], "Text"],
 
@@ -197,8 +434,7 @@ Cell[TextData[{
         SubscriptBox[
          StyleBox["r",
           FontWeight->"Bold"], "cl"], "(", "t", ")"}], "2"]]]}], 
-   TraditionalForm]],
-  FormatType->"TraditionalForm"],
+   TraditionalForm]]],
  ","
 }], "Text",
  TextAlignment->Center],
@@ -217,17 +453,14 @@ involve in particular the action induced by this energy, ",
        SubscriptBox[
         StyleBox["r",
          FontWeight->"Bold"], "cl"], "(", "t", ")"}], ")"}], "dt"}]}], 
-   TraditionalForm]],
-  FormatType->"TraditionalForm"],
+   TraditionalForm]]],
  ", over some complex contour that joins the ionization time ",
  Cell[BoxData[
   FormBox[
-   SubscriptBox["t", "s"], TraditionalForm]],
-  FormatType->"TraditionalForm"],
+   SubscriptBox["t", "s"], TraditionalForm]]],
  " and the final detection time ",
  Cell[BoxData[
-  FormBox["T", TraditionalForm]],
-  FormatType->"TraditionalForm"],
+  FormBox["T", TraditionalForm]]],
  ". However, when doing this integral one must take care with the square \
 root, which has a branch cut - a sign discontinuity - when its argument is \
 real and negative. Integration contours on the time plane cannot cross such \
@@ -268,10 +501,11 @@ Cell[BoxData[
   InterpolatingFunction[{{0., 1.}}, {
    5, 15, 0, {4}, {2}, 0, 0, 0, 0, Automatic, {}, {}, False}, {{0., 
    0.3333333333333333, 0.6666666666666666, 1.}}, {
-   Developer`PackedArrayForm, {0, 1, 2, 3, 4}, {Complex[5.303627496195924, 
-    16.991914396531634`], Complex[5.303627496195924, 0.], Complex[
-    119.5433603540066, 5.], Complex[153.8152802113498, 0.]}}, {Automatic}], 
-  QuODD`Private`rules$$ = {
+   Developer`PackedArrayForm, {0, 1, 2, 3, 4}, {
+     Complex[5.303627496195924, 16.991914396531634`], 
+     Complex[5.303627496195924, 0.], 
+     Complex[119.5433603540066, 5.], 
+     Complex[153.8152802113498, 0.]}}, {Automatic}], QuODD`Private`rules$$ = {
   "t\[Kappa]" -> Complex[5.303627496195924, 16.991914396531634`], "ts" -> 
    Complex[5.303627496195924, 17.97806003643661], "t0" -> 5.303627496195924, 
    "\[Tau]" -> 17.97806003643661, "T" -> 114.23973285781067`, "tCAset" -> {}},
@@ -350,7 +584,7 @@ Cell[BoxData[
                  "t\[Kappa]" -> QuODD`Private`baretss$$ - I/1.007^2, "ts" -> 
                   QuODD`Private`baretss$$, "t0" -> 
                   Re[QuODD`Private`baretss$$], "\[Tau]" -> 
-                  Im[QuODD`Private`baretss$$], "T" -> 2 Pi/0.055}]] - 
+                  Im[QuODD`Private`baretss$$], "T" -> 2 (Pi/0.055)}]] - 
               QuODD`Private`baretss$$, HoldRest]], FieldSize -> 12],ButtonBox[
           "\"\\!\\(\\*SubscriptBox[\\(t\\), \\(s\\)]\\)\"", 
            ButtonFunction :> (QuODD`Private`\[CapitalDelta]tss$$ = 0), 
@@ -358,7 +592,7 @@ Cell[BoxData[
            "Preemptive"],ButtonBox[
           "\"\\!\\(\\*SubscriptBox[\\(t\\), \\(0\\)]\\)\"", 
            ButtonFunction :> (
-            QuODD`Private`\[CapitalDelta]tss$$ = -I 
+            QuODD`Private`\[CapitalDelta]tss$$ = (-I) 
              Im[QuODD`Private`baretss$$]), Appearance -> Automatic, Evaluator -> 
            Automatic, Method -> "Preemptive"]},
          "RowDefault"], 
@@ -397,7 +631,8 @@ Cell[BoxData[
                     Sign[QuODD`Private`xinit$$] #, #])& ], 
                   Dynamic[
                    Abs[QuODD`Private`xinit$$], (QuODD`Private`xinit$$ = 
-                   If[QuODD`Private`xinit$$ != 0, 
+                   If[
+                    QuODD`Private`xinit$$ != 0, 
                     Sign[QuODD`Private`xinit$$] #, #])& ], {0, 0.15}, Medium, 
                   Small, Automatic, True, Automatic, True, True, True, All, 
                   False, {}, 
@@ -11496,8 +11731,8 @@ vNvRdm3DneKqQ+4P7C9sP9uzNiidkGumJgM3xM/j7r3t3d+YUcZV/ufbPWxn
                     4892}, {6004, 676, 6006}, {17312, 1388, 22081}, {17831, 
                     994, 22100}, {4896, 589, 5804}, {5428, 560, 5430}, {17842,
                      999, 17841}, {17843, 999, 4897}, {4885, 1395, 22098}, {
-                    6000, 589, 5805}, {17832, 995, 17834}, {5997, 672, 5996},
-                     {4271, 560, 5429}, {5794, 584, 5793}, {5998, 672, 
+                    6000, 589, 5805}, {17832, 995, 17834}, {5997, 672, 
+                    5996}, {4271, 560, 5429}, {5794, 584, 5793}, {5998, 672, 
                     4273}, {4894, 995, 17833}}], PolygonBox[CompressedData["
 1:eJwtlctvlGUUhw/QRhYKdYZOCy2Uyq1CpYXeJB2jEYapXOqAQQWjCzcgEliA
 l39A/wOqCcYbUhITJQGja5Wl0YA7NkBJJHJJUS5i5OLz5HyLJ3nn+973e8/5
@@ -14675,7 +14910,7 @@ iyFJPA==\
         QuODD`Private`rules$$ := {
           "t\[Kappa]" -> QuODD`Private`tss$$ - I/1.007^2, "ts" -> 
            QuODD`Private`tss$$, "t0" -> Re[QuODD`Private`tss$$], "\[Tau]" -> 
-           Im[QuODD`Private`tss$$], "T" -> 2 Pi/0.055, "tCAset" -> 
+           Im[QuODD`Private`tss$$], "T" -> 2 (Pi/0.055), "tCAset" -> 
            QuODD`Private`tCAset$$}; QuODD`Private`tRangeNumeric$$ = ReplaceAll[
            ({{
              If[Part[#, 1, 1] === All, "t0" - 10, 
@@ -14840,23 +15075,23 @@ pair for large blocks on the Dashboard."], ARMSupport`volkovExponent[{
          Blank[]]}, 
        Pattern[ARMSupport`Private`\[Kappa], 
         Blank[]]] := -((1/8) 
-       Im[(1 (2 ARMSupport`Private`F 
-            ARMSupport`Private`\[Omega] ((-4) ARMSupport`Private`pp + 
-             3 ARMSupport`Private`pp 
+       Im[(1 (((2 ARMSupport`Private`F) 
+             ARMSupport`Private`\[Omega]) ((-4) 
+              ARMSupport`Private`pp + (3 ARMSupport`Private`pp) 
               Sqrt[1 + ((-(I ARMSupport`Private`pp) + 
                     Sqrt[ARMSupport`Private`po^2 + ARMSupport`Private`py^2 + 
                     ARMSupport`Private`\[Kappa]^2])^2 
-                  ARMSupport`Private`\[Omega]^2)/ARMSupport`Private`F^2] - I 
-             Sqrt[ARMSupport`Private`po^2 + ARMSupport`Private`py^2 + 
-               ARMSupport`Private`\[Kappa]^2] 
+                  ARMSupport`Private`\[Omega]^2)/ARMSupport`Private`F^2] - (I 
+              Sqrt[ARMSupport`Private`po^2 + ARMSupport`Private`py^2 + 
+                ARMSupport`Private`\[Kappa]^2]) 
              Sqrt[1 + ((-(I ARMSupport`Private`pp) + 
                    Sqrt[ARMSupport`Private`po^2 + ARMSupport`Private`py^2 + 
                     ARMSupport`Private`\[Kappa]^2])^2 
-                 ARMSupport`Private`\[Omega]^2)/ARMSupport`Private`F^2]) + 
-           2 (ARMSupport`Private`F^2 + 
-             2 (ARMSupport`Private`po^2 + ARMSupport`Private`pp^2 + 
-               ARMSupport`Private`py^2 + ARMSupport`Private`\[Kappa]^2) 
-              ARMSupport`Private`\[Omega]^2) 
+                 ARMSupport`Private`\[Omega]^2)/ARMSupport`Private`F^2]) + (
+             2 (ARMSupport`Private`F^2 + (
+                2 (ARMSupport`Private`po^2 + ARMSupport`Private`pp^2 + 
+                 ARMSupport`Private`py^2 + ARMSupport`Private`\[Kappa]^2)) 
+               ARMSupport`Private`\[Omega]^2)) 
             ArcSin[((ARMSupport`Private`pp + 
                 I Sqrt[ARMSupport`Private`po^2 + ARMSupport`Private`py^2 + 
                    ARMSupport`Private`\[Kappa]^2]) 
@@ -16710,8 +16945,7 @@ the complex-valued function ",
     RowBox[{
      SubscriptBox[
       StyleBox["r",
-       FontWeight->"Bold"], "cl"], "(", "t", ")"}], "2"], TraditionalForm]],
-  FormatType->"TraditionalForm"],
+       FontWeight->"Bold"], "cl"], "(", "t", ")"}], "2"], TraditionalForm]]],
  ":"
 }], "Text"],
 
@@ -16725,8 +16959,7 @@ Cell[TextData[{
     RowBox[{
      SubscriptBox[
       StyleBox["r",
-       FontWeight->"Bold"], "cl"], "(", "t", ")"}], "2"], TraditionalForm]],
-  FormatType->"TraditionalForm"],
+       FontWeight->"Bold"], "cl"], "(", "t", ")"}], "2"], TraditionalForm]]],
  " is real and negative, are shown as red lines."
 }], "Item"],
 
@@ -16738,8 +16971,7 @@ Cell[TextData[{
     RowBox[{
      SubscriptBox[
       StyleBox["r",
-       FontWeight->"Bold"], "cl"], "(", "t", ")"}], "2"], TraditionalForm]],
-  FormatType->"TraditionalForm"],
+       FontWeight->"Bold"], "cl"], "(", "t", ")"}], "2"], TraditionalForm]]],
  " is real and positive, which is in some ways the most desirable condition."
 }], "Item"],
 
@@ -16755,8 +16987,7 @@ position is negative: ",
        SubscriptBox[
         StyleBox["r",
          FontWeight->"Bold"], "cl"], "(", "t", ")"}], "2"], ")"}], "<", "0"}],
-    TraditionalForm]],
-  FormatType->"TraditionalForm"],
+    TraditionalForm]]],
  ". This signifies that a branch cut is nearby, and can cause problems for \
 ionic potentials more complex than the Coulomb interaction. "
 }], "Item"]
@@ -16768,13 +16999,11 @@ Coloured dots indicate the start and end of the contour (green and red), the \
 time origin ",
  Cell[BoxData[
   FormBox[
-   RowBox[{"t", "=", "0"}], TraditionalForm]],
-  FormatType->"TraditionalForm"],
+   RowBox[{"t", "=", "0"}], TraditionalForm]]],
  " (blue), the ionization time ",
  Cell[BoxData[
   FormBox[
-   SubscriptBox["t", "s"], TraditionalForm]],
-  FormatType->"TraditionalForm"],
+   SubscriptBox["t", "s"], TraditionalForm]]],
  " (purple), as well as a manipulatable black dot on the contour controlled \
 at the top left of the Dashboard."
 }], "Text"]
@@ -16783,6 +17012,37 @@ at the top left of the Dashboard."
 Cell[CellGroupData[{
 
 Cell["Trajectory plots", "Subsection"],
+
+Cell[TextData[{
+ "The effect of the contour is seen most clearly on the semiclassical \
+trajectory, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox[
+     StyleBox["r",
+      FontWeight->"Bold"], "cl"], "(", "t", ")"}], TraditionalForm]]],
+ ", and this is displayed component-wise on the top left and centre. Two \
+components are important: the ",
+ Cell[BoxData[
+  FormBox["x", TraditionalForm]]],
+ " component, transverse polarization, which is a scaled copy of the time \
+contour (since ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["x", "cl"], "(", "t", ")"}], "=", 
+    RowBox[{
+     SubscriptBox["p", "x"], "(", 
+     RowBox[{"t", "-", 
+      SubscriptBox["t", "s"]}], ")"}]}], TraditionalForm]]],
+ "), and the ",
+ Cell[BoxData[
+  FormBox["z", TraditionalForm]]],
+ " component along the laser field, which displays most of the interesting \
+dynamics."
+}], "Text"],
 
 Cell[BoxData[GridBox[{
    {
@@ -32425,7 +32685,20 @@ Cell[BoxData[
   ImagePadding->{{0., 0.}, {0., 0.}},
   ImageSize->{17, 17},
   PlotRange->{{-1., 1.}, {-1., 1.}},
-  PlotRangePadding->Automatic]], "Output"]
+  PlotRangePadding->
+   Automatic]], "Output",ImageCache->GraphicsData["CompressedBitmap", "\<\
+eJydUktLQkEYHb1a1i58gKIgSZELXbjTlfSkhz0oIbAgrcAWUVS/RglBAyHF
+ty5EcVW7FrVIFFddCtJ+gYo2Z+4Vs0WLFt88vjnnm/OdGZf3xn967r05O/Ya
+V668l/6z42vj8sUVTXESQsgUwkiw7tOlOEyQfr9POMI2dIWQs5H8cTQuHOl5
+nndWKhUdIEJORIwfhsPhD61W+6nRaB7tdnuLIt4MBsN+NBodVJGxaeLO4/E8
+W63WnUQisVAqlTay2ew8he/G4/FXs9l86/P5RCxVwy4+CoVCoGym02nCgUDk
+G5SC1VYqlQKN3cSN0CAGFEYYYyO3F4vFeL1ezxBSAS5lPXMmOvA0FrGToj5R
+zNZqNXm73Z6rVqsogCzENmnABoEqFlKsFgqFitPpZEga67lcTtbpdHCKKoJ0
+7sHhcMyXy2VGkgw0MMmmRqMB35aKxSLVwODIcd1ud6Zerw9yMK6pVqvxJMM2
+WAlJr9f7UiqVAlDoHUIGhiG2k8nku06nG/XrJBgMPtlsNlcmk/ltM3x8sVgs
+B5FIZNTmSVx473a7QQUU2jHDR9Dwcnh02c9voADrNBAItFQqFTqGb3AfXeG9
+xU8zxiYZ0PBhLZ/PTw9/3/++M5F8A/baWKc=\
+\>"]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -32475,7 +32748,20 @@ momentum, with the current value of momentum as a selector (",
    ImagePadding->{{0., 1.}, {1., 0.}},
    ImageSize->{26., Automatic},
    PlotRange->{{-1.0416666666666667`, 1.0416666666666667`}, {-1.04, 1.04}},
-   PlotRangePadding->Automatic]], "Output"],
+   PlotRangePadding->Automatic]], "Output",ImageCache->GraphicsData[
+  "CompressedBitmap", "\<\
+eJzzTSzJSM1NLMlMTlRwL0osyMhMLlZwyy8CCjEzMjAwSIGwAgOI/R/IhBJS
+DP///wdJEqT4wBQzA1gbkAXCnASleCBSMo8fP3bYv38/yBEM3BApLjDFHrto
+0aJnkpKSL8XExI5ZWlq+Bqp4JCsrG7F8+XKYKRCKc0l0dPRFPT29wHXr1jnv
+2bPHZ/PmzU5A5cFr1qy5pqmpOTcpKYmBA6IFQjEnzJ8/H6TFb+PGjQzMIA0M
+rD5ALSCW/4YNG0DawDaxo2gDOQakBayBDUwyh6xevfqxjIwMWAUbRDlEF7Py
+nTt3QFIuu3fvZmCCKFe7efMm669fvzSuX78OE3Pau3fvK1FRUamnT5/CjGAB
+UZCw4/QEEvtBroNibyBm+f37N0gJyCywKUwgGQaWo0DCiQEBWDBcBApF1127
+dsFsB4kx//nzR/XWrVswMVAwglwEiiA0TzH++/fvjbCwMEQhJCS8t2zZAgs+
+EA5Yv379UykpKdTQS5k9e/ZZIyMj302bNqEHOihUL+nq6sYsXrwYNdC5QBau
+Cg0NBWkFKQW5HUS7ALWCtIHiEZQEOJATBQdIV+qsWbNei4iIgHy838HB4TFQ
+B8hXoNiHJiFIomMBqQaFg9fWrVuVEGmRvMSNRwo17zAwAgCw94FX\
+\>"]],
  "). This shows exclusively the tunnelling probability, ",
  Cell[BoxData[
   FormBox[
@@ -32666,7 +32952,19 @@ selectors marked ",
    ImageSize->{26., Automatic},
    PlotRange->{{-1.0416666666666667`, 1.0416666666666667`}, {-1.04, 1.04}},
    PlotRangePadding->Automatic]], "Input",
-  FontWeight->"Plain"],
+  FontWeight->"Plain",ImageCache->GraphicsData["CompressedBitmap", "\<\
+eJzzTSzJSM1NLMlMTlRwL0osyMhMLlZwyy8CCjEzMjAwSIGwAgOI/R/IhBJS
+DP///wdJEqT4wBQzA1gbkAXCnASleCBSMo8fP3bYv38/yBEM3BApLjDFHrto
+0aJnkpKSL8XExI5ZWlq+Bqp4JCsrG7F8+XKYKRCKc0l0dPRFPT29wHXr1jnv
+2bPHZ/PmzU5A5cFr1qy5pqmpOTcpKYmBA6IFQjEnzJ8/H6TFb+PGjQzMIA0M
+rD5ALSCW/4YNG0DawDaxo2gDOQakBayBDUwyh6xevfqxjIwMWAUbRDlEF7Py
+nTt3QFIuu3fvZmCCKFe7efMm669fvzSuX78OE3Pau3fvK1FRUamnT5/CjGAB
+UZCw4/QEEvtBroNibyBm+f37N0gJyCywKUwgGQaWo0DCiQEBWDBcBApF1127
+dsFsB4kx//nzR/XWrVswMVAwglwEiiA0TzH++/fvjbCwMEQhJCS8t2zZAgs+
+EA5Yv379UykpKdTQS5k9e/ZZIyMj302bNqEHOihUL+nq6sYsXrwYNdC5QBau
+Cg0NBWkFKQW5HUS7ALWCtIHiEZQEOJATBQdIV+qsWbNei4iIgHy838HB4TFQ
+B8hXoNiHJiFIomMBqQaFg9fWrVuVEGmRvMSNRwo17zAwAgCw94FX\
+\>"]],
  "on the kinks of the contour, or by clicking near them (the nearest selector \
 moves)."
 }], "Item"],
@@ -33107,13 +33405,73 @@ Cell[BoxData[{
    RowBox[{
     RowBox[{"NotebookDirectory", "[", "]"}], "<>", "\"\<QuODD.m\>\""}]}], 
   "]"}]}], "Input",
- InitializationCell->True,
- EmphasizeSyntaxErrors->True],
+ InitializationCell->True],
 
 Cell[BoxData[
  RowBox[{
   RowBox[{"$HistoryLength", "=", "5"}], ";"}]], "Input",
- InitializationCell->True]
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{"Button", "[", 
+  RowBox[{"\"\<Export CDF\>\"", ",", "\[IndentingNewLine]", 
+   RowBox[{"Export", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+      "\"\<Quantum Orbits Dynamic Dashboard.cdf\>\""}], ",", 
+     RowBox[{"Import", "[", 
+      RowBox[{
+       RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+       "\"\<Quantum Orbits Dynamic Dashboard.nb\>\""}], "]"}]}], "]"}]}], 
+  "\[IndentingNewLine]", "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Export", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+    "\"\<Quantum Orbits Dynamic Dashboard.pdf\>\""}], ",", 
+   RowBox[{"Import", "[", 
+    RowBox[{
+     RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+     "\"\<Quantum Orbits Dynamic Dashboard.nb\>\""}], "]"}]}], 
+  "]"}]], "Input"],
+
+Cell[BoxData["\<\"/home/episanty/Work/CQD/Project/Code/QuODD/Quantum Orbits \
+Dynamic Dashboard.pdf\"\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Button", "[", 
+  RowBox[{"\"\<Export PDF\>\"", ",", 
+   RowBox[{"Export", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+      "\"\<Quantum Orbits Dynamic Dashboard.pdf\>\""}], ",", 
+     RowBox[{"Import", "[", 
+      RowBox[{
+       RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+       "\"\<Quantum Orbits Dynamic Dashboard.nb\>\""}], "]"}]}], "]"}]}], 
+  "\[IndentingNewLine]", "]"}]], "Input"],
+
+Cell[BoxData[
+ ButtonBox["\<\"Export PDF\"\>",
+  Appearance->Automatic,
+  ButtonFunction:>Export[
+    StringJoin[
+     NotebookDirectory[], "Quantum Orbits Dynamic Dashboard.pdf"], 
+    Import[
+     StringJoin[
+      NotebookDirectory[], "Quantum Orbits Dynamic Dashboard.nb"]]],
+  Evaluator->Automatic,
+  Method->"Preemptive"]], "Output"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
@@ -33124,12 +33482,13 @@ WindowMargins->{{-10, Automatic}, {Automatic, -10}},
 PrintingCopies->1,
 PrintingPageRange->{Automatic, Automatic},
 PrintingOptions->{"PaperOrientation"->"Landscape",
-"PaperSize"->{Automatic, Automatic},
-"PostScriptOutputFile"->"",
+"PaperSize"->{950., 1500.},
+"PostScriptOutputFile"->"/home/episanty/Work/CQD/Project/Code/QuODD/Quantum \
+Orbits Dynamic Dashboard.pdf",
 "PrintCellBrackets"->False,
 "PrintMultipleHorizontalPages"->False,
 "PrintRegistrationMarks"->False,
-"PrintingMargins"->0},
+"PrintingMargins"->14.17322834645},
 PrivateNotebookOptions->{"FileOutlineCache"->False},
 ShowSelection->True,
 TrackCellChangeTimes->False,

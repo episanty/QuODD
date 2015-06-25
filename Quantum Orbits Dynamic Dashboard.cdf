@@ -23,10 +23,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[      1064,         20]
-NotebookDataLength[   1908035,      33255]
-NotebookOptionsPosition[   1903224,      33089]
-NotebookOutlinePosition[   1904129,      33122]
-CellTagsIndexPosition[   1904040,      33117]
+NotebookDataLength[   1917968,      33703]
+NotebookOptionsPosition[   1911398,      33483]
+NotebookOutlinePosition[   1912738,      33529]
+CellTagsIndexPosition[   1912556,      33521]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -34,6 +34,252 @@ Notebook[{
 
 Cell[CellGroupData[{
 Cell["The Quantum Orbits Dynamic Dashboard", "Title"],
+
+Cell[CellGroupData[{
+
+Cell["Introduction", "Section"],
+
+Cell[TextData[{
+ "The Quantum Orbits Dynamic Dashboard is a ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " application to aid in the visualization and understanding of the role of \
+complex variables - specifically, complex time and complex position - in the \
+semiclassical theory of tunnel ionization."
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell["References and mild legalities", "Subsubsection"],
+
+Cell["\<\
+The Dashboard was developed as an aid for the research presented in\
+\>", "Text"],
+
+Cell[TextData[{
+ "\t",
+ StyleBox["1",
+  FontVariations->{"CompatibilityType"->"Superscript"}],
+ "\t",
+ "Slalom",
+ " ",
+ "in",
+ " ",
+ "complex",
+ " ",
+ "time",
+ ":",
+ " ",
+ "emergence",
+ " ",
+ "of",
+ " ",
+ "low",
+ "-",
+ "energy",
+ " ",
+ "structures",
+ " ",
+ "in",
+ " ",
+ "tunnel",
+ " ",
+ "ionization",
+ " ",
+ "via",
+ " ",
+ "complex",
+ " ",
+ "time",
+ " ",
+ "contours",
+ ".",
+ " ",
+ "E",
+ ".",
+ " ",
+ "Pisanty",
+ " ",
+ "and",
+ " ",
+ "M",
+ ".",
+ " ",
+ "Ivanov",
+ ".",
+ " ",
+ "In",
+ " ",
+ "preparation",
+ "."
+}], "Reference",
+ Editable->False,
+ TaggingRules->{Global`ReferenceNoteData -> ""},
+ CellTags->"00007310"],
+
+Cell["and it is also documented in", "Text"],
+
+Cell[TextData[{
+ "\t",
+ StyleBox["2",
+  FontVariations->{"CompatibilityType"->"Superscript"}],
+ "\t",
+ "Quantum",
+ " ",
+ "Orbit",
+ " ",
+ "Dynamic",
+ " ",
+ "Dashboard",
+ ":",
+ " ",
+ "a",
+ " ",
+ "navigation",
+ " ",
+ "tool",
+ " ",
+ "for",
+ " ",
+ "complex",
+ " ",
+ "time",
+ " ",
+ "and",
+ " ",
+ "complex",
+ " ",
+ "space",
+ " ",
+ "in",
+ " ",
+ "tunnel",
+ " ",
+ "ionization",
+ ".",
+ " ",
+ "E",
+ ".",
+ " ",
+ "Pisanty",
+ ".",
+ " ",
+ "In",
+ " ",
+ "preparation",
+ "."
+}], "Reference",
+ Editable->False,
+ TaggingRules->{Global`ReferenceNoteData -> ""},
+ CellTags->"00005E01"],
+
+Cell["\<\
+If this software is useful for your research, please cite either or both \
+papers, or cite this software directly. An example citation is\
+\>", "Text"],
+
+Cell[TextData[{
+ "\t",
+ StyleBox["3",
+  FontVariations->{"CompatibilityType"->"Superscript"}],
+ "\t",
+ "E",
+ ".",
+ " ",
+ "Pisanty",
+ ".",
+ " ",
+ "QuODD",
+ ":",
+ " ",
+ "Quantum",
+ " ",
+ "Orbits",
+ " ",
+ "Dynamic",
+ " ",
+ "Dashboard",
+ ".",
+ " ",
+ "https",
+ ":",
+ "//",
+ "github",
+ ".",
+ "com",
+ "/",
+ "episanty",
+ "/",
+ "QuODD",
+ " ",
+ "(",
+ "2015",
+ ")",
+ "."
+}], "Reference",
+ Editable->False,
+ TaggingRules->{Global`ReferenceNoteData -> ""},
+ CellTags->"00005EA2"],
+
+Cell[TextData[{
+ "This software is available under the MIT license, with the exception of the \
+file ",
+ StyleBox["Quantum Orbits Dynamic Dashboard.cdf", "Code",
+  FontWeight->"Plain"],
+ ", which is licensed under the ",
+ ButtonBox["Creative Commons Attribution-ShareAlike",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://creativecommons.org/licenses/by-sa/3.0/us/"], None},
+  ButtonNote->"https://creativecommons.org/licenses/by-sa/3.0/us/"],
+ " (CC BY-SA) license."
+}], "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Table of contents", "Subsubsection"],
+
+Cell["This document is structured as follows:", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Motivation",
+  FontWeight->"Bold"],
+ ", describing the quantities "
+}], "Item"],
+
+Cell[TextData[{
+ StyleBox["The Dashboard",
+  FontWeight->"Bold"],
+ " itself."
+}], "Item"],
+
+Cell[TextData[{
+ StyleBox["Dashboard Elements",
+  FontWeight->"Bold"],
+ ", with a detailed explanation of each component."
+}], "Item"],
+
+Cell[TextData[{
+ StyleBox["Interaction with the Dashboard",
+  FontWeight->"Bold"],
+ ", detailing the different controls."
+}], "Item"],
+
+Cell[TextData[{
+ StyleBox["How to make new Dashboards",
+  FontWeight->"Bold"],
+ "."
+}], "Item"],
+
+Cell[TextData[{
+ StyleBox["Some physics examples",
+  FontWeight->"Bold"],
+ "."
+}], "Item"]
+}, Open  ]],
 
 Cell[BoxData[
  ButtonBox["\<\"Export CDF\"\>",
@@ -47,18 +293,34 @@ Cell[BoxData[
   Evaluator->Automatic,
   Method->"Preemptive"]], "Output"],
 
+Cell[BoxData[
+ RowBox[{
+  ButtonBox["\<\"Export CDF\"\>",
+   Appearance->Automatic,
+   ButtonFunction:>Export[
+     StringJoin[
+      NotebookDirectory[], "Quantum Orbits Dynamic Dashboard.cdf"], 
+     Import[
+      StringJoin[
+       NotebookDirectory[], "Quantum Orbits Dynamic Dashboard.nb"]]],
+   Evaluator->Automatic,
+   Method->"Preemptive"], 
+  ButtonBox["\<\"Export PDF\"\>",
+   Appearance->Automatic,
+   ButtonFunction:>Export[
+     StringJoin[
+      NotebookDirectory[], "Quantum Orbits Dynamic Dashboard.pdf"], 
+     Import[
+      StringJoin[
+       NotebookDirectory[], "Quantum Orbits Dynamic Dashboard.nb"]]],
+   Evaluator->Automatic,
+   Method->"Preemptive"]}]], "Input"]
+}, Open  ]]
+}, Open  ]],
+
 Cell[CellGroupData[{
 
 Cell["Motivation", "Section"],
-
-Cell[TextData[{
- "The Quantum Orbits Dynamic Dashboard is a ",
- StyleBox["Mathematica",
-  FontSlant->"Italic"],
- " application to aid in the visualization and understanding of the role of \
-complex variables - specifically, complex time and complex position - in the \
-semiclassical theory of tunnel ionization.\n"
-}], "Text"],
 
 Cell[TextData[{
  "Tunnel ionization occurs when an atom or molecule of ionization potential \
@@ -128,7 +390,7 @@ Cell[TextData[{
     StyleBox["A",
      FontWeight->"Bold"], "(", "t", ")"}], TraditionalForm]]],
  " is the laser field\[CloseCurlyQuote]s vector potential, which we take to \
-be linearly polarized and monochromatic - ",
+be linearly polarized and monochromatic (i.e. ",
  Cell[BoxData[
   FormBox[
    RowBox[{
@@ -142,7 +404,7 @@ be linearly polarized and monochromatic - ",
       FontWeight->"Bold"], " ", 
      RowBox[{"sin", "(", 
       RowBox[{"\[Omega]", " ", "t"}], ")"}]}]}], TraditionalForm]]],
- "; their sum ",
+ "); their sum ",
  Cell[BoxData[
   FormBox[
    RowBox[{
@@ -366,7 +628,7 @@ Cell[BoxData[
                  "t\[Kappa]" -> QuODD`Private`baretss$$ - I/1.007^2, "ts" -> 
                   QuODD`Private`baretss$$, "t0" -> 
                   Re[QuODD`Private`baretss$$], "\[Tau]" -> 
-                  Im[QuODD`Private`baretss$$], "T" -> 2 Pi/0.055}]] - 
+                  Im[QuODD`Private`baretss$$], "T" -> 2 (Pi/0.055)}]] - 
               QuODD`Private`baretss$$, HoldRest]], FieldSize -> 12],ButtonBox[
           "\"\\!\\(\\*SubscriptBox[\\(t\\), \\(s\\)]\\)\"", 
            ButtonFunction :> (QuODD`Private`\[CapitalDelta]tss$$ = 0), 
@@ -374,7 +636,7 @@ Cell[BoxData[
            "Preemptive"],ButtonBox[
           "\"\\!\\(\\*SubscriptBox[\\(t\\), \\(0\\)]\\)\"", 
            ButtonFunction :> (
-            QuODD`Private`\[CapitalDelta]tss$$ = -I 
+            QuODD`Private`\[CapitalDelta]tss$$ = (-I) 
              Im[QuODD`Private`baretss$$]), Appearance -> Automatic, Evaluator -> 
            Automatic, Method -> "Preemptive"]},
          "RowDefault"], 
@@ -14691,7 +14953,7 @@ iyFJPA==\
         QuODD`Private`rules$$ := {
           "t\[Kappa]" -> QuODD`Private`tss$$ - I/1.007^2, "ts" -> 
            QuODD`Private`tss$$, "t0" -> Re[QuODD`Private`tss$$], "\[Tau]" -> 
-           Im[QuODD`Private`tss$$], "T" -> 2 Pi/0.055, "tCAset" -> 
+           Im[QuODD`Private`tss$$], "T" -> 2 (Pi/0.055), "tCAset" -> 
            QuODD`Private`tCAset$$}; QuODD`Private`tRangeNumeric$$ = ReplaceAll[
            ({{
              If[Part[#, 1, 1] === All, "t0" - 10, 
@@ -14856,23 +15118,23 @@ pair for large blocks on the Dashboard."], ARMSupport`volkovExponent[{
          Blank[]]}, 
        Pattern[ARMSupport`Private`\[Kappa], 
         Blank[]]] := -((1/8) 
-       Im[(1 (2 ARMSupport`Private`F 
-            ARMSupport`Private`\[Omega] ((-4) ARMSupport`Private`pp + 
-             3 ARMSupport`Private`pp 
+       Im[(1 (((2 ARMSupport`Private`F) 
+             ARMSupport`Private`\[Omega]) ((-4) 
+              ARMSupport`Private`pp + (3 ARMSupport`Private`pp) 
               Sqrt[1 + ((-(I ARMSupport`Private`pp) + 
                     Sqrt[ARMSupport`Private`po^2 + ARMSupport`Private`py^2 + 
                     ARMSupport`Private`\[Kappa]^2])^2 
-                  ARMSupport`Private`\[Omega]^2)/ARMSupport`Private`F^2] - I 
-             Sqrt[ARMSupport`Private`po^2 + ARMSupport`Private`py^2 + 
-               ARMSupport`Private`\[Kappa]^2] 
+                  ARMSupport`Private`\[Omega]^2)/ARMSupport`Private`F^2] - (I 
+              Sqrt[ARMSupport`Private`po^2 + ARMSupport`Private`py^2 + 
+                ARMSupport`Private`\[Kappa]^2]) 
              Sqrt[1 + ((-(I ARMSupport`Private`pp) + 
                    Sqrt[ARMSupport`Private`po^2 + ARMSupport`Private`py^2 + 
                     ARMSupport`Private`\[Kappa]^2])^2 
-                 ARMSupport`Private`\[Omega]^2)/ARMSupport`Private`F^2]) + 
-           2 (ARMSupport`Private`F^2 + 
-             2 (ARMSupport`Private`po^2 + ARMSupport`Private`pp^2 + 
-               ARMSupport`Private`py^2 + ARMSupport`Private`\[Kappa]^2) 
-              ARMSupport`Private`\[Omega]^2) 
+                 ARMSupport`Private`\[Omega]^2)/ARMSupport`Private`F^2]) + (
+             2 (ARMSupport`Private`F^2 + (
+                2 (ARMSupport`Private`po^2 + ARMSupport`Private`pp^2 + 
+                 ARMSupport`Private`py^2 + ARMSupport`Private`\[Kappa]^2)) 
+               ARMSupport`Private`\[Omega]^2)) 
             ArcSin[((ARMSupport`Private`pp + 
                 I Sqrt[ARMSupport`Private`po^2 + ARMSupport`Private`py^2 + 
                    ARMSupport`Private`\[Kappa]^2]) 
@@ -16744,13 +17006,86 @@ Cell[TextData[{
  " is real and negative, are shown as red lines."
 }], "Item"],
 
-Cell["By contrast, the", "Item"]
-}, Open  ]]
+Cell[TextData[{
+ "By contrast, the green lines show the times for which ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox[
+    RowBox[{
+     SubscriptBox[
+      StyleBox["r",
+       FontWeight->"Bold"], "cl"], "(", "t", ")"}], "2"], TraditionalForm]]],
+ " is real and positive, which is in some ways the most desirable condition."
+}], "Item"],
+
+Cell[TextData[{
+ "The gray regions show the places where the real part of the squared \
+position is negative: ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Re", "(", 
+     SuperscriptBox[
+      RowBox[{
+       SubscriptBox[
+        StyleBox["r",
+         FontWeight->"Bold"], "cl"], "(", "t", ")"}], "2"], ")"}], "<", "0"}],
+    TraditionalForm]]],
+ ". This signifies that a branch cut is nearby, and can cause problems for \
+ionic potentials more complex than the Coulomb interaction. "
+}], "Item"]
+}, Open  ]],
+
+Cell[TextData[{
+ "In this plot, and throughout, tooltips mark every relevant structure. \
+Coloured dots indicate the start and end of the contour (green and red), the \
+time origin ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"t", "=", "0"}], TraditionalForm]]],
+ " (blue), the ionization time ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["t", "s"], TraditionalForm]]],
+ " (purple), as well as a manipulatable black dot on the contour controlled \
+at the top left of the Dashboard."
+}], "Text"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell["Trajectory plots", "Subsection"],
+
+Cell[TextData[{
+ "The effect of the contour is seen most clearly on the semiclassical \
+trajectory, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox[
+     StyleBox["r",
+      FontWeight->"Bold"], "cl"], "(", "t", ")"}], TraditionalForm]]],
+ ", and this is displayed component-wise on the top left and centre. Two \
+components are important: the ",
+ Cell[BoxData[
+  FormBox["x", TraditionalForm]]],
+ " component, transverse polarization, which is a scaled copy of the time \
+contour (since ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["x", "cl"], "(", "t", ")"}], "=", 
+    RowBox[{
+     SubscriptBox["p", "x"], "(", 
+     RowBox[{"t", "-", 
+      SubscriptBox["t", "s"]}], ")"}]}], TraditionalForm]]],
+ "), and the ",
+ Cell[BoxData[
+  FormBox["z", TraditionalForm]]],
+ " component along the laser field, which displays most of the interesting \
+dynamics."
+}], "Text"],
 
 Cell[BoxData[GridBox[{
    {
@@ -32798,8 +33133,8 @@ Cell[CellGroupData[{
 Cell["How to call the function", "Subsubsection"],
 
 Cell[TextData[{
- "To make new Dashboards, you can use the dashboardPlotter function, though \
-this requires full-blown ",
+ "To make a new Dashboard, you can use the dashboardPlotter function. This \
+requires full-blown ",
  StyleBox["Mathematica",
   FontSlant->"Italic"],
  " and cannot be done on the CDF player. To see the calling syntax, use "
@@ -33075,29 +33410,89 @@ Cell[BoxData[{
    RowBox[{
     RowBox[{"NotebookDirectory", "[", "]"}], "<>", "\"\<QuODD.m\>\""}]}], 
   "]"}]}], "Input",
- InitializationCell->True,
- EmphasizeSyntaxErrors->True],
+ InitializationCell->True],
 
 Cell[BoxData[
  RowBox[{
   RowBox[{"$HistoryLength", "=", "5"}], ";"}]], "Input",
- InitializationCell->True]
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{"Button", "[", 
+  RowBox[{"\"\<Export CDF\>\"", ",", "\[IndentingNewLine]", 
+   RowBox[{"Export", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+      "\"\<Quantum Orbits Dynamic Dashboard.cdf\>\""}], ",", 
+     RowBox[{"Import", "[", 
+      RowBox[{
+       RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+       "\"\<Quantum Orbits Dynamic Dashboard.nb\>\""}], "]"}]}], "]"}]}], 
+  "\[IndentingNewLine]", "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Export", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+    "\"\<Quantum Orbits Dynamic Dashboard.pdf\>\""}], ",", 
+   RowBox[{"Import", "[", 
+    RowBox[{
+     RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+     "\"\<Quantum Orbits Dynamic Dashboard.nb\>\""}], "]"}]}], "]"}]], "Input"],
+
+Cell[BoxData["\<\"/home/episanty/Work/CQD/Project/Code/QuODD/Quantum Orbits \
+Dynamic Dashboard.pdf\"\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Button", "[", 
+  RowBox[{"\"\<Export PDF\>\"", ",", 
+   RowBox[{"Export", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+      "\"\<Quantum Orbits Dynamic Dashboard.pdf\>\""}], ",", 
+     RowBox[{"Import", "[", 
+      RowBox[{
+       RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+       "\"\<Quantum Orbits Dynamic Dashboard.nb\>\""}], "]"}]}], "]"}]}], 
+  "\[IndentingNewLine]", "]"}]], "Input"],
+
+Cell[BoxData[
+ ButtonBox["\<\"Export PDF\"\>",
+  Appearance->Automatic,
+  ButtonFunction:>Export[
+    StringJoin[
+     NotebookDirectory[], "Quantum Orbits Dynamic Dashboard.pdf"], 
+    Import[
+     StringJoin[
+      NotebookDirectory[], "Quantum Orbits Dynamic Dashboard.nb"]]],
+  Evaluator->Automatic,
+  Method->"Preemptive"]], "Output"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1313, 1028},
+WindowSize->{1327, 1028},
 WindowMargins->{{-10, Automatic}, {Automatic, -10}},
 PrintingCopies->1,
 PrintingPageRange->{Automatic, Automatic},
 PrintingOptions->{"PaperOrientation"->"Landscape",
-"PaperSize"->{Automatic, Automatic},
-"PostScriptOutputFile"->"",
+"PaperSize"->{950., 1500.},
+"PostScriptOutputFile"->"/home/episanty/Work/CQD/Project/Code/QuODD/Quantum \
+Orbits Dynamic Dashboard.pdf",
 "PrintCellBrackets"->False,
 "PrintMultipleHorizontalPages"->False,
 "PrintRegistrationMarks"->False,
-"PrintingMargins"->0},
+"PrintingMargins"->14.17322834645},
 PrivateNotebookOptions->{"FileOutlineCache"->False},
 ShowSelection->True,
 TrackCellChangeTimes->False,
@@ -33109,163 +33504,216 @@ StyleDefinitions->"Default.nb"
 (* Internal cache information *)
 (*CellTagsOutline
 CellTagsIndex->{
+ "00007310"->{
+  Cell[2099, 58, 610, 59, 70, "Reference",
+   CellTags->"00007310"]},
+ "00005E01"->{
+  Cell[2759, 121, 562, 52, 70, "Reference",
+   CellTags->"00005E01"]},
+ "00005EA2"->{
+  Cell[3488, 180, 466, 41, 70, "Reference",
+   CellTags->"00005EA2"]},
  "Info3620753336-8646734"->{
-  Cell[1893695, 32812, 858, 12, 70, "Print",
+  Cell[1900068, 33147, 858, 12, 70, "Print",
    CellTags->"Info3620753336-8646734"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"Info3620753336-8646734", 1903931, 33111}
+ {"00007310", 1912176, 33506},
+ {"00005E01", 1912261, 33509},
+ {"00005EA2", 1912347, 33512},
+ {"Info3620753336-8646734", 1912447, 33515}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
 Cell[1486, 35, 53, 0, 70, "Title"],
-Cell[1542, 37, 339, 10, 70, "Output"],
 Cell[CellGroupData[{
-Cell[1906, 51, 29, 0, 70, "Section"],
-Cell[1938, 53, 326, 7, 70, "Text"],
-Cell[2267, 62, 1026, 27, 70, "Text"],
-Cell[3296, 91, 224, 6, 70, "Text"],
-Cell[3523, 99, 453, 16, 70, "Text"],
-Cell[3979, 117, 1351, 48, 70, "Text"],
-Cell[5333, 167, 515, 19, 70, "Text"],
-Cell[5851, 188, 211, 5, 70, "Text"],
-Cell[6065, 195, 218, 4, 70, "Text"],
-Cell[6286, 201, 467, 20, 70, "Text"],
-Cell[6756, 223, 1067, 27, 70, "Text"]
+Cell[1564, 39, 31, 0, 70, "Section"],
+Cell[1598, 41, 324, 7, 70, "Text"],
+Cell[CellGroupData[{
+Cell[1947, 52, 55, 0, 70, "Subsubsection"],
+Cell[2005, 54, 91, 2, 70, "Text"],
+Cell[2099, 58, 610, 59, 70, "Reference",
+ CellTags->"00007310"],
+Cell[2712, 119, 44, 0, 70, "Text"],
+Cell[2759, 121, 562, 52, 70, "Reference",
+ CellTags->"00005E01"],
+Cell[3324, 175, 161, 3, 70, "Text"],
+Cell[3488, 180, 466, 41, 70, "Reference",
+ CellTags->"00005EA2"],
+Cell[3957, 223, 491, 12, 70, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7860, 255, 32, 0, 70, "Section"],
-Cell[7895, 257, 67, 0, 70, "Text"],
+Cell[4485, 240, 42, 0, 70, "Subsubsection"],
+Cell[4530, 242, 55, 0, 70, "Text"],
 Cell[CellGroupData[{
-Cell[7987, 261, 577, 16, 70, "Input"],
-Cell[8567, 279, 892039, 15281, 70, "Output"]
+Cell[4610, 246, 106, 4, 70, "Item"],
+Cell[4719, 252, 89, 4, 70, "Item"],
+Cell[4811, 258, 134, 4, 70, "Item"],
+Cell[4948, 264, 133, 4, 70, "Item"],
+Cell[5084, 270, 95, 4, 70, "Item"],
+Cell[5182, 276, 90, 4, 70, "Item"]
+}, Open  ]],
+Cell[5287, 283, 339, 10, 70, "Output"],
+Cell[5629, 295, 686, 21, 70, "Input"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[900655, 15566, 37, 0, 70, "Section"],
+Cell[6364, 322, 29, 0, 70, "Section"],
+Cell[6396, 324, 1026, 27, 70, "Text"],
+Cell[7425, 353, 224, 6, 70, "Text"],
+Cell[7652, 361, 453, 16, 70, "Text"],
+Cell[8108, 379, 1356, 48, 70, "Text"],
+Cell[9467, 429, 515, 19, 70, "Text"],
+Cell[9985, 450, 211, 5, 70, "Text"],
+Cell[10199, 457, 218, 4, 70, "Text"],
+Cell[10420, 463, 467, 20, 70, "Text"],
+Cell[10890, 485, 1067, 27, 70, "Text"]
+}, Open  ]],
 Cell[CellGroupData[{
-Cell[900717, 15570, 36, 0, 70, "Subsection"],
-Cell[900756, 15572, 601, 16, 70, "Text"],
-Cell[901360, 15590, 65346, 1127, 70, "Input"],
-Cell[966709, 16719, 317, 11, 70, "Text"],
+Cell[11994, 517, 32, 0, 70, "Section"],
+Cell[12029, 519, 67, 0, 70, "Text"],
 Cell[CellGroupData[{
-Cell[967051, 16734, 318, 10, 70, "Item"],
-Cell[967372, 16746, 32, 0, 70, "Item"]
+Cell[12121, 523, 577, 16, 70, "Input"],
+Cell[12701, 541, 892069, 15281, 70, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[967453, 16752, 38, 0, 70, "Subsection"],
-Cell[967494, 16754, 27431, 489, 70, "Input"]
+Cell[904819, 15828, 37, 0, 70, "Section"],
+Cell[CellGroupData[{
+Cell[904881, 15832, 36, 0, 70, "Subsection"],
+Cell[904920, 15834, 601, 16, 70, "Text"],
+Cell[905524, 15852, 65346, 1127, 70, "Input"],
+Cell[970873, 16981, 317, 11, 70, "Text"],
+Cell[CellGroupData[{
+Cell[971215, 16996, 318, 10, 70, "Item"],
+Cell[971536, 17008, 339, 10, 70, "Item"],
+Cell[971878, 17020, 507, 15, 70, "Item"]
+}, Open  ]],
+Cell[972400, 17038, 489, 13, 70, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[994962, 17248, 43, 0, 70, "Subsection"],
-Cell[995008, 17250, 24983, 445, 70, "Input"]
+Cell[972926, 17056, 38, 0, 70, "Subsection"],
+Cell[972967, 17058, 903, 29, 70, "Text"],
+Cell[973873, 17089, 27431, 489, 70, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1020028, 17700, 36, 0, 70, "Subsection"],
-Cell[1020067, 17702, 721, 24, 70, "Text"],
-Cell[1020791, 17728, 808147, 13757, 70, "Output"]
+Cell[1001341, 17583, 43, 0, 70, "Subsection"],
+Cell[1001387, 17585, 24983, 445, 70, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1828975, 31490, 39, 0, 70, "Subsection"],
-Cell[1829017, 31492, 51831, 874, 70, "Input"],
-Cell[CellGroupData[{
-Cell[1880873, 32370, 68, 0, 70, "Subsubsection"],
-Cell[CellGroupData[{
-Cell[1880966, 32374, 419, 13, 70, "Input"],
-Cell[1881388, 32389, 246, 6, 70, "Output"]
+Cell[1026407, 18035, 36, 0, 70, "Subsection"],
+Cell[1026446, 18037, 721, 24, 70, "Text"],
+Cell[1027170, 18063, 808147, 13757, 70, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1881671, 32400, 819, 30, 70, "Item"],
-Cell[1882493, 32432, 103, 3, 70, "Item"],
-Cell[1882599, 32437, 1343, 40, 70, "Item"],
-Cell[1883945, 32479, 164, 3, 70, "Item"]
+Cell[1835354, 31825, 39, 0, 70, "Subsection"],
+Cell[1835396, 31827, 51831, 874, 70, "Input"],
+Cell[CellGroupData[{
+Cell[1887252, 32705, 68, 0, 70, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[1887345, 32709, 419, 13, 70, "Input"],
+Cell[1887767, 32724, 246, 6, 70, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1888050, 32735, 819, 30, 70, "Item"],
+Cell[1888872, 32767, 103, 3, 70, "Item"],
+Cell[1888978, 32772, 1343, 40, 70, "Item"],
+Cell[1890324, 32814, 164, 3, 70, "Item"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1884158, 32488, 65, 0, 70, "Subsubsection"],
+Cell[1890537, 32823, 65, 0, 70, "Subsubsection"],
 Cell[CellGroupData[{
-Cell[1884248, 32492, 160, 3, 70, "Item"],
+Cell[1890627, 32827, 160, 3, 70, "Item"],
 Cell[CellGroupData[{
-Cell[1884433, 32499, 64, 0, 70, "Subitem"],
-Cell[1884500, 32501, 31, 0, 70, "Subitem"],
-Cell[1884534, 32503, 66, 0, 70, "Subitem"],
-Cell[1884603, 32505, 46, 0, 70, "Subitem"],
-Cell[1884652, 32507, 76, 0, 70, "Subitem"]
+Cell[1890812, 32834, 64, 0, 70, "Subitem"],
+Cell[1890879, 32836, 31, 0, 70, "Subitem"],
+Cell[1890913, 32838, 66, 0, 70, "Subitem"],
+Cell[1890982, 32840, 46, 0, 70, "Subitem"],
+Cell[1891031, 32842, 76, 0, 70, "Subitem"]
 }, Open  ]],
-Cell[1884743, 32510, 494, 14, 70, "Item"],
-Cell[1885240, 32526, 462, 17, 70, "Item"],
-Cell[1885705, 32545, 345, 12, 70, "Item"],
-Cell[1886053, 32559, 492, 13, 70, "Item"],
-Cell[1886548, 32574, 408, 9, 70, "Item"],
-Cell[1886959, 32585, 126, 3, 70, "Item"],
-Cell[1887088, 32590, 334, 8, 70, "Item"],
-Cell[1887425, 32600, 515, 17, 70, "Item"]
+Cell[1891122, 32845, 494, 14, 70, "Item"],
+Cell[1891619, 32861, 462, 17, 70, "Item"],
+Cell[1892084, 32880, 345, 12, 70, "Item"],
+Cell[1892432, 32894, 492, 13, 70, "Item"],
+Cell[1892927, 32909, 408, 9, 70, "Item"],
+Cell[1893338, 32920, 126, 3, 70, "Item"],
+Cell[1893467, 32925, 334, 8, 70, "Item"],
+Cell[1893804, 32935, 515, 17, 70, "Item"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1887989, 32623, 53, 0, 70, "Subsubsection"],
+Cell[1894368, 32958, 53, 0, 70, "Subsubsection"],
 Cell[CellGroupData[{
-Cell[1888067, 32627, 516, 12, 70, "Item"],
-Cell[1888586, 32641, 480, 10, 70, "Item"],
-Cell[1889069, 32653, 214, 4, 70, "Item"],
-Cell[1889286, 32659, 574, 18, 70, "Item"],
-Cell[1889863, 32679, 164, 3, 70, "Item"],
-Cell[1890030, 32684, 474, 15, 70, "Item"],
-Cell[1890507, 32701, 1891, 60, 70, "Item"],
-Cell[1892401, 32763, 850, 28, 70, "Item"]
+Cell[1894446, 32962, 516, 12, 70, "Item"],
+Cell[1894965, 32976, 480, 10, 70, "Item"],
+Cell[1895448, 32988, 214, 4, 70, "Item"],
+Cell[1895665, 32994, 574, 18, 70, "Item"],
+Cell[1896242, 33014, 164, 3, 70, "Item"],
+Cell[1896409, 33019, 474, 15, 70, "Item"],
+Cell[1896886, 33036, 1891, 60, 70, "Item"],
+Cell[1898780, 33098, 850, 28, 70, "Item"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1893300, 32797, 49, 0, 70, "Subsubsection"],
-Cell[1893352, 32799, 256, 6, 70, "Text"],
+Cell[1899679, 33132, 49, 0, 70, "Subsubsection"],
+Cell[1899731, 33134, 250, 6, 70, "Text"],
 Cell[CellGroupData[{
-Cell[1893633, 32809, 59, 1, 70, "Input"],
-Cell[1893695, 32812, 858, 12, 70, "Print",
+Cell[1900006, 33144, 59, 1, 70, "Input"],
+Cell[1900068, 33147, 858, 12, 70, "Print",
  CellTags->"Info3620753336-8646734"]
 }, Open  ]],
-Cell[1894568, 32827, 174, 3, 70, "Text"],
-Cell[1894745, 32832, 80, 1, 70, "Input"]
+Cell[1900941, 33162, 174, 3, 70, "Text"],
+Cell[1901118, 33167, 80, 1, 70, "Input"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1894874, 32839, 43, 0, 70, "Subsection"],
+Cell[1901247, 33174, 43, 0, 70, "Subsection"],
 Cell[CellGroupData[{
-Cell[1894942, 32843, 91, 1, 70, "Subsubsection"],
-Cell[1895036, 32846, 734, 19, 70, "Text"],
-Cell[1895773, 32867, 560, 14, 70, "Input"],
-Cell[1896336, 32883, 1074, 21, 70, "Text"]
+Cell[1901315, 33178, 91, 1, 70, "Subsubsection"],
+Cell[1901409, 33181, 734, 19, 70, "Text"],
+Cell[1902146, 33202, 560, 14, 70, "Input"],
+Cell[1902709, 33218, 1074, 21, 70, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1897447, 32909, 46, 0, 70, "Subsubsection"],
-Cell[1897496, 32911, 373, 7, 70, "Text"],
-Cell[1897872, 32920, 547, 16, 70, "Input"],
-Cell[1898422, 32938, 1139, 29, 70, "Text"]
+Cell[1903820, 33244, 46, 0, 70, "Subsubsection"],
+Cell[1903869, 33246, 373, 7, 70, "Text"],
+Cell[1904245, 33255, 547, 16, 70, "Input"],
+Cell[1904795, 33273, 1139, 29, 70, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1899598, 32972, 42, 0, 70, "Subsubsection"],
-Cell[1899643, 32974, 441, 10, 70, "Text"],
-Cell[1900087, 32986, 408, 12, 70, "Input"],
-Cell[1900498, 33000, 831, 16, 70, "Text"]
+Cell[1905971, 33307, 42, 0, 70, "Subsubsection"],
+Cell[1906016, 33309, 441, 10, 70, "Text"],
+Cell[1906460, 33321, 408, 12, 70, "Input"],
+Cell[1906871, 33335, 831, 16, 70, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1901366, 33021, 65, 0, 70, "Subsubsection"],
-Cell[1901434, 33023, 124, 3, 70, "Text"],
-Cell[1901561, 33028, 327, 9, 70, "Input"],
-Cell[1901891, 33039, 28, 0, 70, "Text"],
-Cell[1901922, 33041, 349, 9, 70, "Input"],
-Cell[1902274, 33052, 99, 2, 70, "Text"]
+Cell[1907739, 33356, 65, 0, 70, "Subsubsection"],
+Cell[1907807, 33358, 124, 3, 70, "Text"],
+Cell[1907934, 33363, 327, 9, 70, "Input"],
+Cell[1908264, 33374, 28, 0, 70, "Text"],
+Cell[1908295, 33376, 349, 9, 70, "Input"],
+Cell[1908647, 33387, 99, 2, 70, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1902410, 33059, 39, 0, 70, "Subsubsection"],
-Cell[1902452, 33061, 610, 17, 70, "Input",
+Cell[1908783, 33394, 39, 0, 70, "Subsubsection"],
+Cell[1908825, 33396, 580, 16, 70, "Input",
  InitializationCell->True],
-Cell[1903065, 33080, 107, 3, 70, "Input",
- InitializationCell->True]
+Cell[1909408, 33414, 107, 3, 70, "Input",
+ InitializationCell->True],
+Cell[1909518, 33419, 485, 12, 70, "Input"],
+Cell[CellGroupData[{
+Cell[1910028, 33435, 346, 9, 70, "Input"],
+Cell[1910377, 33446, 116, 1, 70, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1910530, 33452, 462, 12, 70, "Input"],
+Cell[1910995, 33466, 339, 10, 70, "Output"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
@@ -33275,4 +33723,4 @@ Cell[1903065, 33080, 107, 3, 70, "Input",
 *)
 
 (* End of internal cache information *)
-(* NotebookSignature ZvDE#HA4rnt5TDKSydZmiHI4 *)
+(* NotebookSignature CuTHmgnaIxlnfAwqHrps4T@K *)
