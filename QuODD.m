@@ -157,7 +157,8 @@ ParametricPlot[
 ,PlotLabel->label
 ,Evaluate@If[label=="\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t\!\(\*SuperscriptBox[\()\), \(2\)]\)",Prolog->{
 GrayLevel[0.8],Tooltip[Rectangle[{-1000,-1000},{0,1000}],DisplayForm[Row[{"Re(",Superscript["\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)","2"],")<0"}]]],
-Red,Thick,Tooltip[Line[{{-1000,0},{0,0}}],DisplayForm[Row[{"Branch cut\n",Superscript["\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)","2"],")<0"}]]]
+Red,Thick,Tooltip[Line[{{-1000,0},{0,0}}],DisplayForm[Row[{"Branch cut\n",Superscript["\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)","2"],")<0"}]]],
+Darker[Green],Thick,Tooltip[Line[{{0,0},{1000000,0}}],DisplayForm[Row[{"Real axis\n",Superscript["\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)","2"],")>0"}]]]
 },##&[]
 ]
 ]
