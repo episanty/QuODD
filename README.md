@@ -3,7 +3,9 @@
 
 The Quantum Optics Dynamic Dashboard is a Mathematica package to aid in the visualization of the complex-valued trajectories that arise in the theory of optical tunnelling - i.e., the ionization of atoms by strong, low-frequency laser fields by means of the tunnel effect.
 
-To get the dashboard, download the ZIP file from the bar on the right and unpack its contents onto a folder. To view the Dashboard, open `Quantum Optics Dynamic Dashboard.nb` in Mathematica.
+The Dashboard requires Wolfram Mathematica to view and modify, and it can be viewed and interacted with (but not modified) with the free-to-download [Wolfram CDF Player](http://www.wolfram.com/cdf-player/).
+
+To get the Dashboard, download the ZIP file from the bar on the right and unpack its contents onto a folder. Then use Mathematica to open `Quantum Optics Dynamic Dashboard.nb` or open `Quantum Optics Dynamic Dashboard.cdf` with the CDF player.
 
 A sample Dashboard looks as follows:
 ![](DashboardExample.png)
