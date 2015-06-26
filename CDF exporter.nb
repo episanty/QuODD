@@ -49,19 +49,34 @@ Cell[BoxData[
    RowBox[{
     RowBox[{
      RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
-     "\"\<Quantum Orbits Dynamic Dashboard.cdf\>\""}], ",", 
-    "\[IndentingNewLine]", 
+     "\"\<ARMSupport.pdf\>\""}], ",", "\[IndentingNewLine]", 
     RowBox[{
      RowBox[{"Import", "[", 
       RowBox[{
        RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
-       "\"\<Quantum Orbits Dynamic Dashboard.nb\>\""}], "]"}], "/.", 
+       "\"\<ARMSupport.nb\>\""}], "]"}], "/.", 
+     RowBox[{"{", 
+      RowBox[{"Closed", "\[Rule]", "Open"}], "}"}]}]}], "\[IndentingNewLine]",
+    "]"}], ";"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Export", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"NotebookDirectory", "[", "]"}], "<>", "\"\<EPToolbox.pdf\>\""}],
+     ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Import", "[", 
+      RowBox[{
+       RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+       "\"\<EPToolbox.nb\>\""}], "]"}], "/.", 
      RowBox[{"{", 
       RowBox[{"Closed", "\[Rule]", "Open"}], "}"}]}]}], "\[IndentingNewLine]",
     "]"}], ";"}]], "Input"]
 },
 WindowSize->{991, 904},
-WindowMargins->{{766, Automatic}, {Automatic, 41}},
+WindowMargins->{{746, Automatic}, {Automatic, 21}},
 PrivateNotebookOptions->{"FileOutlineCache"->False},
 TrackCellChangeTimes->False,
 FrontEndVersion->"10.1 for Linux x86 (64-bit) (March 23, 2015)",
