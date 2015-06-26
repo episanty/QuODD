@@ -1,71 +1,70 @@
-(* Content-type: application/vnd.wolfram.mathematica *)
-
-(*** Wolfram Notebook File ***)
-(* http://www.wolfram.com/nb *)
-
-(* CreatedBy='Mathematica 10.1' *)
-
-(*CacheID: 234*)
-(* Internal cache information:
-NotebookFileLineBreakTest
-NotebookFileLineBreakTest
-NotebookDataPosition[       158,          7]
-NotebookDataLength[      1792,         62]
-NotebookOptionsPosition[      1452,         45]
-NotebookOutlinePosition[      1790,         60]
-CellTagsIndexPosition[      1747,         57]
-WindowFrame->Normal*)
-
-(* Beginning of Notebook Content *)
 Notebook[{
 Cell[BoxData[
  RowBox[{
-  RowBox[{"SetDirectory", "[", 
-   RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";"}]], "Input",
- CellChangeTimes->{{3.644080326228936*^9, 3.644080355473528*^9}, 
-   3.644080412777996*^9}],
-
-Cell[CellGroupData[{
+  RowBox[{"Export", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+     "\"\<Quantum Orbits Dynamic Dashboard.cdf\>\""}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Import", "[", 
+      RowBox[{
+       RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+       "\"\<Quantum Orbits Dynamic Dashboard.nb\>\""}], "]"}], "/.", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Closed", "\[Rule]", "Open"}], ",", 
+       RowBox[{
+        RowBox[{"Cell", "[", 
+         RowBox[{
+         "\"\<\[Copyright] Emilio Pisanty, 2015. Available under the MIT \
+License.\>\"", ",", "\"\<Text\>\""}], "]"}], "\[Rule]", 
+        RowBox[{"Cell", "[", 
+         RowBox[{
+         "\"\<\[Copyright] Emilio Pisanty, 2015. Available under the CC BY-SA \
+License.\>\"", ",", "\"\<Text\>\""}], "]"}]}]}], "\[IndentingNewLine]", 
+      "}"}]}]}], "\[IndentingNewLine]", "]"}], ";"}]], "Input"],
 
 Cell[BoxData[
- RowBox[{"Export", "[", 
-  RowBox[{"\"\<Quantum Orbits Dynamic Dashboard.cdf\>\"", ",", 
+ RowBox[{
+  RowBox[{"Export", "[", "\[IndentingNewLine]", 
    RowBox[{
-   "Import", "[", "\"\<Quantum Orbits Dynamic Dashboard.nb\>\"", "]"}]}], 
-  "]"}]], "Input",
- CellChangeTimes->{{3.6440803214352303`*^9, 3.644080324996764*^9}, {
-  3.644080359489294*^9, 3.6440803841646223`*^9}, {3.64408041640267*^9, 
-  3.644080420193872*^9}, {3.6441331331533012`*^9, 3.644133135674513*^9}}],
+    RowBox[{
+     RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+     "\"\<Quantum Orbits Dynamic Dashboard.pdf\>\""}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Import", "[", 
+      RowBox[{
+       RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+       "\"\<Quantum Orbits Dynamic Dashboard.nb\>\""}], "]"}], "/.", 
+     RowBox[{"{", 
+      RowBox[{"Closed", "\[Rule]", "Open"}], "}"}]}]}], "\[IndentingNewLine]",
+    "]"}], ";"}]], "Input"],
 
-Cell[BoxData["\<\"Quantum Orbits Dynamic Dashboard.cdf\"\>"], "Output",
- CellChangeTimes->{
-  3.6440803865045853`*^9, 3.644080754218466*^9, 3.644131469120432*^9, {
-   3.644133139504724*^9, 3.644133147675024*^9}}]
-}, Open  ]]
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Export", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+     "\"\<Quantum Orbits Dynamic Dashboard.cdf\>\""}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Import", "[", 
+      RowBox[{
+       RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+       "\"\<Quantum Orbits Dynamic Dashboard.nb\>\""}], "]"}], "/.", 
+     RowBox[{"{", 
+      RowBox[{"Closed", "\[Rule]", "Open"}], "}"}]}]}], "\[IndentingNewLine]",
+    "]"}], ";"}]], "Input"]
 },
-WindowSize->{808, 911},
-WindowMargins->{{1007, Automatic}, {-10, Automatic}},
+WindowSize->{991, 904},
+WindowMargins->{{766, Automatic}, {Automatic, 41}},
+PrivateNotebookOptions->{"FileOutlineCache"->False},
+TrackCellChangeTimes->False,
 FrontEndVersion->"10.1 for Linux x86 (64-bit) (March 23, 2015)",
 StyleDefinitions->"Default.nb"
 ]
-(* End of Notebook Content *)
 
-(* Internal cache information *)
-(*CellTagsOutline
-CellTagsIndex->{}
-*)
-(*CellTagsIndex
-CellTagsIndex->{}
-*)
-(*NotebookFileOutline
-Notebook[{
-Cell[558, 20, 215, 5, 32, "Input"],
-Cell[CellGroupData[{
-Cell[798, 29, 423, 8, 55, "Input"],
-Cell[1224, 39, 212, 3, 32, "Output"]
-}, Open  ]]
-}
-]
-*)
-
-(* End of internal cache information *)
