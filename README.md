@@ -5,6 +5,9 @@ The Quantum Optics Dynamic Dashboard is a Mathematica package to aid in the visu
 
 To get the dashboard, download the ZIP file from the bar on the right and unpack its contents onto a folder. To view the Dashboard, open `Quantum Optics Dynamic Dashboard.nb` in Mathematica.
 
+A sample Dashboard looks as follows:
+![](DashboardExample.png)
+
 This application consists of the following files:
 
  - `Quantum Orbits Dynamic Dashboard.nb` contains documentation for the Dashboard and a number of examples. The corresponding `.cdf` file can be opened using the free-to-download [Wolfram CDF Player](http://www.wolfram.com/cdf-player/); the `.pdf` file has a printout of the notebook.
