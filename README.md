@@ -23,9 +23,9 @@ All `.m` package files are generated automatically from the corresponding `.nb` 
 
 This software was developed as an aid for the research presented in
 
-> Slalom in complex time: emergence of low-energy structures in tunnel ionization via complex time contours. E. Pisanty and M. Ivanov. In preparation.
+> Slalom in complex time: emergence of low-energy structures in tunnel ionization via complex time contours. E. Pisanty and M. Ivanov. [arXiv:1507.00011](http://arxiv.org/abs/1507.00011).
 
-and it is also documented in
+and will also be documented in
 
 > Quantum Orbit Dynamic Dashboard: a navigation tool for complex time and complex space in tunnel ionization. E. Pisanty. In preparation.
 
