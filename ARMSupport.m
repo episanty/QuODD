@@ -19,7 +19,7 @@
 
 
 
-BeginPackage["ARMSupport`",{"EPToolbox`"}]
+BeginPackage["ARMSupport`",{"EPToolbox`"}];
 
 
 stdpars={0.05,0.055,1.007};
@@ -42,7 +42,7 @@ t\[Kappa]::usage="t\[Kappa][{po, py, pp}, {F, \[Omega], \[Kappa]}] Returns the s
 t\[Kappa][pp, \[Kappa], \[Omega], F, po, py] Returns the starting point \!\(\*SubscriptBox[\(t\), \(\[Kappa]\)]\) directly.";
 
 
-Begin["`Private`"]
+Begin["`Private`"];
 ts[pp_,\[Kappa]_,\[Omega]_,F_,po_,py_]:=1/\[Omega] ArcSin[\[Omega]/F pp+I \[Omega]/F Sqrt[\[Kappa]^2+po^2+py^2]]
 ts[{po_,py_,pp_},{F_,\[Omega]_,\[Kappa]_}]:=ts[pp,\[Kappa],\[Omega],F,po,py]
 
@@ -54,7 +54,7 @@ t0[pp_,\[Kappa]_,\[Omega]_,F_,po_,py_]:=Re[ts[pp,\[Kappa],\[Omega],F,po,py]]
 
 t\[Kappa][pp_,\[Kappa]_,\[Omega]_,F_,po_,py_]:=ts[pp,\[Kappa],\[Omega],F,po,py]-I/\[Kappa]^2
 t\[Kappa][{po_,py_,pp_},{F_,\[Omega]_,\[Kappa]_}]:=t\[Kappa][pp,\[Kappa],\[Omega],F,po,py]
-End[]
+End[];
 
 
 getClassicalTransition::usage="getClassicalTransition[n, {F, \[Omega], \[Kappa]}] Returns pz and tr in atomic units as a list of replacement rules.
@@ -62,7 +62,11 @@ getClassicalTransition[range, {F, \[Omega], \[Kappa]}]
 getClassicalTransition[n, F, \[Omega], \[Kappa]]";
 
 
-Begin["`Private`"]
+pz::usage="pz represents the z component of momentum."
+tr::usage="tr represents the return time as calculated by getClassicalTransition and friends."
+
+
+Begin["`Private`"];
 getClassicalTransition[n_,{F_,\[Omega]_,\[Kappa]_}]:=getClassicalTransition[n,F,\[Omega],\[Kappa]]
 getClassicalTransition[range_List,{F_,\[Omega]_,\[Kappa]_}]:=(getClassicalTransition[#,{F,\[Omega],\[Kappa]}]&/@range)
 getClassicalTransition[n_,F_,\[Omega]_,\[Kappa]_]:=Module[{getTimes,t00,zinit},
@@ -75,14 +79,14 @@ pz-F/\[Omega] Sin[\[Omega] tr]==0}
 ,{{pz,0},{tr,(n+1) \[Pi]/\[Omega]}}
 ]
 ]
-End[]
+End[];
 
 
-Begin["`Private`"]
+Begin["`Private`"];
 getLinearizedTransition[n_,{F_,\[Omega]_,\[Kappa]_}]:=getClassicalTransition[n,F,\[Omega],\[Kappa]]
 getLinearizedTransition[range_List,{F_,\[Omega]_,\[Kappa]_}]:=(getClassicalTransition[#,{F,\[Omega],\[Kappa]}]&/@range)
 getLinearizedTransition[n_,F_,\[Omega]_,\[Kappa]_]:={pz->F/\[Omega] getReducedLinearizedTransition[n,(\[Omega] \[Kappa])/F],tr->1/\[Omega] ((n+1)\[Pi]+ArcSin[getReducedLinearizedTransition[n,(\[Omega] \[Kappa])/F]])}
-End[]
+End[];
 
 
 getReducedLinearizedTransition::usage="getReducedLinearizedTransition[n, {F, \[Omega], \[Kappa]}] Returns \[Omega]pz/F directly.
@@ -90,10 +94,10 @@ getReducedLinearizedTransition[range, {F, \[Omega], \[Kappa]}]
 getReducedLinearizedTransition[n, F, \[Omega], \[Kappa]]";
 
 
-Begin["`Private`"]
+Begin["`Private`"];
 getReducedLinearizedTransition[range_List,\[Gamma]_]:=(getReducedLinearizedTransition[#,\[Gamma]]&/@range)
 getReducedLinearizedTransition[n_,\[Gamma]_]:=((-1)^n+Sqrt[1+\[Gamma]^2])/(\[Pi](n+1))
-End[]
+End[];
 
 
 getFullLinearizedTransition::usage="getFullLinearizedTransition[n, {F, \[Omega], \[Kappa]}] Returns pz and tr in atomic units as a list of replacement rules, for the linearized case without neglecting \[Omega]/\[Kappa]^2.
@@ -104,13 +108,13 @@ getFullReducedLinearizedTransition[range, {F, \[Omega], \[Kappa]}]
 getFullReducedLinearizedTransition[n, F, \[Omega], \[Kappa]]";
 
 
-Begin["`Private`"]
+Begin["`Private`"];
 getFullLinearizedTransition[n_,{F_,\[Omega]_,\[Kappa]_}]:=getFullLinearizedTransition[n,F,\[Omega],\[Kappa]]
 getFullLinearizedTransition[range_List,{F_,\[Omega]_,\[Kappa]_}]:=(getFullLinearizedTransition[#,{F,\[Omega],\[Kappa]}]&/@range)
 getFullLinearizedTransition[n_,F_,\[Omega]_,\[Kappa]_]:={pz->F/\[Omega] getFullReducedLinearizedTransition[n,(\[Omega] \[Kappa])/F],tr->1/\[Omega] ((n+1)\[Pi]+ArcSin[getReducedLinearizedTransition[n,(\[Omega] \[Kappa])/F]])}
 getFullReducedLinearizedTransition[range_List,F_,\[Omega]_,\[Kappa]_]:=(getFullReducedLinearizedTransition[#,F,\[Omega],\[Kappa]]&/@range)
 getFullReducedLinearizedTransition[n_,F_,\[Omega]_,\[Kappa]_]:=((-1)^n+Sqrt[1+((\[Omega] \[Kappa])/F)^2]Cosh[\[Omega]/\[Kappa]^2]-(\[Omega] \[Kappa])/F Sinh[\[Omega]/\[Kappa]^2])/((n+1)\[Pi])
-End[]
+End[];
 
 
 getComplexTransition::usage="getComplexTransition[n, {F, \[Omega], \[Kappa]}] Returns pz and tr in atomic units as a list of replacement rules.
@@ -118,7 +122,7 @@ getComplexTransition[range, {F, \[Omega], \[Kappa]}]
 getComplexTransition[n, F, \[Omega], \[Kappa]]";
 
 
-Begin["`Private`"]
+Begin["`Private`"];
 getComplexTransition[n_,{F_,\[Omega]_,\[Kappa]_}]:=getComplexTransition[n,F,\[Omega],\[Kappa]]
 getComplexTransition[range_List,{F_,\[Omega]_,\[Kappa]_}]:=(getComplexTransition[#,{F,\[Omega],\[Kappa]}]&/@range)
 getComplexTransition[n_,F_,\[Omega]_,\[Kappa]_]:=Module[{t\[Kappa]\[Kappa]},
@@ -127,7 +131,7 @@ FindRoot[
 (\[Omega] pz)/F ((n+1) \[Pi]+ArcSin[(\[Omega] pz)/F]-\[Omega] t\[Kappa]\[Kappa][pz])+(-1)^(n+1) Sqrt[1-((\[Omega] pz)/F)^2]-Cos[\[Omega] t\[Kappa]\[Kappa][pz]]==0
 ,{pz,0.0}]
 ]
-End[]
+End[];
 
 
 complexTrajectory::usage="complexTrajectory[t,{px,py,pz},{F,\[Omega],\[Kappa]}] Returns the vector-valued complex trajectory \!\(\*SubscriptBox[\(r\), \(cl\)]\)(t)=\!\(\*SubsuperscriptBox[\(\[Integral]\), SubscriptBox[\(t\), \(s\)], \(t\)]\)(p+A(\[Tau]))\[DifferentialD]\[Tau].
@@ -141,7 +145,7 @@ forcets::usage="forcets is an option for complexTrajectory and classicalTrajecto
 Protect[rInit,zInit,forcets];
 
 
-Begin["`Private`"]
+Begin["`Private`"];
 Options[complexTrajectory]={zInit->0,rInit->{0,0,0},forcets->Automatic};
 complexTrajectory[t_,pz_,{F_,\[Omega]_,\[Kappa]_},OptionsPattern[]]:=With[{tss=If[OptionValue[forcets]===Automatic,ts[{0,0,pz},{F,\[Omega],\[Kappa]}],OptionValue[forcets]]},
 OptionValue[zInit]+pz(t-tss)+F/\[Omega]^2 (Cos[\[Omega] t]-Cos[\[Omega] tss])
@@ -149,7 +153,7 @@ OptionValue[zInit]+pz(t-tss)+F/\[Omega]^2 (Cos[\[Omega] t]-Cos[\[Omega] tss])
 complexTrajectory[t_,{px_,py_,pz_},{F_,\[Omega]_,\[Kappa]_},OptionsPattern[]]:=With[{tss=If[OptionValue[forcets]===Automatic,ts[{px,py,pz},{F,\[Omega],\[Kappa]}],OptionValue[forcets]]},
 OptionValue[rInit]+{px,py,pz}(t-tss)+{0,0,1} F/\[Omega]^2 (Cos[\[Omega] t]-Cos[\[Omega] tss])
 ]
-End[]
+End[];
 
 
 classicalTrajectory::usage="classicalTrajectory[t, {px, py, pz}, {F, \[Omega], \[Kappa]}] Returns the real part of the vector-valued complex trajectory, Re(\!\(\*SubscriptBox[\(r\), \(cl\)]\)(t))=Re(\!\(\*SubsuperscriptBox[\(\[Integral]\), SubscriptBox[\(t\), \(s\)], \(t\)]\)(p+A(\[Tau]))\[DifferentialD]\[Tau]).
@@ -157,16 +161,16 @@ classicalTrajectory::usage="classicalTrajectory[t, {px, py, pz}, {F, \[Omega], \
 classicalTrajectory[t, pz, {F, \[Omega], \[Kappa]}] Returns the real part of the z component  of the complex trajectory, Re(\!\(\*SubscriptBox[\(z\), \(cl\)]\)(t))=Re(\!\(\*SubsuperscriptBox[\(\[Integral]\), SubscriptBox[\(t\), \(s\)], \(t\)]\)(\!\(\*SubscriptBox[\(p\), \(z\)]\)+A(\[Tau]))\[DifferentialD]\[Tau]).";
 
 
-Begin["`Private`"]
+Begin["`Private`"];
 classicalTrajectory[t_,pz_,{F_,\[Omega]_,\[Kappa]_},OptionsPattern[zInit->0]]:=Re[complexTrajectory[t,pz,{F,\[Omega],\[Kappa]},zInit->OptionValue[zInit]]]
 classicalTrajectory[t_?NumericQ,{px_,py_,pz_},{F_,\[Omega]_,\[Kappa]_},OptionsPattern[rInit->0]]:=Re[complexTrajectory[t,{px,py,pz},{F,\[Omega],\[Kappa]},rInit->OptionValue[rInit]]]
-End[]
+End[];
 
 
 classicalClosestApproach::usage="classicalClosestApproach[{px, py, pz}, {F, \[Omega], \[Kappa]}] Returns \!\(\*SubscriptBox[\(t\), \(CA\)]\), such that Re[\!\(\*SubscriptBox[\(r\), \(cl\)]\)(\!\(\*SubscriptBox[\(t\), \(CA\)]\))]\[CenterDot]v(\!\(\*SubscriptBox[\(t\), \(CA\)]\))=0, for the given momentum and parameters. Accepts \"rules\" as an option, as well as \"Range\" in the format {t1, t2}, where both can contain the laser period \"T\".";
 
 
-Begin["`Private`"]
+Begin["`Private`"];
 Options[classicalClosestApproach]={"rules"->Automatic,"Range"->{0,2"T"}};
 classicalClosestApproach[{px_,py_,pz_},{F_,\[Omega]_,\[Kappa]_},OptionsPattern[]]:=Module[
 {tstart,zinit},
@@ -182,13 +186,13 @@ Evaluate[OptionValue["Range"][[1]]<t<OptionValue["Range"][[2]]/.{"T"->(2\[Pi])/\
 },t]
 ]
 ]
-End[]
+End[];
 
 
 rDotV::usage="rDotV[t, px, pz, {F, \[Omega], \[Kappa]}] Returns the classical r(t)\[CenterDot]v(t) for the given momentum and parameters.";
 
 
-Begin["`Private`"]
+Begin["`Private`"];
 rDotV[t_,{px_,py_,pz_},{F_,\[Omega]_,\[Kappa]_}]:=Module[{tss,zinit=F/\[Omega]^2 (1-Sqrt[1+((\[Kappa] \[Omega])/F)^2])},
 tss=If[NumberQ[OptionValue["rules"]],
 "t0"/.OptionValue["rules"],
@@ -196,27 +200,27 @@ Re[1/\[Omega] ArcSin[\[Omega]/F (pz+I Sqrt[\[Kappa]^2+px^2+py^2])]]
 ];
 (px^2+py^2)(t-tss)+(pz(t-tss)+F/\[Omega]^2 (Cos[\[Omega] t]-Cos[\[Omega] tss])+zinit)(pz-F/\[Omega] Sin[\[Omega] t])
 ]
-End[]
+End[];
 
 
-Begin["`Private`"]
+Begin["`Private`"];
 rDotV[t_,px_,pz_,{F_,\[Omega]_,\[Kappa]_}]:=rDotV[t,px,pz,{F,\[Omega],\[Kappa]}]=rDotV[t,{px,0,pz},{F,\[Omega],\[Kappa]}]
-End[]
+End[];
 
 
 d2r2::usage="d2r2[t, {px, py, pz}, {F, \[Omega], \[Kappa]}] Returns the classical second time derivative \!\(\*FractionBox[SuperscriptBox[\(d\), \(2\)], SuperscriptBox[\(dt\), \(2\)]]\)\!\(\*SubsuperscriptBox[\(r\), \(cl\), \(2\)]\) at the given momentum and parameers.";
 
 
-Begin["`Private`"]
+Begin["`Private`"];
 d2r2[t_,{px_,py_,pz_},{F_,\[Omega]_,\[Kappa]_}]:=d2r2[t,{px,py,pz},{F,\[Omega],\[Kappa]}]=2(Norm[{px,py,pz}-{0,0,1} F/\[Omega] Sin[\[Omega] t]]^2-classicalTrajectory[t,pz,{F,\[Omega],\[Kappa]}]F Cos[\[Omega] t])
-End[]
+End[];
 
 
 allQuantumClosestApproachTimes::usage="allQuantumClosestApproachTimes[{px, py, pz}, {F, \[Omega], \[Kappa]}, {xinit, yinit, zinit}] returns the quantum tCAs as a list of complex values. It accepts as options an explicit \"ts\" and a \"Range\", set to {-2\[ImaginaryI]\[Tau], T+2\[ImaginaryI]\[Tau]} by default, as well as all the options of EPToolbox`FindComplexRoots.";
 tCA::usage="tCA represents a closest approach time \!\(\*SubscriptBox[\(t\), \(CA\)]\).";
 
 
-Begin["`Private`"]
+Begin["`Private`"];
 Options[allQuantumClosestApproachTimes]=Join[Options[FindComplexRoots],{"rules"->Automatic,"Range"->Automatic}];
 allQuantumClosestApproachTimes[{po_,py_,pp_},{F_,\[Omega]_,\[Kappa]_},{xinit_,yinit_,zinit_},options:OptionsPattern[]]:=Module[
 {tss,range,rules},
@@ -238,7 +242,7 @@ Sort@FindComplexRoots[
 ,Tolerance->10^(4-$MachinePrecision)
 ]
 ]
-End[]
+End[];
 
 
 makeTCAsFromCircuit::usage="makeTCAsFromCircuit[{{n1, {px1, py1, pz1}}, ..., {nN, {pxnN, pynN, pznN}}}, {F, \[Omega], \[Kappa]}, {xinit, yinit, zinit}] Calculates the tCAs for the given circuit and parameters. The ni can be any tags which are returned with the output, which is of the form {{n1, {px1, py1, pz1}, tCA11}, {n1, {px1, py1, pz1}, tCA12}, ..., {nN, {pxnN, pynN, pznN}, tCAnNk}}, with all the appropriate tCA in separate entries. Same \"rules\" and \"Range\" options as allQuantumClosestApproachTimes.";
@@ -273,11 +277,11 @@ End[]
 makeTCAsFromRange::usage="makeTCAsFromRange[{pomin, pomax, \[Delta]po}, {ppmin, ppmax, \[Delta]pp}, fixedMomenta, {F, \[Omega], \[Kappa]}, {xinit, yinit, zinit}, \"Range\"\[Rule]{t1, t2}] Returns a list with elements of the form {{po, py, pp}, tCA} for a rectangular grid in momentum with the given spans and separations. fixedMomenta should be a list of replacement rules such as {py\[Rule]0}.";
 
 
-Begin["`Private`"]
-Options[makeTCAsFromRange]=Join[{"rules"->Automatic,OptionValue["Range"]},Options[allQuantumClosestApproachTimes]];
+Begin["`Private`"];
+Options[makeTCAsFromRange]=Options[allQuantumClosestApproachTimes];
 makeTCAsFromRange[{pomin_,pomax_,\[Delta]po_},{ppmin_,ppmax_,\[Delta]pp_},fixedMomenta_,{F_,\[Omega]_,\[Kappa]_},{xinit_,yinit_,zinit_},options:OptionsPattern[]]:=Module[
 {range,rules,tss},
-tss=If[OptionValue["rules"]===Automatic,ts[pp,\[Kappa],\[Omega],F,po,py],"ts"/.OptionValue["rules"]];
+tss=If[OptionValue["rules"]===Automatic,ts[pp,\[Kappa],\[Omega],F,po,Global`py],"ts"/.OptionValue["rules"]];
 rules=If[OptionValue["rules"]===Automatic,
 {"t\[Kappa]"->tss-I/\[Kappa]^2,"ts"->tss,"t0"->Re[tss],"\[Tau]"->Im[tss],"T"->2\[Pi]/\[Omega]},
 OptionValue[rules]
@@ -286,16 +290,18 @@ Flatten[
 Table[
 range=Which[
 MatchQ[OptionValue["Range"]/.rules/.fixedMomenta,{_?NumericQ,_?NumericQ}],OptionValue["Range"]/.rules,
-MatchQ[OptionValue[PlotRange]/.rules/.fixedMomenta,{{_?NumericQ,_?NumericQ},{_?NumericQ,_?NumericQ}}],Complex@@@(OptionValue[PlotRange]\[Transpose]/.rules),
+MatchQ[OptionValue["Range"]/.rules/.fixedMomenta,{{_?NumericQ,_?NumericQ},{_?NumericQ,_?NumericQ}}],Complex@@@(OptionValue["Range"]\[Transpose]/.rules),
 True,{-2I Im[tss],(2\[Pi])/\[Omega]+2I Im[tss]}
 ]/.fixedMomenta;(*ugly logic inside the Table because range depends on tss which depends on p*)
-{{po,py,pp}/.fixedMomenta,tCA}/.allQuantumClosestApproachTimes[{po,py,pp}/.fixedMomenta,{F,\[Omega],\[Kappa]},{xinit,yinit,zinit}
+{{po,Global`py,pp}/.fixedMomenta,tCA}/.allQuantumClosestApproachTimes[
+{po,Global`py,pp}/.fixedMomenta
+,{F,\[Omega],\[Kappa]},{xinit,yinit,zinit}
 ,"Range"->range,Sequence@@FilterRules[{options},Options[allQuantumClosestApproachTimes]]
 ]
 ,{po,pomin,pomax,\[Delta]po},{pp,ppmin,ppmax,\[Delta]pp}]
 ,{1,2,3}]
 ]
-End[]
+End[];
 
 
 closestApproachTimesPath::usage="closestApproachTimesPath[{px, py, pz}, {F, \[Omega], \[Kappa]}, {xinit, yinit, zinit}] Returns a selected and ordered list of complex tCAs as replacement rules, in atomic units. Accepts the same \"rules\" and \"Range\" options as allQuantumClosestApproachTimes.";
@@ -358,7 +364,7 @@ ReportToFile::usage="ReportToFile[directory, file] returns a function which can 
 
 
 Begin["`Private`"]
-SetSharedFunction[Sow];
+If[$KernelID==0,SetSharedFunction[Sow]];
 Quiet[ReportingFunction=ReportingFunction;Softening=Softening;]
 Protect[ReportingFunction];Protect[Softening];
 
